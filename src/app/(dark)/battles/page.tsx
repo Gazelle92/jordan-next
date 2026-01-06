@@ -1,6 +1,5 @@
 import { HistoryBack } from "@/ui/components/history-back";
-
-import InfraredIrlInfo from "@/ui/svg/infrared_irl_info.svg";
+import InfraredBattle from "@/ui/svg/infrared_battle.svg";
 import Logo from "@/ui/svg/logo.svg";
 
 import BasicInformation from "@/ui/components/basic-information";
@@ -90,46 +89,56 @@ export default function IrlInfo() {
       <div className="flex flex-col gap-10 px-3 pb-3">
         <div className="flex flex-col flex-grow-1 items-center justify-center gap-7">
           <Logo className="w-20" />
-          <InfraredIrlInfo width={256} className="mx-auto" />
+          <InfraredBattle width={256} className="mx-auto" />
+
         </div>
         <div className="flex flex-col gap-2">
           <hr className="border-2" />
           <BasicInformation />
-          <div className="flex flex-col gap-5">
-            <h2 className="text-[24px] font-black text-center border-t-4 border-b-1 py-1">
-              저지
-            </h2>
-            <div className="py-5 flex gap-x-16 justify-center">
+          <div className="flex flex-col gap-5 ani">
+            <div className="fade-cw border-t-4 border-b-1 py-1">
+              <h2 className="fadeCover-1 text-[24px] font-black text-center ">
+                저지
+              </h2>
+            </div>
+            <div className="py-5 flex gap-x-16 justify-center fadeCover-0-2">
               {judges.map((judge) => (
                 <Profile key={judge.name} {...judge} />
               ))}
             </div>
           </div>
-          <div className="flex flex-col gap-5">
-            <h2 className="text-[24px] font-black text-center border-t-4 border-b-1 py-1">
-              MC
-            </h2>
-            <div className="py-5 flex gap-x-16 justify-center">
+          <div className="flex flex-col gap-5 ani">
+            <div className="fade-cw border-t-4 border-b-1 py-1">
+              <h2 className="fadeCover-1 text-[24px] font-black text-center ">
+                MC
+              </h2>
+            </div>
+            <div className="py-5 flex gap-x-16 justify-center fadeCover-0-2">
               {MCs.map((judge) => (
                 <Profile key={judge.name} {...judge} />
               ))}
             </div>
           </div>
-          <div className="flex flex-col gap-5">
-            <h2 className="text-[24px] font-black text-center border-t-4 border-b-1 py-1">
-              게스트 배틀러
-            </h2>
-            <div className="py-5 flex flex-wrap gap-5 justify-center">
+          <div className="flex flex-col gap-5 ani">
+            <div className="fade-cw border-t-4 border-b-1 py-1">
+              <h2 className="fadeCover-1 text-[24px] font-black text-center ">
+                게스트 배틀러
+              </h2>
+            </div>
+            <div className="py-5 flex flex-wrap gap-5 justify-center fadeCover-0-2">
               {guests.map((judge) => (
                 <Profile key={judge.name} {...judge} />
               ))}
             </div>
           </div>
-          <div className="flex flex-col gap-5">
-            <h2 className="text-[24px] font-black text-center border-t-4 border-b-1 py-1">
-              타임 테이블
-            </h2>
-            <div className="py-5 grid grid-cols-2 gap-5 px-3.5">
+          <div className="flex flex-col gap-5 ani">
+
+            <div className="fade-cw border-t-4 border-b-1 py-1">
+              <h2 className="fadeCover-1 text-[24px] font-black text-center ">
+                타임 테이블
+              </h2>
+            </div>
+            <div className="py-5 grid grid-cols-2 gap-5 px-3.5 fadeCover-0-2">
               {matches.map((match) => (
                 <div className="flex flex-col items-start" key={match.label}>
                   <p className="font-black text-[12px]">{match.label}</p>

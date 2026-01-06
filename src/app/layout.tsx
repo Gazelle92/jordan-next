@@ -3,7 +3,7 @@ import "./globals.css";
 import { ViewTransitions } from "next-view-transitions";
 
 import { pretendard } from "@/ui/font";
-
+import PageEnterAni from "@/ui/components/PageEnterAni";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -17,7 +17,8 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${pretendard.variable}`}>
+      <body className={`${pretendard.variable} pretendard`}>
+        <PageEnterAni />
         <ViewTransitions>{children}</ViewTransitions>
       </body>
     </html>

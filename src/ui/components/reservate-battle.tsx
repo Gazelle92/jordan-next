@@ -23,7 +23,7 @@ export const ReservateBattle = ({ }) => {
 
   return (
     <>
-      <Button reverse onClick={() => setOpen(true)}>사전 예약하기 테스트</Button>
+      <Button reverse onClick={() => setOpen(true)}>사전 예약하기</Button>
       <FullDialog open={open} onClose={() => setOpen(false)}>
         {completed ? (
           <>

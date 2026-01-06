@@ -24,11 +24,11 @@ const Thumbnail = ({ src }: { src: string }) => {
         />
       </div>
       <VideoDialog open={open} onClose={() => setOpen(false)}>
-        <div className="aspect-[320/498]">
+        <div className="aspect-[9/16] h-full">
           <iframe
             width="100%"
             height="100%"
-            src="https://www.instagram.com/reel/DS12_3LkXij/embed"
+            src="https://www.instagram.com/reel/DTBUZmqjKLe/embed"
             allow="autoplay; encrypted-media"
             allowFullScreen
             className="w-full h-full rounded"
@@ -48,7 +48,7 @@ export default function Videos() {
   return (
     <>
       <div className="flex flex-col gap-2">
-        <div className="flex justify-end items-center">
+        <div className="flex justify-end items-center video_btn_w text-[12px]">
           <Select
             options={[
               { label: "최신순", value: "1" },
@@ -60,7 +60,8 @@ export default function Videos() {
         </div>
         <div className="-mx-3 grid grid-cols-3">
           {Array.from({ length: videos }).map((_, index) => {
-            const src = `https://picsum.photos/id/${index + 500}/300/400`;
+            //const src = `https://picsum.photos/id/${index + 500}/300/400`;
+            const src = "https://scontent-ssn1-1.cdninstagram.com/v/t51.71878-15/609208731_1208110991422894_6604862857071378500_n.jpg?stp=dst-jpg_e15_tt6&_nc_cat=1&ig_cache_key=MzgwMTQwOTI4MDkxMDU5ODg3OA%3D%3D.3-ccb7-5&ccb=7-5&_nc_sid=58cdad&efg=eyJ2ZW5jb2RlX3RhZyI6InhwaWRzLjY0MHgxMTM2LnNkci5DMyJ9&_nc_ohc=synQXUV28VwQ7kNvwEk0If_&_nc_oc=AdnlXr8IeVLnTPFOWje5hV7j8kYny9u2PCXYH6RA-mw0lFJEKEuFntRLGMld9ZP-83M&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=scontent-ssn1-1.cdninstagram.com&_nc_gid=u8nMgpTlhogUrQNzPx2B6A&oh=00_Afoy7j5K2TcdxlPzuupOK96V-82jFeHe60TxenBbNlRlcA&oe=6962451B";
             return <Thumbnail src={src} key={index} />;
           })}
         </div>

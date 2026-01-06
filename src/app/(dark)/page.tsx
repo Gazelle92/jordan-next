@@ -11,12 +11,18 @@ export default function Home() {
   const [transitionState, setTransitionState] = useState<number>(0);
   const router = useTransitionRouter();
 
+  const [fadeOut, setFadeOut] = useState(false);
+  const [pushed, setPushed] = useState(false);
+
   useEffect(() => {
     const interval = setInterval(() => {
       setTransitionState((prev) => {
         if (prev === 2) {
           clearInterval(interval);
-          if (process.env.NODE_ENV === "development") router.push("/menu");
+          if (process.env.NODE_ENV === "development") {
+
+            // router.push("/menu");
+          }
           return 2;
         }
         return prev + 1;
@@ -50,9 +56,22 @@ export default function Home() {
             autoPlay
             muted
             playsInline
-            className="w-dvw h-dvh object-cover"
-            onEnded={() => {
-              router.push("/menu");
+            className={`w-dvw h-dvh object-cover transition-opacity duration-500 ease-in-out ${fadeOut ? "opacity-0" : "opacity-100"
+              }`}
+            onTimeUpdate={(e) => {
+              const video = e.currentTarget;
+
+              if (
+                !pushed &&
+                video.duration &&
+                video.currentTime >= video.duration - 2
+              ) {
+                setFadeOut(true);
+                setPushed(true);
+                setTimeout(() => {
+                  router.push("/menu");
+                }, 500);
+              }
             }}
           />
           <div className="absolute bottom-15 left-0 right-0">

@@ -47,7 +47,7 @@ const UsersTable = ({ items, children }: UsersTableProps) => {
 
 export default function SelectedUsers() {
   return (
-    <div className="flex flex-col">
+    <div className="flex flex-col font-semibold">
       <HistoryBack />
       <div className="flex flex-col gap-5 px-3 pb-3">
         <div className="flex flex-col flex-grow-1 items-center justify-center gap-7">

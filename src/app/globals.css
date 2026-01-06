@@ -1,4 +1,6 @@
 @import "tailwindcss";
+.pretendard{font-family: "Pretendard", sans-serif;}
+
 
 :root {
   --background: #000000;
@@ -40,3 +42,93 @@ body {
   background: var(--background);
   color: var(--foreground);
 }
+
+.logo_wrap a{transition: ease 1s transform; transition-delay: 0.0s;}
+.logo_wrap a:nth-child(even) {transform: translateX(-110%);}
+.logo_wrap a:nth-child(odd) {transform: translateX(110%);}
+.ani.active.logo_wrap a:nth-child(odd){transform: translateX(0%);}
+.ani.active.logo_wrap a:nth-child(even){transform: translateX(0%);}
+main{overflow: hidden;}
+
+
+.ani.active .fade-slice{opacity: 1;}
+.fade-slice {
+  opacity: 0;
+  display: block;
+  width: 100%;
+}
+
+.fade-slice .line {
+  overflow: hidden;
+  display: block;
+  width: auto;
+}
+
+.fade-slice .line .inner {
+  transform: translateY(100%);
+  transition: transform 0.6s ease;
+  display: inline-block;
+  white-space: nowrap;
+}
+
+/* stagger delay */
+.fade-slice .line:nth-child(1) .inner { transition-delay: 0.1s; }
+.fade-slice .line:nth-child(2) .inner { transition-delay: 0.2s; }
+.fade-slice .line:nth-child(3) .inner { transition-delay: 0.3s; }
+.fade-slice .line:nth-child(4) .inner { transition-delay: 0.4s; }
+.fade-slice .line:nth-child(5) .inner { transition-delay: 0.5s; }
+.fade-slice .line:nth-child(6) .inner { transition-delay: 0.6s; }
+.fade-slice .line:nth-child(7) .inner { transition-delay: 0.7s; }
+.fade-slice .line:nth-child(8) .inner { transition-delay: 0.8s; }
+.fade-slice .line:nth-child(9) .inner { transition-delay: 0.9s; }
+.fade-slice .line:nth-child(10) .inner { transition-delay: 1s; }
+
+.ani.active .fade-slice .line {
+  overflow: hidden;
+  display: block;
+}
+
+.ani.active .fade-slice .line .inner {
+  transform: translateY(0);
+}
+.fade-cw{overflow: hidden;}
+.fade-cw u, .fade-cw span{transition: all 1s cubic-bezier(0,0,.43,1.06), font-size 0s ease;}
+.fadeCover-0{opacity: 0; transition: all 1s cubic-bezier(0,0,.43,1.06); transition-delay: 0.0s!important;}
+.fadeCover-0-1{opacity: 0; transition: all 1s cubic-bezier(0,0,.43,1.06); transition-delay: 0.1s!important;}
+.fadeCover-0-2{opacity: 0; transition: all 1s cubic-bezier(0,0,.43,1.06); transition-delay: 0.2s!important;}
+.fadeCover-0-3{opacity: 0; transition: all 1s cubic-bezier(0,0,.43,1.06); transition-delay: 0.3s!important;}
+.fadeCover-0-4{opacity: 0; transition: all 1s cubic-bezier(0,0,.43,1.06); transition-delay: 0.4s!important;}
+.fadeCover-0-5{opacity: 0; transition: all 1s cubic-bezier(0,0,.43,1.06); transition-delay: 0.5s!important;}
+.fadeCover-0-6{opacity: 0; transition: all 1s cubic-bezier(0,0,.43,1.06); transition-delay: 0.6s!important;}
+.fadeCover-1{display: block; opacity: 0; transform: translateY(130%); transition: all 1s cubic-bezier(0,0,.43,1.06); transition-delay: 0.0s!important;}
+.fadeCover-2{display: block; opacity: 0; transform: translateY(130%); transition: all 1s cubic-bezier(0,0,.43,1.06); transition-delay: 0.1s!important;}
+.fadeCover-3{display: block; opacity: 0; transform: translateY(130%); transition: all 1s cubic-bezier(0,0,.43,1.06); transition-delay: 0.2s!important;}
+.fadeCover-4{display: block; opacity: 0; transform: translateY(130%); transition: all 1s cubic-bezier(0,0,.43,1.06); transition-delay: 0.3s!important;}
+.fadeCover-5{display: block; opacity: 0; transform: translateY(130%); transition: all 1s cubic-bezier(0,0,.43,1.06); transition-delay: 0.4s!important;}
+.fadeCover-6{display: block; opacity: 0; transform: translateY(130%); transition: all 1s cubic-bezier(0,0,.43,1.06); transition-delay: 0.5s!important;}
+.fadeCover-7{display: block; opacity: 0; transform: translateY(130%); transition: all 1s cubic-bezier(0,0,.43,1.06); transition-delay: 0.6s!important;}
+
+.ani.active .fadeCover-0,
+.ani.active .fadeCover-0-1,
+.ani.active .fadeCover-0-2,
+.ani.active .fadeCover-0-3,
+.ani.active .fadeCover-0-4,
+.ani.active .fadeCover-0-5,
+.ani.active .fadeCover-0-6,
+.ani.active .fadeCover-1,
+.ani.active .fadeCover-2,
+.ani.active .fadeCover-3,
+.ani.active .fadeCover-4,
+.ani.active .fadeCover-5,
+.ani.active .fadeCover-6,
+.ani.active .fadeCover-7{transform: translateY(0); opacity: 1;}
+
+@media(min-width:1025px){
+  main.max-w-md, .fixed.max-w-md{max-width:600px;}
+}
+
+.video_btn_w button{background-color: #ff3b49; color: #000; transition: ease 0.3s all; border: 1px solid #000; cursor: pointer;}
+.video_btn_w button:hover{background-color: #000; color: #ff3b49;}
+.video_btn_w button:hover svg path{stroke: #ff3b49;}
+.video_btn_w div li{background-color: #ff3b49; color: #000; transition: ease 0.3s all;}
+.video_btn_w div li:hover{background-color: #000; color: #ff3b49;}

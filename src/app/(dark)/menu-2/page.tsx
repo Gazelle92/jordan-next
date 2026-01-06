@@ -27,11 +27,11 @@ export default function Menu() {
         <Category width={300} height={26} />
       </div>
       <div className="flex flex-col items-stretch gap-3 logo_wrap ani">
-        {/*<Link href="/selected-users">
+        <Link href="/selected-users">
           <MenuButton>
             <span className="text-2xl font-black">선정자 명단 보기</span>
           </MenuButton>
-        </Link>*/}
+        </Link>
         <Link href="/irl-info">
           <MenuButton>
             <IrlInfo width={168} height={38} className="mx-auto" />

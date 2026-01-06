@@ -19,7 +19,7 @@ const programs = [
 
 export default function IrlInfo() {
   return (
-    <div className="flex flex-col">
+    <div className="flex flex-col ani">
       <HistoryBack />
       <div className="flex flex-col gap-10 px-3 pb-3">
         <div className="flex flex-col flex-grow-1 items-center justify-center gap-7">
@@ -31,10 +31,13 @@ export default function IrlInfo() {
           <BasicInformation />
           <hr className="border-2" />
           <div className="flex flex-col gap-5">
-            <h2 className="text-[24px] font-black text-center">
-              프로그램 구성
-            </h2>
-            <div className="flex flex-col">
+
+            <div className="fade-cw">
+              <h2 className="text-[24px] font-black text-center fadeCover-5">
+                프로그램 구성
+              </h2>
+            </div>
+            <div className="flex flex-col fadeCover-0">
               {programs.map((program) => (
                 <div
                   className={clsx("border-b flex gap-6 px-4 py-3 text-[15px] items-center", jordan.className)}

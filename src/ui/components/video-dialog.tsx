@@ -42,11 +42,10 @@ export const VideoDialog = ({ open, onClose, children }: VideoDialogProps) => {
 
   return (
     <div
-      className={`fixed max-w-md mx-auto p-5 flex flex-col inset-0 z-50 justify-center transition-all duration-400 ${
-        open
-          ? "pointer-events-auto bg-black/50 backdrop-blur opacity-100"
-          : "pointer-events-none bg-black/0 backdrop-blur-0 opacity-0"
-      }`}
+      className={`fixed max-w-md mx-auto p-5 flex flex-col inset-0 z-50 justify-center transition-all duration-400 ${open
+          ? "pointer-events-auto bg-black/50  opacity-100"
+          : "pointer-events-none bg-black/0 opacity-0"
+        }`}
       aria-modal="true"
       aria-hidden={!open}
     >
@@ -62,19 +61,17 @@ export const VideoDialog = ({ open, onClose, children }: VideoDialogProps) => {
         </div>
       )}
       <div
-        className={`flex video-dialog h-full flex-col ${
-          open
+        className={`flex video-dialog h-full flex-col ${open
             ? "pointer-events-auto opacity-100"
             : "pointer-events-none opacity-0"
-        }`}
+          }`}
       >
         <div
           ref={dialogRef}
-          className={`w-full h-full overflow-y-auto flex-grow-1 flex flex-col justify-center transition-transform duration-400 pb-15 ${
-            open
+          className={`w-full h-full overflow-y-auto flex-grow-1 flex flex-col justify-center transition-transform duration-400 pb-15 ${open
               ? "scale-100 opacity-100 translate-y-0"
               : "scale-95 opacity-0 translate-y-3"
-          }`}
+            }`}
         >
           {children}
         </div>
