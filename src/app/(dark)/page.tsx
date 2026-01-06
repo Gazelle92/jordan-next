@@ -15,14 +15,15 @@ export default function Home() {
   const [pushed, setPushed] = useState(false);
 
   useEffect(() => {
+    if (process.env.NODE_ENV === "development") {
+      router.replace("/menu");
+      return;
+    }
+
     const interval = setInterval(() => {
       setTransitionState((prev) => {
         if (prev === 2) {
           clearInterval(interval);
-          if (process.env.NODE_ENV === "development") {
-
-            // router.push("/menu");
-          }
           return 2;
         }
         return prev + 1;
@@ -31,6 +32,10 @@ export default function Home() {
 
     return () => clearInterval(interval);
   }, []);
+
+  if (process.env.NODE_ENV === "development") {
+    return null;
+  }
 
   switch (transitionState) {
     case 0:

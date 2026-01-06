@@ -8,22 +8,145 @@ import { Link } from "next-view-transitions";
 import Logo from "@/ui/svg/logo.svg";
 import clsx from "clsx";
 import { jordan } from "@/ui/font";
+import { deleteWorkshop, listWorkshops, updateWorkshop } from "@/lib/api-client";
 
 type Step = "verify" | "edit" | "doneEdit" | "doneDelete";
+type VerifyForm = {
+  name: string;
+  phoneMiddle: string;
+};
+type WorkshopForm = {
+  id: number;
+  name: string;
+  birth_date: string;
+  phone_number: string;
+  instagram_video_url: string;
+  what_do_you_want: string;
+};
+
+const normalizePhone = (value: string) => value.replace(/\D/g, "");
+
+const matchesPhoneMiddle = (phoneNumber: string, middle: string) => {
+  if (!phoneNumber || !middle) {
+    return false;
+  }
+  const normalized = normalizePhone(phoneNumber);
+  return normalized.includes(middle);
+};
 
 export default function RegistrationEditPage() {
   const [step, setStep] = useState<Step>("verify");
+  const [verifyForm, setVerifyForm] = useState<VerifyForm>({
+    name: "",
+    phoneMiddle: "",
+  });
+  const [workshopForm, setWorkshopForm] = useState<WorkshopForm | null>(null);
+  const [error, setError] = useState<string | null>(null);
+  const [isVerifying, setIsVerifying] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const handleVerify = async () => {
+    if (!verifyForm.name || !verifyForm.phoneMiddle) {
+      setError("이름과 휴대폰 뒷자리를 입력해 주세요.");
+      return;
+    }
+    setIsVerifying(true);
+    setError(null);
+    try {
+      const data = await listWorkshops();
+      const match = data.results.find(
+        (item) =>
+          item.name === verifyForm.name &&
+          matchesPhoneMiddle(item.phone_number, verifyForm.phoneMiddle)
+      );
+      if (!match) {
+        setError("잘못 입력하였습니다.");
+        return;
+      }
+      setWorkshopForm({
+        id: match.id,
+        name: match.name,
+        birth_date: match.birth_date,
+        phone_number: match.phone_number,
+        instagram_video_url: match.instagram_video_url,
+        what_do_you_want: match.what_do_you_want,
+      });
+      setStep("edit");
+    } catch (err) {
+      setError(err instanceof Error ? err.message : "조회에 실패했습니다.");
+    } finally {
+      setIsVerifying(false);
+    }
+  };
+
+  const handleUpdate = async () => {
+    if (!workshopForm) {
+      return;
+    }
+    if (
+      !workshopForm.name ||
+      !workshopForm.birth_date ||
+      !workshopForm.phone_number ||
+      !workshopForm.instagram_video_url ||
+      !workshopForm.what_do_you_want
+    ) {
+      setError("필수 항목을 모두 입력해 주세요.");
+      return;
+    }
+    setIsSubmitting(true);
+    setError(null);
+    try {
+      await updateWorkshop(workshopForm.id, {
+        name: workshopForm.name,
+        birth_date: workshopForm.birth_date,
+        phone_number: workshopForm.phone_number,
+        instagram_video_url: workshopForm.instagram_video_url,
+        what_do_you_want: workshopForm.what_do_you_want,
+      });
+      setStep("doneEdit");
+    } catch (err) {
+      setError(err instanceof Error ? err.message : "수정에 실패했습니다.");
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
+  const handleDelete = async () => {
+    if (!workshopForm) {
+      return;
+    }
+    setIsSubmitting(true);
+    setError(null);
+    try {
+      await deleteWorkshop(workshopForm.id);
+      setStep("doneDelete");
+    } catch (err) {
+      setError(err instanceof Error ? err.message : "삭제에 실패했습니다.");
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
 
   return (
     <div className="min-h-dvh bg-black text-red-500 flex flex-col">
       {step === "verify" && (
-        <StepVerify onNext={() => setStep("edit")} />
+        <StepVerify
+          form={verifyForm}
+          error={error}
+          isLoading={isVerifying}
+          onChange={setVerifyForm}
+          onNext={handleVerify}
+        />
       )}
 
       {step === "edit" && (
         <StepEdit
-          onSubmit={() => setStep("doneEdit")}
-          onDelete={() => setStep("doneDelete")}
+          form={workshopForm}
+          error={error}
+          isLoading={isSubmitting}
+          onChange={setWorkshopForm}
+          onSubmit={handleUpdate}
+          onDelete={handleDelete}
         />
       )}
 
@@ -45,7 +168,19 @@ export default function RegistrationEditPage() {
 /* ===============================
    STEP 1 – 본인 확인
 =============================== */
-function StepVerify({ onNext }: { onNext: () => void }) {
+function StepVerify({
+  form,
+  error,
+  isLoading,
+  onNext,
+  onChange,
+}: {
+  form: VerifyForm;
+  error: string | null;
+  isLoading: boolean;
+  onNext: () => void;
+  onChange: (form: VerifyForm) => void;
+}) {
   return (
     <div className="flex flex-col gap-5 flex-grow mt-10 px-5 pb-5">
       <h4 className="font-black text-[24px] text-center">
@@ -66,6 +201,10 @@ function StepVerify({ onNext }: { onNext: () => void }) {
           <Input
             type="text"
             placeholder="이름을 입력해주세요."
+            value={form.name}
+            onChange={(event) =>
+              onChange({ ...form, name: event.target.value })
+            }
           />
         </div>
         <div className="border-b-1 flex justify-between px-1.5 py-1">
@@ -75,17 +214,19 @@ function StepVerify({ onNext }: { onNext: () => void }) {
           <Input
             type="text"
             placeholder="휴대폰을 입력해주세요."
+            value={form.phoneMiddle}
+            onChange={(event) =>
+              onChange({ ...form, phoneMiddle: event.target.value })
+            }
           />
         </div>
       </div>
 
-      <span className="text-[12px]">
-        잘못 입력하였습니다.
-      </span>
+      <span className="text-[12px]">{error ?? ""}</span>
 
       <div className="flex-grow-1" />
-      <Button className="py-3" onClick={onNext}>
-        확인
+      <Button className="py-3" disabled={isLoading} onClick={onNext}>
+        {isLoading ? "확인 중..." : "확인"}
       </Button>
     </div>
   );
@@ -95,13 +236,29 @@ function StepVerify({ onNext }: { onNext: () => void }) {
    STEP 2 – 신청서 수정
 =============================== */
 function StepEdit({
+  form,
+  error,
+  isLoading,
+  onChange,
   onSubmit,
   onDelete,
 }: {
+  form: WorkshopForm | null;
+  error: string | null;
+  isLoading: boolean;
+  onChange: (form: WorkshopForm | null) => void;
   onSubmit: () => void;
   onDelete: () => void;
 }) {
   const [confirmDelete, setConfirmDelete] = useState(false);
+  const formValue = form ?? {
+    id: 0,
+    name: "",
+    birth_date: "",
+    phone_number: "",
+    instagram_video_url: "",
+    what_do_you_want: "",
+  };
 
   return (
     <div className="flex flex-col gap-5 flex-grow mt-10 px-5 pb-5">
@@ -118,6 +275,10 @@ function StepEdit({
           <Input
             type="text"
             placeholder="이름을 입력해주세요."
+            value={formValue.name}
+            onChange={(event) =>
+              onChange({ ...formValue, name: event.target.value })
+            }
           />
         </div>
 
@@ -128,6 +289,10 @@ function StepEdit({
           <Input
             type="text"
             placeholder="생년월일을 입력해주세요."
+            value={formValue.birth_date}
+            onChange={(event) =>
+              onChange({ ...formValue, birth_date: event.target.value })
+            }
           />
         </div>
         <div className="border-b-1 flex justify-between px-1.5 py-1">
@@ -137,25 +302,42 @@ function StepEdit({
           <Input
             type="text"
             placeholder="휴대폰을 입력해주세요."
+            value={formValue.phone_number}
+            onChange={(event) =>
+              onChange({ ...formValue, phone_number: event.target.value })
+            }
           />
         </div>
         <div className="border-b-1 flex flex-col px-1.5 py-1">
           <div className={clsx("font-black text-[20px] whitespace-nowrap", jordan.className)}>
             인스타그램 영상 링크
           </div>
-          <Textarea className="resize-none" placeholder="인스타그램 영상 링크" />
+          <Textarea
+            className="resize-none"
+            placeholder="인스타그램 영상 링크"
+            value={formValue.instagram_video_url}
+            onChange={(event) =>
+              onChange({ ...formValue, instagram_video_url: event.target.value })
+            }
+          />
         </div>
 
         <div className="border-b-1 flex flex-col px-1.5 py-1">
           <div className={clsx("font-black text-[20px] whitespace-nowrap", jordan.className)}>
             WHAT DO YOU WANT
           </div>
-          <Textarea placeholder="WHAT DO YOU WANT" />
+          <Textarea
+            placeholder="WHAT DO YOU WANT"
+            value={formValue.what_do_you_want}
+            onChange={(event) =>
+              onChange({ ...formValue, what_do_you_want: event.target.value })
+            }
+          />
         </div>
 
       </div>
       <span className="text-[12px]">
-        필수 항목을 모두 입력해 주세요.
+        {error ?? "필수 항목을 모두 입력해 주세요."}
       </span>
 
 
@@ -180,12 +362,13 @@ function StepEdit({
           <Button
             reverse
             onClick={() => setConfirmDelete(true)}
+            disabled={isLoading}
           >
             신청내역 삭제
           </Button>
 
-          <Button onClick={onSubmit}>
-            수정하기
+          <Button onClick={onSubmit} disabled={isLoading}>
+            {isLoading ? "수정 중..." : "수정하기"}
           </Button>
         </div>
       ) : (
@@ -194,12 +377,14 @@ function StepEdit({
             reverse
             className="flex-1"
             onClick={onDelete}
+            disabled={isLoading}
           >
-            예
+            {isLoading ? "처리 중..." : "예"}
           </Button>
           <Button
             className="flex-1"
             onClick={() => setConfirmDelete(false)}
+            disabled={isLoading}
           >
             아니오
           </Button>
