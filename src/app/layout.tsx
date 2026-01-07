@@ -21,6 +21,7 @@ export default function RootLayout({
         <PageEnterAni />
         <ViewTransitions>{children}</ViewTransitions>
       </body>
+
     </html>
   );
 }
