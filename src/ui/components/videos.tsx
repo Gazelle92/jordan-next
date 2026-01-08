@@ -116,7 +116,7 @@ const Thumbnail = ({ videoUrl }: { videoUrl: string }) => {
         />
       </div>
       <VideoDialog open={open} onClose={() => setOpen(false)}>
-        <div className="aspect-[9/16] h-full">
+        <div className="aspect-[9/16] h-full md:aspect-auto md:w-[360px] md:h-[640px] md:mx-auto">
           <div className="relative w-full h-full overflow-hidden rounded bg-black">
             <div className="absolute inset-0 pointer-events-none bg-gradient-to-b from-black/30 via-transparent to-black/40" />
             <blockquote
