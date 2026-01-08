@@ -2,6 +2,7 @@
 
 import ArrowBottom from "@/ui/svg/arrow_bottom.svg";
 import Image from "next/image";
+import Script from "next/script";
 import { useEffect, useState } from "react";
 import { VideoDialog } from "./video-dialog";
 import { ApplicateWorkshop } from "./applicate-workshop";
@@ -39,6 +40,22 @@ const toInstagramEmbedUrl = (url: string) => {
   }
 };
 
+const toInstagramPermalinkUrl = (url: string) => {
+  if (!url) {
+    return url;
+  }
+  try {
+    const parsed = new URL(url);
+    const match = parsed.pathname.match(/\/(reel|p|tv)\/([^/]+)/);
+    if (match) {
+      return `https://www.instagram.com/${match[1]}/${match[2]}/`;
+    }
+    return parsed.origin;
+  } catch {
+    return url.replace(/\/embed\/?$/, "/");
+  }
+};
+
 const toInstagramThumbnailUrl = (url: string) => {
   if (!url) {
     return url;
@@ -64,6 +81,16 @@ const Thumbnail = ({
 }) => {
   const [open, setOpen] = useState(false);
 
+  useEffect(() => {
+    if (!open || typeof window === "undefined") {
+      return;
+    }
+    const win = window as typeof window & {
+      instgrm?: { Embeds?: { process: () => void } };
+    };
+    win.instgrm?.Embeds?.process();
+  }, [open]);
+
   return (
     <>
       <div className="aspect-[0.64]">
@@ -78,15 +105,24 @@ const Thumbnail = ({
       </div>
       <VideoDialog open={open} onClose={() => setOpen(false)}>
         <div className="aspect-[9/16] h-full">
-          <iframe
-            width="100%"
-            height="100%"
-            src={videoUrl}
-            allow="autoplay; encrypted-media"
-            allowFullScreen
-            className="w-full h-full rounded"
-            style={{ border: "none" }}
-          />
+          <div className="relative w-full h-full overflow-hidden rounded bg-black">
+            <div className="absolute inset-0 pointer-events-none bg-gradient-to-b from-black/30 via-transparent to-black/40" />
+            <blockquote
+              className="instagram-media w-full h-full"
+              data-instgrm-permalink={toInstagramPermalinkUrl(videoUrl)}
+              data-instgrm-version="14"
+              style={{
+                maxWidth: "100%",
+                height: "100%",
+                position: "absolute",
+                left: "50%",
+                top: "50%",
+                transform: "translate(-50%, -38%) scaleY(1.70)",
+                transformOrigin: "center",
+              }}
+            />
+          </div>
+          <Script async src="https://www.instagram.com/embed.js" />
         </div>
       </VideoDialog>
     </>
