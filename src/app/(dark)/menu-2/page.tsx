@@ -29,7 +29,7 @@ export default function Menu() {
       <div className="flex flex-col items-stretch gap-3 logo_wrap ani">
         <Link href="/selected-users">
           <MenuButton>
-            <span className="text-2xl font-black">선정자 명단 보기test260108</span>
+            <span className="text-2xl font-black">선정자 명단 보기test</span>
           </MenuButton>
         </Link>
         <Link href="/irl-info">
