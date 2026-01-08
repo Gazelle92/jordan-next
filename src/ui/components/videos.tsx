@@ -60,8 +60,8 @@ const listEmbedStyle = {
   height: "100%",
   position: "absolute" as const,
   left: "50%",
-  top: "50%",
-  transform: "translate(-50%, -55%) scaleY(1.35)",
+  top: "37%",
+  transform: "translate(-50%, -50%) scaleY(1.26)",
   transformOrigin: "center",
 };
 
@@ -100,7 +100,7 @@ const Thumbnail = ({ videoUrl }: { videoUrl: string }) => {
 
   return (
     <>
-      <div className="relative aspect-[9/16] w-full overflow-hidden rounded bg-black md:aspect-auto md:w-[240px] md:h-[426px]">
+      <div className="relative aspect-auto w-[200px] h-[450px] overflow-hidden rounded bg-black md:w-[240px] md:h-[460px]">
         <div className="absolute inset-0 pointer-events-none bg-gradient-to-b from-black/25 via-transparent to-black/35" />
         <blockquote
           className="instagram-media w-full h-full pointer-events-none ig-embed-list"
@@ -116,7 +116,7 @@ const Thumbnail = ({ videoUrl }: { videoUrl: string }) => {
         />
       </div>
       <VideoDialog open={open} onClose={() => setOpen(false)}>
-        <div className="aspect-[9/16] h-full md:aspect-auto md:w-[360px] md:h-[640px] md:mx-auto">
+        <div className="aspect-auto w-[320px] h-[568px] mx-auto md:w-[360px] md:h-[640px]">
           <div className="relative w-full h-full overflow-hidden rounded bg-black">
             <div className="absolute inset-0 pointer-events-none bg-gradient-to-b from-black/30 via-transparent to-black/40" />
             <blockquote
@@ -209,7 +209,7 @@ export default function Videos() {
             onChange={setValue}
           />
         </div>
-        <div className="-mx-3 grid grid-cols-2 md:justify-items-center">
+        <div className="grid grid-cols-2 gap-3 px-3 justify-items-center md:gap-4 md:px-0">
           {workshops.map((workshop) => {
             const liked = likedIds.includes(workshop.id);
             return (
