@@ -1,7 +1,6 @@
 "use client";
 
 import ArrowBottom from "@/ui/svg/arrow_bottom.svg";
-import Image from "next/image";
 import Script from "next/script";
 import { useEffect, useState } from "react";
 import { VideoDialog } from "./video-dialog";
@@ -56,30 +55,38 @@ const toInstagramPermalinkUrl = (url: string) => {
   }
 };
 
-const toInstagramThumbnailUrl = (url: string) => {
-  if (!url) {
-    return url;
-  }
-  try {
-    const parsed = new URL(url);
-    const match = parsed.pathname.match(/\/(reel|p|tv)\/([^/]+)/);
-    if (match) {
-      return `https://www.instagram.com/${match[1]}/${match[2]}/media/?size=l`;
-    }
-  } catch {
-    return url;
-  }
-  return url;
+const listEmbedStyle = {
+  maxWidth: "100%",
+  height: "100%",
+  position: "absolute" as const,
+  left: "50%",
+  top: "50%",
+  transform: "translate(-50%, -55%) scaleY(1.35)",
+  transformOrigin: "center",
 };
 
-const Thumbnail = ({
-  src,
-  videoUrl,
-}: {
-  src: string;
-  videoUrl: string;
-}) => {
+const modalEmbedStyle = {
+  maxWidth: "100%",
+  height: "100%",
+  position: "absolute" as const,
+  left: "50%",
+  top: "50%",
+  transform: "translate(-50%, -38%) scaleY(1.7)",
+  transformOrigin: "center",
+};
+
+const Thumbnail = ({ videoUrl }: { videoUrl: string }) => {
   const [open, setOpen] = useState(false);
+
+  useEffect(() => {
+    if (typeof window === "undefined") {
+      return;
+    }
+    const win = window as typeof window & {
+      instgrm?: { Embeds?: { process: () => void } };
+    };
+    win.instgrm?.Embeds?.process();
+  }, [videoUrl]);
 
   useEffect(() => {
     if (!open || typeof window === "undefined") {
@@ -93,14 +100,19 @@ const Thumbnail = ({
 
   return (
     <>
-      <div className="aspect-[0.64]">
-        <Image
+      <div className="relative aspect-[9/23] w-full overflow-hidden rounded bg-black">
+        <div className="absolute inset-0 pointer-events-none bg-gradient-to-b from-black/25 via-transparent to-black/35" />
+        <blockquote
+          className="instagram-media w-full h-full pointer-events-none ig-embed-list"
+          data-instgrm-permalink={toInstagramPermalinkUrl(videoUrl)}
+          data-instgrm-version="14"
+          style={listEmbedStyle}
+        />
+        <button
+          type="button"
+          className="absolute inset-0"
           onClick={() => setOpen(true)}
-          src={src}
-          alt="video"
-          className="w-full h-full object-cover"
-          width={240}
-          height={374}
+          aria-label="영상 열기"
         />
       </div>
       <VideoDialog open={open} onClose={() => setOpen(false)}>
@@ -108,21 +120,12 @@ const Thumbnail = ({
           <div className="relative w-full h-full overflow-hidden rounded bg-black">
             <div className="absolute inset-0 pointer-events-none bg-gradient-to-b from-black/30 via-transparent to-black/40" />
             <blockquote
-              className="instagram-media w-full h-full"
+              className="instagram-media w-full h-full ig-embed-modal"
               data-instgrm-permalink={toInstagramPermalinkUrl(videoUrl)}
               data-instgrm-version="14"
-              style={{
-                maxWidth: "100%",
-                height: "100%",
-                position: "absolute",
-                left: "50%",
-                top: "50%",
-                transform: "translate(-50%, -38%) scaleY(1.70)",
-                transformOrigin: "center",
-              }}
+              style={modalEmbedStyle}
             />
           </div>
-          <Script async src="https://www.instagram.com/embed.js" />
         </div>
       </VideoDialog>
     </>
@@ -206,16 +209,12 @@ export default function Videos() {
             onChange={setValue}
           />
         </div>
-        <div className="-mx-3 grid grid-cols-3">
+        <div className="-mx-3 grid grid-cols-2">
           {workshops.map((workshop) => {
-            const src = toInstagramThumbnailUrl(
-              workshop.instagram_video_url
-            );
             const liked = likedIds.includes(workshop.id);
             return (
               <div className="relative" key={workshop.id}>
                 <Thumbnail
-                  src={src}
                   videoUrl={toInstagramEmbedUrl(workshop.instagram_video_url)}
                 />
                 <button
@@ -228,6 +227,16 @@ export default function Videos() {
             );
           })}
         </div>
+        <Script
+          async
+          src="https://www.instagram.com/embed.js"
+          onLoad={() => {
+            const win = window as typeof window & {
+              instgrm?: { Embeds?: { process: () => void } };
+            };
+            win.instgrm?.Embeds?.process();
+          }}
+        />
         {error && (
           <div className="py-2 text-center text-[12px]">{error}</div>
         )}

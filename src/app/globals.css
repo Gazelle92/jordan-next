@@ -38,6 +38,19 @@ main:not(.dark) {
   background: var(--background);
 }
 
+.ig-embed-list,
+.ig-embed-modal {
+  margin: 0 !important;
+}
+
+.ig-embed-list > span,
+.ig-embed-modal > span,
+.ig-embed-list > iframe,
+.ig-embed-modal > iframe {
+  width: 100% !important;
+  height: 100% !important;
+}
+
 body {
   background: var(--background);
   color: var(--foreground);
