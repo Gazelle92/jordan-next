@@ -212,11 +212,11 @@ export default function Videos() {
             onChange={setValue}
           />
         </div>
-        <div className="grid grid-cols-3 mx-[-12px] justify-items-center  md:px-0">
+        <div className="grid grid-cols-3 mx-[-12px] justify-items-center md:px-0">
           {workshops.map((workshop) => {
             const liked = likedIds.includes(workshop.id);
             return (
-              <div className="relative w-full aspect-120/187 flex items-center justify-center" key={workshop.id}>
+              <div className="relative w-full aspect-120/187 flex items-center justify-center group" key={workshop.id}>
                 <Thumbnail
                   videoUrl={toInstagramEmbedUrl(workshop.instagram_video_url)}
                 />
@@ -233,6 +233,7 @@ export default function Videos() {
                   {workshop.like_count}
                 </button>
                 <img className="absolute left-1/2 bottom-[6px] w-[20px] transform -translate-x-1/2 md:bottom-[8px] md:w-[32px]" src="/images/logo_red.svg" />
+                <img className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[20px] opacity-0 group-hover:opacity-100  transition-opacity duration-200" src="/images/btn_play.png" />
               </div>
             );
           })}
