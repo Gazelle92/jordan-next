@@ -50,7 +50,7 @@ export const VideoDialog = ({ open, onClose, children }: VideoDialogProps) => {
       aria-hidden={!open}
     >
       {onClose && (
-        <div className="flex justify-end">
+        <div className="flex justify-end max-w-[400px] w-full mx-auto">
           <button
             className="p-5 text-2xl text-white"
             onClick={onClose}
@@ -68,7 +68,7 @@ export const VideoDialog = ({ open, onClose, children }: VideoDialogProps) => {
       >
         <div
           ref={dialogRef}
-          className={`w-full h-full overflow-y-auto flex-grow-1 flex flex-col justify-center transition-transform duration-400 pb-15 ${open
+          className={`w-full h-full overflow-y-auto flex-grow-1 flex flex-col justify-center transition-transform duration-400 pb-15 items-center ${open
             ? "scale-100 opacity-100 translate-y-0"
             : "scale-95 opacity-0 translate-y-3"
             }`}

@@ -56,12 +56,15 @@ const toInstagramPermalinkUrl = (url: string) => {
 };
 
 const listEmbedStyle = {
-  maxWidth: "100%",
-  height: "100%",
+  //maxWidth: "100%",
+  height: "150%",
+  width: "170%",
+  //minWidth: "170%",
   position: "absolute" as const,
   left: "50%",
-  top: "37%",
-  transform: "translate(-50%, -50%) scaleY(1.26)",
+  top: "47%",
+  //transform: "translate(-50%, -50%) scale(1.26)",
+  transform: "translate(-50%, -50%) scale(1.0)",
   transformOrigin: "center",
 };
 
@@ -71,7 +74,7 @@ const modalEmbedStyle = {
   position: "absolute" as const,
   left: "50%",
   top: "50%",
-  transform: "translate(-50%, -48%) scaleY(1.35)",
+  transform: "translate(-50%, -50%) scale(1.44)",
   transformOrigin: "center",
 };
 
@@ -100,13 +103,13 @@ const Thumbnail = ({ videoUrl }: { videoUrl: string }) => {
 
   return (
     <>
-      <div className="relative aspect-auto w-[180px] h-[450px] overflow-hidden rounded bg-black md:w-[240px] md:h-[460px]">
+      <div className="relative aspect-120/180 w-[120%] h-[120%] overflow-hidden rounded bg-black ">
         <div className="absolute inset-0 pointer-events-none bg-gradient-to-b from-black/25 via-transparent to-black/35" />
         <blockquote
-          className="instagram-media w-full h-full pointer-events-none ig-embed-list"
+          className="instagram-media w-full h-full pointer-events-none ig-embed-list !min-w-0"
           data-instgrm-permalink={toInstagramPermalinkUrl(videoUrl)}
           data-instgrm-version="14"
-          style={listEmbedStyle}
+          style={{ ...listEmbedStyle, minWidth: "unset" }}
         />
         <button
           type="button"
@@ -116,7 +119,7 @@ const Thumbnail = ({ videoUrl }: { videoUrl: string }) => {
         />
       </div>
       <VideoDialog open={open} onClose={() => setOpen(false)}>
-        <div className="aspect-auto w-[320px] h-[530px] mx-auto md:w-[320px] md:h-[530px]">
+        <div className="aspect-320/500 w-full h-auto max-w-[400px]">
           <div className="relative w-full h-full overflow-hidden rounded bg-black">
             <div className="absolute inset-0 pointer-events-none bg-gradient-to-b from-black/30 via-transparent to-black/40" />
             <blockquote
@@ -209,20 +212,27 @@ export default function Videos() {
             onChange={setValue}
           />
         </div>
-        <div className="grid grid-cols-2 gap-3 px-3 justify-items-center md:gap-4 md:px-0">
+        <div className="grid grid-cols-3 mx-[-12px] justify-items-center  md:px-0">
           {workshops.map((workshop) => {
             const liked = likedIds.includes(workshop.id);
             return (
-              <div className="relative" key={workshop.id}>
+              <div className="relative w-full aspect-120/187 flex items-center justify-center" key={workshop.id}>
                 <Thumbnail
                   videoUrl={toInstagramEmbedUrl(workshop.instagram_video_url)}
                 />
                 <button
-                  className="absolute bottom-1 right-1 text-[10px] font-black"
+                  className="absolute bottom-[4px] left-[6px] md:bottom-[6px] md:left-[8px] text-[10px] md:text-[14px] text-white font-regular flex items-center"
                   onClick={() => handleToggleLike(workshop.id)}
                 >
-                  {liked ? "좋아요 취소" : "좋아요"} {workshop.like_count}
+
+                  <img
+                    src={liked ? "/images/heart_2.png" : "/images/heart_1.png"}
+                    alt=""
+                    className="w-3 mr-[4px] md:w-4 md:mr-[8px]"
+                  />
+                  {workshop.like_count}
                 </button>
+                <img className="absolute left-1/2 bottom-[6px] w-[20px] transform -translate-x-1/2 md:bottom-[8px] md:w-[32px]" src="/images/logo_red.svg" />
               </div>
             );
           })}
