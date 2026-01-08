@@ -100,7 +100,7 @@ const Thumbnail = ({ videoUrl }: { videoUrl: string }) => {
 
   return (
     <>
-      <div className="relative aspect-[9/23] w-full overflow-hidden rounded bg-black">
+      <div className="relative aspect-[9/16] w-full overflow-hidden rounded bg-black md:aspect-auto md:w-[240px] md:h-[426px]">
         <div className="absolute inset-0 pointer-events-none bg-gradient-to-b from-black/25 via-transparent to-black/35" />
         <blockquote
           className="instagram-media w-full h-full pointer-events-none ig-embed-list"
@@ -209,7 +209,7 @@ export default function Videos() {
             onChange={setValue}
           />
         </div>
-        <div className="-mx-3 grid grid-cols-2">
+        <div className="-mx-3 grid grid-cols-2 md:justify-items-center">
           {workshops.map((workshop) => {
             const liked = likedIds.includes(workshop.id);
             return (
