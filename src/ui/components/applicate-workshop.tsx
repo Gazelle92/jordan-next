@@ -39,30 +39,32 @@ export const ApplicateWorkshop = ({ }) => {
   }, [open]);
 
   const handleSubmit = async () => {
+    if (!form.privacy_policy_agreed) {
+      setError("개인정보 수집에 동의 해주시기 바랍니다.");
+      return;
+    }
     if (
       !form.name ||
       !form.phone_number ||
       !form.birth_date ||
+      !form.battle_genre ||
       !form.instagram_video_url ||
-      !form.what_do_you_want ||
-      !form.privacy_policy_agreed
+      !form.what_do_you_want
     ) {
-      setError("필수 항목을 모두 입력해주세요.");
+      setError("필수 항목 누락되었습니다.");
       return;
     }
 
     setIsSubmitting(true);
     setError(null);
     try {
-      const mergedWhatDoYouWant = form.battle_genre
-        ? `${form.what_do_you_want}\n배틀 장르: ${form.battle_genre}`
-        : form.what_do_you_want;
       await createWorkshop({
         name: form.name,
         phone_number: form.phone_number,
         birth_date: form.birth_date,
+        battle_genre: form.battle_genre,
         instagram_video_url: form.instagram_video_url,
-        what_do_you_want: mergedWhatDoYouWant,
+        what_do_you_want: form.what_do_you_want,
         privacy_policy_agreed: form.privacy_policy_agreed,
       });
       setCompleted(true);
@@ -199,9 +201,7 @@ export const ApplicateWorkshop = ({ }) => {
               >
                 <a className="underline ">개인정보 수집</a>에 동의합니다.
               </Checkbox>
-              <span className="text-[12px]">
-                {error ?? "필수 항목을 모두 입력해주세요."}
-              </span>
+              {error && <span className="text-[12px]">{error}</span>}
             </div>
             <div className="flex-grow-1" />
             <Button disabled={isSubmitting} onClick={handleSubmit}>

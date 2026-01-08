@@ -17,14 +17,26 @@ const toInstagramEmbedUrl = (url: string) => {
   if (!url) {
     return url;
   }
-  if (url.includes("/embed")) {
+  try {
+    const parsed = new URL(url);
+    if (parsed.pathname.includes("/embed")) {
+      return parsed.toString();
+    }
+    const match = parsed.pathname.match(/\/(reel|p|tv)\/([^/]+)/);
+    if (match) {
+      return `https://www.instagram.com/${match[1]}/${match[2]}/embed`;
+    }
+    return parsed.origin;
+  } catch {
+    if (url.includes("/embed")) {
+      return url;
+    }
+    const trimmed = url.replace(/\/$/, "");
+    if (trimmed.includes("instagram.com")) {
+      return `${trimmed}/embed`;
+    }
     return url;
   }
-  const trimmed = url.replace(/\/$/, "");
-  if (trimmed.includes("instagram.com")) {
-    return `${trimmed}/embed`;
-  }
-  return url;
 };
 
 const toInstagramThumbnailUrl = (url: string) => {

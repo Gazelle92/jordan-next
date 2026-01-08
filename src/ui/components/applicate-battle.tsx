@@ -39,16 +39,19 @@ export const ApplicateBattle = ({ }) => {
   }, [open]);
 
   const handleSubmit = async () => {
+    if (!form.privacy_policy_agreed) {
+      setError("개인정보 수집에 동의 해주시기 바랍니다.");
+      return;
+    }
     if (
       !form.name ||
       !form.phone_number ||
       !form.birth_date ||
       !form.battle_genre ||
       !form.instagram_id ||
-      !form.what_do_you_want ||
-      !form.privacy_policy_agreed
+      !form.what_do_you_want
     ) {
-      setError("필수 항목을 모두 입력해주세요.");
+      setError("필수 항목 누락되었습니다.");
       return;
     }
 
@@ -186,9 +189,7 @@ export const ApplicateBattle = ({ }) => {
               >
                 <a className="underline ">개인정보 수집</a>에 동의합니다.
               </Checkbox>
-              <span className="text-[12px]">
-                {error ?? "필수 항목을 모두 입력해주세요."}
-              </span>
+              {error && <span className="text-[12px]">{error}</span>}
             </div>
             <div className="flex-grow-1" />
             <Button reverse disabled={isSubmitting} onClick={handleSubmit}>

@@ -29,6 +29,7 @@ export type WorkshopPayload = {
   name: string;
   phone_number: string;
   birth_date: string;
+  battle_genre: string;
   instagram_video_url: string;
   what_do_you_want: string;
   privacy_policy_agreed: boolean;
@@ -55,6 +56,30 @@ const parseErrorMessage = async (response: Response) => {
     const detail = data.detail ?? data.message;
     if (typeof detail === "string") {
       return detail;
+    }
+    const prioritizedFields = [
+      "privacy_policy_agreed",
+      "birth_date",
+      "instagram_id",
+      "phone_number",
+      "non_field_errors",
+    ];
+    for (const field of prioritizedFields) {
+      const value = data[field];
+      if (typeof value === "string") {
+        return value;
+      }
+      if (Array.isArray(value) && typeof value[0] === "string") {
+        return value[0];
+      }
+    }
+    for (const value of Object.values(data)) {
+      if (typeof value === "string") {
+        return value;
+      }
+      if (Array.isArray(value) && typeof value[0] === "string") {
+        return value[0];
+      }
     }
     return text;
   } catch {

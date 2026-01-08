@@ -20,6 +20,7 @@ type WorkshopForm = {
   name: string;
   birth_date: string;
   phone_number: string;
+  battle_genre: string;
   instagram_video_url: string;
   what_do_you_want: string;
 };
@@ -68,6 +69,7 @@ export default function RegistrationEditPage() {
         name: match.name,
         birth_date: match.birth_date,
         phone_number: match.phone_number,
+        battle_genre: match.battle_genre ?? "",
         instagram_video_url: match.instagram_video_url,
         what_do_you_want: match.what_do_you_want,
       });
@@ -87,6 +89,7 @@ export default function RegistrationEditPage() {
       !workshopForm.name ||
       !workshopForm.birth_date ||
       !workshopForm.phone_number ||
+      !workshopForm.battle_genre ||
       !workshopForm.instagram_video_url ||
       !workshopForm.what_do_you_want
     ) {
@@ -100,6 +103,7 @@ export default function RegistrationEditPage() {
         name: workshopForm.name,
         birth_date: workshopForm.birth_date,
         phone_number: workshopForm.phone_number,
+        battle_genre: workshopForm.battle_genre,
         instagram_video_url: workshopForm.instagram_video_url,
         what_do_you_want: workshopForm.what_do_you_want,
       });
@@ -256,6 +260,7 @@ function StepEdit({
     name: "",
     birth_date: "",
     phone_number: "",
+    battle_genre: "",
     instagram_video_url: "",
     what_do_you_want: "",
   };
@@ -305,6 +310,19 @@ function StepEdit({
             value={formValue.phone_number}
             onChange={(event) =>
               onChange({ ...formValue, phone_number: event.target.value })
+            }
+          />
+        </div>
+        <div className="border-b-1 flex justify-between px-1.5 py-1">
+          <div className="font-black text-[20px] whitespace-nowrap">
+            배틀 장르
+          </div>
+          <Input
+            type="text"
+            placeholder="배틀 장르를 입력해주세요."
+            value={formValue.battle_genre}
+            onChange={(event) =>
+              onChange({ ...formValue, battle_genre: event.target.value })
             }
           />
         </div>
