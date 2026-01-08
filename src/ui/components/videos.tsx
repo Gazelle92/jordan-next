@@ -27,6 +27,22 @@ const toInstagramEmbedUrl = (url: string) => {
   return url;
 };
 
+const toInstagramThumbnailUrl = (url: string) => {
+  if (!url) {
+    return url;
+  }
+  try {
+    const parsed = new URL(url);
+    const match = parsed.pathname.match(/\/(reel|p|tv)\/([^/]+)/);
+    if (match) {
+      return `https://www.instagram.com/${match[1]}/${match[2]}/media/?size=l`;
+    }
+  } catch {
+    return url;
+  }
+  return url;
+};
+
 const Thumbnail = ({
   src,
   videoUrl,
@@ -144,8 +160,9 @@ export default function Videos() {
         </div>
         <div className="-mx-3 grid grid-cols-3">
           {workshops.map((workshop) => {
-            const src =
-              "https://scontent-ssn1-1.cdninstagram.com/v/t51.71878-15/609208731_1208110991422894_6604862857071378500_n.jpg?stp=dst-jpg_e15_tt6&_nc_cat=1&ig_cache_key=MzgwMTQwOTI4MDkxMDU5ODg3OA%3D%3D.3-ccb7-5&ccb=7-5&_nc_sid=58cdad&efg=eyJ2ZW5jb2RlX3RhZyI6InhwaWRzLjY0MHgxMTM2LnNkci5DMyJ9&_nc_ohc=synQXUV28VwQ7kNvwEk0If_&_nc_oc=AdnlXr8IeVLnTPFOWje5hV7j8kYny9u2PCXYH6RA-mw0lFJEKEuFntRLGMld9ZP-83M&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=scontent-ssn1-1.cdninstagram.com&_nc_gid=u8nMgpTlhogUrQNzPx2B6A&oh=00_Afoy7j5K2TcdxlPzuupOK96V-82jFeHe60TxenBbNlRlcA&oe=6962451B";
+            const src = toInstagramThumbnailUrl(
+              workshop.instagram_video_url
+            );
             const liked = likedIds.includes(workshop.id);
             return (
               <div className="relative" key={workshop.id}>
