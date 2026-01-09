@@ -147,6 +147,9 @@ main{overflow: hidden;}
 .video_btn_w div li:hover{background-color: #000; color: #ff3b49;}
 
 .instagram-media, .instagram-media *{border-radius: 0!important;}
+.instagram-media{background: #000!important;}
+.instagram-media > span,
+.instagram-media iframe{background: #000!important;}
 .hover_el .hover_target{opacity: 0;}
 .hover_el:hover .hover_target{opacity: 1;}
 
