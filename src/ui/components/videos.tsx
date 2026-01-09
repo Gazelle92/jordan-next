@@ -1,6 +1,5 @@
 "use client";
 
-import ArrowBottom from "@/ui/svg/arrow_bottom.svg";
 import Script from "next/script";
 import { useEffect, useState } from "react";
 import { VideoDialog } from "./video-dialog";
@@ -152,7 +151,6 @@ export default function Videos() {
 
   const ordering = value.value === "likes" ? "likes" : undefined;
 
-  const [btnLoading, setBtnLoading] = useState(false);
 
   const loadWorkshops = async (reset: boolean) => {
     setIsLoading(true);
@@ -244,13 +242,19 @@ export default function Videos() {
           })}
         </div>
 
-        <div
-          className="loading_btn relative flex items-center justify-center mt-[4px] flex-col h-[60px] cursor-pointer"
-          onClick={() => setBtnLoading(true)}
-        >
-          <div className={`btn_arrow ${btnLoading ? "hidden" : "block"}`} />
-          <div className={`loader mx-auto ${btnLoading ? "block" : "hidden"}`} />
-        </div>
+        {nextUrl && (
+          <div
+            className="loading_btn relative flex items-center justify-center mt-[4px] flex-col h-[60px] cursor-pointer"
+            onClick={() => {
+              if (!isLoading) {
+                loadWorkshops(false);
+              }
+            }}
+          >
+            <div className={`btn_arrow ${isLoading ? "hidden" : "block"}`} />
+            <div className={`loader mx-auto ${isLoading ? "block" : "hidden"}`} />
+          </div>
+        )}
 
         <Script
           async
@@ -266,11 +270,6 @@ export default function Videos() {
           <div className="py-2 text-center text-[12px]">{error}</div>
         )}
         <div className="py-3 flex justify-center">
-          {nextUrl && (
-            <button disabled={isLoading} onClick={() => loadWorkshops(false)}>
-              <ArrowBottom className="size-4 mx-auto" />
-            </button>
-          )}
           {!nextUrl && !isLoading && workshops.length === 0 && (
             <span className="text-[12px]">등록된 영상이 없습니다.</span>
           )}

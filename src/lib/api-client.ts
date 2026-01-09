@@ -1,4 +1,4 @@
-import { apiUrl } from "./api";
+import { API_BASE_URL, apiUrl } from "./api";
 
 export type PaginatedResponse<T> = {
   count: number;
@@ -149,7 +149,8 @@ type ListWorkshopOptions = {
 
 export const listWorkshops = (options: ListWorkshopOptions = {}) => {
   if (options.url) {
-    return apiFetch<PaginatedResponse<Workshop>>(options.url);
+    const normalized = new URL(options.url, API_BASE_URL).toString();
+    return apiFetch<PaginatedResponse<Workshop>>(normalized);
   }
   const query = options.ordering ? `?ordering=${options.ordering}` : "";
   return apiFetch<PaginatedResponse<Workshop>>(`workshops/${query}`);
