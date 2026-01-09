@@ -232,7 +232,6 @@ export default function Videos() {
                   />
                   {workshop.like_count}
                 </button>
-                <img className="absolute left-1/2 bottom-[6px] w-[20px] transform -translate-x-1/2 md:bottom-[8px] md:w-[32px]" src="/images/logo_red.svg" />
                 <img className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[20px] opacity-0 group-hover:opacity-100  transition-opacity duration-200" src="/images/btn_play.png" />
               </div>
             );
