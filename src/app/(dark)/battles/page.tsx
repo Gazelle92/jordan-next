@@ -87,13 +87,12 @@ export default function IrlInfo() {
     <div className="flex flex-col">
       <HistoryBack />
       <div className="flex flex-col gap-10 px-3 pb-3">
-        <div className="flex flex-col flex-grow-1 items-center justify-center gap-7">
-          <Logo className="w-20" />
-          <InfraredBattle width={256} className="mx-auto" />
-
+        <div className="flex flex-col flex-grow-1 items-center justify-center gap-7 ani">
+          <Logo className="w-20 logo_ani" />
+          <InfraredBattle width={256} className="mx-auto fadeCover-0-3" />
         </div>
-        <div className="flex flex-col gap-2">
-          <hr className="border-2" />
+        <div className="flex flex-col gap-2 ani">
+          <hr className="border-2 border_el ani_order_3 border-l-0 border-r-0" />
           <BasicInformation />
           <div className="flex flex-col gap-5 ani">
             <div className="fade-cw border-t-4 border-b-1 py-1">

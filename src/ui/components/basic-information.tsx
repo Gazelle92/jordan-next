@@ -4,15 +4,16 @@ import clsx from "clsx";
 export default function BasicInformation() {
   return (
     <div className="flex flex-col">
-      <div className="flex flex-col gap-1.5 ani">
-        <div className="flex flex-col gap-1 text-center font-black border-b-1 pb-2">
-          <div className="fade-cw"><span className="fadeCover-1 text-[15px] leading-[1]">일시</span></div>
-          <div className="fade-cw"><span className={clsx("text-[30px] leading-[29px] fadeCover-2", jordan.className)}>2026.2.7</span></div>
-
+      <div className="flex flex-col gap-1.5">
+        <div className="flex flex-col gap-1 text-center font-black pb-2 relative">
+          <div className="fade-cw"><span className="fadeCover-4 text-[15px] leading-[1]">일시</span></div>
+          <div className="fade-cw"><span className={clsx("text-[30px] leading-[29px] fadeCover-5", jordan.className)}>2026.2.7</span></div>
+          <div className="absolute left-0 bottom-0 h-[1px] border-b-1 border_el ani_order_6"></div>
         </div>
-        <div className="flex flex-col gap-1 text-center font-black border-b-1 pb-2">
-          <div className="fade-cw"><span className="fadeCover-3 text-[15px] leading-[1]">장소</span></div>
-          <div className="fade-cw"><span className={clsx("text-[30px] leading-[29px] fadeCover-4", jordan.className)}>FUTURA SEOUL</span></div>
+        <div className="flex flex-col gap-1 text-center font-black pb-2 relative">
+          <div className="fade-cw"><span className="fadeCover-7 text-[15px] leading-[1]">장소</span></div>
+          <div className="fade-cw"><span className={clsx("text-[30px] leading-[29px] fadeCover-8", jordan.className)}>FUTURA SEOUL</span></div>
+          <div className="absolute left-0 bottom-0 h-[1px] border-b-1 border_el ani_order_9"></div>
         </div>
       </div>
       <div className="py-8 text-[13px] font-semibold whitespace-pre-wrap break-keep text-center ani">

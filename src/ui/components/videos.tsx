@@ -123,7 +123,7 @@ const Thumbnail = ({ videoUrl }: { videoUrl: string }) => {
         />
       </div>
       <VideoDialog open={open} onClose={() => setOpen(false)}>
-        <div className="aspect-320/500 w-full h-auto max-w-[400px]">
+        <div className="aspect-320/500 w-full h-auto max-w-[400px] here_test">
           <div className="relative w-full h-full overflow-hidden  bg-black">
             <div className="absolute inset-0 pointer-events-none bg-gradient-to-b from-black/30 via-transparent to-black/40" />
             <blockquote
@@ -207,8 +207,8 @@ export default function Videos() {
 
   return (
     <>
-      <div className="flex flex-col gap-2">
-        <div className="flex justify-end items-center video_btn_w text-[12px]">
+      <div className="flex flex-col gap-2 ani">
+        <div className="flex justify-end items-center video_btn_w text-[12px] fadeCover-0 ani_order_11">
           <Select
             options={[
               { label: "최신순", value: "latest" },

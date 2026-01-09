@@ -25,7 +25,7 @@ export const Select = ({ options, value, onChange, className }: SelectProps) => 
           {value.label}
           <ArrowBottom className="size-2" />
         </ListboxButton>
-        <ListboxOptions className="absolute top-[100%] outline-none focus:outline-none focus:ring-0 border border-t-0 w-27 text-start text-[13px] p-0">
+        <ListboxOptions className="absolute top-[100%] outline-none focus:outline-none focus:ring-0 border-0 border-t-0 w-27 text-start text-[13px] p-0">
           {options.map((option) => option.value === value.value ? null : (
             <ListboxOption as={Fragment} key={option.value} value={option}>
               <li

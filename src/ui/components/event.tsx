@@ -15,7 +15,7 @@ export const Event = ({ }) => {
 
   return (
     <>
-      <Button onClick={() => setOpen(true)} reverse>
+      <Button className="fadeCover-0 ani_order_9" onClick={() => setOpen(true)} reverse>
         월드오브플라이트 참여시 혜택
       </Button>
       <FullDialog open={open} onClose={() => setOpen(false)}>
