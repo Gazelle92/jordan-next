@@ -1,4 +1,4 @@
-import { apiUrl } from "./api";
+import { API_BASE_URL, apiUrl } from "./api";
 
 export type PaginatedResponse<T> = {
   count: number;
@@ -23,6 +23,12 @@ export type BattlePayload = {
   instagram_id: string;
   what_do_you_want: string;
   privacy_policy_agreed: boolean;
+};
+
+export type Battle = BattlePayload & {
+  id: number;
+  created_at?: string;
+  updated_at?: string;
 };
 
 export type WorkshopPayload = {
@@ -127,8 +133,14 @@ export const updatePreRegistration = (
     json: payload,
   });
 
+const buildAuthQuery = (name: string, phoneMiddle: string) =>
+  new URLSearchParams({
+    auth_name: name,
+    auth_phone_middle: phoneMiddle,
+  }).toString();
+
 export const listBattles = () =>
-  apiFetch<PaginatedResponse<BattlePayload>>("battles/");
+  apiFetch<PaginatedResponse<Battle>>("battles/");
 
 export const createBattle = (payload: BattlePayload) =>
   apiFetch<BattlePayload>("battles/", {
@@ -142,6 +154,37 @@ export const updateBattle = (id: number, payload: Partial<BattlePayload>) =>
     json: payload,
   });
 
+export const deleteBattle = (id: number) =>
+  apiFetch<void>(`battles/${id}/`, {
+    method: "DELETE",
+  });
+
+export const getBattleByAuth = (name: string, phoneMiddle: string) =>
+  apiFetch<Battle>(`battles/auth/?${buildAuthQuery(name, phoneMiddle)}`);
+
+export const updateBattleByAuth = (
+  name: string,
+  phoneMiddle: string,
+  payload: Partial<BattlePayload>
+) =>
+  apiFetch<Battle>(`battles/auth/?${buildAuthQuery(name, phoneMiddle)}`, {
+    method: "PATCH",
+    json: {
+      auth_name: name,
+      auth_phone_middle: phoneMiddle,
+      ...payload,
+    },
+  });
+
+export const deleteBattleByAuth = (name: string, phoneMiddle: string) =>
+  apiFetch<void>(`battles/auth/?${buildAuthQuery(name, phoneMiddle)}`, {
+    method: "DELETE",
+    json: {
+      auth_name: name,
+      auth_phone_middle: phoneMiddle,
+    },
+  });
+
 type ListWorkshopOptions = {
   ordering?: "likes";
   url?: string;
@@ -149,11 +192,15 @@ type ListWorkshopOptions = {
 
 export const listWorkshops = (options: ListWorkshopOptions = {}) => {
   if (options.url) {
-    return apiFetch<PaginatedResponse<Workshop>>(options.url);
+    const normalized = new URL(options.url, API_BASE_URL).toString();
+    return apiFetch<PaginatedResponse<Workshop>>(normalized);
   }
   const query = options.ordering ? `?ordering=${options.ordering}` : "";
   return apiFetch<PaginatedResponse<Workshop>>(`workshops/${query}`);
 };
+
+export const getWorkshopByAuth = (name: string, phoneMiddle: string) =>
+  apiFetch<Workshop>(`workshops/auth/?${buildAuthQuery(name, phoneMiddle)}`);
 
 export const createWorkshop = (payload: WorkshopPayload) =>
   apiFetch<WorkshopPayload>("workshops/", {
@@ -180,4 +227,27 @@ export const unlikeWorkshop = (id: number) =>
 export const deleteWorkshop = (id: number) =>
   apiFetch<void>(`workshops/${id}/`, {
     method: "DELETE",
+  });
+
+export const updateWorkshopByAuth = (
+  name: string,
+  phoneMiddle: string,
+  payload: Partial<WorkshopPayload>
+) =>
+  apiFetch<Workshop>(`workshops/auth/?${buildAuthQuery(name, phoneMiddle)}`, {
+    method: "PATCH",
+    json: {
+      auth_name: name,
+      auth_phone_middle: phoneMiddle,
+      ...payload,
+    },
+  });
+
+export const deleteWorkshopByAuth = (name: string, phoneMiddle: string) =>
+  apiFetch<void>(`workshops/auth/?${buildAuthQuery(name, phoneMiddle)}`, {
+    method: "DELETE",
+    json: {
+      auth_name: name,
+      auth_phone_middle: phoneMiddle,
+    },
   });

@@ -1,6 +1,5 @@
 "use client";
 
-import ArrowBottom from "@/ui/svg/arrow_bottom.svg";
 import Script from "next/script";
 import { useEffect, useState } from "react";
 import { VideoDialog } from "./video-dialog";
@@ -78,7 +77,13 @@ const modalEmbedStyle = {
   transformOrigin: "center",
 };
 
-const Thumbnail = ({ videoUrl }: { videoUrl: string }) => {
+const Thumbnail = ({
+  videoUrl,
+  embedReady,
+}: {
+  videoUrl: string;
+  embedReady: boolean;
+}) => {
   const [open, setOpen] = useState(false);
 
   useEffect(() => {
@@ -110,7 +115,7 @@ const Thumbnail = ({ videoUrl }: { videoUrl: string }) => {
       <div className="relative aspect-120/180 w-[120%] h-[120%] overflow-hidden  bg-black ">
         <div className="absolute inset-0 pointer-events-none bg-gradient-to-b from-black/25 via-transparent to-black/35" />
         <blockquote
-          className="instagram-media w-full h-full pointer-events-none ig-embed-list !min-w-0"
+          className={`instagram-media w-full h-full pointer-events-none ig-embed-list !min-w-0 transition-opacity duration-300 ${embedReady ? "opacity-100" : "opacity-0"}`}
           data-instgrm-permalink={toInstagramPermalinkUrl(videoUrl)}
           data-instgrm-version="14"
           style={{ ...listEmbedStyle, minWidth: "unset" }}
@@ -149,10 +154,24 @@ export default function Videos() {
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [likedIds, setLikedIds] = useState<number[]>([]);
+  const [embedReady, setEmbedReady] = useState(false);
+  const [freshIds, setFreshIds] = useState<number[]>([]);
+  const [freshOrder, setFreshOrder] = useState<Record<number, number>>({});
 
   const ordering = value.value === "likes" ? "likes" : undefined;
 
-  const [btnLoading, setBtnLoading] = useState(false);
+  useEffect(() => {
+    if (typeof window === "undefined") {
+      return;
+    }
+    const win = window as typeof window & {
+      instgrm?: { Embeds?: { process: () => void } };
+    };
+    if (win.instgrm?.Embeds) {
+      setEmbedReady(true);
+    }
+  }, []);
+
 
   const loadWorkshops = async (reset: boolean) => {
     setIsLoading(true);
@@ -165,6 +184,18 @@ export default function Videos() {
       setWorkshops((prev) =>
         reset ? data.results : [...prev, ...data.results]
       );
+      if (reset) {
+        setFreshIds([]);
+        setFreshOrder({});
+      } else {
+        const ids = data.results.map((item) => item.id);
+        setFreshIds(ids);
+        const orderMap = ids.reduce<Record<number, number>>((acc, id, index) => {
+          acc[id] = index;
+          return acc;
+        }, {});
+        setFreshOrder(orderMap);
+      }
       setNextUrl(data.next);
     } catch (err) {
       setError(err instanceof Error ? err.message : "목록을 불러오지 못했습니다.");
@@ -177,6 +208,17 @@ export default function Videos() {
     loadWorkshops(true);
     setLikedIds([]);
   }, [value.value]);
+
+  useEffect(() => {
+    if (freshIds.length === 0) {
+      return;
+    }
+    const timeout = setTimeout(() => {
+      setFreshIds([]);
+      setFreshOrder({});
+    }, 1000 + freshIds.length * 300);
+    return () => clearTimeout(timeout);
+  }, [freshIds]);
 
   const handleToggleLike = async (id: number) => {
     const alreadyLiked = likedIds.includes(id);
@@ -221,10 +263,17 @@ export default function Videos() {
         <div className="grid grid-cols-3 mx-[-12px] justify-items-center md:px-0 video_w">
           {workshops.map((workshop) => {
             const liked = likedIds.includes(workshop.id);
+            const isFresh = freshIds.includes(workshop.id);
+            const freshIndex = freshOrder[workshop.id] ?? 0;
             return (
-              <div className="relative w-full aspect-120/180 flex items-center justify-center hover_el" key={workshop.id}>
+              <div
+                className={`relative w-full aspect-120/180 flex items-center justify-center hover_el ${isFresh ? "fade-in" : ""}`}
+                style={isFresh ? { animationDelay: `${freshIndex * 300}ms` } : undefined}
+                key={workshop.id}
+              >
                 <Thumbnail
                   videoUrl={toInstagramEmbedUrl(workshop.instagram_video_url)}
+                  embedReady={embedReady}
                 />
                 <button
                   className="absolute bottom-[4px] left-[6px] md:bottom-[6px] md:left-[8px] text-[10px] md:text-[14px] text-white font-regular flex items-center"
@@ -239,38 +288,41 @@ export default function Videos() {
                   {workshop.like_count}
                 </button>
                 <img className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[20px] opacity-0 transition-opacity duration-200 hover_target" src="/images/btn_play.png" />
-              </div>
-            );
+                </div>
+              );
           })}
         </div>
 
-        <div
-          className="loading_btn relative flex items-center justify-center mt-[4px] flex-col h-[60px] cursor-pointer"
-          onClick={() => setBtnLoading(true)}
-        >
-          <div className={`btn_arrow ${btnLoading ? "hidden" : "block"}`} />
-          <div className={`loader mx-auto ${btnLoading ? "block" : "hidden"}`} />
-        </div>
+        {nextUrl && (
+          <div
+            className="loading_btn relative flex items-center justify-center mt-[4px] flex-col h-[60px] cursor-pointer"
+            onClick={() => {
+              if (!isLoading) {
+                loadWorkshops(false);
+              }
+            }}
+          >
+            <div className={`btn_arrow ${isLoading ? "hidden" : "block"}`} />
+            <div className={`loader mx-auto ${isLoading ? "block" : "hidden"}`} />
+          </div>
+        )}
 
         <Script
           async
           src="https://www.instagram.com/embed.js"
+          strategy="afterInteractive"
           onLoad={() => {
             const win = window as typeof window & {
               instgrm?: { Embeds?: { process: () => void } };
             };
             win.instgrm?.Embeds?.process();
+            setEmbedReady(true);
           }}
         />
         {error && (
           <div className="py-2 text-center text-[12px]">{error}</div>
         )}
         <div className="py-3 flex justify-center">
-          {nextUrl && (
-            <button disabled={isLoading} onClick={() => loadWorkshops(false)}>
-              <ArrowBottom className="size-4 mx-auto" />
-            </button>
-          )}
           {!nextUrl && !isLoading && workshops.length === 0 && (
             <span className="text-[12px]">등록된 영상이 없습니다.</span>
           )}
