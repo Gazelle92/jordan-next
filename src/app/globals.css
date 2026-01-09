@@ -145,3 +145,5 @@ main{overflow: hidden;}
 .video_btn_w button:hover svg path{stroke: #ff3b49;}
 .video_btn_w div li{background-color: #ff3b49; color: #000; transition: ease 0.3s all;}
 .video_btn_w div li:hover{background-color: #000; color: #ff3b49;}
+
+.instagram-media, .instagram-media *{border-radius: 0!important;}

@@ -103,7 +103,7 @@ const Thumbnail = ({ videoUrl }: { videoUrl: string }) => {
 
   return (
     <>
-      <div className="relative aspect-120/180 w-[120%] h-[120%] overflow-hidden rounded bg-black ">
+      <div className="relative aspect-120/180 w-[120%] h-[120%] overflow-hidden  bg-black ">
         <div className="absolute inset-0 pointer-events-none bg-gradient-to-b from-black/25 via-transparent to-black/35" />
         <blockquote
           className="instagram-media w-full h-full pointer-events-none ig-embed-list !min-w-0"
@@ -120,7 +120,7 @@ const Thumbnail = ({ videoUrl }: { videoUrl: string }) => {
       </div>
       <VideoDialog open={open} onClose={() => setOpen(false)}>
         <div className="aspect-320/500 w-full h-auto max-w-[400px]">
-          <div className="relative w-full h-full overflow-hidden rounded bg-black">
+          <div className="relative w-full h-full overflow-hidden  bg-black">
             <div className="absolute inset-0 pointer-events-none bg-gradient-to-b from-black/30 via-transparent to-black/40" />
             <blockquote
               className="instagram-media w-full h-full ig-embed-modal"
