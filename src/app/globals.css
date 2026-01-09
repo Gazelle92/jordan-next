@@ -147,3 +147,29 @@ main{overflow: hidden;}
 .video_btn_w div li:hover{background-color: #000; color: #ff3b49;}
 
 .instagram-media, .instagram-media *{border-radius: 0!important;}
+.hover_el .hover_target{opacity: 0;}
+.hover_el:hover .hover_target{opacity: 1;}
+
+.loader {
+  width: 60px;
+  aspect-ratio: 2;
+  --_g: no-repeat radial-gradient(circle closest-side,#ffffff 90%,#ffffff00);
+  background:
+    var(--_g) 0%   50%,
+    var(--_g) 50%  50%,
+    var(--_g) 100% 50%;
+  background-size: calc(100%/3) 50%;
+  animation: l3 1s infinite linear;
+}
+@keyframes l3 {
+    20%{background-position:0%   0%, 50%  50%,100%  50%}
+    40%{background-position:0% 100%, 50%   0%,100%  50%}
+    60%{background-position:0%  50%, 50% 100%,100%   0%}
+    80%{background-position:0%  50%, 50%  50%,100% 100%}
+}
+
+.loading_btn{}
+.btn_arrow{width: 14px; height: 14px; position: relative; transform: rotate(45deg);}
+.btn_arrow::before, .btn_arrow::after{content: ""; display: block; position: absolute; background-color: #fff;}
+.btn_arrow::before{width: 100%; height: 4px; left: 0; bottom: 0;}
+.btn_arrow::after{width: 4px; height: 100%; right: 0; bottom: 0;}

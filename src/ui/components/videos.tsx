@@ -62,7 +62,7 @@ const listEmbedStyle = {
   //minWidth: "170%",
   position: "absolute" as const,
   left: "50%",
-  top: "47%",
+  top: "48%",
   //transform: "translate(-50%, -50%) scale(1.26)",
   transform: "translate(-50%, -50%) scale(1.0)",
   transformOrigin: "center",
@@ -100,6 +100,10 @@ const Thumbnail = ({ videoUrl }: { videoUrl: string }) => {
     };
     win.instgrm?.Embeds?.process();
   }, [open]);
+
+
+
+
 
   return (
     <>
@@ -147,6 +151,8 @@ export default function Videos() {
   const [likedIds, setLikedIds] = useState<number[]>([]);
 
   const ordering = value.value === "likes" ? "likes" : undefined;
+
+  const [btnLoading, setBtnLoading] = useState(false);
 
   const loadWorkshops = async (reset: boolean) => {
     setIsLoading(true);
@@ -212,11 +218,11 @@ export default function Videos() {
             onChange={setValue}
           />
         </div>
-        <div className="grid grid-cols-3 mx-[-12px] justify-items-center md:px-0">
+        <div className="grid grid-cols-3 mx-[-12px] justify-items-center md:px-0 video_w">
           {workshops.map((workshop) => {
             const liked = likedIds.includes(workshop.id);
             return (
-              <div className="relative w-full aspect-120/187 flex items-center justify-center group" key={workshop.id}>
+              <div className="relative w-full aspect-120/180 flex items-center justify-center hover_el" key={workshop.id}>
                 <Thumbnail
                   videoUrl={toInstagramEmbedUrl(workshop.instagram_video_url)}
                 />
@@ -232,11 +238,20 @@ export default function Videos() {
                   />
                   {workshop.like_count}
                 </button>
-                <img className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[20px] opacity-0 group-hover:opacity-100  transition-opacity duration-200" src="/images/btn_play.png" />
+                <img className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[20px] opacity-0 transition-opacity duration-200 hover_target" src="/images/btn_play.png" />
               </div>
             );
           })}
         </div>
+
+        <div
+          className="loading_btn relative flex items-center justify-center mt-[4px] flex-col h-[60px] cursor-pointer"
+          onClick={() => setBtnLoading(true)}
+        >
+          <div className={`btn_arrow ${btnLoading ? "hidden" : "block"}`} />
+          <div className={`loader mx-auto ${btnLoading ? "block" : "hidden"}`} />
+        </div>
+
         <Script
           async
           src="https://www.instagram.com/embed.js"
@@ -261,6 +276,7 @@ export default function Videos() {
           )}
         </div>
         <ApplicateWorkshop />
+
       </div>
     </>
   );
