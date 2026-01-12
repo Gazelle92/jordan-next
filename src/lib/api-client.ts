@@ -21,6 +21,11 @@ export type BattlePayload = {
   birth_date: string;
   battle_genre: string;
   instagram_id: string;
+  member2_name?: string;
+  member2_birth_date?: string;
+  member2_battle_genre?: string;
+  member2_phone_number?: string;
+  member2_instagram_id?: string;
   what_do_you_want: string;
   privacy_policy_agreed: boolean;
 };
@@ -167,7 +172,7 @@ export const updateBattleByAuth = (
   phoneMiddle: string,
   payload: Partial<BattlePayload>
 ) =>
-  apiFetch<Battle>(`battles/auth/?${buildAuthQuery(name, phoneMiddle)}`, {
+  apiFetch<Battle>("battles/auth/", {
     method: "PATCH",
     json: {
       auth_name: name,
@@ -177,7 +182,7 @@ export const updateBattleByAuth = (
   });
 
 export const deleteBattleByAuth = (name: string, phoneMiddle: string) =>
-  apiFetch<void>(`battles/auth/?${buildAuthQuery(name, phoneMiddle)}`, {
+  apiFetch<void>("battles/auth/", {
     method: "DELETE",
     json: {
       auth_name: name,
@@ -234,7 +239,7 @@ export const updateWorkshopByAuth = (
   phoneMiddle: string,
   payload: Partial<WorkshopPayload>
 ) =>
-  apiFetch<Workshop>(`workshops/auth/?${buildAuthQuery(name, phoneMiddle)}`, {
+  apiFetch<Workshop>("workshops/auth/", {
     method: "PATCH",
     json: {
       auth_name: name,
@@ -244,7 +249,7 @@ export const updateWorkshopByAuth = (
   });
 
 export const deleteWorkshopByAuth = (name: string, phoneMiddle: string) =>
-  apiFetch<void>(`workshops/auth/?${buildAuthQuery(name, phoneMiddle)}`, {
+  apiFetch<void>("workshops/auth/", {
     method: "DELETE",
     json: {
       auth_name: name,

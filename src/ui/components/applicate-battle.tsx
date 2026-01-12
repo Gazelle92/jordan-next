@@ -18,6 +18,11 @@ const initialForm = {
   birth_date: "",
   battle_genre: "",
   instagram_id: "",
+  member2_name: "",
+  member2_birth_date: "",
+  member2_battle_genre: "",
+  member2_phone_number: "",
+  member2_instagram_id: "",
   what_do_you_want: "",
   privacy_policy_agreed: false,
 };
@@ -49,6 +54,11 @@ export const ApplicateBattle = ({ }) => {
       !form.birth_date ||
       !form.battle_genre ||
       !form.instagram_id ||
+      !form.member2_name ||
+      !form.member2_birth_date ||
+      !form.member2_battle_genre ||
+      !form.member2_phone_number ||
+      !form.member2_instagram_id ||
       !form.what_do_you_want
     ) {
       setError("필수 항목 누락되었습니다.");
@@ -185,10 +195,10 @@ export const ApplicateBattle = ({ }) => {
                 <Input
                   type="text"
                   placeholder="이름을 입력해주세요."
-                  value={form.name}
+                  value={form.member2_name}
                   className="placeholder:text-[#ff3b49] font-extralight text-[20px]"
                   onChange={(event) =>
-                    setForm((prev) => ({ ...prev, name: event.target.value }))
+                    setForm((prev) => ({ ...prev, member2_name: event.target.value }))
                   }
                 />
               </div>
@@ -199,12 +209,12 @@ export const ApplicateBattle = ({ }) => {
                 <Input
                   type="text"
                   placeholder="생년월일을 입력해주세요."
-                  value={form.birth_date}
+                  value={form.member2_birth_date}
                   className="placeholder:text-[#ff3b49] font-extralight text-[20px]"
                   onChange={(event) =>
                     setForm((prev) => ({
                       ...prev,
-                      birth_date: event.target.value,
+                      member2_birth_date: event.target.value,
                     }))
                   }
                 />
@@ -216,12 +226,12 @@ export const ApplicateBattle = ({ }) => {
                 <Input
                   type="text"
                   placeholder="배틀 장르를 입력해주세요."
-                  value={form.battle_genre}
+                  value={form.member2_battle_genre}
                   className="placeholder:text-[#ff3b49] font-extralight text-[20px]"
                   onChange={(event) =>
                     setForm((prev) => ({
                       ...prev,
-                      battle_genre: event.target.value,
+                      member2_battle_genre: event.target.value,
                     }))
                   }
                 />
@@ -233,12 +243,12 @@ export const ApplicateBattle = ({ }) => {
                 <Input
                   type="text"
                   placeholder="휴대폰을 입력해주세요."
-                  value={form.phone_number}
+                  value={form.member2_phone_number}
                   className="placeholder:text-[#ff3b49] font-extralight text-[20px]"
                   onChange={(event) =>
                     setForm((prev) => ({
                       ...prev,
-                      phone_number: event.target.value,
+                      member2_phone_number: event.target.value,
                     }))
                   }
                 />
@@ -250,12 +260,12 @@ export const ApplicateBattle = ({ }) => {
                 </div>
                 <Input
                   placeholder="인스타그램 아이디를 입력해주세요."
-                  value={form.instagram_id}
+                  value={form.member2_instagram_id}
                   className="placeholder:text-[#ff3b49] font-extralight text-[20px]"
                   onChange={(event) =>
                     setForm((prev) => ({
                       ...prev,
-                      instagram_id: event.target.value,
+                      member2_instagram_id: event.target.value,
                     }))
                   }
                 />

@@ -26,6 +26,11 @@ type BattleForm = {
   phone_number: string;
   battle_genre: string;
   instagram_id: string;
+  member2_name: string;
+  member2_birth_date: string;
+  member2_battle_genre: string;
+  member2_phone_number: string;
+  member2_instagram_id: string;
   what_do_you_want: string;
 };
 
@@ -60,6 +65,11 @@ export default function BattleEditPage() {
         phone_number: match.phone_number,
         battle_genre: match.battle_genre ?? "",
         instagram_id: match.instagram_id ?? "",
+        member2_name: match.member2_name ?? "",
+        member2_birth_date: match.member2_birth_date ?? "",
+        member2_battle_genre: match.member2_battle_genre ?? "",
+        member2_phone_number: match.member2_phone_number ?? "",
+        member2_instagram_id: match.member2_instagram_id ?? "",
         what_do_you_want: match.what_do_you_want,
       });
       setAuthInfo(verifyForm);
@@ -81,6 +91,11 @@ export default function BattleEditPage() {
       !battleForm.phone_number ||
       !battleForm.battle_genre ||
       !battleForm.instagram_id ||
+      !battleForm.member2_name ||
+      !battleForm.member2_birth_date ||
+      !battleForm.member2_battle_genre ||
+      !battleForm.member2_phone_number ||
+      !battleForm.member2_instagram_id ||
       !battleForm.what_do_you_want
     ) {
       setError("필수 항목을 모두 입력해 주세요.");
@@ -95,6 +110,11 @@ export default function BattleEditPage() {
         phone_number: battleForm.phone_number,
         battle_genre: battleForm.battle_genre,
         instagram_id: battleForm.instagram_id,
+        member2_name: battleForm.member2_name,
+        member2_birth_date: battleForm.member2_birth_date,
+        member2_battle_genre: battleForm.member2_battle_genre,
+        member2_phone_number: battleForm.member2_phone_number,
+        member2_instagram_id: battleForm.member2_instagram_id,
         what_do_you_want: battleForm.what_do_you_want,
       });
       setStep("doneEdit");
@@ -234,11 +254,11 @@ function StepEdit({
     phone_number: "",
     battle_genre: "",
     instagram_id: "",
-    name_2: "",
-    birth_date_2: "",
-    phone_number_2: "",
-    battle_genre_2: "",
-    instagram_id_2: "",
+    member2_name: "",
+    member2_birth_date: "",
+    member2_phone_number: "",
+    member2_battle_genre: "",
+    member2_instagram_id: "",
     what_do_you_want: "",
   };
 
@@ -334,10 +354,10 @@ function StepEdit({
           <Input
             type="text"
             placeholder="이름을 입력해주세요."
-            value={formValue.name}
+            value={formValue.member2_name}
             className="placeholder:text-[#ff3b49] font-extralight text-[20px]"
             onChange={(event) =>
-              onChange({ ...formValue, name: event.target.value })
+              onChange({ ...formValue, member2_name: event.target.value })
             }
           />
         </div>
@@ -349,10 +369,10 @@ function StepEdit({
           <Input
             type="text"
             placeholder="생년월일을 입력해주세요."
-            value={formValue.birth_date}
+            value={formValue.member2_birth_date}
             className="placeholder:text-[#ff3b49] font-extralight text-[20px]"
             onChange={(event) =>
-              onChange({ ...formValue, birth_date: event.target.value })
+              onChange({ ...formValue, member2_birth_date: event.target.value })
             }
           />
         </div>
@@ -364,10 +384,10 @@ function StepEdit({
           <Input
             type="text"
             placeholder="배틀 장르를 입력해주세요."
-            value={formValue.battle_genre}
+            value={formValue.member2_battle_genre}
             className="placeholder:text-[#ff3b49] font-extralight text-[20px]"
             onChange={(event) =>
-              onChange({ ...formValue, battle_genre: event.target.value })
+              onChange({ ...formValue, member2_battle_genre: event.target.value })
             }
           />
         </div>
@@ -378,10 +398,10 @@ function StepEdit({
           <Input
             type="text"
             placeholder="휴대폰번호을 입력해주세요."
-            value={formValue.phone_number}
+            value={formValue.member2_phone_number}
             className="placeholder:text-[#ff3b49] font-extralight text-[20px]"
             onChange={(event) =>
-              onChange({ ...formValue, phone_number: event.target.value })
+              onChange({ ...formValue, member2_phone_number: event.target.value })
             }
           />
         </div>
@@ -392,10 +412,10 @@ function StepEdit({
           <Input
             type="text"
             placeholder="@아이디"
-            value={formValue.instagram_id}
+            value={formValue.member2_instagram_id}
             className="placeholder:text-[#ff3b49] font-extralight text-[20px]"
             onChange={(event) =>
-              onChange({ ...formValue, instagram_id: event.target.value })
+              onChange({ ...formValue, member2_instagram_id: event.target.value })
             }
           />
         </div>
