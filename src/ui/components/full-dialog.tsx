@@ -52,7 +52,7 @@ export const FullDialog = ({ open, onClose, reverse, children }: FullDialogProps
     >
       <div
         className={`flex dialog h-full flex-col
-          ${reverse ? "reverse" : ""}
+          ${reverse ? "reverse" : "border border-solid"}
           ${open
             ? "pointer-events-auto opacity-100"
             : "pointer-events-none opacity-0"

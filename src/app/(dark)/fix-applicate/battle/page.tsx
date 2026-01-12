@@ -166,7 +166,7 @@ function StepVerify({
 }) {
   return (
     <div className="flex flex-col gap-5 flex-grow mt-10 px-5 pb-5">
-      <h4 className="font-black text-[24px] text-center">배틀 신청서 수정</h4>
+      <h4 className="font-black text-[24px] text-center">신청서 수정</h4>
 
       <div className="flex items-center justify-center mt-[120px] text-center">
         <strong>이름과 휴대폰 뒷자리를 입력해 주세요.</strong>
@@ -179,6 +179,7 @@ function StepVerify({
             type="text"
             placeholder="이름을 입력해주세요."
             value={form.name}
+            className="placeholder:text-[#ff3b49] font-extralight text-[20px]"
             onChange={(event) =>
               onChange({ ...form, name: event.target.value })
             }
@@ -192,6 +193,7 @@ function StepVerify({
             type="text"
             placeholder="휴대폰을 입력해주세요."
             value={form.phoneMiddle}
+            className="placeholder:text-[#ff3b49] font-extralight text-[20px]"
             onChange={(event) =>
               onChange({ ...form, phoneMiddle: event.target.value })
             }
@@ -232,6 +234,11 @@ function StepEdit({
     phone_number: "",
     battle_genre: "",
     instagram_id: "",
+    name_2: "",
+    birth_date_2: "",
+    phone_number_2: "",
+    battle_genre_2: "",
+    instagram_id_2: "",
     what_do_you_want: "",
   };
 
@@ -240,12 +247,18 @@ function StepEdit({
       <h4 className="font-black text-[24px] text-center">배틀 신청서 수정</h4>
 
       <div className="flex flex-col border-1">
+        <div className="border-b-1 flex justify-between px-1.5 py-1 justify-center">
+          <div className="text-[20px] font-bold whitespace-nowrap">
+            멤버1
+          </div>
+        </div>
         <div className="border-b-1 flex justify-between px-1.5 py-1">
-          <div className="font-black text-[20px] whitespace-nowrap">이름</div>
+          <div className="font-semibold text-[20px] whitespace-nowrap">이름</div>
           <Input
             type="text"
             placeholder="이름을 입력해주세요."
             value={formValue.name}
+            className="placeholder:text-[#ff3b49] font-extralight text-[20px]"
             onChange={(event) =>
               onChange({ ...formValue, name: event.target.value })
             }
@@ -253,68 +266,152 @@ function StepEdit({
         </div>
 
         <div className="border-b-1 flex justify-between px-1.5 py-1">
-          <div className="font-black text-[20px] whitespace-nowrap">
+          <div className="font-semibold text-[20px] whitespace-nowrap">
             생년월일
           </div>
           <Input
             type="text"
             placeholder="생년월일을 입력해주세요."
             value={formValue.birth_date}
+            className="placeholder:text-[#ff3b49] font-extralight text-[20px]"
             onChange={(event) =>
               onChange({ ...formValue, birth_date: event.target.value })
             }
           />
         </div>
+
         <div className="border-b-1 flex justify-between px-1.5 py-1">
-          <div className="font-black text-[20px] whitespace-nowrap">
-            휴대폰
-          </div>
-          <Input
-            type="text"
-            placeholder="휴대폰을 입력해주세요."
-            value={formValue.phone_number}
-            onChange={(event) =>
-              onChange({ ...formValue, phone_number: event.target.value })
-            }
-          />
-        </div>
-        <div className="border-b-1 flex justify-between px-1.5 py-1">
-          <div className="font-black text-[20px] whitespace-nowrap">
-            배틀 장르
+          <div className="font-semibold text-[20px] whitespace-nowrap">
+            장르
           </div>
           <Input
             type="text"
             placeholder="배틀 장르를 입력해주세요."
             value={formValue.battle_genre}
+            className="placeholder:text-[#ff3b49] font-extralight text-[20px]"
             onChange={(event) =>
               onChange({ ...formValue, battle_genre: event.target.value })
             }
           />
         </div>
+        <div className="border-b-1 flex justify-between px-1.5 py-1">
+          <div className="font-semibold text-[20px] whitespace-nowrap">
+            휴대폰번호
+          </div>
+          <Input
+            type="text"
+            placeholder="휴대폰번호을 입력해주세요."
+            value={formValue.phone_number}
+            className="placeholder:text-[#ff3b49] font-extralight text-[20px]"
+            onChange={(event) =>
+              onChange({ ...formValue, phone_number: event.target.value })
+            }
+          />
+        </div>
         <div className="border-b-1 flex flex-col px-1.5 py-1">
-          <div className={clsx("font-black text-[20px] whitespace-nowrap", jordan.className)}>
+          <div className={clsx("font-semibold text-[20px] whitespace-nowrap", jordan.className)}>
             인스타그램 아이디
           </div>
           <Input
             type="text"
             placeholder="@아이디"
             value={formValue.instagram_id}
+            className="placeholder:text-[#ff3b49] font-extralight text-[20px]"
             onChange={(event) =>
               onChange({ ...formValue, instagram_id: event.target.value })
             }
           />
         </div>
 
+
+        <div className="border-b-1 flex justify-between px-1.5 py-1 justify-center">
+          <div className="text-[20px] font-black whitespace-nowrap">
+            멤버2
+          </div>
+        </div>
+        <div className="border-b-1 flex justify-between px-1.5 py-1">
+          <div className="font-semibold text-[20px] whitespace-nowrap">이름</div>
+          <Input
+            type="text"
+            placeholder="이름을 입력해주세요."
+            value={formValue.name}
+            className="placeholder:text-[#ff3b49] font-extralight text-[20px]"
+            onChange={(event) =>
+              onChange({ ...formValue, name: event.target.value })
+            }
+          />
+        </div>
+
+        <div className="border-b-1 flex justify-between px-1.5 py-1">
+          <div className="font-semibold text-[20px] whitespace-nowrap">
+            생년월일
+          </div>
+          <Input
+            type="text"
+            placeholder="생년월일을 입력해주세요."
+            value={formValue.birth_date}
+            className="placeholder:text-[#ff3b49] font-extralight text-[20px]"
+            onChange={(event) =>
+              onChange({ ...formValue, birth_date: event.target.value })
+            }
+          />
+        </div>
+
+        <div className="border-b-1 flex justify-between px-1.5 py-1">
+          <div className="font-semibold text-[20px] whitespace-nowrap">
+            장르
+          </div>
+          <Input
+            type="text"
+            placeholder="배틀 장르를 입력해주세요."
+            value={formValue.battle_genre}
+            className="placeholder:text-[#ff3b49] font-extralight text-[20px]"
+            onChange={(event) =>
+              onChange({ ...formValue, battle_genre: event.target.value })
+            }
+          />
+        </div>
+        <div className="border-b-1 flex justify-between px-1.5 py-1">
+          <div className="font-semibold text-[20px] whitespace-nowrap">
+            휴대폰번호
+          </div>
+          <Input
+            type="text"
+            placeholder="휴대폰번호을 입력해주세요."
+            value={formValue.phone_number}
+            className="placeholder:text-[#ff3b49] font-extralight text-[20px]"
+            onChange={(event) =>
+              onChange({ ...formValue, phone_number: event.target.value })
+            }
+          />
+        </div>
         <div className="border-b-1 flex flex-col px-1.5 py-1">
-          <div className={clsx("font-black text-[20px] whitespace-nowrap", jordan.className)}>
-            WHAT DO YOU WANT
+          <div className={clsx("font-semibold text-[20px] whitespace-nowrap", jordan.className)}>
+            인스타그램 아이디
+          </div>
+          <Input
+            type="text"
+            placeholder="@아이디"
+            value={formValue.instagram_id}
+            className="placeholder:text-[#ff3b49] font-extralight text-[20px]"
+            onChange={(event) =>
+              onChange({ ...formValue, instagram_id: event.target.value })
+            }
+          />
+        </div>
+
+
+        <div className="border-b-1 flex flex-col px-1.5 py-1">
+          <div className={clsx("font-semibold text-[20px] whitespace-nowrap", jordan.className)}>
+            댄서에게 궁금한 점
           </div>
           <Textarea
-            placeholder="WHAT DO YOU WANT"
+            placeholder="댄서에게 궁금한 점"
             value={formValue.what_do_you_want}
             onChange={(event) =>
               onChange({ ...formValue, what_do_you_want: event.target.value })
             }
+            className="!text-left placeholder:text-[#ff3b49] font-extralight text-[12px]"
           />
         </div>
       </div>
