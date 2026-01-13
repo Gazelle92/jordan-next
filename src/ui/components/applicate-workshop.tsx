@@ -79,7 +79,7 @@ export const ApplicateWorkshop = ({ }) => {
     <>
       <div className="sticky max-w-md w-full mx-auto absolute bottom-0 left-0 right-0 p-3">
         <div className="-mx-3">
-          <Button className="border-none" onClick={() => setOpen(true)}>워크샵 신청하기</Button>
+          <Button className="border-none" onClick={() => setOpen(true)}>코레오그래피 워크샵 신청하기</Button>
         </div>
       </div>
       <FullDialog open={open} onClose={() => setOpen(false)}>
@@ -87,7 +87,7 @@ export const ApplicateWorkshop = ({ }) => {
           <>
             <div className="flex flex-col flex-grow-1 items-center justify-center gap-6">
               <Logo width={100} height={100} />
-              <strong>신청이 완료되었습니다.</strong>
+              <strong>코레오그래피 워크샵 신청이<br />완료 되었습니다.</strong>
             </div>
             <Link href="/menu">
               <Button>메뉴로 돌아가기</Button>
@@ -95,7 +95,7 @@ export const ApplicateWorkshop = ({ }) => {
           </>
         ) : (
           <div className="flex flex-col gap-5 flex-grow-1">
-            <h4 className="font-black text-[24px] text-center">워크샵 신청서</h4>
+            <h4 className="font-black text-[24px] text-center">코레오그래피 워크샵 신청서</h4>
             <div className="flex flex-col border-1">
               <div className="border-b-1 flex justify-between px-1.5 py-1">
                 <div className="font-black text-[20px] whitespace-nowrap">
@@ -175,10 +175,10 @@ export const ApplicateWorkshop = ({ }) => {
               </div>
               <div className="flex flex-col px-1.5 py-1">
                 <div className={clsx("font-black text-[20px] whitespace-nowrap", jordan.className)}>
-                  WHAT DO YOU WANT
+                  댄서들에게 묻고 싶은 질문
                 </div>
                 <Textarea
-                  placeholder="WHAT DO YOU WANT"
+                  placeholder="댄서들에게 묻고 싶은 질문"
                   value={form.what_do_you_want}
                   onChange={(event) =>
                     setForm((prev) => ({

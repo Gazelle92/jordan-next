@@ -250,7 +250,8 @@ export default function Videos() {
   return (
     <>
       <div className="flex flex-col gap-2 ani">
-        <div className="flex justify-end items-center video_btn_w text-[12px] fadeCover-0 ani_order_11">
+        <h1 className="pt-[8px] pb-[12px] text-[24px] border-t-4 text-center leading-[1] font-black">참여자 영상 아카이빙</h1>
+        <div className="flex justify-end items-center video_btn_w text-[12px] fadeCover-0 ani_order_11 pb-2">
           <Select
             options={[
               { label: "최신순", value: "latest" },
@@ -288,8 +289,8 @@ export default function Videos() {
                   {workshop.like_count}
                 </button>
                 <img className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[20px] opacity-0 transition-opacity duration-200 hover_target" src="/images/btn_play.png" />
-                </div>
-              );
+              </div>
+            );
           })}
         </div>
 

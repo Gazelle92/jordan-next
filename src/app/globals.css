@@ -151,7 +151,7 @@ main{overflow: hidden;}
 }
 
 .video_btn_w{z-index: 1;}
-.video_btn_w button{background-color: #ff3b49; color: #000; transition: ease 0.3s all; border: 1px solid #000; cursor: pointer;}
+.video_btn_w button{background-color: #ff3b49; color: #000; transition: ease 0.3s all; border: 1px solid #000; cursor: pointer; border: 1px solid #ff3b49;}
 .video_btn_w button:hover{background-color: #000; color: #ff3b49;}
 .video_btn_w button:hover svg path{stroke: #ff3b49;}
 .video_btn_w div li{background-color: #ff3b49; color: #000; transition: ease 0.3s all;}
@@ -215,3 +215,10 @@ main{overflow: hidden;}
 .ani_order_12{transition-delay: 1.2s!important;}
 */
 .filled-color *{fill: #ff3b49;}
+
+.dot-sp-1, .dot-sp-2{position: relative; }
+.dot-sp-1{padding-left: 12px;}
+.dot-sp-2{padding-left: 24px;}
+.dot-sp-1::before, .dot-sp-2::before{content: ''; width: 4px; height: 4px; background-color: #ff3b49; border-radius: 100%; position: absolute;  top: 8px;}
+.dot-sp-1::before{left: 2px;}
+.dot-sp-2::before{left: 14px;}
