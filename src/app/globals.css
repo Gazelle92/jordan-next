@@ -195,11 +195,11 @@ main{overflow: hidden;}
 
 .workshop_txt g{fill: var(--foreground)!important;}
 
-.logo_ani{transition:  transform 1s cubic-bezier(0,0,.43,1.06), opacity 1s cubic-bezier(0,0,.43,1.06); opacity: 0; transform: translateX(-100px);}
+/*.logo_ani{transition:  transform 1s cubic-bezier(0,0,.43,1.06), opacity 1s cubic-bezier(0,0,.43,1.06); opacity: 0; transform: translateX(-100px);}
 .ani.active .logo_ani{transform: translateX(0); opacity: 1;}
-
-.border_el {width: 0; transition: width 1s cubic-bezier(0,0,.43,1.06); opacity: 0;}
-.ani.active .border_el, .ani.active.border_el{width: 100%; opacity: 1;}
+*/
+.border_el {width: 0; transition: width 1s cubic-bezier(0,0,.43,1.06); opacity: 0; width: 100%; opacity: 1;}
+/*.ani.active .border_el, .ani.active.border_el{width: 100%; opacity: 1;}
 .ani_order_0{transition-delay: 0.0s!important;}
 .ani_order_1{transition-delay: 0.1s!important;}
 .ani_order_2{transition-delay: 0.2s!important;}
@@ -213,3 +213,4 @@ main{overflow: hidden;}
 .ani_order_10{transition-delay: 1.0s!important;}
 .ani_order_11{transition-delay: 1.1s!important;}
 .ani_order_12{transition-delay: 1.2s!important;}
+*/

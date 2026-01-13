@@ -15,10 +15,11 @@ export default function Home() {
   const [pushed, setPushed] = useState(false);
 
   useEffect(() => {
+    /*
     if (process.env.NODE_ENV === "development") {
       router.replace("/menu");
       return;
-    }
+    }*/
 
     const interval = setInterval(() => {
       setTransitionState((prev) => {
@@ -33,9 +34,10 @@ export default function Home() {
     return () => clearInterval(interval);
   }, []);
 
+  /*
   if (process.env.NODE_ENV === "development") {
     return null;
-  }
+  }*/
 
   switch (transitionState) {
     case 0:
@@ -57,7 +59,7 @@ export default function Home() {
             <Logo width={40} />
           </div>
           <video
-            src="/video/bada_sample.mp4"
+            src="/video/bada_sample2.mp4"
             autoPlay
             muted
             playsInline
@@ -69,7 +71,7 @@ export default function Home() {
               if (
                 !pushed &&
                 video.duration &&
-                video.currentTime >= video.duration - 2
+                video.currentTime >= video.duration - 0
               ) {
                 setFadeOut(true);
                 setPushed(true);
