@@ -1,5 +1,6 @@
 import { HistoryBack } from "@/ui/components/history-back";
 import InfraredBattle from "@/ui/svg/infrared_battle.svg";
+import WomenBattle from "@/ui/svg/women_battle.svg";
 import Logo from "@/ui/svg/logo.svg";
 
 import BasicInformation from "@/ui/components/basic-information";
@@ -89,30 +90,30 @@ export default function IrlInfo() {
       <div className="flex flex-col gap-10 px-3 pb-3">
         <div className="flex flex-col flex-grow-1 items-center justify-center gap-7 ani">
           <Logo className="w-20 logo_ani" />
-          <InfraredBattle width={256} className="mx-auto fadeCover-0-3" />
+          <WomenBattle reverse width={239} className="mx-auto filled-color" />
         </div>
         <div className="flex flex-col gap-2 ani">
           <hr className="border-2 border_el ani_order_3 border-l-0 border-r-0" />
           <BasicInformation />
           <div className="flex flex-col gap-5 ani">
-            <div className="fade-cw border-t-4 border-b-1 py-1">
-              <h2 className="fadeCover-1 text-[24px] font-black text-center ">
+            <div className="border-t-4 border-b-1 py-1">
+              <h2 className="text-[24px] font-black text-center ">
                 저지
               </h2>
             </div>
-            <div className="py-5 flex gap-x-16 justify-center fadeCover-0-2">
+            <div className="py-5 flex gap-x-16 justify-center ">
               {judges.map((judge) => (
                 <Profile key={judge.name} {...judge} />
               ))}
             </div>
           </div>
           <div className="flex flex-col gap-5 ani">
-            <div className="fade-cw border-t-4 border-b-1 py-1">
-              <h2 className="fadeCover-1 text-[24px] font-black text-center ">
+            <div className="border-t-4 border-b-1 py-1">
+              <h2 className="text-[24px] font-black text-center ">
                 MC
               </h2>
             </div>
-            <div className="py-5 flex gap-x-16 justify-center fadeCover-0-2">
+            <div className="py-5 flex gap-x-16 justify-center">
               {MCs.map((judge) => (
                 <Profile key={judge.name} {...judge} />
               ))}

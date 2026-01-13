@@ -65,13 +65,13 @@ export const ReservateBattle = ({ }) => {
 
   return (
     <>
-      <Button reverse onClick={() => setOpen(true)}>사전 예약하기</Button>
+      <Button reverse onClick={() => setOpen(true)}>BATTLE</Button>
       <FullDialog open={open} onClose={() => setOpen(false)}>
         {completed ? (
           <>
             <div className="flex flex-col flex-grow-1 items-center justify-center gap-6">
               <Logo width={100} height={100} />
-              <strong>사전 예약이 완료 되었습니다.</strong>
+              <strong>신청이 완료 되었습니다.</strong>
             </div>
             <Link href="/menu">
               <Button>메뉴로 돌아가기</Button>
@@ -79,7 +79,7 @@ export const ReservateBattle = ({ }) => {
           </>
         ) : (
           <div className="flex flex-col gap-5 flex-grow-1">
-            <h4 className="font-black text-[24px] text-center">사전 예약 신청서</h4>
+            <h4 className="font-black text-[24px] text-center leading-[1]">HOUSE OF GREATNESS<br />이벤트 예약</h4>
             <div className="flex flex-col border-1">
               <div className="border-b-1 flex justify-between px-1.5 py-1">
                 <div className="font-black text-[20px] whitespace-nowrap">
@@ -128,10 +128,10 @@ export const ReservateBattle = ({ }) => {
               </div>
               <div className="flex flex-col px-1.5 py-1">
                 <div className={clsx("font-black text-[20px] whitespace-nowrap", jordan.className)}>
-                  WHAT DO YOU WANT
+                  댄서들에게 묻고 싶은 질문
                 </div>
                 <Textarea
-                  placeholder="WHAT DO YOU WANT"
+                  placeholder="댄서들에게 묻고 싶은 질문"
                   value={form.what_do_you_want}
                   onChange={(event) =>
                     setForm((prev) => ({
@@ -157,7 +157,7 @@ export const ReservateBattle = ({ }) => {
               {error && <span className="text-[12px]">{error}</span>}
             </div>
             <div className="flex-grow-1" />
-            <Button reverse disabled={isSubmitting} onClick={handleSubmit}>
+            <Button disabled={isSubmitting} onClick={handleSubmit}>
               {isSubmitting ? "신청 중..." : "신청하기"}
             </Button>
           </div>

@@ -11,10 +11,10 @@ import { jordan } from "@/ui/font";
 import { ReservateBattle } from "@/ui/components/reservate-battle";
 
 const programs = [
-  { id: 1, name: "배틀", times: "11:00 - 14:30" },
-  { id: 2, name: "코레오그래피 워크샵", times: "14:00 - 18:30" },
-  { id: 3, name: "토크세션", times: "18:30 - 19:30" },
-  { id: 4, name: "퍼블릭 프로그램", times: "11:00 - 20:00" },
+  { id: 1, name: "2:2 WOMEN'S OPEN STYLE BATTLE", times: "12:00 - 18:30" },
+  { id: 2, name: "CHOREOGRAPHY WORKSHOP", times: "14:00 - 18:30" },
+  { id: 3, name: "TALK SESSION", times: "19:00 - 20:00" },
+  { id: 4, name: "STYLING WORKSHOP", times: "11:00 - 18:00" },
 ];
 
 export default function IrlInfo() {
@@ -44,9 +44,7 @@ export default function IrlInfo() {
                 INFRARED 에너지가 충돌·증폭되며, 64팀 예선부터 변칙 토너먼트까지 흐름으로
                 GREATNESS를 증명하는 배틀입니다.
               </p>
-
-              <br /><br />
-
+              <br />
               <h4 className="text-[16px] font-black">
                 02. CHOREOGRAPHY WORKSHOP
               </h4>
@@ -55,9 +53,7 @@ export default function IrlInfo() {
                 참여자 전원이 하나의 집단 퍼포먼스로 완성하는 현장 중심 워크숍입니다.
                 파트별 안무 습득과 연결을 거쳐, INFRARED의 에너지를 몸으로 체화하는 무대를 만들어갑니다.
               </p>
-
-              <br /><br />
-
+              <br />
               <h4 className="text-[16px] font-black">
                 03. TALK SESSION
               </h4>
@@ -66,9 +62,7 @@ export default function IrlInfo() {
                 코레오그래피와 배틀 씬을 가로지르는 춤의 스펙트럼을 공유하며
                 참여자들이 각자의 다음 스텝을 그려보는 자리입니다.
               </p>
-
-              <br /><br />
-
+              <br />
               <h4 className="text-[16px] font-black">
                 04. STYLING WORKSHOP
               </h4>
@@ -77,23 +71,27 @@ export default function IrlInfo() {
                 스타일링 세션입니다. 무대 안팎에서 움직임과 스타일이 하나의 시그니처로
                 완성되는 경험을 제안합니다.
               </p>
-
             </div>
             <hr className="border-2" />
-            <div className="flex flex-col fadeCover-0">
+            <h2 className="text-[24px] font-black text-center pb-2 border-b-1">
+              타임테이블
+            </h2>
+            <div className="flex flex-col py-2">
               {programs.map((program) => (
                 <div
-                  className={clsx("border-b flex gap-6 px-4 py-3 text-[15px] items-center", jordan.className)}
+                  className={clsx("flex gap-6 px-4 py-2 text-[15px] items-center", jordan.className)}
                   key={program.id}
                 >
                   <div className="font-medium">0{program.id}</div>
-                  <div className="flex-grow-1 font-black">{program.name}</div>
-                  <div className="font-medium text-[13px]">11:00 - 14:30</div>
+                  <div className="flex-grow-1 leading-[1] font-black text-balance w-[calc(100%-200px)] break-keep">{program.name}</div>
+                  <div className="font-medium text-[13px]">{program.times}</div>
                 </div>
               ))}
             </div>
             <Link href="/battles">
-              <Button className="flex justify-center items-center"><span className="text-[18px]">HOUSE OF GREATNESS 이벤트 예약하기</span></Button>
+              <Button className="flex justify-center items-center">
+                <span className="text-[18px]">HOUSE OF GREATNESS 이벤트 예약하기</span>
+              </Button>
             </Link>
 
           </div>
