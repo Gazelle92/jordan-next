@@ -15,11 +15,11 @@ export default function Home() {
   const [pushed, setPushed] = useState(false);
 
   useEffect(() => {
-    /*
+
     if (process.env.NODE_ENV === "development") {
       router.replace("/menu");
       return;
-    }*/
+    }
 
     const interval = setInterval(() => {
       setTransitionState((prev) => {
@@ -34,10 +34,10 @@ export default function Home() {
     return () => clearInterval(interval);
   }, []);
 
-  /*
+
   if (process.env.NODE_ENV === "development") {
     return null;
-  }*/
+  }
 
   switch (transitionState) {
     case 0:
