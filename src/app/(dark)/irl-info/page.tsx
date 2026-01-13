@@ -2,7 +2,6 @@ import { HistoryBack } from "@/ui/components/history-back";
 
 import InfraredIrlInfo from "@/ui/svg/infrared_irl_info_2.svg";
 import Logo from "@/ui/svg/logo.svg";
-
 import { Button } from "@/ui/components/button";
 import { Link } from "next-view-transitions";
 import IrlInformation from "@/ui/components/irl-information";

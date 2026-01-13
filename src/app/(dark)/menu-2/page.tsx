@@ -1,9 +1,6 @@
 import { Link } from "next-view-transitions";
 
-import Category from "@/ui/svg/category.svg";
 import Title from "@/ui/svg/house_of_greatness.svg";
-import ChoreoGraphyWorkshop from "@/ui/svg/choreo_graphy_workshop.svg";
-import InfraredBattle from "@/ui/svg/infrared_battle.svg";
 import IrlInfo from "@/ui/svg/infrared_irl_info.svg";
 import Logo from "@/ui/svg/logo.svg";
 import ViewInfrared from "@/ui/svg/view_infrared.svg";
