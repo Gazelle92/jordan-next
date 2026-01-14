@@ -144,9 +144,9 @@ export default function WorkshopEditPage() {
         />
       )}
 
-      {step === "doneEdit" && <StepDone text="신청이 수정되었습니다." />}
+      {step === "doneEdit" && <StepDone text="코레오그래피 신청서 수정이 완료 되었습니다." />}
 
-      {step === "doneDelete" && <StepDone text="신청이 취소되었습니다." />}
+      {step === "doneDelete" && <StepDone text="코레오그래피 신청서 취소가 완료 되었습니다." />}
     </div>
   );
 }
@@ -166,7 +166,7 @@ function StepVerify({
 }) {
   return (
     <div className="flex flex-col gap-5 flex-grow mt-10 px-5 pb-5">
-      <h4 className="font-black text-[24px] text-center">워크샵 신청서 수정</h4>
+      <h4 className="font-black text-[24px] text-center">코레오그래피 신청서 수정</h4>
 
       <div className="flex items-center justify-center mt-[120px] text-center">
         <strong>이름과 휴대폰 중간 4자리를 입력해 주세요.</strong>
@@ -179,6 +179,7 @@ function StepVerify({
             type="text"
             placeholder="이름을 입력해주세요."
             value={form.name}
+            className="placeholder:text-[#ff3b49] font-extralight text-[20px]"
             onChange={(event) =>
               onChange({ ...form, name: event.target.value })
             }
@@ -191,6 +192,7 @@ function StepVerify({
           <Input
             type="text"
             placeholder="휴대폰을 입력해주세요."
+            className="placeholder:text-[#ff3b49] font-extralight text-[20px]"
             value={form.phoneMiddle}
             onChange={(event) =>
               onChange({ ...form, phoneMiddle: event.target.value })
@@ -245,6 +247,7 @@ function StepEdit({
           <Input
             type="text"
             placeholder="이름을 입력해주세요."
+            className="placeholder:text-[#ff3b49] font-extralight text-[20px]"
             value={formValue.name}
             onChange={(event) =>
               onChange({ ...formValue, name: event.target.value })
@@ -259,6 +262,7 @@ function StepEdit({
           <Input
             type="text"
             placeholder="생년월일을 입력해주세요."
+            className="placeholder:text-[#ff3b49] font-extralight text-[20px]"
             value={formValue.birth_date}
             onChange={(event) =>
               onChange({ ...formValue, birth_date: event.target.value })
@@ -270,6 +274,7 @@ function StepEdit({
           <Input
             type="text"
             placeholder="휴대폰을 입력해주세요."
+            className="placeholder:text-[#ff3b49] font-extralight text-[20px]"
             value={formValue.phone_number}
             onChange={(event) =>
               onChange({ ...formValue, phone_number: event.target.value })
@@ -283,6 +288,7 @@ function StepEdit({
           <Input
             type="text"
             placeholder="배틀 장르를 입력해주세요."
+            className="placeholder:text-[#ff3b49] font-extralight text-[20px]"
             value={formValue.battle_genre}
             onChange={(event) =>
               onChange({ ...formValue, battle_genre: event.target.value })
@@ -294,9 +300,10 @@ function StepEdit({
             인스타그램 영상 링크
           </div>
           <Textarea
-            className="resize-none"
+            className="placeholder:text-[#ff3b49] font-extralight text-[20px] resize-none"
             placeholder="인스타그램 영상 링크"
             value={formValue.instagram_video_url}
+
             onChange={(event) =>
               onChange({ ...formValue, instagram_video_url: event.target.value })
             }
@@ -305,10 +312,11 @@ function StepEdit({
 
         <div className="border-b-1 flex flex-col px-1.5 py-1">
           <div className={clsx("font-black text-[20px] whitespace-nowrap", jordan.className)}>
-            WHAT DO YOU WANT
+            댄서에게 궁금한 점
           </div>
           <Textarea
-            placeholder="WHAT DO YOU WANT"
+            placeholder="댄서에게 궁금한 점"
+            className="placeholder:text-[#ff3b49] font-extralight text-[20px]"
             value={formValue.what_do_you_want}
             onChange={(event) =>
               onChange({ ...formValue, what_do_you_want: event.target.value })

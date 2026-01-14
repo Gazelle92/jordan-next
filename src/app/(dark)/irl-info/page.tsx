@@ -35,7 +35,7 @@ export default function IrlInfo() {
               프로그램
             </h2>
 
-            <div className="py-[15px] text-[13px] font-semibold whitespace-pre-wrap break-keep leading-[1.5]">
+            <div className="py-[15px] text-[13px] font-semibold whitespace-pre-wrap break-keep leading-[1.5] px-4">
               <h4 className="text-[16px] font-black">
                 01. 2:2 WOMEN&apos;S OPEN STYLE BATTLE
               </h4>

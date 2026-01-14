@@ -18,7 +18,7 @@ export default function BasicInformation() {
           <div className="absolute left-0 bottom-0 h-[1px] border-b-1 border_el ani_order_9"></div>
         </div>
       </div>
-      <div className="py-8 text-[13px] font-semibold whitespace-pre-wrap break-keep ani">
+      <div className="py-8 text-[13px] font-semibold whitespace-pre-wrap break-keep ani px-4">
         <div>
           여성 댄서만을 위한 2대2 오픈 스타일 배틀에 참여해보세요. 하우스 DJ의 랜덤 플레이 속에서
           순간의 선택과 반응으로, 당신만의 에너지를 무대 위에 드러낼 수 있습니다.
@@ -37,14 +37,14 @@ export default function BasicInformation() {
 
         <br />
 
-        <div>[REGISTRATION]</div>
+        <div className="text-[16px] font-black">[REGISTRATION]</div>
         <div className="dot-sp-1">참가 대상: 여성 댄서 누구나 (2인 1조 팀으로 신청 가능)</div>
         <div className="dot-sp-1">신청 기간: 1월 21일(수)~1월 27일(화)</div>
         <div className="dot-sp-1">참가자 발표: 1월 30일(금), 공식 웹사이트 공지 및 개별 문자 발송</div>
 
         <br />
 
-        <div>[BATTLE RULES]</div>
+        <div className="text-[16px] font-black">[BATTLE RULES]</div>
 
         <div className="dot-sp-1">1차 예선</div>
         <div className="dot-sp-2">3개 서클 동시 진행 / 점수제</div>
@@ -97,7 +97,7 @@ export default function BasicInformation() {
 
         <br />
 
-        <div>[BATTLE REWARDS]</div>
+        <div className="text-[16px] font-black">[BATTLE REWARDS]</div>
         <div className="dot-sp-1">1등: 1,000만 원 상당의 조던 브랜드 스폰서십 + 젬 신발 트로피</div>
         <div className="dot-sp-1">2등: 500만 원 상당의 조던 브랜드 스폰서십</div>
         <div className="dot-sp-1">공동 3등 (2팀): 각 200만 원 상당의 조던 브랜드 스폰서십</div>
@@ -106,7 +106,7 @@ export default function BasicInformation() {
 
         <br />
 
-        <div>[NOTICE]</div>
+        <div className="text-[16px] font-black">[NOTICE]</div>
         <div>- CHOREOGRAPHY WORKSHOP과 중복 참여가 제한됩니다.</div>
         <div>
           - 2:2 women&apos;s open style battle 참가자로 선정되지 않더라도 본 행사 관람을

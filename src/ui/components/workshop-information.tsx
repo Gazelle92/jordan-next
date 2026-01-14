@@ -14,7 +14,7 @@ export default function WorkshopInformation() {
           <div className="absolute left-0 bottom-0 h-[1px] border-b-1 border_el ani_order_9"></div>
         </div>
       </div>
-      <div className="py-8 text-[13px] font-semibold whitespace-pre-wrap break-keep ani">
+      <div className="py-8 px-4 text-[13px] font-semibold whitespace-pre-wrap break-keep ani">
 
         <div>INFRARED의 에너지를 움직임의 언어로 풀어내며, 몸으로 직접 체화하는 코레오그래피 여정이 펼쳐집니다.</div>
         <br />
@@ -22,7 +22,7 @@ export default function WorkshopInformation() {
         <br />
         <div>파트별 안무를 연결해 모두가 하나의 집단 퍼포먼스로 완성하고, 이 퍼포먼스는 비주얼 필름으로 기록되어 INFRARED의 에너지가 무대 밖까지 이어지는 순간을 직접 경험해보세요.</div>
         <br />
-        <div>[REGISTRATION]</div>
+        <div className="text-[16px] font-black">[REGISTRATION]</div>
 
         <div className="dot-sp-1">참가 대상: 여성 댄서 누구나</div>
         <div className="dot-sp-1">신청 기간: 1월 21일(수)~1월 27일(화)</div>
@@ -37,7 +37,7 @@ export default function WorkshopInformation() {
 
         <br /><br />
 
-        <div>[NOTICE]</div>
+        <div className="text-[16px] font-black">[NOTICE]</div>
         <div>- 2:2 OPEN STYLE BATTLE과 중복 참여가 제한됩니다.</div>
         <div>- choreography workshop 참가자로 선정되지 않더라도 본 행사 관람을 원하시는 경우, 반드시 일반 관람 신청을 별도로 진행해 주시기 바랍니다.</div>
         <div>- 본 행사는 조던 브랜드 행사로, 타 브랜드 로고가 과도하게 노출되는 착장은 지양해 주시길 부탁드립니다.</div>
