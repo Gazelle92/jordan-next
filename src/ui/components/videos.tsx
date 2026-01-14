@@ -210,6 +210,9 @@ export default function Videos() {
     setVisible(false);
     loadWorkshops(true).finally(() => {
       setTimeout(() => setVisible(true), 2000);
+      setTimeout(() => {
+        document.querySelector('.pre-loader')?.classList.remove('loader');
+      }, 3000);
     });
   }, [value.value]);
 
