@@ -91,6 +91,7 @@ export const ReservateBattle = ({ }) => {
                   type="text"
                   placeholder="이름을 입력해주세요."
                   value={form.name}
+                  className="placeholder:text-[#ff3b49] font-extralight text-[20px] resize-none"
                   onChange={(event) =>
                     setForm((prev) => ({ ...prev, name: event.target.value }))
                   }
@@ -104,6 +105,7 @@ export const ReservateBattle = ({ }) => {
                   type="text"
                   placeholder="생년월일을 입력해주세요."
                   value={form.birth_date}
+                  className="placeholder:text-[#ff3b49] font-extralight text-[20px] resize-none"
                   onChange={(event) =>
                     setForm((prev) => ({
                       ...prev,
@@ -120,6 +122,7 @@ export const ReservateBattle = ({ }) => {
                   type="text"
                   placeholder="휴대폰을 입력해주세요."
                   value={form.phone_number}
+                  className="placeholder:text-[#ff3b49] font-extralight text-[20px] resize-none"
                   onChange={(event) =>
                     setForm((prev) => ({
                       ...prev,
@@ -135,6 +138,7 @@ export const ReservateBattle = ({ }) => {
                 <Textarea
                   placeholder="댄서들에게 묻고 싶은 질문"
                   value={form.what_do_you_want}
+                  className="placeholder:text-[#ff3b49] font-extralight text-[20px] resize-none"
                   onChange={(event) =>
                     setForm((prev) => ({
                       ...prev,
