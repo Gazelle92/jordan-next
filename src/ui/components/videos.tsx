@@ -5,6 +5,7 @@ import { useEffect, useState } from "react";
 import { VideoDialog } from "./video-dialog";
 import { ApplicateWorkshop } from "./applicate-workshop";
 import { Select } from "./select";
+import clsx from "clsx";
 import {
   listWorkshops,
   likeWorkshop,
@@ -157,7 +158,7 @@ export default function Videos() {
   const [embedReady, setEmbedReady] = useState(false);
   const [freshIds, setFreshIds] = useState<number[]>([]);
   const [freshOrder, setFreshOrder] = useState<Record<number, number>>({});
-
+  const [visible, setVisible] = useState(false);
   const ordering = value.value === "likes" ? "likes" : undefined;
 
   useEffect(() => {
@@ -204,10 +205,14 @@ export default function Videos() {
     }
   };
 
+
   useEffect(() => {
-    loadWorkshops(true);
-    setLikedIds([]);
+    setVisible(false);
+    loadWorkshops(true).finally(() => {
+      setTimeout(() => setVisible(true), 2000);
+    });
   }, [value.value]);
+
 
   useEffect(() => {
     if (freshIds.length === 0) {
@@ -261,7 +266,12 @@ export default function Videos() {
             onChange={setValue}
           />
         </div>
-        <div className="grid grid-cols-3 mx-[-12px] justify-items-center md:px-0 video_w">
+        <div
+          className={clsx(
+            "grid grid-cols-3 mx-[-12px] justify-items-center md:px-0 video_w transition-opacity duration-500",
+            visible ? "opacity-100" : "opacity-0"
+          )}
+        >
           {workshops.map((workshop) => {
             const liked = likedIds.includes(workshop.id);
             const isFresh = freshIds.includes(workshop.id);

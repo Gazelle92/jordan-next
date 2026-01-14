@@ -12,9 +12,9 @@ export default function Workshop() {
     <div className="flex flex-col">
       <HistoryBack />
       <div className="flex flex-col gap-10 px-3">
-        <div className="flex flex-col flex-grow-1 items-center justify-center gap-7 ani">
+        <div className="flex flex-col flex-grow-1 items-center justify-center gap-7">
           <Logo className="w-20 logo_ani" />
-          <ChoreoGraphyWorkshop width={322} className="mx-auto workshop_txt fadeCover-0-3" />
+          <ChoreoGraphyWorkshop width={322} className="mx-auto workshop_txt" />
         </div>
         <div className="flex flex-col gap-2 ani">
           <hr className="border-2 border_el ani_order_3 border-l-0 border-r-0" />
