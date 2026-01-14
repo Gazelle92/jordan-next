@@ -50,36 +50,86 @@ const Profile = ({ name, instagram, avatarProps, small }: ProfileProps) => {
 
 const judges: ProfileProps[] = [
   {
-    name: "judge1",
-    instagram: "judge1",
-    avatarProps: { src: "https://picsum.photos/id/248/300/400", size: 84 },
+    name: "EUN.G",
+    instagram: "@eun.g_popping",
+    avatarProps: { src: "/images/judge_1.png", size: 60 },
   },
   {
-    name: "judeg2",
-    instagram: "judge2",
-    avatarProps: { src: "https://picsum.photos/id/249/300/400", size: 84 },
+    name: "WAACKXXXY",
+    instagram: "@waackxx_xy",
+    avatarProps: { src: "/images/judge_2.png", size: 60 },
+  },
+  {
+    name: "BABYSLEEK",
+    instagram: "@babysleek",
+    avatarProps: { src: "/images/judge_3.png", size: 60 },
   },
 ];
 
+
+
+
+
+
+
 const MCs: ProfileProps[] = [
   {
-    name: "mc1",
-    instagram: "mc1",
-    avatarProps: { src: "https://picsum.photos/id/250/300/400", size: 84 },
+    name: "DU LOCK",
+    instagram: "@dulock87",
+    avatarProps: { src: "/images/mc_1.png", size: 60 },
   },
 ];
 
 const DJs: ProfileProps[] = Array.from({ length: 1 }, (_, index) => ({
-  name: `DJ${index + 1}`,
-  instagram: `DJ${index + 1}`,
-  avatarProps: { src: `https://picsum.photos/id/${index + 108}/300/400` },
+  name: "MARCIA",
+  instagram: "@dj_marcia",
+  avatarProps: { src: "/images/dj_1.png", size: 60 },
 }));
 
-const guests: ProfileProps[] = Array.from({ length: 8 }, (_, index) => ({
-  name: `guest${index + 1}`,
-  instagram: `guest${index + 1}`,
-  avatarProps: { src: `https://picsum.photos/id/${index + 108}/300/400` },
-}));
+
+const guests: ProfileProps[] = [
+  {
+    name: "LEESE",
+    instagram: "@leese_lee",
+    avatarProps: { src: "/images/guest_1.png", size: 60 },
+  },
+  {
+    name: "RIHA",
+    instagram: "@riha_rtist",
+    avatarProps: { src: "/images/guest_2.png", size: 60 },
+  },
+  {
+    name: "SIMMON",
+    instagram: "@simmon__03",
+    avatarProps: { src: "/images/guest_3.png", size: 60 },
+  },
+  {
+    name: "CELINE",
+    instagram: "@ff_celine_",
+    avatarProps: { src: "/images/guest_4.png", size: 60 },
+  },
+  {
+    name: "YUJIN",
+    instagram: "@yujin_dancer",
+    avatarProps: { src: "/images/guest_5.png", size: 60 },
+  },
+  {
+    name: "RYU",
+    instagram: "@l_like__ryu",
+    avatarProps: { src: "/images/guest_6.png", size: 60 },
+  },
+  {
+    name: "CERA",
+    instagram: "@cera___",
+    avatarProps: { src: "/images/guest_7.png", size: 60 },
+  },
+  {
+    name: "LEEVER",
+    instagram: "@likealeever",
+    avatarProps: { src: "/images/guest_8.png", size: 60 },
+  },
+];
+
 
 const matches = [
   { label: "Opening", time: "12:00 - 12:10" },
@@ -99,12 +149,12 @@ export default function IrlInfo() {
     <div className="flex flex-col">
       <HistoryBack />
       <div className="flex flex-col gap-10 px-3 pb-3">
-        <div className="flex flex-col flex-grow-1 items-center justify-center gap-7 ani">
-          <Logo className="w-20 logo_ani" />
+        <div className="flex flex-col flex-grow-1 items-center justify-center gap-7">
+          <Logo className="w-20" />
           <WomenBattle width={239} className="mx-auto filled-color" />
         </div>
-        <div className="flex flex-col gap-2 ani">
-          <hr className="border-2 border_el ani_order_3 border-l-0 border-r-0" />
+        <div className="flex flex-col gap-2">
+          <hr className="border-2 border_el border-l-0 border-r-0" />
           <BattleInformation />
 
           <div className="flex flex-col">
@@ -126,7 +176,7 @@ export default function IrlInfo() {
                 JUDGE
               </h2>
             </div>
-            <div className="py-5 flex gap-x-16 justify-center ">
+            <div className="py-5 flex gap-x-2 justify-center ">
               {judges.map((judge) => (
                 <Profile key={judge.name} {...judge} />
               ))}
@@ -152,7 +202,8 @@ export default function IrlInfo() {
                 BATTLE GUEST
               </h2>
             </div>
-            <div className="py-5 grid grid-cols-4 gap-5 ">
+
+            <div className="py-5 grid grid-cols-4 gap-5 gap-x-4 gap-y-[26px] justify-center px-6">
               {guests.map((judge) => (
                 <Profile key={judge.name} {...judge} small />
               ))}

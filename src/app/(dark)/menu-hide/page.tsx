@@ -26,7 +26,7 @@ export default function Menu() {
         <Logo className="w-[33px]" />
         <Title width={300} height={46} />
       </div>
-      <div className="flex flex-col items-stretch gap-3">
+      <div className="flex flex-col items-stretch gap-3 overflow-hidden">
         <Link href="/irl-info">
           <MenuButton>
             <IrlInfo width={168} height={18} className="mx-auto" />

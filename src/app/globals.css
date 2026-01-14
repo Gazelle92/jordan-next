@@ -61,7 +61,7 @@ body {
 .logo_wrap a:nth-child(odd) {transform: translateX(110%);}
 .ani.active.logo_wrap a:nth-child(odd){transform: translateX(0%);}
 .ani.active.logo_wrap a:nth-child(even){transform: translateX(0%);}
-main{overflow: hidden;}
+/*main{overflow: hidden;}*/
 
 
 .ani.active .fade-slice{opacity: 1;}

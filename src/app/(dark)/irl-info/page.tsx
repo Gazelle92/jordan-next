@@ -19,7 +19,7 @@ const programs = [
 
 export default function IrlInfo() {
   return (
-    <div className="flex flex-col ani">
+    <div className="flex flex-col">
       <HistoryBack />
       <div className="flex flex-col gap-16 px-3 pb-3">
         <div className="flex flex-col flex-grow-1 items-center justify-center gap-7">
@@ -88,11 +88,7 @@ export default function IrlInfo() {
                 </div>
               ))}
             </div>
-            <Link href="/battles">
-              <Button className="flex justify-center items-center">
-                <span className="text-[18px]">HOUSE OF GREATNESS 이벤트 예약하기</span>
-              </Button>
-            </Link>
+            <ReservateBattle />
 
           </div>
 
@@ -100,7 +96,11 @@ export default function IrlInfo() {
 
       </div>
       <div className="sticky bottom-3 mt-3 mx-3">
-        <ReservateBattle />
+        <Link href="/battles">
+          <Button reverse className="flex justify-center items-center">
+            BATTLE
+          </Button>
+        </Link>
       </div>
     </div>
   );

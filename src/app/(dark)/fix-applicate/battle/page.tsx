@@ -189,7 +189,7 @@ function StepVerify({
       <h4 className="font-black text-[24px] text-center">신청서 수정</h4>
 
       <div className="flex items-center justify-center mt-[120px] text-center">
-        <strong>이름과 휴대폰 뒷자리를 입력해 주세요.</strong>
+        <strong>이름과 휴대폰 중간 4자리를 입력해 주세요.</strong>
       </div>
 
       <div className="flex flex-col border-1 mt-[20px]">

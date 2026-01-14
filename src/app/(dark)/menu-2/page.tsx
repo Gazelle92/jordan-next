@@ -26,7 +26,7 @@ export default function Menu() {
         <Logo className="w-[33px]" />
         <Title width={300} height={46} />
       </div>
-      <div className="flex flex-col items-stretch gap-3 logo_wrap ani">
+      <div className="flex flex-col items-stretch gap-3 logo_wrap ani overflow-hidden">
         <Link href="/selected-users">
           <MenuButton>
             <span className="text-2xl font-black">선정자 명단 보기</span>

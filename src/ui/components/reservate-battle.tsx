@@ -65,7 +65,9 @@ export const ReservateBattle = ({ }) => {
 
   return (
     <>
-      <Button reverse onClick={() => setOpen(true)}>BATTLE</Button>
+      <Button onClick={() => setOpen(true)}>
+        <span className="text-[18px]">HOUSE OF GREATNESS 이벤트 예약하기</span>
+      </Button>
       <FullDialog open={open} onClose={() => setOpen(false)}>
         {completed ? (
           <>

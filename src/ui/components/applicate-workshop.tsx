@@ -79,7 +79,7 @@ export const ApplicateWorkshop = ({ }) => {
     <>
       <div className="sticky max-w-md w-full mx-auto absolute bottom-0 left-0 right-0 p-3">
         <div className="-mx-3">
-          <Button className="border-none" onClick={() => setOpen(true)}>코레오그래피 워크샵 신청하기</Button>
+          <Button className="border-none text-center" onClick={() => setOpen(true)}>코레오그래피 워크샵 신청하기</Button>
         </div>
       </div>
       <FullDialog open={open} onClose={() => setOpen(false)}>
