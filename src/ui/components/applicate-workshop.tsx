@@ -77,7 +77,7 @@ export const ApplicateWorkshop = ({ }) => {
 
   return (
     <>
-      <div className="sticky max-w-md w-full mx-auto absolute bottom-0 left-0 right-0 p-3">
+      <div className="sticky w-full mx-auto absolute bottom-0 left-0 right-0 p-3">
         <div className="-mx-3">
           <Button className="border-none text-center" onClick={() => setOpen(true)}>코레오그래피 워크샵 신청하기</Button>
         </div>
@@ -87,7 +87,7 @@ export const ApplicateWorkshop = ({ }) => {
           <>
             <div className="flex flex-col flex-grow-1 items-center justify-center gap-6">
               <Logo width={100} height={100} />
-              <strong>코레오그래피 워크샵 신청이<br />완료 되었습니다.</strong>
+              <strong className="text-center">코레오그래피 워크샵 신청이<br />완료 되었습니다.</strong>
             </div>
             <Link href="/menu">
               <Button>메뉴로 돌아가기</Button>
