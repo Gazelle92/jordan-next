@@ -88,7 +88,11 @@ export default function IrlInfo() {
                 </div>
               ))}
             </div>
-            <ReservateBattle />
+            <Link href="/battles">
+              <Button reverse className="flex justify-center items-center">
+                BATTLE
+              </Button>
+            </Link>
 
           </div>
 
@@ -96,11 +100,8 @@ export default function IrlInfo() {
 
       </div>
       <div className="sticky bottom-3 mt-3 mx-3">
-        <Link href="/battles">
-          <Button reverse className="flex justify-center items-center">
-            BATTLE
-          </Button>
-        </Link>
+
+        <ReservateBattle />
       </div>
     </div>
   );

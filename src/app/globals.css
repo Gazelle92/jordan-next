@@ -148,6 +148,7 @@ body {
 
 @media(min-width:1025px){
   main.max-w-md, .fixed.max-w-md{max-width:600px;}
+  .btn_fix{max-width:576px;}
 }
 
 .video_btn_w{z-index: 1;}
