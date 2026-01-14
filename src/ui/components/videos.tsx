@@ -254,7 +254,7 @@ export default function Videos() {
 
   return (
     <>
-      <div className="flex flex-col gap-2 ani">
+      <div className="flex flex-col gap-2 ani relative">
         <h1 className="pt-[8px] pb-[12px] text-[24px] border-t-4 text-center leading-[1] font-black">참여자 영상 아카이빙</h1>
         <div className="flex justify-end items-center video_btn_w text-[12px] fadeCover-0 ani_order_11 pb-2">
           <Select
@@ -266,12 +266,14 @@ export default function Videos() {
             onChange={setValue}
           />
         </div>
+        <div className="loader pre-loader w-[120px] absolute z-[0] top-[120px] left-1/2 -translate-x-1/2"></div>
         <div
           className={clsx(
             "grid grid-cols-3 mx-[-12px] justify-items-center md:px-0 video_w transition-opacity duration-500",
             visible ? "opacity-100" : "opacity-0"
           )}
         >
+
           {workshops.map((workshop) => {
             const liked = likedIds.includes(workshop.id);
             const isFresh = freshIds.includes(workshop.id);
