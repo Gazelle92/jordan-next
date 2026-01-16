@@ -16,16 +16,16 @@ export default function Home() {
 
   useEffect(() => {
 
-    if (process.env.NODE_ENV === "development") {
-      router.replace("/menu");
-      return;
-    }
+    /* if (process.env.NODE_ENV === "development") {
+       router.replace("/menu");
+       return;
+     }*/
 
     const interval = setInterval(() => {
       setTransitionState((prev) => {
-        if (prev === 2) {
+        if (prev === 1) {
           clearInterval(interval);
-          return 2;
+          return 1;
         }
         return prev + 1;
       });
@@ -34,26 +34,27 @@ export default function Home() {
     return () => clearInterval(interval);
   }, []);
 
-
-  if (process.env.NODE_ENV === "development") {
-    return null;
-  }
-
+  /*
+    if (process.env.NODE_ENV === "development") {
+      return null;
+    }
+  */
   switch (transitionState) {
-    case 0:
+    /*case 0:
       return (
-        <div className="flex flex-grow-1 items-center justify-center">
+
+        <div className="flex flex-grow-1 items-center justify-center opacity-0">
           <Logo width={100} height={100} />
         </div>
-      );
-    case 1:
+      );*/
+    case 0:
       return (
         <div className="flex flex-grow-1 items-center justify-center">
           <WhatDoYouWant width={180} height={104} className="mx-auto" />
           <Logo width={40} className={`main_logo absolute left-1/2 -translate-x-1/2 top-[26px] left- transition-opacity duration-500 ease-in-out ${fadeOut ? "opacity-0" : "opacity-100"}`} />
         </div>
       );
-    case 2:
+    case 1:
       return (
         <div className="flex flex-grow-1 items-center justify-center relative">
           <div className="absolute top-[26px] right-[28px]">
