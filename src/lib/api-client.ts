@@ -46,9 +46,13 @@ export type WorkshopPayload = {
   privacy_policy_agreed: boolean;
 };
 
-export type Workshop = WorkshopPayload & {
+export type Workshop = Omit<WorkshopPayload, "instagram_video_url"> & {
   id: number;
+  instagram_video_url?: string | null;
   like_count: number;
+  stream_video_url?: string | null;
+  stream_thumbnail_url?: string | null;
+  stream_status?: string | null;
   created_at?: string;
   updated_at?: string;
 };
