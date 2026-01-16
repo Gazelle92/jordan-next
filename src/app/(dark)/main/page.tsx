@@ -56,11 +56,12 @@ export default function Home() {
       return (
         <div className="flex flex-grow-1 items-center justify-center relative">
           <div className="absolute top-[26px] right-[28px]">
-            <Logo width={40} className="main_logo" />
+            <Logo width={40} className={`main_logo transition-opacity duration-500 ease-in-out ${fadeOut ? "opacity-0" : "opacity-100"}`} />
 
           </div>
           <div className="absolute top-0 left-[22px] w-[60px] h-full">
-            <Image src="/images/intro_tag.jpg" alt="houseofgreatness" fill sizes="100vh" className="h-full main_tag" />
+            <Image src="/images/intro_tag.jpg" alt="houseofgreatness" fill sizes="100vh" className={`h-full main_tag transition-opacity duration-500 ease-in-out ${fadeOut ? "opacity-0" : "opacity-100"}`} />
+
           </div>
 
           <video
