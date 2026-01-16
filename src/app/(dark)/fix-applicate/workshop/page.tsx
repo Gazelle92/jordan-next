@@ -59,7 +59,7 @@ export default function WorkshopEditPage() {
         birth_date: match.birth_date,
         phone_number: match.phone_number,
         battle_genre: match.battle_genre ?? "",
-        instagram_video_url: match.instagram_video_url,
+        instagram_video_url: match.instagram_video_url ?? "",
         what_do_you_want: match.what_do_you_want,
       });
       setAuthInfo(verifyForm);
