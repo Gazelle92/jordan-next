@@ -50,6 +50,7 @@ export default function Home() {
       return (
         <div className="flex flex-grow-1 items-center justify-center">
           <WhatDoYouWant width={180} height={104} className="mx-auto" />
+          <Logo width={40} className={`main_logo absolute left-1/2 -translate-x-1/2 top-[26px] left- transition-opacity duration-500 ease-in-out ${fadeOut ? "opacity-0" : "opacity-100"}`} />
         </div>
       );
     case 2:
@@ -88,9 +89,9 @@ export default function Home() {
               }
             }}
           />
-          <div className="absolute bottom-15 left-0 right-0">
+          {/*<div className="absolute bottom-15 left-0 right-0">
             <AllOrEverything className="w-full" />
-          </div>
+          </div>*/}
         </div>
       );
   }
