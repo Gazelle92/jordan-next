@@ -11,6 +11,7 @@ import { Textarea } from "./textarea";
 import clsx from "clsx";
 import { jordan } from "../font";
 import { createWorkshop } from "@/lib/api-client";
+import { PrivacyPolicy } from "@/ui/components/privacy-policy";
 
 const initialForm = {
   name: "",
@@ -205,10 +206,27 @@ export const ApplicateWorkshop = ({ }) => {
                   }))
                 }
               >
-                <a className="underline ">개인정보 수집</a>에 동의합니다.
+                <PrivacyPolicy />에 동의합니다.
               </Checkbox>
               {error && <span className="text-[12px]">{error}</span>}
             </div>
+
+            <div className="flex flex-col">
+              <Checkbox
+                className="chbx_w"
+                checked={form.privacy_policy_agreed}
+                onChange={(event) =>
+                  setForm((prev) => ({
+                    ...prev,
+                    privacy_policy_agreed: event.target.checked,
+                  }))
+                }
+              >
+                <span className="w-[calc(100%-20px)]">본인이 업로드한 릴스 콘텐츠의 HOUSE OF GREATNESS 리캡 영상 및 공식 채널 활용에 동의합니다.</span>
+              </Checkbox>
+              {error && <span className="text-[12px]">{error}</span>}
+            </div>
+
             <div className="flex-grow-1" />
             <Button disabled={isSubmitting} onClick={handleSubmit}>
               {isSubmitting ? "신청 중..." : "신청하기"}

@@ -2,7 +2,7 @@
 
 import { useTransitionRouter } from "next-view-transitions";
 import { useEffect, useState } from "react";
-
+import Image from "next/image";
 import AllOrEverything from "@/ui/svg/all_or_everything.svg";
 import Logo from "@/ui/svg/logo.svg";
 import WhatDoYouWant from "@/ui/svg/what_do_you_want.svg";
@@ -55,16 +55,22 @@ export default function Home() {
     case 2:
       return (
         <div className="flex flex-grow-1 items-center justify-center relative">
-          <div className="absolute top-0 right-0 p-5">
-            <Logo width={40} />
+          <div className="absolute top-[26px] right-[28px]">
+            <Logo width={40} className="main_logo" />
+
           </div>
+          <div className="absolute top-0 left-[22px] w-[60px] h-full">
+            <Image src="/images/intro_tag.jpg" alt="houseofgreatness" fill sizes="100vh" className="h-full main_tag" />
+          </div>
+
           <video
-            src="/video/bada_sample2.mp4"
+            src="/video/bada_sample3.mp4"
             autoPlay
             muted
             playsInline
             className={`w-dvw h-dvh object-cover transition-opacity duration-500 ease-in-out ${fadeOut ? "opacity-0" : "opacity-100"
               }`}
+
             onTimeUpdate={(e) => {
               const video = e.currentTarget;
 
