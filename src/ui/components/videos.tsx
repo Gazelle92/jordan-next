@@ -1,11 +1,12 @@
 "use client";
 
 import Script from "next/script";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { VideoDialog } from "./video-dialog";
 import { ApplicateWorkshop } from "./applicate-workshop";
 import { Select } from "./select";
 import clsx from "clsx";
+import Hls from "hls.js";
 import {
   listWorkshops,
   likeWorkshop,
@@ -13,9 +14,9 @@ import {
   Workshop,
 } from "@/lib/api-client";
 
-const toInstagramEmbedUrl = (url: string) => {
+const toInstagramEmbedUrl = (url?: string | null) => {
   if (!url) {
-    return url;
+    return "";
   }
   try {
     const parsed = new URL(url);
@@ -39,9 +40,9 @@ const toInstagramEmbedUrl = (url: string) => {
   }
 };
 
-const toInstagramPermalinkUrl = (url: string) => {
+const toInstagramPermalinkUrl = (url?: string | null) => {
   if (!url) {
-    return url;
+    return "";
   }
   try {
     const parsed = new URL(url);
@@ -79,13 +80,24 @@ const modalEmbedStyle = {
 };
 
 const Thumbnail = ({
-  videoUrl,
+  instagramUrl,
+  streamVideoUrl,
+  streamThumbnailUrl,
+  streamStatus,
   embedReady,
 }: {
-  videoUrl: string;
+  instagramUrl: string;
+  streamVideoUrl?: string | null;
+  streamThumbnailUrl?: string | null;
+  streamStatus?: string | null;
   embedReady: boolean;
 }) => {
   const [open, setOpen] = useState(false);
+  const [canPlayHls, setCanPlayHls] = useState(false);
+  const isStreamReady = !!streamVideoUrl;
+  const canPlayStream = isStreamReady && (canPlayHls || Hls.isSupported());
+  const hasInstagram = !!instagramUrl;
+  const videoRef = useRef<HTMLVideoElement | null>(null);
 
   useEffect(() => {
     if (typeof window === "undefined") {
@@ -95,7 +107,7 @@ const Thumbnail = ({
       instgrm?: { Embeds?: { process: () => void } };
     };
     win.instgrm?.Embeds?.process();
-  }, [videoUrl]);
+  }, [instagramUrl]);
 
   useEffect(() => {
     if (!open || typeof window === "undefined") {
@@ -107,20 +119,63 @@ const Thumbnail = ({
     win.instgrm?.Embeds?.process();
   }, [open]);
 
+  useEffect(() => {
+    if (typeof document === "undefined") {
+      return;
+    }
+    const video = document.createElement("video");
+    setCanPlayHls(
+      video.canPlayType("application/vnd.apple.mpegURL") !== ""
+    );
+  }, []);
 
-
-
+  useEffect(() => {
+    if (!open || !isStreamReady || !streamVideoUrl) {
+      return;
+    }
+    const video = videoRef.current;
+    if (!video) {
+      return;
+    }
+    if (canPlayHls) {
+      video.src = streamVideoUrl;
+      void video.play().catch(() => {});
+      return;
+    }
+    if (!Hls.isSupported()) {
+      return;
+    }
+    const hls = new Hls();
+    hls.loadSource(streamVideoUrl);
+    hls.attachMedia(video);
+    hls.on(Hls.Events.MANIFEST_PARSED, () => {
+      void video.play().catch(() => {});
+    });
+    return () => {
+      hls.destroy();
+    };
+  }, [open, isStreamReady, streamVideoUrl, canPlayHls]);
 
   return (
     <>
       <div className="relative aspect-120/180 w-[120%] h-[120%] overflow-hidden  bg-black ">
         <div className="absolute inset-0 pointer-events-none bg-gradient-to-b from-black/25 via-transparent to-black/35" />
-        <blockquote
-          className={`instagram-media w-full h-full pointer-events-none ig-embed-list !min-w-0 transition-opacity duration-300 ${embedReady ? "opacity-100" : "opacity-0"}`}
-          data-instgrm-permalink={toInstagramPermalinkUrl(videoUrl)}
-          data-instgrm-version="14"
-          style={{ ...listEmbedStyle, minWidth: "unset" }}
-        />
+        {isStreamReady && streamThumbnailUrl ? (
+          <img
+            src={streamThumbnailUrl}
+            alt=""
+            className="w-full h-full object-cover"
+          />
+        ) : hasInstagram ? (
+          <blockquote
+            className={`instagram-media w-full h-full pointer-events-none ig-embed-list !min-w-0 transition-opacity duration-300 ${embedReady ? "opacity-100" : "opacity-0"}`}
+            data-instgrm-permalink={toInstagramPermalinkUrl(instagramUrl)}
+            data-instgrm-version="14"
+            style={{ ...listEmbedStyle, minWidth: "unset" }}
+          />
+        ) : (
+          <div className="w-full h-full bg-black" />
+        )}
         <button
           type="button"
           className="absolute inset-0"
@@ -132,12 +187,34 @@ const Thumbnail = ({
         <div className="aspect-320/500 w-full h-auto max-w-[400px] here_test">
           <div className="relative w-full h-full overflow-hidden  bg-black">
             <div className="absolute inset-0 pointer-events-none bg-gradient-to-b from-black/30 via-transparent to-black/40" />
-            <blockquote
-              className="instagram-media w-full h-full ig-embed-modal"
-              data-instgrm-permalink={toInstagramPermalinkUrl(videoUrl)}
-              data-instgrm-version="14"
-              style={modalEmbedStyle}
-            />
+            {canPlayStream ? (
+              <video
+                className="absolute inset-0 w-full h-full object-cover"
+                ref={videoRef}
+                controls
+                playsInline
+                preload="metadata"
+                poster={streamThumbnailUrl ?? undefined}
+              >
+                {canPlayHls && (
+                  <source
+                    src={streamVideoUrl ?? undefined}
+                    type="application/vnd.apple.mpegURL"
+                  />
+                )}
+              </video>
+            ) : hasInstagram ? (
+              <blockquote
+                className="instagram-media w-full h-full ig-embed-modal"
+                data-instgrm-permalink={toInstagramPermalinkUrl(instagramUrl)}
+                data-instgrm-version="14"
+                style={modalEmbedStyle}
+              />
+            ) : (
+              <div className="absolute inset-0 flex items-center justify-center text-[12px] text-white/70">
+                영상이 준비중입니다.
+              </div>
+            )}
           </div>
         </div>
       </VideoDialog>
@@ -277,7 +354,13 @@ export default function Videos() {
           )}
         >
 
-          {workshops.map((workshop) => {
+          {workshops
+            .filter(
+              (workshop) =>
+                !!workshop.stream_video_url &&
+                !!workshop.stream_thumbnail_url
+            )
+            .map((workshop) => {
             const liked = likedIds.includes(workshop.id);
             const isFresh = freshIds.includes(workshop.id);
             const freshIndex = freshOrder[workshop.id] ?? 0;
@@ -288,7 +371,10 @@ export default function Videos() {
                 key={workshop.id}
               >
                 <Thumbnail
-                  videoUrl={toInstagramEmbedUrl(workshop.instagram_video_url)}
+                  instagramUrl={toInstagramEmbedUrl(workshop.instagram_video_url)}
+                  streamVideoUrl={workshop.stream_video_url}
+                  streamThumbnailUrl={workshop.stream_thumbnail_url}
+                  streamStatus={workshop.stream_status}
                   embedReady={embedReady}
                 />
                 <button

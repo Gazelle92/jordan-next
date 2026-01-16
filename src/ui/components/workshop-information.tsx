@@ -1,6 +1,3 @@
-import { jordan } from "@/ui/font";
-import clsx from "clsx";
-
 export default function WorkshopInformation() {
   return (
     <div className="flex flex-col">
