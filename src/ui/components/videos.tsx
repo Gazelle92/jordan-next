@@ -3,7 +3,7 @@
 import Script from "next/script";
 import { useEffect, useRef, useState } from "react";
 import { VideoDialog } from "./video-dialog";
-import { ApplicateWorkshop } from "./applicate-workshop";
+
 import { Select } from "./select";
 import Image from "next/image";
 import clsx from "clsx";
@@ -446,7 +446,7 @@ export default function Videos() {
             <span className="text-[12px]">등록된 영상이 없습니다.</span>
           )}
         </div>
-        <ApplicateWorkshop />
+
 
       </div>
     </>

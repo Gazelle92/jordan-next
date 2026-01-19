@@ -7,7 +7,7 @@ import WorkshopInformation from "@/ui/components/workshop-information";
 import { Event } from "@/ui/components/event";
 import Videos from "@/ui/components/videos";
 import { FullDialog2 } from "@/ui/components/full-dialog2";
-
+import { ApplicateWorkshop } from "@/ui/components/applicate-workshop";
 export default function Workshop() {
   return (
     <div className="flex flex-col">
@@ -25,6 +25,7 @@ export default function Workshop() {
 
         <Videos />
       </div>
+      <ApplicateWorkshop />
     </div>
   );
 }
