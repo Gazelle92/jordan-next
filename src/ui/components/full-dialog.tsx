@@ -24,6 +24,7 @@ export const FullDialog = ({ open, onClose, reverse, children }: FullDialogProps
   }, [open]);
 
   // Close on click outside
+  /*
   useEffect(() => {
     function handleClick(e: MouseEvent) {
       if (
@@ -40,7 +41,7 @@ export const FullDialog = ({ open, onClose, reverse, children }: FullDialogProps
     }
     return () => document.removeEventListener("mousedown", handleClick);
   }, [open, onClose]);
-
+*/
   return (
     <div
       className={`fixed max-w-md mx-auto p-5 flex flex-col inset-0 z-50 justify-center transition-all duration-400 ${open

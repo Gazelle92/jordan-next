@@ -101,12 +101,12 @@ export const ApplicateBattle = ({ }) => {
                 </div>
               </div>
               <div className="border-b-1 flex justify-between px-1.5 py-1 text-[20px] ">
-                <div className="whitespace-nowrap font-bold">
+                <div className="whitespace-nowrap">
                   이름
                 </div>
                 <Input
                   type="text"
-                  placeholder="이름을 입력해주세요."
+                  placeholder="한글/영문"
                   value={form.name}
                   className="placeholder:text-[#ff3b49] font-extralight"
                   onChange={(event) =>
@@ -120,7 +120,7 @@ export const ApplicateBattle = ({ }) => {
                 </div>
                 <Input
                   type="text"
-                  placeholder="생년월일을 입력해주세요."
+                  placeholder="ex) YYYYMMDD"
                   value={form.birth_date}
                   className="placeholder:text-[#ff3b49] font-extralight text-[20px]"
                   onChange={(event) =>
@@ -137,7 +137,7 @@ export const ApplicateBattle = ({ }) => {
                 </div>
                 <Input
                   type="text"
-                  placeholder="배틀 장르를 입력해주세요."
+                  placeholder="ex) 왁킹"
                   value={form.battle_genre}
                   className="placeholder:text-[#ff3b49] font-extralight text-[20px]"
                   onChange={(event) =>
@@ -154,7 +154,7 @@ export const ApplicateBattle = ({ }) => {
                 </div>
                 <Input
                   type="text"
-                  placeholder="휴대폰을 입력해주세요."
+                  placeholder="ex) 01012345678"
                   value={form.phone_number}
                   className="placeholder:text-[#ff3b49] font-extralight text-[20px]"
                   onChange={(event) =>
@@ -171,7 +171,7 @@ export const ApplicateBattle = ({ }) => {
                   인스타그램 아이디
                 </div>
                 <Input
-                  placeholder="인스타그램 아이디를 입력해주세요."
+                  placeholder="ex) @JORDAN"
                   value={form.instagram_id}
                   className="placeholder:text-[#ff3b49] font-extralight text-[20px]"
                   onChange={(event) =>
@@ -194,7 +194,7 @@ export const ApplicateBattle = ({ }) => {
                 </div>
                 <Input
                   type="text"
-                  placeholder="이름을 입력해주세요."
+                  placeholder="한글/영문"
                   value={form.member2_name}
                   className="placeholder:text-[#ff3b49] font-extralight text-[20px]"
                   onChange={(event) =>
@@ -208,7 +208,7 @@ export const ApplicateBattle = ({ }) => {
                 </div>
                 <Input
                   type="text"
-                  placeholder="생년월일을 입력해주세요."
+                  placeholder="ex) YYYYMMDD"
                   value={form.member2_birth_date}
                   className="placeholder:text-[#ff3b49] font-extralight text-[20px]"
                   onChange={(event) =>
@@ -225,7 +225,7 @@ export const ApplicateBattle = ({ }) => {
                 </div>
                 <Input
                   type="text"
-                  placeholder="배틀 장르를 입력해주세요."
+                  placeholder="ex) 왁킹"
                   value={form.member2_battle_genre}
                   className="placeholder:text-[#ff3b49] font-extralight text-[20px]"
                   onChange={(event) =>
@@ -242,7 +242,7 @@ export const ApplicateBattle = ({ }) => {
                 </div>
                 <Input
                   type="text"
-                  placeholder="휴대폰을 입력해주세요."
+                  placeholder="ex) 01012345678"
                   value={form.member2_phone_number}
                   className="placeholder:text-[#ff3b49] font-extralight text-[20px]"
                   onChange={(event) =>
@@ -259,7 +259,7 @@ export const ApplicateBattle = ({ }) => {
                   인스타그램 아이디
                 </div>
                 <Input
-                  placeholder="인스타그램 아이디를 입력해주세요."
+                  placeholder="ex) @JORDAN"
                   value={form.member2_instagram_id}
                   className="placeholder:text-[#ff3b49] font-extralight text-[20px]"
                   onChange={(event) =>

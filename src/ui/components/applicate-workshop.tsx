@@ -104,7 +104,7 @@ export const ApplicateWorkshop = ({ }) => {
                 </div>
                 <Input
                   type="text"
-                  placeholder="이름을 입력해주세요."
+                  placeholder="한글/영문"
                   value={form.name}
                   className="placeholder:text-[#ff3b49] font-extralight text-[20px]"
                   onChange={(event) =>
@@ -118,7 +118,7 @@ export const ApplicateWorkshop = ({ }) => {
                 </div>
                 <Input
                   type="text"
-                  placeholder="생년월일을 입력해주세요."
+                  placeholder="ex) YYYYMMDD"
                   value={form.birth_date}
                   className="placeholder:text-[#ff3b49] font-extralight text-[20px]"
                   onChange={(event) =>
@@ -135,7 +135,7 @@ export const ApplicateWorkshop = ({ }) => {
                 </div>
                 <Input
                   type="text"
-                  placeholder="휴대폰을 입력해주세요."
+                  placeholder="ex) 01012345678"
                   value={form.phone_number}
                   className="placeholder:text-[#ff3b49] font-extralight text-[20px]"
                   onChange={(event) =>
@@ -168,9 +168,9 @@ export const ApplicateWorkshop = ({ }) => {
                   인스타그램 영상 링크
                 </div>
                 <Textarea
-                  placeholder="인스타그램 영상 링크를 입력해주세요."
+                  placeholder="참여하신 인스타그램 릴스 게시물 링크를 붙여넣어주세요."
                   value={form.instagram_video_url}
-                  className="placeholder:text-[#ff3b49] font-extralight text-[20px] resize-none"
+                  className="placeholder:text-[#ff3b49] font-extralight text-[12px] resize-none"
                   onChange={(event) =>
                     setForm((prev) => ({
                       ...prev,

@@ -23,7 +23,7 @@ export const Event = ({ }) => {
   return (
     <>
       <Button className="pretendard" onClick={() => setOpen(true)}>
-        월드오브플라이트 참여시 혜택
+        조던 월드 오브 플라이트 서울 홍대<br /> & 카시나 성수점<br />스토어 챌린지 참여 안내
       </Button>
       <Button className="pretendard" reverse>챌린지 음원 다운로드</Button>
       <FullDialog open={open} onClose={() => setOpen(false)}>
@@ -57,7 +57,7 @@ export const Event = ({ }) => {
                 <span className="text-[15px] leading-[1]">서울 마포구 양화로 161 1층</span>
                 <h1 className="text-[24px] font-black leading-[1]">조던 카시나 성수점</h1>
                 <span className="text-[15px] leading-[1]">서울 성동구 성수이로7길 41</span>
-                <div className="absolute left-0 bottom-0 h-[1px] border-b-1 border_el ani_order_9"></div>
+                <div className="absolute left-0 bottom-0 h-[1px] border-b-4 border_el ani_order_9"></div>
               </div>
             </div>
 
@@ -65,9 +65,9 @@ export const Event = ({ }) => {
               조던 월드 오브 플라이트 서울 홍대와 카시나 성수점에 마련된 전용 챌린지 공간에서 메인 디렉터 ‘바다’의 시그니처 코레오그래피로 챌린지에 참여해 보세요.
             </div>
 
-            <div className="text-[13px] font-semibold whitespace-pre-wrap break-keep ani border-t-4">
+            <div className="text-[13px] font-semibold whitespace-pre-wrap break-keep ani border-t-0">
               <div className="text-[22px] px-4 pt-[12px] font-black text-center">
-                {"REGISTRATION | 참가 신청"}
+                {"REGISTRATION | 현장 참여 신청"}
               </div>
 
               <div className={clsx("txt-w ", openMap[0] && "show")}>

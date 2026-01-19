@@ -53,17 +53,17 @@ const Profile = ({ name, instagram, avatarProps, small }: ProfileProps) => {
 const judges: ProfileProps[] = [
   {
     name: "EUN.G",
-    instagram: "@eun.g_popping",
+    instagram: "eun.g_popping",
     avatarProps: { src: "/images/judge_1.png", size: 60 },
   },
   {
     name: "WAACKXXXY",
-    instagram: "@waackxx_xy",
+    instagram: "waackxx_xy",
     avatarProps: { src: "/images/judge_2.png", size: 60 },
   },
   {
     name: "BABYSLEEK",
-    instagram: "@babysleek",
+    instagram: "babysleek",
     avatarProps: { src: "/images/judge_3.png", size: 60 },
   },
 ];
@@ -77,14 +77,14 @@ const judges: ProfileProps[] = [
 const MCs: ProfileProps[] = [
   {
     name: "DU LOCK",
-    instagram: "@dulock87",
+    instagram: "dulock87",
     avatarProps: { src: "/images/mc_1.png", size: 60 },
   },
 ];
 
 const DJs: ProfileProps[] = Array.from({ length: 1 }, (_, index) => ({
   name: "MARCIA",
-  instagram: "@dj_marcia",
+  instagram: "dj_marcia",
   avatarProps: { src: "/images/dj_1.png", size: 60 },
 }));
 
@@ -92,42 +92,42 @@ const DJs: ProfileProps[] = Array.from({ length: 1 }, (_, index) => ({
 const guests: ProfileProps[] = [
   {
     name: "LEESE",
-    instagram: "@leese_lee",
+    instagram: "leese_lee",
     avatarProps: { src: "/images/guest_1.png", size: 60 },
   },
   {
     name: "RIHA",
-    instagram: "@riha_rtist",
+    instagram: "riha_rtist",
     avatarProps: { src: "/images/guest_2.png", size: 60 },
   },
   {
     name: "SIMMON",
-    instagram: "@simmon__03",
+    instagram: "simmon__03",
     avatarProps: { src: "/images/guest_3.png", size: 60 },
   },
   {
     name: "CELINE",
-    instagram: "@ff_celine_",
+    instagram: "ff_celine_",
     avatarProps: { src: "/images/guest_4.png", size: 60 },
   },
   {
     name: "YUJIN",
-    instagram: "@yujin_dancer",
+    instagram: "yujin_dancer",
     avatarProps: { src: "/images/guest_5.png", size: 60 },
   },
   {
     name: "RYU",
-    instagram: "@l_like__ryu",
+    instagram: "l_like__ryu",
     avatarProps: { src: "/images/guest_6.png", size: 60 },
   },
   {
     name: "CERA",
-    instagram: "@cera___",
+    instagram: "cera___",
     avatarProps: { src: "/images/guest_7.png", size: 60 },
   },
   {
     name: "LEEVER",
-    instagram: "@likealeever",
+    instagram: "likealeever",
     avatarProps: { src: "/images/guest_8.png", size: 60 },
   },
 ];

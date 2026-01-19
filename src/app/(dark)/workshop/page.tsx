@@ -2,10 +2,11 @@ import { HistoryBack } from "@/ui/components/history-back";
 
 import ChoreoGraphyWorkshop from "@/ui/svg/choreo_graphy_workshop_2.svg";
 import Logo from "@/ui/svg/logo.svg";
-
+import { PrivacyPolicy } from "@/ui/components/privacy-policy";
 import WorkshopInformation from "@/ui/components/workshop-information";
 import { Event } from "@/ui/components/event";
 import Videos from "@/ui/components/videos";
+import { FullDialog2 } from "@/ui/components/full-dialog2";
 
 export default function Workshop() {
   return (
@@ -21,6 +22,7 @@ export default function Workshop() {
           <WorkshopInformation />
           <Event />
         </div>
+
         <Videos />
       </div>
     </div>

@@ -89,7 +89,7 @@ export const ReservateBattle = ({ }) => {
                 </div>
                 <Input
                   type="text"
-                  placeholder="이름을 입력해주세요."
+                  placeholder="한글/영문"
                   value={form.name}
                   className="placeholder:text-[#ff3b49] font-extralight text-[20px] resize-none"
                   onChange={(event) =>
@@ -103,7 +103,7 @@ export const ReservateBattle = ({ }) => {
                 </div>
                 <Input
                   type="text"
-                  placeholder="생년월일을 입력해주세요."
+                  placeholder="ex) YYYYMMDD"
                   value={form.birth_date}
                   className="placeholder:text-[#ff3b49] font-extralight text-[20px] resize-none"
                   onChange={(event) =>
@@ -120,7 +120,7 @@ export const ReservateBattle = ({ }) => {
                 </div>
                 <Input
                   type="text"
-                  placeholder="휴대폰을 입력해주세요."
+                  placeholder="ex) 01012345678"
                   value={form.phone_number}
                   className="placeholder:text-[#ff3b49] font-extralight text-[20px] resize-none"
                   onChange={(event) =>
@@ -158,7 +158,7 @@ export const ReservateBattle = ({ }) => {
                   }))
                 }
               >
-                <a className="underline ">개인정보 수집</a>에 동의합니다.
+                <a className="underline ">개인정보 수집・이용 및 콘텐츠 활용</a>에 동의합니다.
               </Checkbox>
               {error && <span className="text-[12px]">{error}</span>}
             </div>

@@ -5,6 +5,7 @@ import { useEffect, useRef, useState } from "react";
 import { VideoDialog } from "./video-dialog";
 import { ApplicateWorkshop } from "./applicate-workshop";
 import { Select } from "./select";
+import Image from "next/image";
 import clsx from "clsx";
 import Hls from "hls.js";
 import {
@@ -346,7 +347,15 @@ export default function Videos() {
             onChange={setValue}
           />
         </div>
-        <div className="loader pre-loader w-[120px] absolute z-[0] top-[120px] left-1/2 -translate-x-1/2"></div>
+        <div className="pre-loader w-[120px] absolute z-[0] top-[100px] left-1/2 -translate-x-1/2">
+          <Image
+            src="/images/loading.gif"
+            alt="loading"
+            className="mx-auto mt-[19px]"
+            width={120}
+            height={120}
+          />
+        </div>
         <div
           className={clsx(
             "grid grid-cols-3 mx-[-12px] justify-items-center md:px-0 video_w transition-opacity duration-500",
@@ -405,7 +414,15 @@ export default function Videos() {
             }}
           >
             <div className={`btn_arrow ${isLoading ? "hidden" : "block"}`} />
-            <div className={`loader mx-auto ${isLoading ? "block" : "hidden"}`} />
+            <div className={`mx-auto ${isLoading ? "block" : "hidden"}`}>
+              <Image
+                src="/images/loading.gif"
+                alt="loading"
+                className="mx-auto mt-[20px]"
+                width={120}
+                height={120}
+              />
+            </div>
           </div>
         )}
 

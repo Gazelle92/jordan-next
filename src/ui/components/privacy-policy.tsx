@@ -11,13 +11,13 @@ import { jordan } from "../font";
 
 
 export const PrivacyPolicy = ({ }) => {
-  const [open, setOpen] = useState(false);
+  const [open2, setOpen] = useState(false);
 
 
   return (
     <>
       <span onClick={() => setOpen(true)} className="underline">개인정보 수집</span>
-      <FullDialog2 open={open} onClose={() => setOpen(false)}>
+      <FullDialog2 open2={open2} onClose={() => setOpen(false)}>
 
         <div className="flex flex-col gap-5 flex-grow-1 h-[calc(100%-60px)]">
           <h4 className="font-black text-[24px] text-center leading-[1]">개인정보 처리방침</h4>
