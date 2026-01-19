@@ -12,6 +12,13 @@ import { jordan } from "../font";
 
 export const Event = ({ }) => {
   const [open, setOpen] = useState(false);
+  const [openMap, setOpenMap] = useState<Record<number, boolean>>({});
+  const toggle = (idx: number) => {
+    setOpenMap(prev => ({
+      ...prev,
+      [idx]: !prev[idx],
+    }));
+  };
 
   return (
     <>
@@ -20,19 +27,19 @@ export const Event = ({ }) => {
       </Button>
       <Button className="pretendard" reverse>챌린지 음원 다운로드</Button>
       <FullDialog open={open} onClose={() => setOpen(false)}>
-        <div className="flex flex-col gap-5 h-full relative">
-          <h4 className="font-black text-[24px] text-center leading-[1.3]">
-            월드오브플라이트
-            <br />
-            참여 이벤트
+        <div className="flex flex-col h-full relative">
+          <h4 className="font-black text-[24px] text-center leading-[1.3] pb-6">
+            조던 월드 오브 플라이트 서울<br />홍대 & 카시나 성수점<br />스토어 챌린지 참여 안내
           </h4>
-          <div className="border-t-4 text-center font-black text-[15px] pt-2 pb-3">
-            <div className="flex flex-col gap-7">
-              리워드
+          <div className="border-t-4 text-center font-black text-[15px] py-6">
+            <div className="flex flex-col leading-[1] ">
+              <span className="text-[15px] pb-1 font-semibold">리워드</span>
+              <h1 className="text-[18px] font-black">휴대폰 흡착패드 & 클립형 라이트</h1>
+
               <Image
-                src="/images/event.png"
+                src="/images/event_2.png"
                 alt="reward"
-                className="mx-auto"
+                className="mx-auto mt-[19px]"
                 width={270}
                 height={140}
               />
@@ -42,66 +49,206 @@ export const Event = ({ }) => {
           <div className="flex flex-col">
             <hr className="border-2" />
             <div className="flex flex-col gap-1.5">
-              <div className="flex flex-col gap-2 text-center font-black pt-[15px] pb-[20px] relative">
+              <div className="flex flex-col gap-2 text-center font-black py-6 relative">
                 <span className="text-[15px] leading-[1]">일시</span>
-                <h1 className="text-[24px] font-black leading-[1]">2026.02.07</h1>
+                <h1 className="text-[24px] font-black leading-[1] pb-2">2026.01.21 - 01.27</h1>
                 <span className="text-[15px] leading-[1]">장소</span>
-                <h1 className="text-[24px] font-black leading-[1]">앤더슨씨 성수</h1>
-                <span className="text-[15px] leading-[1]">서울특별시 성동구 성수일로6길 36</span>
+                <h1 className="text-[24px] font-black leading-[1]">조던 월드 오브 플라이트 서울 홍대</h1>
+                <span className="text-[15px] leading-[1]">서울 마포구 양화로 161 1층</span>
+                <h1 className="text-[24px] font-black leading-[1]">조던 카시나 성수점</h1>
+                <span className="text-[15px] leading-[1]">서울 성동구 성수이로7길 41</span>
                 <div className="absolute left-0 bottom-0 h-[1px] border-b-1 border_el ani_order_9"></div>
               </div>
             </div>
-            <div className="py-8 text-[13px] font-semibold whitespace-pre-wrap break-keep ani">
-              <div>조던 월드 오브 플라이트 서울 홍대에 마련된 INFRARED를 표현한 무대 위에서 INFRARED CHOREO 챌린지에 참여해보세요.</div>
-              <br />
-              <div>
-                메인 디렉터 바다가 직접 설계한 시그니처 코레오그래피를 따라 각자의 움직임을 현장에서
-                퍼포먼스로 기록할 수 있습니다. 이 과정은 단순한 기록을 넘어 CHOREOGRAPHY WORKSHOP
-                신청으로 이어지며, 즉각적인 리워드 혜택도 함께 제공됩니다.
+
+            <div className="pt-[19] pb-[25] border-b-1 px-4 text-[13px] font-semibold leading-[1.5]">
+              조던 월드 오브 플라이트 서울 홍대와 카시나 성수점에 마련된 전용 챌린지 공간에서 메인 디렉터 ‘바다’의 시그니처 코레오그래피로 챌린지에 참여해 보세요.
+            </div>
+
+            <div className="text-[13px] font-semibold whitespace-pre-wrap break-keep ani border-t-4">
+              <div className="text-[22px] px-4 pt-[12px] font-black text-center">
+                {"REGISTRATION | 참가 신청"}
+              </div>
+
+              <div className={clsx("txt-w ", openMap[0] && "show")}>
+                <div className="txt-inner px-4 leading-[1.5]">
+                  <div className="dot-sp-1 !font-semibold !text-[13px]">
+                    {"참가 대상 : 조던 월드 오브 플라이트 서울 홍대 혹은 카시나 성수점을 방문하는 여성 댄서 누구나"}
+                  </div>
+                  <div className="dot-sp-1 !font-semibold !text-[13px]">
+                    {"참여 기간 : 1월 21일(수) ~ 1월 27일(화)"}
+                  </div>
+                  <div className="dot-sp-1 !font-semibold !text-[13px]">
+                    {"선정 방식 : 메인 디렉터 ‘바다’가 신청자 중 총 60명을 직접 선정"}
+                  </div>
+                  <div className="dot-sp-1 !font-semibold !text-[13px]">
+                    {"참가자 발표 : 1월 30일(금), 공식 웹사이트 공지 및 개별 문자 발송"}
+                  </div>
+                  <div className="dot-sp-1 !font-semibold !text-[13px]">
+                    {"신청 방법 : 인스타그램 챌린지 참여 후 공식 웹사이트 접수"}
+                  </div>
+
+                  <br />
+
+                  <div className="font-semibold text-[16px]">
+                    {"STEP 1."}
+                  </div>
+                  <div className="font-semibold text-[13px]">
+                    {"조던 월드 오브 플라이트 서울 홍대 혹은 카시나 성수점 내 별도 셋업 공간에서 챌린지 영상 촬영"}
+                  </div>
+
+                  <div className="font-semibold text-[16px]">
+                    {"STEP 2."}
+                  </div>
+                  <div className="font-semibold text-[13px]">
+                    {"본인 인스타그램 계정에 ‘게시물’ 또는 ‘릴스’로 업로드 (공개 계정 필수)"}
+                  </div>
+
+                  <div className="font-semibold text-[16px]">
+                    {"STEP 3."}
+                  </div>
+                  <div className="font-semibold text-[13px]">
+                    {"공식 웹사이트 내 신청서에 해당 게시물 링크를 제출하면 신청 완료"}
+                  </div>
+
+                  <br />
+
+                  <div className="font-semibold text-[13px]">
+                    {"※ 신청 영상은 홈페이지 내 ‘참여자 아카이빙 영상’에서 확인 가능하며, 1인 1회 참여 가능합니다."}
+                    <br />
+                    {"※ 스토리로 업로드한 영상은 신청이 완료되지 않으니 유의해 주시기 바랍니다"}
+
+                  </div>
+                </div>
+
+                <div
+                  className="txt-btn-w w-full flex justify-center mx-auto pb-[30px] border-b-1"
+                  onClick={() => toggle(0)}
+                >
+                  <div className="btn_arrow" />
+                </div>
+              </div>
+
+              <div className="text-[22px] px-4 pt-[12px] font-black text-center">
+                HOW TO CHALLENGE <br />| 챌린지 참여 방법
+              </div>
+
+              <div className={clsx("txt-w", openMap[1] && "show")}>
+                <div className="txt-inner px-4 leading-[1.5]">
+                  <div className="font-black text-[16px]">
+                    {"1. 음원 선택"}
+                  </div>
+                  <div className="font-semibold text-[13px]">
+                    {"바다(@badalee__)의 인스타그램 챌린지 영상에 사용된 ‘오리지널 오디오’를 사용해 주세요."}
+                  </div>
+
+                  <br />
+
+                  <div className="font-black text-[16px]">
+                    {"2. 영상 업로드"}
+                  </div>
+                  <div className="font-semibold text-[13px]">
+                    {"촬영한 챌린지 영상을 선택해 업로드 단계를 진행해 주세요."}
+                  </div>
+
+                  <br />
+
+                  <div className="font-black text-[16px]">
+                    {"3. 스티커 추가"}
+                  </div>
+                  <div className="font-semibold text-[13px] whitespace-pre-wrap">
+                    {"릴스 업로드 화면 하단의 [스티커] 아이콘 클릭 후, 검색창에 'HOUSEOFGREATNESS' 입력\n전용 GIF 스티커를 선택하여 가이드라인에 맞춰 크기와 위치를 조정해 주세요."}
+                  </div>
+
+                  <br />
+
+                  <div className="font-black text-[16px]">
+                    {"4. 업로드 완료"}
+                  </div>
+                  <div className="font-semibold text-[13px]">
+                    {"필수 과정이 완료된 영상을 인스타그램에 최종 업로드해 주세요."}
+                  </div>
+                </div>
+
+                <div
+                  className="txt-btn-w w-full flex justify-center mx-auto pb-[30px] border-b-1"
+                  onClick={() => toggle(1)}
+                >
+                  <div className="btn_arrow" />
+                </div>
               </div>
 
               <br />
 
-              <div>[REGISTRATION]</div>
-              <div className="dot-sp-1">참여 대상: 조던 월드 오브 플라이트 홍대 방문 여성 댄서 누구나</div>
-              <div className="dot-sp-1">참여 기간: 1월 21일(수)~1월 27일(화)</div>
-              <div className="dot-sp-1">
-                참여 방법: 매장 내 셋업을 활용해 챌린지 영상 촬영 후 인스타그램 ‘게시물’ 또는 ‘릴스’ 형태로 업로드
-              </div>
-              <div>※ 현장 챌린지 참여 시 CHOREOGRAPHY WORKSHOP 신청 자동 연동</div>
-              <div className="dot-sp-1">선정 방식: 촬영된 챌린지 영상 중 메인 디렉터 바다 직접 선정</div>
-              <div className="dot-sp-1">결과 발표: 나이키 서울 채널을 통해 추후 일정 및 상세 스케줄 공지</div>
-              <div>※ 비공개 계정은 참여 및 선정 대상에서 제외됩니다.</div>
-              <div>※ 1인당 1회 참여가 가능합니다.</div>
-
               <br />
 
-              <div>[SET UP]</div>
-              <div className="dot-sp-1">스탠바이미</div>
-              <div className="dot-sp-1">촬영 조명</div>
-              <div className="dot-sp-1">삼각대</div>
-
-              <br />
-
-              <div>[REWARDS]</div>
-              <div className="dot-sp-1">인스타그램 업로드 완료 시 조던 브랜드 굿즈 증정</div>
-
-              <br />
-
-              <div>[NOTICE]</div>
-              <div>- 2:2 OPEN STYLE BATTLE과 중복 참여가 제한됩니다.</div>
-              <div>
-                - choreography workshop 참가자로 선정되지 않더라도 본 행사 관람을 원하시는 경우,
-                반드시 일반 관람 신청을 별도로 진행해 주시기 바랍니다.
+              <div className="text-[22px] px-4 pt-[12px] font-black text-center">
+                {"REWARDS | 현장 참여 혜택"}
               </div>
-              <div>
-                - 본 행사는 조던 브랜드 행사로, 타 브랜드 로고가 과도하게 노출되는 착장은 지양해 주시길 부탁드립니다.
+
+              <div className={clsx("txt-w", openMap[2] && "show")}>
+                <div className="txt-inner px-4 leading-[1.5]">
+                  <div className="dot-sp-1 !font-semibold !text-[13px]">
+                    {"챌린지 공간 내 참여 인증 시 리워드 증정 "}
+                  </div>
+                  <div className="dot-sp-2 !font-semibold !text-[13px]">
+                    {"증정 대상: 인스타그램 업로드 및 홈페이지 신청을 완료한 인원"}
+                  </div>
+                  <div className="dot-sp-2 !font-semibold !text-[13px]">
+                    {"증정 품목: 휴대폰 흡착 패드 & 클립형 라이트 세트"}
+                  </div>
+                  <div className="pl-[20px] !font-semibold !text-[13px]">
+                    {"※ 리워드는 한정 수량으로 조기 소진될 수 있습니다."}
+                  </div>
+
+
+
+                </div>
+
+                <div
+                  className="txt-btn-w w-full flex justify-center mx-auto pb-[30px] border-b-1"
+                  onClick={() => toggle(2)}
+                >
+                  <div className="btn_arrow" />
+                </div>
               </div>
-              <div>- 리워드는 한정 수량으로 조기 소진될 수 있습니다.</div>
-              <div>- 원활한 운영을 위해 개인정보 수집 및 이용 동의가 필요합니다.</div>
-              <div>- 현장 상황에 따라 운영 내용 및 장비 구성은 일부 변경될 수 있습니다.</div>
+
+              <div className="text-[22px] px-4 pt-[12px] font-black text-center">
+                {"NOTICE | 유의 사항"}
+              </div>
+
+              <div className={clsx("txt-w", openMap[3] && "show")}>
+                <div className="txt-inner px-4 leading-[1.5]">
+                  <div className="dot-sp-1 !font-semibold !text-[13px]">
+                    {"2:2 OPEN STYLE BATTLE과 중복 참여가 불가합니다."}
+                  </div>
+                  <div className="dot-sp-1 !font-semibold !text-[13px]">
+                    {"프로그램 참가자로 선정되지 않더라도 행사 관람을 원하실 경우, 반드시 일반 관람 신청을 별도로 진행해 주시기 바랍니다."}
+                  </div>
+                  <div className="dot-sp-1 !font-semibold !text-[13px]">
+                    {"본 행사는 조던 브랜드 이벤트로, 타 브랜드 로고가 과도하게 노출되는 착장은 자제를 부탁드립니다."}
+                  </div>
+                  <div className="dot-sp-1 !font-semibold !text-[13px]">
+                    {"원활한 운영을 위해 신청 시 개인정보 수집·이용 및 콘텐츠 활용 동의가 필요합니다."}
+                  </div>
+                  <div className="dot-sp-1 !font-semibold !text-[13px]">
+                    {"현장 상황에 따라 운영 내용은 일부 변동될 수 있습니다."}
+                  </div>
+                  <div className="dot-sp-1 !font-semibold !text-[13px]">
+                    {"가이드라인에 위반되거나 선정적인 내용은 업로드 및 선정이 제한될 수 있습니다."}
+                  </div>
+                </div>
+
+                <div
+                  className="txt-btn-w w-full flex justify-center mx-auto pb-[30px]"
+                  onClick={() => toggle(3)}
+                >
+                  <div className="btn_arrow" />
+                </div>
+              </div>
 
             </div>
+
           </div>
         </div>
       </FullDialog>
