@@ -57,7 +57,7 @@ export default function Home() {
     case 1:
       return (
         <div className="flex flex-grow-1 items-center justify-center relative">
-          <div className="absolute top-[26px] right-[28px]">
+          <div className="absolute top-[13px] right-[14px]">
             <Logo width={40} className={`main_logo transition-opacity duration-500 ease-in-out ${fadeOut ? "opacity-0" : "opacity-100"}`} />
 
           </div>
