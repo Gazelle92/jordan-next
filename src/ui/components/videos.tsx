@@ -335,7 +335,7 @@ export default function Videos() {
   return (
     <>
       <div className="flex flex-col gap-2 ani relative">
-        <h1 className="pt-[8px] pb-[12px] text-[24px] border-t-4 text-center leading-[1] font-black">참여자 영상 아카이빙</h1>
+        <h1 className="pt-[8px] pb-[9px] text-[24px] border-t-4 border-b-1 text-center leading-[1] font-black">참여자 영상 아카이빙</h1>
         <div className="flex justify-end items-center video_btn_w text-[12px] fadeCover-0 ani_order_11 pb-2">
           <Select
             options={[
