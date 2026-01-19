@@ -250,19 +250,19 @@ body {
     background: rgba(0, 0, 0, 0);
 }
 .main_logo{}
-.main_tag{object-fit: cover;}
+.main_tag{object-fit: cover; width: auto!important;}
 
 @media(min-width:1024px){
   .main_logo{width:81px!important;}
-  .main_tag{width: 49px!important;}
+
 }
 @media(min-width:451px) and (max-width: 1023px){
   .main_logo{width:64px!important;}
-  .main_tag{width: 36px!important;}
+
 }
 @media(max-width:450px){
   .main_logo{width:14vw!important;}
-  .main_tag{width: 8.999vw!important;}
+
 }
 
 .table_body tr:first-child td{padding-top: 8px;}

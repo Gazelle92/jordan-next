@@ -74,21 +74,21 @@ export default function Home() {
             className={`w-dvw h-dvh object-cover transition-opacity duration-500 ease-in-out ${fadeOut ? "opacity-0" : "opacity-100"
               }`}
 
-            onTimeUpdate={(e) => {
-              const video = e.currentTarget;
+          /*onTimeUpdate={(e) => {
+            const video = e.currentTarget;
 
-              if (
-                !pushed &&
-                video.duration &&
-                video.currentTime >= video.duration - 0
-              ) {
-                setFadeOut(true);
-                setPushed(true);
-                setTimeout(() => {
-                  router.push("/menu");
-                }, 500);
-              }
-            }}
+            if (
+              !pushed &&
+              video.duration &&
+              video.currentTime >= video.duration - 0
+            ) {
+              setFadeOut(true);
+              setPushed(true);
+              setTimeout(() => {
+                router.push("/menu");
+              }, 500);
+            }
+          }}*/
           />
           {/*<div className="absolute bottom-15 left-0 right-0">
             <AllOrEverything className="w-full" />
