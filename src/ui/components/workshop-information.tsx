@@ -28,7 +28,7 @@ export default function WorkshopInformation() {
       </div>
 
       <div className="text-[13px] font-semibold whitespace-pre-wrap break-keep ani border-t-4">
-        <div className="text-[20px] px-4 pt-[12px] font-black">
+        <div className="text-[22px] px-4 pt-[12px] font-black text-center">
           {"REGISTRATION | 참가 신청"}
         </div>
 
@@ -88,8 +88,8 @@ export default function WorkshopInformation() {
           </div>
         </div>
 
-        <div className="text-[20px] px-4 pt-[12px] font-black">
-          {"HOW TO CHALLENGE | 챌린지 참여 방법"}
+        <div className="text-[22px] px-4 pt-[12px] font-black text-center">
+          HOW TO CHALLENGE <br />| 챌린지 참여 방법
         </div>
 
         <div className={clsx("txt-w", openMap[1] && "show")}>
@@ -139,7 +139,7 @@ export default function WorkshopInformation() {
 
         <br />
 
-        <div className="text-[20px] px-4 pt-[12px] font-black">
+        <div className="text-[22px] px-4 pt-[12px] font-black text-center">
           {"NOTICE | 유의 사항"}
         </div>
 

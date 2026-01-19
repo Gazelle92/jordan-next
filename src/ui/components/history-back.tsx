@@ -15,7 +15,8 @@ export const HistoryBack = () => {
             router.replace("/menu");
             return;
           }
-          router.back()
+          router.replace("/menu");
+          //router.back()
         }}
       >
         <BackIcon className="size-6 mx-auto" />

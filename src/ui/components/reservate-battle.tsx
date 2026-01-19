@@ -66,22 +66,22 @@ export const ReservateBattle = ({ }) => {
   return (
     <>
       <Button onClick={() => setOpen(true)}>
-        <span className="text-[22px]">{/*HOUSE OF GREATNESS 이벤트 예약하기*/}배틀 관람 및 토크 세션 신청하기</span>
+        <span className="text-[24px] pretendard">{/*HOUSE OF GREATNESS 이벤트 예약하기*/}배틀 관람 및 토크 세션 신청하기</span>
       </Button>
       <FullDialog open={open} onClose={() => setOpen(false)}>
         {completed ? (
           <>
             <div className="flex flex-col flex-grow-1 items-center justify-center gap-6">
               <Logo width={100} height={100} />
-              <strong>신청이 완료 되었습니다.</strong>
+              <strong>배틀 관람 및 토크세션<br />참여 신청이 완료되었습니다.</strong>
             </div>
             <Link href="/menu">
               <Button>메뉴로 돌아가기</Button>
             </Link>
           </>
         ) : (
-          <div className="flex flex-col gap-5 flex-grow-1">
-            <h4 className="font-black text-[24px] text-center leading-[1]">HOUSE OF GREATNESS<br />이벤트 예약</h4>
+          <div className="flex flex-col gap-5 flex-grow-1 h-full">
+            <h4 className="font-black text-[24px] text-center leading-[1]">배틀 관람 및 토크세션<br />참여 신청서</h4>
             <div className="flex flex-col border-1">
               <div className="border-b-1 flex justify-between px-1.5 py-1">
                 <div className="font-black text-[20px] whitespace-nowrap">
@@ -132,13 +132,13 @@ export const ReservateBattle = ({ }) => {
                 />
               </div>
               <div className="flex flex-col px-1.5 py-1">
-                <div className={clsx("font-black text-[20px] whitespace-nowrap", jordan.className)}>
-                  댄서들에게 묻고 싶은 질문
+                <div className={clsx("font-black text-[20px]", jordan.className)}>
+                  토크세션 호스트<br />‘바다’와 ‘왁씨’에게 묻고 싶은 질문
                 </div>
                 <Textarea
-                  placeholder="댄서들에게 묻고 싶은 질문"
+                  placeholder=" ‘바다’와 ‘왁씨’에게 묻고 싶은 질문이 있다면 적어주세요."
                   value={form.what_do_you_want}
-                  className="placeholder:text-[#ff3b49] font-extralight text-[20px] resize-none"
+                  className="placeholder:text-[#ff3b49] font-extralight text-[12px] resize-none h-[100px]"
                   onChange={(event) =>
                     setForm((prev) => ({
                       ...prev,

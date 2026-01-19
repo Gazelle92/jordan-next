@@ -79,7 +79,7 @@ export const ApplicateBattle = ({ }) => {
 
   return (
     <>
-      <Button onClick={() => setOpen(true)}>배틀 신청하기</Button>
+      <Button onClick={() => setOpen(true)} className="pretendard">배틀 신청하기</Button>
       <FullDialog open={open} onClose={() => setOpen(false)}>
         {completed ? (
           <>
@@ -92,7 +92,7 @@ export const ApplicateBattle = ({ }) => {
             </Link>
           </>
         ) : (
-          <div className="flex flex-col gap-5 flex-grow-1">
+          <div className="flex flex-col gap-5 flex-grow-1 h-full">
             <h4 className="font-black text-[24px] text-center">배틀 신청서</h4>
             <div className="flex flex-col border-1">
               <div className="border-b-1 flex justify-between px-1.5 py-1 justify-center">
@@ -270,23 +270,24 @@ export const ApplicateBattle = ({ }) => {
                   }
                 />
               </div>
-              <div className="flex flex-col px-1.5 py-1">
-                <div className={clsx("font-black text-[20px] whitespace-nowrap", jordan.className)}>
-                  댄서들에게 묻고 싶은 질문
-                </div>
-                <Textarea
-                  placeholder="댄서들에게 묻고 싶은 질문"
-                  value={form.what_do_you_want}
 
-                  onChange={(event) =>
-                    setForm((prev) => ({
-                      ...prev,
-                      what_do_you_want: event.target.value,
-                    }))
-                  }
-                  className="!text-left placeholder:text-[#ff3b49] font-extralight text-[12px]"
-                />
+            </div>
+            <div className="flex flex-col px-1.5 py-1 border-1">
+              <div className={clsx("font-black text-[20px] whitespace-nowrap", jordan.className)}>
+                토크세션 호스트<br />‘바다’와 ‘왁씨’에게 묻고 싶은 질문
               </div>
+              <Textarea
+                placeholder="‘바다’와 ‘왁씨’에게 묻고 싶은 질문이 있다면 적어주세요."
+                value={form.what_do_you_want}
+
+                onChange={(event) =>
+                  setForm((prev) => ({
+                    ...prev,
+                    what_do_you_want: event.target.value,
+                  }))
+                }
+                className="placeholder:text-[#ff3b49] font-extralight text-[12px] resize-none h-[100px]"
+              />
             </div>
             <div className="flex flex-col">
               <Checkbox

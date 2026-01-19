@@ -164,7 +164,7 @@ export default function IrlInfo() {
           <Logo className="w-20" />
           <WomenBattle width={239} className="mx-auto filled-color" />
         </div>
-        <div className="flex flex-col gap-2">
+        <div className="flex flex-col gap-0">
           <hr className="border-2 border_el border-l-0 border-r-0" />
           <BattleInformation />
 
@@ -174,7 +174,7 @@ export default function IrlInfo() {
                 MC
               </h2>
             </div>
-            <div className="py-5 flex gap-x-16 justify-center items-center">
+            <div className="py-4 flex gap-x-16 justify-center items-center">
               {MCs.map((judge) => (
                 <Profile key={judge.name} {...judge} />
               ))}
@@ -187,7 +187,7 @@ export default function IrlInfo() {
                 JUDGE
               </h2>
             </div>
-            <div className="py-5 flex gap-x-2 justify-center ">
+            <div className="py-4 flex gap-x-2 justify-center ">
               {judges.map((judge) => (
                 <Profile key={judge.name} {...judge} />
               ))}
@@ -200,7 +200,7 @@ export default function IrlInfo() {
                 DJ
               </h2>
             </div>
-            <div className="py-5 flex gap-x-16 justify-center ">
+            <div className="py-4 flex gap-x-16 justify-center ">
               {DJs.map((judge) => (
                 <Profile key={judge.name} {...judge} />
               ))}
@@ -214,7 +214,7 @@ export default function IrlInfo() {
               </h2>
             </div>
 
-            <div className="py-5 grid grid-cols-4 gap-5 gap-x-4 gap-y-[26px] justify-center px-6">
+            <div className="py-4 grid grid-cols-4 gap-5 gap-x-4 gap-y-[26px] justify-center px-6 guest_wrap">
               {guests.map((judge) => (
                 <Profile key={judge.name} {...judge} small />
               ))}
@@ -223,7 +223,7 @@ export default function IrlInfo() {
 
 
           <div className="text-[13px] font-semibold whitespace-pre-wrap break-keep ani border-t-4">
-            <div className="text-[20px] px-4 pt-[12px] font-black">
+            <div className="text-[22px] px-4 pt-[12px] font-black text-center">
               {"REGISTRATION | 참가 신청"}
             </div>
 
@@ -248,7 +248,7 @@ export default function IrlInfo() {
               </div>
             </div>
 
-            <div className="text-[20px] px-4 pt-[12px] font-black">
+            <div className="text-[22px] px-4 pt-[12px] font-black text-center">
               {"BATTLE RULES | 배틀 규정"}
             </div>
 
@@ -353,8 +353,8 @@ export default function IrlInfo() {
 
             <br />
 
-            <div className="text-[20px] px-4 pt-[12px] font-black">
-              {"BATTLE REWARDS | 우승 혜택"}
+            <div className="text-[22px] px-4 pt-[12px] font-black text-center">
+              BATTLE REWARDS<br />| 우승 혜택
             </div>
 
             <div className={clsx("txt-w", openMap[2] && "show")}>
@@ -389,7 +389,7 @@ export default function IrlInfo() {
 
             <br />
 
-            <div className="text-[20px] px-4 pt-[12px] font-black">
+            <div className="text-[22px] px-4 pt-[12px] font-black text-center">
               {"NOTICE | 유의 사항"}
             </div>
 
@@ -425,19 +425,19 @@ export default function IrlInfo() {
 
 
 
-          <div className="flex flex-col gap-2 ani">
+          <div className="flex flex-col ">
 
             <div className="fade-cw border-t-4 border-b-1 py-1">
-              <h2 className="fadeCover-1 text-[24px] font-black text-center ">
+              <h2 className="text-[24px] font-black text-center ">
                 배틀 타임 테이블
               </h2>
             </div>
-            <div className="py-5 grid grid-cols-1 gap-5 pl-[18px] pr-[14px] pb-0 fadeCover-0-2">
+            <div className="py-[17px] grid grid-cols-1 gap-[16px] pl-[18px] pr-[14px] pb-0 ">
               {matches.map((match, i) => (
                 <div className="flex items-start leading-[1] justify-center" key={match.label}>
-                  <p className="w-[46px] font-medium text-[15px]">{String(i + 1).padStart(2, "0")}</p>
-                  <p className="w-[calc(100%-126px)] font-black uppercase text-[15px]">{match.label}</p>
-                  <p className="w-[80px] font-medium text-[13px]">{match.time}</p>
+                  <p className="w-[46px] font-medium text-[17px] py-[0px]">{String(i + 1).padStart(2, "0")}</p>
+                  <p className="w-[calc(100%-126px)] font-black uppercase text-[17px]">{match.label}</p>
+                  <p className="w-[80px] font-medium text-[13px] py-[1px]">{match.time}</p>
                 </div>
               ))}
             </div>

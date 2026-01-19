@@ -80,7 +80,7 @@ export const ApplicateWorkshop = ({ }) => {
     <>
       <div className="sticky w-full mx-auto absolute bottom-0 left-0 right-0 p-3">
         <div className="-mx-3">
-          <Button className="border-none text-center" onClick={() => setOpen(true)}>코레오그래피 워크샵 신청하기</Button>
+          <Button className="border-none text-center pretendard" onClick={() => setOpen(true)}>코레오그래피 워크샵 신청하기</Button>
         </div>
       </div>
       <FullDialog open={open} onClose={() => setOpen(false)}>
@@ -88,14 +88,14 @@ export const ApplicateWorkshop = ({ }) => {
           <>
             <div className="flex flex-col flex-grow-1 items-center justify-center gap-6">
               <Logo width={100} height={100} />
-              <strong className="text-center">코레오그래피 워크샵 신청이<br />완료 되었습니다.</strong>
+              <strong className="text-center">코레오그래피 워크샵 신청이<br />완료되었습니다.</strong>
             </div>
             <Link href="/menu">
               <Button>메뉴로 돌아가기</Button>
             </Link>
           </>
         ) : (
-          <div className="flex flex-col gap-5 flex-grow-1">
+          <div className="flex flex-col gap-5 flex-grow-1 h-full">
             <h4 className="font-black text-[24px] text-center">코레오그래피 워크샵 신청서</h4>
             <div className="flex flex-col border-1">
               <div className="border-b-1 flex justify-between px-1.5 py-1">
@@ -181,12 +181,12 @@ export const ApplicateWorkshop = ({ }) => {
               </div>
               <div className="flex flex-col px-1.5 py-1">
                 <div className={clsx("font-black text-[20px] whitespace-nowrap", jordan.className)}>
-                  댄서들에게 묻고 싶은 질문
+                  토크세션 호스트<br />‘바다’와 ‘왁씨’에게 묻고 싶은 질문
                 </div>
                 <Textarea
-                  placeholder="댄서들에게 묻고 싶은 질문"
+                  placeholder="‘바다’와 ‘왁씨’에게 묻고 싶은 질문이 있다면 적어주세요."
                   value={form.what_do_you_want}
-                  className="placeholder:text-[#ff3b49] font-extralight text-[20px]"
+                  className="placeholder:text-[#ff3b49] font-extralight text-[12px] h-[100px]"
                   onChange={(event) =>
                     setForm((prev) => ({
                       ...prev,

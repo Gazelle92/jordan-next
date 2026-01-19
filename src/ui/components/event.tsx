@@ -15,10 +15,10 @@ export const Event = ({ }) => {
 
   return (
     <>
-      <Button onClick={() => setOpen(true)}>
+      <Button className="pretendard" onClick={() => setOpen(true)}>
         월드오브플라이트 참여시 혜택
       </Button>
-      <Button reverse>챌린지 음원 다운로드</Button>
+      <Button className="pretendard" reverse>챌린지 음원 다운로드</Button>
       <FullDialog open={open} onClose={() => setOpen(false)}>
         <div className="flex flex-col gap-5 h-full relative">
           <h4 className="font-black text-[24px] text-center leading-[1.3]">

@@ -236,7 +236,8 @@ body {
 .chbx_w > span:last-child{width: calc(100% - 20px); text-wrap: balance; word-break: keep-all;}
 
 
-.scrollbar{padding: 0px 10px 8px 12px;}
+.scrollbar:not(.application_bar){padding: 0px 10px 8px 12px;}
+.scrollbar.application_bar{padding-right:8px; margin-right: 4px; width: calc(100% - 4px);}
 .scrollbar::-webkit-scrollbar {
     width: 2px;
 }
@@ -252,6 +253,9 @@ body {
 .main_logo{}
 .main_tag{object-fit: cover; width: auto!important;}
 
+.guest_wrap{max-width: 440px; margin: auto}
+.guest_wrap > div:nth-child(2), .guest_wrap > div:nth-child(6){margin-right: 24px;}
+.guest_wrap > div:nth-child(3), .guest_wrap > div:nth-child(7){margin-left: 24px;}
 @media(min-width:1024px){
   .main_logo{width:81px!important;}
 
@@ -262,7 +266,10 @@ body {
 }
 @media(max-width:450px){
   .main_logo{width:14vw!important;}
+  .guest_wrap > div:nth-child(2), .guest_wrap > div:nth-child(6){margin-right: 12px;}
+  .guest_wrap > div:nth-child(3), .guest_wrap > div:nth-child(7){margin-left: 12px;}
 
 }
 
 .table_body tr:first-child td{padding-top: 8px;}
+.pretendard{font-family: "pretendard", "pretendard Fallback"!important;}

@@ -71,7 +71,7 @@ export const FullDialog = ({ open, onClose, reverse, children }: FullDialogProps
         )}
         <div
           ref={dialogRef}
-          className={`w-full px-3 pb-3 h-full overflow-y-auto flex-grow-1 flex flex-col justify-center transition-transform duration-400 ${open
+          className={`w-full px-3 pb-3 h-full overflow-y-auto flex-grow-1 flex flex-col justify-center transition-transform duration-400 scrollbar application_bar mb-[10px] ${open
             ? "scale-100 opacity-100 translate-y-0"
             : "scale-95 opacity-0 translate-y-3"
             }`}
