@@ -139,7 +139,7 @@ const Thumbnail = ({
     }
     if (canPlayHls) {
       video.src = streamVideoUrl;
-      void video.play().catch(() => {});
+      void video.play().catch(() => { });
       return;
     }
     if (!Hls.isSupported()) {
@@ -149,7 +149,7 @@ const Thumbnail = ({
     hls.loadSource(streamVideoUrl);
     hls.attachMedia(video);
     hls.on(Hls.Events.MANIFEST_PARSED, () => {
-      void video.play().catch(() => {});
+      void video.play().catch(() => { });
     });
     return () => {
       hls.destroy();
@@ -286,7 +286,7 @@ export default function Videos() {
   useEffect(() => {
     setVisible(false);
     loadWorkshops(true).finally(() => {
-      setTimeout(() => setVisible(true), 2000);
+      setTimeout(() => setVisible(true), 100);
       setTimeout(() => {
         document.querySelector('.pre-loader')?.classList.remove('loader');
       }, 3000);
@@ -361,38 +361,38 @@ export default function Videos() {
                 !!workshop.stream_thumbnail_url
             )
             .map((workshop) => {
-            const liked = likedIds.includes(workshop.id);
-            const isFresh = freshIds.includes(workshop.id);
-            const freshIndex = freshOrder[workshop.id] ?? 0;
-            return (
-              <div
-                className={`relative w-full aspect-120/180 flex items-center justify-center hover_el ${isFresh ? "fade-in" : ""}`}
-                style={isFresh ? { animationDelay: `${freshIndex * 300}ms` } : undefined}
-                key={workshop.id}
-              >
-                <Thumbnail
-                  instagramUrl={toInstagramEmbedUrl(workshop.instagram_video_url)}
-                  streamVideoUrl={workshop.stream_video_url}
-                  streamThumbnailUrl={workshop.stream_thumbnail_url}
-                  streamStatus={workshop.stream_status}
-                  embedReady={embedReady}
-                />
-                <button
-                  className="absolute bottom-[4px] left-[6px] md:bottom-[6px] md:left-[8px] text-[10px] md:text-[14px] text-white font-regular flex items-center"
-                  onClick={() => handleToggleLike(workshop.id)}
+              const liked = likedIds.includes(workshop.id);
+              const isFresh = freshIds.includes(workshop.id);
+              const freshIndex = freshOrder[workshop.id] ?? 0;
+              return (
+                <div
+                  className={`relative w-full aspect-120/180 flex items-center justify-center hover_el ${isFresh ? "fade-in" : ""}`}
+                  style={isFresh ? { animationDelay: `${freshIndex * 300}ms` } : undefined}
+                  key={workshop.id}
                 >
-
-                  <img
-                    src={liked ? "/images/heart_2.png" : "/images/heart_1.png"}
-                    alt=""
-                    className="w-3 mr-[4px] md:w-4 md:mr-[8px]"
+                  <Thumbnail
+                    instagramUrl={toInstagramEmbedUrl(workshop.instagram_video_url)}
+                    streamVideoUrl={workshop.stream_video_url}
+                    streamThumbnailUrl={workshop.stream_thumbnail_url}
+                    streamStatus={workshop.stream_status}
+                    embedReady={embedReady}
                   />
-                  {workshop.like_count}
-                </button>
-                <img className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[20px] opacity-0 transition-opacity duration-200 hover_target" src="/images/btn_play.png" />
-              </div>
-            );
-          })}
+                  <button
+                    className="absolute bottom-[4px] left-[6px] md:bottom-[6px] md:left-[8px] text-[10px] md:text-[14px] text-white font-regular flex items-center"
+                    onClick={() => handleToggleLike(workshop.id)}
+                  >
+
+                    <img
+                      src={liked ? "/images/heart_2.png" : "/images/heart_1.png"}
+                      alt=""
+                      className="w-3 mr-[4px] md:w-4 md:mr-[8px]"
+                    />
+                    {workshop.like_count}
+                  </button>
+                  <img className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[20px] opacity-0 transition-opacity duration-200 hover_target" src="/images/btn_play.png" />
+                </div>
+              );
+            })}
         </div>
 
         {nextUrl && (

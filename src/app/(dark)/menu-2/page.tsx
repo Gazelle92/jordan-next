@@ -1,7 +1,7 @@
 import { Link } from "next-view-transitions";
 
 import Title from "@/ui/svg/house_of_greatness.svg";
-import IrlInfo from "@/ui/svg/infrared_irl_info.svg";
+import IrlInfo from "@/ui/svg/infrared_irl_info_3.svg";
 import Logo from "@/ui/svg/logo.svg";
 import ViewInfrared from "@/ui/svg/view_infrared.svg";
 import ChoreoGraphyWorkshop2 from "@/ui/svg/choreo_graphy_workshop_2.svg";
@@ -34,7 +34,7 @@ export default function Menu() {
         </Link>
         <Link href="/irl-info">
           <MenuButton>
-            <IrlInfo width={168} height={18} className="mx-auto" />
+            <IrlInfo width={224} height={59} className="mx-auto" />
           </MenuButton>
         </Link>
         <Link href="/battles">

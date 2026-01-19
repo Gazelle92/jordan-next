@@ -1,7 +1,9 @@
+"use client";
+
 import { HistoryBack } from "@/ui/components/history-back";
 import WomenBattle from "@/ui/svg/women_battle.svg";
 import Logo from "@/ui/svg/logo.svg";
-
+import { useState } from "react";
 import BattleInformation from "@/ui/components/battle-information";
 import Image from "next/image";
 import clsx from "clsx";
@@ -144,11 +146,20 @@ const matches = [
 ];
 
 
+
 export default function IrlInfo() {
+  const [openMap, setOpenMap] = useState<Record<number, boolean>>({});
+  const toggle = (idx: number) => {
+    setOpenMap(prev => ({
+      ...prev,
+      [idx]: !prev[idx],
+    }));
+  };
+
   return (
     <div className="flex flex-col">
       <HistoryBack />
-      <div className="flex flex-col gap-10 px-3 pb-3">
+      <div className="flex flex-col gap-[35px] px-3 pb-3">
         <div className="flex flex-col flex-grow-1 items-center justify-center gap-7">
           <Logo className="w-20" />
           <WomenBattle width={239} className="mx-auto filled-color" />
@@ -158,8 +169,8 @@ export default function IrlInfo() {
           <BattleInformation />
 
           <div className="flex flex-col">
-            <div className="border-t-4 py-1">
-              <h2 className="text-[24px] font-black text-center ">
+            <div className="border-t-4 py-1 border-b-1">
+              <h2 className="text-[24px] font-black text-center">
                 MC
               </h2>
             </div>
@@ -171,7 +182,7 @@ export default function IrlInfo() {
           </div>
 
           <div className="flex flex-col">
-            <div className="border-t-4 py-1">
+            <div className="border-t-4 py-1 border-b-1">
               <h2 className="text-[24px] font-black text-center ">
                 JUDGE
               </h2>
@@ -184,7 +195,7 @@ export default function IrlInfo() {
           </div>
 
           <div className="flex flex-col">
-            <div className="border-t-4 py-1">
+            <div className="border-t-4 py-1 border-b-1">
               <h2 className="text-[24px] font-black text-center ">
                 DJ
               </h2>
@@ -197,7 +208,7 @@ export default function IrlInfo() {
           </div>
 
           <div className="flex flex-col">
-            <div className="border-t-4 py-1">
+            <div className="border-t-4 py-1 border-b-1">
               <h2 className="text-[24px] font-black text-center ">
                 BATTLE GUEST
               </h2>
@@ -209,6 +220,114 @@ export default function IrlInfo() {
               ))}
             </div>
           </div>
+
+
+          <div className="text-[13px] font-semibold whitespace-pre-wrap break-keep ani  border-t-4">
+
+
+
+            <div className="text-[20px] px-4 pt-[12px] font-black">REGISTRATION | 참가 신청</div>
+
+            <div className={clsx("txt-w ", openMap[0] && "show")}>
+              <div className="txt-inner px-4 leading-[1.5]">
+                <div className="dot-sp-1 !font-semibold !text-[13px]">참가 대상: 여성 댄서 누구나 (2인 1조 팀으로 신청 가능)</div>
+                <div className="dot-sp-1 !font-semibold !text-[13px]">신청 기간: 1월 21일(수)~1월 27일(화)</div>
+                <div className="dot-sp-1 !font-semibold !text-[13px]">참가자 발표: 1월 30일(금), 공식 웹사이트 공지 및 개별 문자 발송</div>
+              </div>
+              <div className="txt-btn-w w-full flex justify-center mx-auto pb-[30px] border-b-1 " onClick={() => toggle(0)}>
+                <div className="btn_arrow " /></div>
+            </div>
+
+            <div className="text-[20px] px-4 pt-[12px] font-black">BATTLE RULES | 배틀 규정</div>
+            <div className={clsx("txt-w", openMap[1] && "show")}>
+              <div className="txt-inner px-4 leading-[1.5]">
+                <div className="dot-sp-1">1차 예선</div>
+                <div className="dot-sp-2">3개 서클 동시 진행 / 점수제 (팀당 90초)</div>
+                <div className="dot-sp-2">각 서클 점수 상위 10팀 → 2차 예선 진출</div>
+
+                <br />
+
+                <div className="dot-sp-1">2차 예선</div>
+                <div className="dot-sp-2">오디션 방식 / 점수제 (팀당 70초)</div>
+                <div className="dot-sp-2">점수 상위 8팀 → 본선 진출</div>
+
+                <br />
+
+                <div className="dot-sp-1">본선 (TOP12)</div>
+                <div className="dot-sp-2">예선 상위 8팀 + 배틀 게스트 4팀</div>
+                <br />
+
+                <div className="dot-sp-1">TOP12 &amp; TOP6</div>
+                <div className="dot-sp-2">팀당 2라운드 (라운드당 60초) / 루틴 제한 없음</div>
+                <br />
+
+                <div className="dot-sp-1">SEMI FINAL</div>
+                <div className="dot-sp-2">팀당 2라운드 (라운드당 60초) / 루틴 제한 없음</div>
+                <br />
+
+                <div className="dot-sp-1">WILD CARD</div>
+                <div className="dot-sp-2">TOP6 배틀에서 승리한 3팀을 제외한 9팀 중, JUDGE가 각 1팀씩 총 3팀 선발</div>
+                <div className="dot-sp-2">콘테스트를 통해 최종 1팀이 WILD CARD로 SEMI FINAL 진출</div>
+
+                <br />
+
+                <div className="dot-sp-1">FINAL BATTLE</div>
+                <div className="dot-sp-2">팀당 3라운드 (라운드당 60초) / 루틴 제한 없음</div>
+                <div className="dot-sp-2">연장 시: 각 팀에서 루틴 없이 솔로 / (40초)</div>
+
+                <br />
+
+                <div className="dot-sp-1">심사 방식</div>
+                <div className="dot-sp-2">예선 ~ TOP6: JUDGE ONLY</div>
+                <div className="dot-sp-2">SEMI FINAL ~ FINAL: JUDGE + 관객 심사</div>
+                <div className="dot-sp-2">JUDGE 거수 3포인트 + 관객 심사 1포인트 (총 4포인트)로 승패 결정</div>
+
+
+
+              </div>
+              <div className="txt-btn-w w-full flex justify-center mx-auto pb-[30px] border-b-1" onClick={() => toggle(1)}>
+                <div className="btn_arrow " /></div>
+            </div>
+
+
+            <br />
+
+            <div className="text-[20px] px-4 pt-[12px] font-black">BATTLE REWARDS | 우승 혜택</div>
+            <div className={clsx("txt-w", openMap[2] && "show")}>
+              <div className="txt-inner  px-4 leading-[1.5]">
+                <div className="dot-sp-1 !font-semibold !text-[13px]"><b>1등</b> : 1,000만 원 상당의 조던 브랜드 스폰서십+젬 신발 트로피</div>
+
+                <div className="dot-sp-1 !font-semibold !text-[13px]"><b>2등</b> : 500만 원 상당의 조던 브랜드 스폰서십</div>
+                <div className="dot-sp-1 !font-semibold !text-[13px]"><b>공동 3등 (2팀)</b> : 각 200만 원 상당의 조던 브랜드 스폰서십</div>
+                <div className="dot-sp-1 !font-semibold !text-[13px]"><b>HOUSE OF GREATNESS상 </b> : Air Jordan 6 'Infrared'+캠페인 어셋 출연권</div>
+                <br />
+                <div>※ 리워드는 지급일로부터 1년간 유효하며, 재고 상황에 따라 제품 선택이 제한될 수 있습니다.</div>
+              </div>
+              <div className="txt-btn-w w-full flex justify-center mx-auto pb-[30px] border-b-1" onClick={() => toggle(2)}>
+                <div className="btn_arrow " /></div>
+            </div>
+
+
+            <br />
+            <div className="text-[20px] px-4 pt-[12px] font-black">NOTICE | 유의 사항</div>
+            <div className={clsx("txt-w", openMap[3] && "show")}>
+              <div className="txt-inner px-4 leading-[1.5]">
+                <div className="dot-sp-1 !font-semibold !text-[13px]">코레오그래피 워크샵과 중복 참여가 제한됩니다.</div>
+                <div className="dot-sp-1 !font-semibold !text-[13px]">프로그램 참가자로 선정되지 않더라도 행사 관람을 원하실 경우, 반드시 일반 관람 신청을 별도로 진행해 주시기 바랍니다.</div>
+                <div className="dot-sp-1 !font-semibold !text-[13px]">본 행사는 조던 브랜드 이벤트로, 타 브랜드 로고가 과도하게 노출되는 착장은 자제를 부탁드립니다.</div>
+                <div className="dot-sp-1 !font-semibold !text-[13px]">원활한 운영을 위해 신청 시 개인정보 수집·이용 및 콘텐츠 활용 동의가 필요합니다.</div>
+                <div className="dot-sp-1 !font-semibold !text-[13px]">현장 상황에 따라 운영 내용은 일부 변동될 수 있습니다.</div>
+              </div>
+              <div className="txt-btn-w w-full flex justify-center mx-auto pb-[30px]" onClick={() => toggle(3)}>
+                <div className="btn_arrow " /></div>
+            </div>
+
+
+          </div>
+
+
+
+
           <div className="flex flex-col gap-2 ani">
 
             <div className="fade-cw border-t-4 border-b-1 py-1">
