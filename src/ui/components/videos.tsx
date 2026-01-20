@@ -249,12 +249,24 @@ const Thumbnail = ({
           <div className="relative w-full h-full overflow-hidden  bg-black hover_w">
             <div className="absolute inset-0 pointer-events-none bg-gradient-to-b from-black/30 via-transparent to-black/40" />
             <div className="absolute flex left-1/2 z-1 top-1/2 -translate-1/2 z-[9] pointer-events-none hover_target">
-              <Image
-                src="/images/btn_play.png"
-                alt="play"
-                className="mx-auto mt-[20px]"
-                width={40}
-                height={40} />
+              {!playing && (
+                <Image
+                  src="/images/btn_play.png"
+                  alt="play"
+                  width={40}
+                  height={40}
+                  className="transition-opacity"
+                />
+              )}
+              {playing && (
+                <Image
+                  src="/images/btn_pause.png"
+                  alt="pause"
+                  width={40}
+                  height={40}
+                  className="transition-opacity"
+                />
+              )}
             </div>
 
             {canPlayStream ? (

@@ -42,7 +42,7 @@ export const VideoDialog = ({ open, onClose, children }: VideoDialogProps) => {
 
   return (
     <div
-      className={`fixed max-w-md mx-auto p-5 flex flex-col inset-0 z-50 justify-center transition-all duration-400 ${open
+      className={`fixed max-w-md mx-auto p-5 pt-0 pb-[60px] flex flex-col inset-0 z-50 justify-center transition-all duration-400 ${open
         ? "pointer-events-auto bg-black/50  opacity-100"
         : "pointer-events-none bg-black/0 opacity-0"
         }`}
