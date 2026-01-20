@@ -16,7 +16,7 @@ export const Checkbox = ({ children, className, ...props }: CheckboxProps) => (
   >
     <input
       type="checkbox"
-      className="peer appearance-none size-3 border-1 border-red outline-none 
+      className="peer appearance-none size-3 border-1 border-red outline-none
         transition-colors duration-150
         checked:bg-foreground
         relative
@@ -33,6 +33,6 @@ export const Checkbox = ({ children, className, ...props }: CheckboxProps) => (
       style={{ left: 0, position: "relative", marginLeft: "-1.75rem" }}
       aria-hidden="true"
     ></span>
-    <span className="text-[12px] font-medium">{children}</span>
+    <span className="text-[14px] font-medium">{children}</span>
   </label>
 );

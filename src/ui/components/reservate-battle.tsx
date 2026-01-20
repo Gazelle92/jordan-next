@@ -194,7 +194,7 @@ export const ReservateBattle = ({ }) => {
 
 
             </div>
-            <span className="font-extralight text-[12px] mt-[-12px]">
+            <span className="font-extralight text-[14px] mt-[-12px]">
               * 해당 프로그램은 사전 신청 후 당첨된 인원에 한해 참여 가능합니다.<br />
               * 참가자 발표는 1월 30일(금), 개별 문자 발송 예정입니다.
             </span>

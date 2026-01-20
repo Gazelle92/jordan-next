@@ -349,7 +349,7 @@ export const ApplicateBattle = ({ }) => {
                   &nbsp;및 콘텐츠 활용에 동의합니다.
                 </div>
               </Checkbox>
-              {error && <span className="text-[12px]">{error}</span>}
+              {error && <span className="text-[14px]">{error}</span>}
 
               <Checkbox
                 checked={form.privacy_policy_agreed}

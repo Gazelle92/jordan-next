@@ -251,8 +251,8 @@ const Thumbnail = ({
             <div className="absolute flex left-1/2 z-1 top-1/2 -translate-1/2 z-[9] pointer-events-none hover_target">
               {!playing && (
                 <Image
-                  src="/images/btn_play.png"
-                  alt="play"
+                  src="/images/btn_pause.png"
+                  alt="pause"
                   width={40}
                   height={40}
                   className="transition-opacity"
@@ -260,12 +260,13 @@ const Thumbnail = ({
               )}
               {playing && (
                 <Image
-                  src="/images/btn_pause.png"
-                  alt="pause"
+                  src="/images/btn_play.png"
+                  alt="play"
                   width={40}
                   height={40}
                   className="transition-opacity"
                 />
+
               )}
             </div>
 
