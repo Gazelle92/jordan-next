@@ -15,7 +15,7 @@ export default function irlInformation() {
           <div className="absolute left-0 bottom-0 h-[1px] border-b-4 border_el ani_order_9"></div>
         </div>
         <div className="flex flex-col text-center font-black py-2 relative">
-          <h1 className="text-[24px] font-black leading-[1]">HOUSE OF GREATNESS</h1>
+          <h1 className="text-[24px] font-black leading-[1.5]">HOUSE OF GREATNESS</h1>
           <div className="absolute left-0 bottom-0 h-[1px] border-b-1 border_el ani_order_6"></div>
         </div>
       </div>

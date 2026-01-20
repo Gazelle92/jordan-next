@@ -257,7 +257,7 @@ export const ReservateBattle = ({ }) => {
 
 
             <div className="flex-grow-1" />
-            <Button disabled={isSubmitting} onClick={handleSubmit}>
+            <Button disabled={isSubmitting} className="pretendard" onClick={handleSubmit}>
               {isSubmitting ? "신청 중..." : "신청하기"}
             </Button>
           </div>

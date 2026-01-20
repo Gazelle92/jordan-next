@@ -123,7 +123,11 @@ export const Event = ({ }) => {
                   className="txt-btn-w w-full flex justify-center mx-auto pb-[30px] border-b-1"
                   onClick={() => toggle(0)}
                 >
-                  <div className="btn_arrow" />
+                  <div className="btn_more">
+                    <div className="bar_w"></div>
+                    <span className="btn_more_1">더보기</span>
+                    <span className="btn_more_2">닫기</span>
+                  </div>
                 </div>
               </div>
 
@@ -182,7 +186,11 @@ export const Event = ({ }) => {
                   className="txt-btn-w w-full flex justify-center mx-auto pb-[30px] border-b-1"
                   onClick={() => toggle(1)}
                 >
-                  <div className="btn_arrow" />
+                  <div className="btn_more">
+                    <div className="bar_w"></div>
+                    <span className="btn_more_1">더보기</span>
+                    <span className="btn_more_2">닫기</span>
+                  </div>
                 </div>
               </div>
 
@@ -217,7 +225,11 @@ export const Event = ({ }) => {
                   className="txt-btn-w w-full flex justify-center mx-auto pb-[30px] border-b-1"
                   onClick={() => toggle(2)}
                 >
-                  <div className="btn_arrow" />
+                  <div className="btn_more">
+                    <div className="bar_w"></div>
+                    <span className="btn_more_1">더보기</span>
+                    <span className="btn_more_2">닫기</span>
+                  </div>
                 </div>
               </div>
 
@@ -248,7 +260,11 @@ export const Event = ({ }) => {
                   className="txt-btn-w w-full flex justify-center mx-auto pb-[30px]"
                   onClick={() => toggle(3)}
                 >
-                  <div className="btn_arrow" />
+                  <div className="btn_more">
+                    <div className="bar_w"></div>
+                    <span className="btn_more_1">더보기</span>
+                    <span className="btn_more_2">닫기</span>
+                  </div>
                 </div>
               </div>
 

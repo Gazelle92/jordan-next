@@ -132,7 +132,7 @@ export const ApplicateBattle = ({ }) => {
                 </div>
               </div>
               <div className="border-b-1 flex justify-between px-1.5 py-1 text-[20px] ">
-                <div className="whitespace-nowrap">
+                <div className="whitespace-nowrap font-black">
                   이름
                 </div>
                 <Input
@@ -146,7 +146,7 @@ export const ApplicateBattle = ({ }) => {
                 />
               </div>
               <div className="border-b-0 flex justify-between px-1.5 py-1 pb-0">
-                <div className="text-[20px] whitespace-nowrap">
+                <div className="text-[20px] whitespace-nowrap font-black">
                   생년월일
                 </div>
                 <Input
@@ -164,7 +164,7 @@ export const ApplicateBattle = ({ }) => {
               </div>
               <div className="text-right text-[12px] border-b-1 pb-1 px-1.5">만 15세 이상만 신청이 가능합니다.</div>
               <div className="border-b-1 flex justify-between px-1.5 py-1">
-                <div className="text-[20px] whitespace-nowrap">
+                <div className="text-[20px] whitespace-nowrap font-black">
                   장르
                 </div>
                 <Input
@@ -181,7 +181,7 @@ export const ApplicateBattle = ({ }) => {
                 />
               </div>
               <div className="border-b-1 flex justify-between px-1.5 py-1">
-                <div className=" text-[20px] whitespace-nowrap">
+                <div className=" text-[20px] whitespace-nowrap font-black">
                   휴대폰
                 </div>
                 <Input
@@ -199,7 +199,7 @@ export const ApplicateBattle = ({ }) => {
               </div>
 
               <div className="border-b-1 text-[20px] flex flex-col px-1.5 py-1">
-                <div className=" whitespace-nowrap">
+                <div className=" whitespace-nowrap font-black">
                   인스타그램 아이디
                 </div>
                 <Input
@@ -215,13 +215,13 @@ export const ApplicateBattle = ({ }) => {
                 />
               </div>
               <div className="border-b-1 flex justify-between px-1.5 py-1 justify-center">
-                <div className="text-[20px] font-black whitespace-nowrap">
+                <div className="text-[20px] font-black whitespace-nowrap font-black">
                   멤버2
                 </div>
 
               </div>
               <div className="border-b-1 flex justify-between px-1.5 py-1">
-                <div className="text-[20px] whitespace-nowrap">
+                <div className="text-[20px] whitespace-nowrap font-black">
                   이름
                 </div>
                 <Input
@@ -235,7 +235,7 @@ export const ApplicateBattle = ({ }) => {
                 />
               </div>
               <div className="border-b-0 flex justify-between px-1.5 py-1 pb-0">
-                <div className="text-[20px] whitespace-nowrap">
+                <div className="text-[20px] whitespace-nowrap font-black">
                   생년월일
                 </div>
                 <Input
@@ -253,7 +253,7 @@ export const ApplicateBattle = ({ }) => {
               </div>
               <div className="text-right text-[12px] border-b-1 pb-1 px-1.5">만 15세 이상만 신청이 가능합니다.</div>
               <div className="border-b-1 flex justify-between px-1.5 py-1">
-                <div className="text-[20px] whitespace-nowrap">
+                <div className="text-[20px] whitespace-nowrap font-black">
                   장르
                 </div>
                 <Input
@@ -270,7 +270,7 @@ export const ApplicateBattle = ({ }) => {
                 />
               </div>
               <div className="border-b-1 flex justify-between px-1.5 py-1">
-                <div className=" text-[20px] whitespace-nowrap">
+                <div className=" text-[20px] whitespace-nowrap font-black">
                   휴대폰
                 </div>
                 <Input
@@ -288,7 +288,7 @@ export const ApplicateBattle = ({ }) => {
               </div>
 
               <div className="border-b-1 flex flex-col px-1.5 py-1">
-                <div className="text-[20px] whitespace-nowrap">
+                <div className="text-[20px] whitespace-nowrap font-black">
                   인스타그램 아이디
                 </div>
                 <Input
@@ -349,7 +349,7 @@ export const ApplicateBattle = ({ }) => {
               {error && <span className="text-[12px]">{error}</span>}
             </div>
             <div className="flex-grow-1" />
-            <Button disabled={isSubmitting} onClick={handleSubmit}>
+            <Button disabled={isSubmitting} className="pretendard" onClick={handleSubmit}>
               {isSubmitting ? "신청 중..." : "신청하기"}
             </Button>
           </div>

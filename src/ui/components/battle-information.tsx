@@ -18,7 +18,7 @@ export default function BasicInformation() {
           <div className="absolute left-0 bottom-0 h-[1px] border-b-4 border_el ani_order_9"></div>
         </div>
       </div>
-      <div className="py-[22px] text-[13px] font-semibold whitespace-pre-wrap break-keep ani px-4 ">
+      <div className="py-[22px] text-[13px] font-medium whitespace-pre-wrap break-keep ani px-4 ">
         여성 댄서들만을 위해 마련된 2:2 오픈 스타일 배틀입니다. DJ의 랜덤 플레이에 맞춰 진행됩니다.
       </div>
 

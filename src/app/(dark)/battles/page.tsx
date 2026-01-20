@@ -454,7 +454,7 @@ export default function IrlInfo() {
         </div>
         <div className="flex flex-col gap-3 overflow-visible">
           <Link href="/workshop">
-            <Button reverse>
+            <Button reverse className="pretendard">
               코레오그래피 워크숍 신청하기
             </Button>
           </Link>
