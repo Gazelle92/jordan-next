@@ -392,7 +392,7 @@ export default function IrlInfo() {
             <div className={clsx("txt-w", openMap[3] && "show")}>
               <div className="txt-inner px-4 leading-[1.5]">
                 <div className="dot-sp-1 !font-semibold !text-[13px]">
-                  {"코레오그래피 워크샵과 중복 참여가 제한됩니다."}
+                  {"코레오그래피 워크숍과 중복 참여가 제한됩니다."}
                 </div>
                 <div className="dot-sp-1 !font-semibold !text-[13px]">
                   {"프로그램 참가자로 선정되지 않더라도 행사 관람을 원하실 경우, 반드시 '배틀 관람 및 토크 세션'을 별도로 진행해 주시기 바랍니다."}
