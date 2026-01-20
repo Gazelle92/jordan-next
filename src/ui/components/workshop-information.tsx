@@ -25,7 +25,7 @@ export default function WorkshopInformation() {
         </div>
       </div>
       <div className="py-[22px] text-[13px] font-semibold whitespace-pre-wrap break-keep ani px-4 ">
-        <div>댄서 ‘바다’가 선택한 60명의 참여자는 2월 7일, 〈HOUSE OF GREATNESS〉 코레오그래피 워크숍에 초대됩니다. ‘바다’ 그리고 ‘베베 멤버들’과 함께 완성된 퍼포먼스는 영상으로 제작되어, 소장용으로 전달됩니다.</div>
+        <div>댄서 ‘바다’가 선택한 60명의 참여자는 2월 7일, 〈HOUSE OF GREATNESS〉 코레오그래피 워크숍에 초대됩니다. 댄서 ‘바다’ 그리고 ‘베베 멤버들’과 함께 완성된 퍼포먼스는 영상으로 제작되어, 소장용으로 전달됩니다.</div>
       </div>
 
       <div className="text-[13px] font-semibold whitespace-pre-wrap break-keep ani border-t-4">
@@ -150,7 +150,10 @@ export default function WorkshopInformation() {
             <div className="!font-semibold !text-[13px]">※ 1인 단독 촬영 및 게시물만 인정됩니다. 공동 작업자 참여는 불가합니다.</div>
           </div>
 
-          <Button className="mt-4">챌린지 음원 다운로드</Button>
+          <a href="/FULL_INFRARED.mp3" download="FULL_INFRARED.mp3"
+          >
+            <Button className="mt-4">챌린지 음원 다운로드</Button>
+          </a>
           <div
             className="txt-btn-w w-full flex justify-center mx-auto pb-[30px] border-b-1"
             onClick={() => toggle(1)}
@@ -197,6 +200,6 @@ export default function WorkshopInformation() {
         </div>
       </div>
 
-    </div>
+    </div >
   );
 }

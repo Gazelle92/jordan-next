@@ -73,7 +73,7 @@ export default function IrlInfo() {
                 >
                   <div className="font-medium">0{program.id}</div>
                   <div className="flex-grow-1 leading-[1] font-black text-balance w-[180px] pr-[calc(100%-320px)] break-keep">{program.name}</div>
-                  <div className="font-medium text-[13px]">{program.times}</div>
+                  <div className="whitespace-nowrap font-medium text-[13px]">{program.times}</div>
                 </div>
               ))}
             </div>

@@ -79,7 +79,7 @@ export const ReservateBattle = ({ }) => {
           <>
             <div className="flex flex-col flex-grow-1 items-center justify-center gap-6">
               <Logo width={100} height={100} />
-              <strong>배틀 관람 및 토크세션<br />참여 신청이 완료되었습니다.</strong>
+              <strong className="text-center">배틀 관람 및 토크세션<br />참여 신청이 완료되었습니다.</strong>
             </div>
             <Link href="/menu">
               <Button>메뉴로 돌아가기</Button>
@@ -140,7 +140,7 @@ export const ReservateBattle = ({ }) => {
               </div>
               <div className="flex flex-col px-1.5 py-1">
                 <div className={clsx("font-black text-[20px]", jordan.className)}>
-                  토크세션 호스트<br />댄서 ‘바다’와 ‘왁씨’에게 묻고 싶은 질문
+                  댄서 ‘바다’와 ‘왁씨’에게 묻고 싶은 질문
                 </div>
                 <Textarea
                   placeholder=""

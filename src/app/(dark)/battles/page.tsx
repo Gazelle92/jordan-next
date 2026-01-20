@@ -231,7 +231,7 @@ export default function IrlInfo() {
                   {"참가 대상: 만 15세 이상 여성 댄서 누구나 (2인 1조 팀 신청)"}
                 </div>
                 <div className="dot-sp-1 !font-semibold !text-[13px]">
-                  {"참가 신청 기간: 1월 21일(수) 12:00~ 1월 27일(화) 23:59"}
+                  {"참가 신청 기간: 1월 21일(수) 12:00 ~ 1월 27일(화) 23:59"}
                 </div>
                 <div className="dot-sp-1 !font-semibold !text-[13px]">
                   {"참가자 발표: 1월 30일(금), 공식 웹사이트 공지 및 개별 문자 발송"}
@@ -284,7 +284,7 @@ export default function IrlInfo() {
                 <br />
 
                 <div className="dot-sp-1">
-                  {"본선 (TOP12)"}
+                  {"본선 (TOP 12)"}
                 </div>
                 <div className="dot-sp-2">
                   {"예선 상위 8팀 + 배틀 게스트 4팀"}
@@ -305,7 +305,7 @@ export default function IrlInfo() {
                   {"WILD CARD"}
                 </div>
                 <div className="dot-sp-2">
-                  {"TOP6 배틀에서 승리한 3팀을 제외한 9팀 중, JUDGE가 각 1팀씩 총 3팀 선발"}
+                  {"TOP 6 배틀에서 승리한 3팀을 제외한 9팀 중, JUDGE가 각 1팀씩 총 3팀 선발"}
                 </div>
                 <div className="dot-sp-2">
                   {"콘테스트를 통해 최종 1팀이 SEMI FINAL 진출"}
@@ -329,7 +329,7 @@ export default function IrlInfo() {
                   {"심사 방식"}
                 </div>
                 <div className="dot-sp-2">
-                  {"예선 ~ TOP6: JUDGE ONLY"}
+                  {"예선 ~ TOP 6: JUDGE ONLY"}
                 </div>
                 <div className="dot-sp-2">
                   {"SEMI FINAL ~ FINAL: JUDGE + 관객 심사"}

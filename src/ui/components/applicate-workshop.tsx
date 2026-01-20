@@ -190,7 +190,7 @@ export const ApplicateWorkshop = ({ }) => {
               </div>
               <div className="flex flex-col px-1.5 py-1">
                 <div className={clsx("font-black text-[20px] whitespace-nowrap", jordan.className)}>
-                  토크세션 호스트<br />댄서 ‘바다’와 ‘왁씨’에게 묻고 싶은 질문
+                  댄서 ‘바다’와 ‘왁씨’에게 묻고 싶은 질문
                 </div>
                 <Textarea
                   placeholder=""
@@ -232,7 +232,8 @@ export const ApplicateWorkshop = ({ }) => {
               {error && <span className="text-[12px]">{error}</span>}
             </div>
 
-            <div className="flex flex-col">
+
+            {/*<div className="flex flex-col">
               <Checkbox
                 className="chbx_w"
                 checked={form.privacy_policy_agreed}
@@ -246,7 +247,7 @@ export const ApplicateWorkshop = ({ }) => {
                 <span className="w-[calc(100%-20px)]">본인이 업로드한 릴스 콘텐츠의 HOUSE OF GREATNESS 리캡 영상 및 공식 채널 활용에 동의합니다.</span>
               </Checkbox>
               {error && <span className="text-[12px]">{error}</span>}
-            </div>
+            </div>*/}
 
             <div className="flex-grow-1" />
             <Button disabled={isSubmitting} onClick={handleSubmit}>
