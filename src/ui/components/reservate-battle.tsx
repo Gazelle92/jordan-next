@@ -18,8 +18,6 @@ const initialForm = {
   phone_number: "",
   birth_date: "",
   what_do_you_want: "",
-  watch_battle: false,
-  watch_talk_session: false,
   privacy_policy_agreed: false,
 };
 
@@ -49,7 +47,6 @@ export const ReservateBattle = ({ }) => {
       setError("개인정보 수집에 동의 해주시기 바랍니다.");
       return;
     }
-
     if (
       !form.name ||
       !form.phone_number ||
@@ -161,11 +158,11 @@ export const ReservateBattle = ({ }) => {
             <div className="flex flex-col justify-center text-center gap-[8px]">
               <div className="flex justify-center gap-[20px] text-[16px] leading-[1.2]">
                 <Checkbox
-                  checked={form.watch_battle}
+                  checked={form.privacy_policy_agreed}
                   onChange={(event) =>
                     setForm((prev) => ({
                       ...prev,
-                      watch_battle: event.target.checked,
+                      privacy_policy_agreed: event.target.checked,
                     }))
                   }
                 >
@@ -173,18 +170,18 @@ export const ReservateBattle = ({ }) => {
                 </Checkbox>
 
                 <Checkbox
-                  checked={form.watch_talk_session}
+                  checked={form.privacy_policy_agreed}
                   onChange={(event) =>
                     setForm((prev) => ({
                       ...prev,
-                      watch_talk_session: event.target.checked,
+                      privacy_policy_agreed: event.target.checked,
                     }))
                   }
                 >
                   <div className="text-[16px]">토크 세션 관람</div>
                 </Checkbox>
               </div>
-              <span className="text-[12px]">* 두 프로그램은 중복 신청이 가능합니다.</span>
+              {error && <span className="text-[12px]">{error}</span>}
             </div>
             <div className="flex flex-col">
               <Checkbox
