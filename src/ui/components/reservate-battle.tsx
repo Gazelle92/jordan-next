@@ -88,14 +88,14 @@ export const ReservateBattle = ({ }) => {
   return (
     <>
       <Button onClick={() => setOpen(true)}>
-        <span className="text-[24px] pretendard">{/*HOUSE OF GREATNESS 이벤트 예약하기*/}배틀 관람 및 토크 세션 신청하기</span>
+        <span className="text-[24px] pretendard">{/*HOUSE OF GREATNESS 이벤트 예약하기*/}배틀 & 코레오그래피 워크샵 관람 신청</span>
       </Button>
       <FullDialog open={open} onClose={() => setOpen(false)}>
         {completed ? (
           <>
             <div className="flex flex-col flex-grow-1 items-center justify-center gap-6">
               <Logo width={100} height={100} />
-              <strong className="text-center">배틀 관람 및 토크 세션<br />참여 신청이 완료되었습니다.</strong>
+              <strong className="text-center">배틀 & 코레오그래피 워크샵<br />관람 신청이 완료되었습니다.</strong>
             </div>
             <Link href="/menu">
               <Button>메뉴로 돌아가기</Button>
@@ -103,7 +103,7 @@ export const ReservateBattle = ({ }) => {
           </>
         ) : (
           <div className="flex flex-col gap-5 flex-grow-1 h-full">
-            <h4 className="font-black text-[24px] text-center leading-[1]">배틀 관람 및 토크 세션<br />참여 신청서</h4>
+            <h4 className="font-black text-[24px] text-center leading-[1]">배틀 & 코레오그래피 워크샵<br />관람 신청서</h4>
             <div className="flex flex-col border-1">
               <div className="border-b-1 flex justify-between px-1.5 py-1">
                 <div className="font-black text-[20px] whitespace-nowrap">
@@ -200,6 +200,7 @@ export const ReservateBattle = ({ }) => {
               </div>
               <span className="text-[12px]">* 두 프로그램은 중복 신청이 가능합니다.</span>
             </div>
+            <div className="flex-grow-1" />
             <div className="flex flex-col gap-1">
               <Checkbox
                 checked={form.privacy_policy_agreed}
@@ -256,7 +257,7 @@ export const ReservateBattle = ({ }) => {
             </div>
 
 
-            <div className="flex-grow-1" />
+
             <Button disabled={isSubmitting} className="pretendard" onClick={handleSubmit}>
               {isSubmitting ? "신청 중..." : "신청하기"}
             </Button>

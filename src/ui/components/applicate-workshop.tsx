@@ -205,6 +205,7 @@ export const ApplicateWorkshop = ({ }) => {
                 />
               </div>
             </div>
+            <div className="flex-grow-1" />
             <div className="flex flex-col gap-1">
               <Checkbox
                 checked={form.privacy_policy_agreed}
@@ -277,7 +278,7 @@ export const ApplicateWorkshop = ({ }) => {
               {error && <span className="text-[12px]">{error}</span>}
             </div>*/}
 
-            <div className="flex-grow-1" />
+
             <Button disabled={isSubmitting} className="pretendard" onClick={handleSubmit}>
               {isSubmitting ? "신청 중..." : "신청하기"}
             </Button>

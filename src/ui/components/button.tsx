@@ -18,7 +18,7 @@ export const Button = ({
           ? "bg-black text-[#FF3B49] border-1 border-[#FF3B49]"
           : "bg-[#FF3B49] text-black border-1 border-black",
         "w-full min-h-10 pt-[7px] pb-[5px] leading-[1]",
-        "text-center text-[24px] font-black",
+        "text-center text-[24px] font-black rounded-[9px]",
 
         className
       )}
