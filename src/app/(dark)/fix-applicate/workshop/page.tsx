@@ -24,7 +24,6 @@ type WorkshopForm = {
   name: string;
   birth_date: string;
   phone_number: string;
-  battle_genre: string;
   instagram_video_url: string;
   what_do_you_want: string;
 };
@@ -58,7 +57,6 @@ export default function WorkshopEditPage() {
         name: match.name,
         birth_date: match.birth_date,
         phone_number: match.phone_number,
-        battle_genre: match.battle_genre ?? "",
         instagram_video_url: match.instagram_video_url ?? "",
         what_do_you_want: match.what_do_you_want,
       });
@@ -79,7 +77,6 @@ export default function WorkshopEditPage() {
       !workshopForm.name ||
       !workshopForm.birth_date ||
       !workshopForm.phone_number ||
-      !workshopForm.battle_genre ||
       !workshopForm.instagram_video_url ||
       !workshopForm.what_do_you_want
     ) {
@@ -93,7 +90,6 @@ export default function WorkshopEditPage() {
         name: workshopForm.name,
         birth_date: workshopForm.birth_date,
         phone_number: workshopForm.phone_number,
-        battle_genre: workshopForm.battle_genre,
         instagram_video_url: workshopForm.instagram_video_url,
         what_do_you_want: workshopForm.what_do_you_want,
       });
@@ -232,7 +228,6 @@ function StepEdit({
     name: "",
     birth_date: "",
     phone_number: "",
-    battle_genre: "",
     instagram_video_url: "",
     what_do_you_want: "",
   };
