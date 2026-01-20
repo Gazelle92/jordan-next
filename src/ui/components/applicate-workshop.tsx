@@ -22,6 +22,7 @@ const initialForm = {
   instagram_video_url: "",
   what_do_you_want: "",
   privacy_policy_agreed: false,
+  third_party_agreed: false,
 };
 
 export const ApplicateWorkshop = ({ }) => {
@@ -49,8 +50,14 @@ export const ApplicateWorkshop = ({ }) => {
   const phoneRegex = /^010\d{8}$/;
 
   const handleSubmit = async () => {
-    if (!form.privacy_policy_agreed) {
-      setError("개인정보 수집에 동의 해주시기 바랍니다.");
+    if (!form.privacy_policy_agreed || !form.third_party_agreed) {
+      if (!form.privacy_policy_agreed && !form.third_party_agreed) {
+        setError("개인정보 수집・이용 및 제3자 제공에 동의해 주세요.");
+      } else if (!form.privacy_policy_agreed) {
+        setError("개인정보 수집・이용 및 콘텐츠 활용에 동의해 주세요.");
+      } else {
+        setError("개인정보 제3자 제공/처리위탁에 동의해 주세요.");
+      }
       return;
     }
     if (!birthDateRegex.test(form.birth_date)) {
@@ -59,12 +66,6 @@ export const ApplicateWorkshop = ({ }) => {
     }
     if (!phoneRegex.test(form.phone_number)) {
       setError("휴대폰 번호 형식이 올바르지 않습니다.\n예시) 01012345678");
-      return;
-    }
-
-
-    if (!form.privacy_policy_agreed) {
-      setError("개인정보 수집에 동의 해주시기 바랍니다.");
       return;
     }
     if (
@@ -82,15 +83,7 @@ export const ApplicateWorkshop = ({ }) => {
     setIsSubmitting(true);
     setError(null);
     try {
-      await createWorkshop({
-        name: form.name,
-        phone_number: form.phone_number,
-        birth_date: form.birth_date,
-        battle_genre: form.battle_genre,
-        instagram_video_url: form.instagram_video_url,
-        what_do_you_want: form.what_do_you_want,
-        privacy_policy_agreed: form.privacy_policy_agreed,
-      });
+      await createWorkshop(form);
       setCompleted(true);
     } catch (err) {
       setError(err instanceof Error ? err.message : "신청에 실패했습니다.");
@@ -232,14 +225,13 @@ export const ApplicateWorkshop = ({ }) => {
                   &nbsp;및 콘텐츠 활용에 동의합니다.
                 </div>
               </Checkbox>
-              {error && <span className="text-[12px]">{error}</span>}
 
               <Checkbox
-                checked={form.privacy_policy_agreed}
+                checked={form.third_party_agreed}
                 onChange={(event) =>
                   setForm((prev) => ({
                     ...prev,
-                    privacy_policy_agreed: event.target.checked,
+                    third_party_agreed: event.target.checked,
                   }))
                 }
               >
@@ -275,7 +267,6 @@ export const ApplicateWorkshop = ({ }) => {
               >
                 <span className="w-[calc(100%-20px)]">본인이 업로드한 릴스 콘텐츠의 HOUSE OF GREATNESS 리캡 영상 및 공식 채널 활용에 동의합니다.</span>
               </Checkbox>
-              {error && <span className="text-[12px]">{error}</span>}
             </div>*/}
 
 

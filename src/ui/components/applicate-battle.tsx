@@ -26,6 +26,7 @@ const initialForm = {
   member2_instagram_id: "",
   what_do_you_want: "",
   privacy_policy_agreed: false,
+  third_party_agreed: false,
 };
 
 export const ApplicateBattle = ({ }) => {
@@ -55,8 +56,14 @@ export const ApplicateBattle = ({ }) => {
 
 
   const handleSubmit = async () => {
-    if (!form.privacy_policy_agreed) {
-      setError("개인정보 수집에 동의 해주시기 바랍니다.");
+    if (!form.privacy_policy_agreed || !form.third_party_agreed) {
+      if (!form.privacy_policy_agreed && !form.third_party_agreed) {
+        setError("개인정보 수집・이용 및 제3자 제공에 동의해 주세요.");
+      } else if (!form.privacy_policy_agreed) {
+        setError("개인정보 수집・이용 및 콘텐츠 활용에 동의해 주세요.");
+      } else {
+        setError("개인정보 제3자 제공/처리위탁에 동의해 주세요.");
+      }
       return;
     }
 
@@ -349,14 +356,13 @@ export const ApplicateBattle = ({ }) => {
                   &nbsp;및 콘텐츠 활용에 동의합니다.
                 </div>
               </Checkbox>
-              {error && <span className="text-[14px]">{error}</span>}
 
               <Checkbox
-                checked={form.privacy_policy_agreed}
+                checked={form.third_party_agreed}
                 onChange={(event) =>
                   setForm((prev) => ({
                     ...prev,
-                    privacy_policy_agreed: event.target.checked,
+                    third_party_agreed: event.target.checked,
                   }))
                 }
               >

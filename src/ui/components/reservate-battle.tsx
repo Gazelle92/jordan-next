@@ -8,8 +8,6 @@ import Logo from "@/ui/svg/logo.svg";
 import { Link } from "next-view-transitions";
 import { Input } from "./input";
 import { Textarea } from "./textarea";
-import clsx from "clsx";
-import { jordan } from "../font";
 import { createPreRegistration } from "@/lib/api-client";
 import { PrivacyPolicy } from "@/ui/components/privacy-policy";
 
@@ -18,7 +16,9 @@ const initialForm = {
   phone_number: "",
   birth_date: "",
   what_do_you_want: "",
+  talk_session_view: false,
   privacy_policy_agreed: false,
+  third_party_agreed: false,
 };
 
 export const ReservateBattle = ({ }) => {
@@ -44,11 +44,16 @@ export const ReservateBattle = ({ }) => {
 
   const birthDateRegex = /^\d{8}$/;
   const phoneRegex = /^010\d{8}$/;
-  const instagramRegex = /^@[A-Za-z0-9._]+$/;
 
   const handleSubmit = async () => {
-    if (!form.privacy_policy_agreed) {
-      setError("개인정보 수집에 동의 해주시기 바랍니다.");
+    if (!form.privacy_policy_agreed || !form.third_party_agreed) {
+      if (!form.privacy_policy_agreed && !form.third_party_agreed) {
+        setError("개인정보 수집・이용 및 제3자 제공에 동의해 주세요.");
+      } else if (!form.privacy_policy_agreed) {
+        setError("개인정보 수집・이용 및 콘텐츠 활용에 동의해 주세요.");
+      } else {
+        setError("개인정보 제3자 제공/처리위탁에 동의해 주세요.");
+      }
       return;
     }
     if (!birthDateRegex.test(form.birth_date)) {
@@ -76,7 +81,15 @@ export const ReservateBattle = ({ }) => {
     setIsSubmitting(true);
     setError(null);
     try {
-      await createPreRegistration(form);
+      await createPreRegistration({
+        name: form.name,
+        phone_number: form.phone_number,
+        birth_date: form.birth_date,
+        viewing_preference: form.talk_session_view,
+        what_do_you_want: form.what_do_you_want,
+        privacy_policy_agreed: form.privacy_policy_agreed,
+        third_party_agreed: form.third_party_agreed,
+      });
       setCompleted(true);
     } catch (err) {
       setError(err instanceof Error ? err.message : "신청에 실패했습니다.");
@@ -178,11 +191,11 @@ export const ReservateBattle = ({ }) => {
                 <span className="font-extralight text-[12px]">* 토크 세션 관람을 희망하시는 경우 체크해 주세요.</span>
                 <Checkbox
                   className="absolute right-[14px] top-[10px] view_label"
-                  checked={form.privacy_policy_agreed}
+                  checked={form.talk_session_view}
                   onChange={(event) =>
                     setForm((prev) => ({
                       ...prev,
-                      privacy_policy_agreed: event.target.checked,
+                      talk_session_view: event.target.checked,
                     }))
                   }
                 >
@@ -255,14 +268,13 @@ export const ReservateBattle = ({ }) => {
                   &nbsp;및 콘텐츠 활용에 동의합니다.
                 </div>
               </Checkbox>
-              {error && <span className="text-[12px]">{error}</span>}
 
               <Checkbox
-                checked={form.privacy_policy_agreed}
+                checked={form.third_party_agreed}
                 onChange={(event) =>
                   setForm((prev) => ({
                     ...prev,
-                    privacy_policy_agreed: event.target.checked,
+                    third_party_agreed: event.target.checked,
                   }))
                 }
               >

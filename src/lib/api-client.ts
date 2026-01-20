@@ -11,8 +11,10 @@ export type PreRegistrationPayload = {
   name: string;
   phone_number: string;
   birth_date: string;
+  viewing_preference: boolean;
   what_do_you_want: string;
   privacy_policy_agreed: boolean;
+  third_party_agreed: boolean;
 };
 
 export type BattlePayload = {
@@ -28,6 +30,7 @@ export type BattlePayload = {
   member2_instagram_id?: string;
   what_do_you_want: string;
   privacy_policy_agreed: boolean;
+  third_party_agreed: boolean;
 };
 
 export type Battle = BattlePayload & {
@@ -44,6 +47,7 @@ export type WorkshopPayload = {
   instagram_video_url: string;
   what_do_you_want: string;
   privacy_policy_agreed: boolean;
+  third_party_agreed: boolean;
 };
 
 export type Workshop = Omit<WorkshopPayload, "instagram_video_url"> & {
