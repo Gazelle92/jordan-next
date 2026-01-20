@@ -5,6 +5,7 @@ import { useEffect, useState } from "react";
 import Image from "next/image";
 import AllOrEverything from "@/ui/svg/all_or_everything.svg";
 import Logo from "@/ui/svg/logo.svg";
+import VideoLogo from "@/ui/svg/video_logo.svg";
 import WhatDoYouWant from "@/ui/svg/what_do_you_want.svg";
 
 export default function Home() {
@@ -40,13 +41,13 @@ export default function Home() {
   }
 
   switch (transitionState) {
-    /*case 0:
+    case 0:
       return (
 
         <div className="flex flex-grow-1 items-center justify-center opacity-0">
           <Logo width={100} height={100} />
         </div>
-      );*/
+      );
     case 0:
       return (
         <div className="flex flex-grow-1 items-center justify-center">
@@ -57,8 +58,8 @@ export default function Home() {
     case 1:
       return (
         <div className="flex flex-grow-1 items-center justify-center relative">
-          <div className="absolute top-[13px] right-[14px]">
-            <Logo width={40} className={`main_logo transition-opacity duration-500 ease-in-out ${fadeOut ? "opacity-0" : "opacity-100"}`} />
+          <div className="absolute top-[27px] left-1/2 main_logo_w">
+            <VideoLogo width={218} className={`main_logo transition-opacity duration-500 ease-in-out ${fadeOut ? "opacity-0" : "opacity-100"}`} />
 
           </div>
           <div className="absolute top-0 left-[22px] w-[60px] h-full">
@@ -67,12 +68,19 @@ export default function Home() {
           </div>
 
           <video
-            src="/video/bada_sample3.mp4"
+            src="https://customer-y6yfz33adjmztpgx.cloudflarestream.com/29bc1ae03cd5e74772998e47fdedce02/manifest/video.m3u8"
             autoPlay
             muted
             playsInline
             className={`w-dvw h-dvh object-cover transition-opacity duration-500 ease-in-out ${fadeOut ? "opacity-0" : "opacity-100"
               }`}
+            onClick={() => {
+              setFadeOut(true);
+              setPushed(true);
+              setTimeout(() => {
+                router.push("/menu");
+              }, 500);
+            }}
 
             onTimeUpdate={(e) => {
               const video = e.currentTarget;

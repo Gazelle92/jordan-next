@@ -28,7 +28,7 @@ export default function irlInformation() {
         여성 댄서들의 주체적인 스텝은 이 흐름의 출발점입니다. 발끝에서 시작된 에너지는 공간을 가로질러 퍼지고, 개인의 움직임은 집단의 리듬이 되어 현장을 채웁니다.
         <br /><br />
         지금, 성수동에서 열리는 HOUSE OF GREATNESS에 들어와 조던이 말하는 움직임의 에너지와 다음 스텝을 향한 순간을 직접 만나보세요.*/}
-        Air Jordan 6 ‘Infrared’와 함께, 자신만의 위대함을 향해 나아가는 이들을 위한 ‘HOUSE OF GREATNESS’를 시작합니다.
+        Air Jordan 6 ‘Infrared’와 함께, 자신만의 위대함을 향해 나아가는 이들을 위한 ‘HOUSE OF GREATNESS’를 선보입니다.
       </div>
     </div>
   );

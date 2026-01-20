@@ -251,21 +251,22 @@ body {
     background: rgba(0, 0, 0, 0);
 }
 .main_logo{}
+.main_logo_w{position: absolute; left: 50%; transform: translateX(-50%); top: 27px;}
 .main_tag{object-fit: cover; width: auto!important;}
 
 .guest_wrap{max-width: 440px; margin: auto}
 .guest_wrap > div:nth-child(2), .guest_wrap > div:nth-child(6){margin-right: 24px;}
 .guest_wrap > div:nth-child(3), .guest_wrap > div:nth-child(7){margin-left: 24px;}
 @media(min-width:1024px){
-  .main_logo{width:81px!important;}
+
 
 }
 @media(min-width:451px) and (max-width: 1023px){
-  .main_logo{width:64px!important;}
+
 
 }
 @media(max-width:450px){
-  .main_logo{width:14vw!important;}
+
   .guest_wrap > div:nth-child(2), .guest_wrap > div:nth-child(6){margin-right: 12px;}
   .guest_wrap > div:nth-child(3), .guest_wrap > div:nth-child(7){margin-left: 12px;}
 

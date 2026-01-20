@@ -13,6 +13,7 @@ import { jordan } from "../font";
 import { createWorkshop } from "@/lib/api-client";
 import { PrivacyPolicy } from "@/ui/components/privacy-policy";
 
+
 const initialForm = {
   name: "",
   phone_number: "",
@@ -29,6 +30,11 @@ export const ApplicateWorkshop = ({ }) => {
   const [form, setForm] = useState(initialForm);
   const [error, setError] = useState<string | null>(null);
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [privacyOpen, setPrivacyOpen] = useState(false);
+
+  useEffect(() => {
+    if (!open) setPrivacyOpen(false);
+  }, [open]);
 
   useEffect(() => {
     if (!open) {
@@ -206,7 +212,17 @@ export const ApplicateWorkshop = ({ }) => {
                   }))
                 }
               >
-                <PrivacyPolicy />에 동의합니다.
+
+                <button
+                  type="button"
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    setPrivacyOpen(true);
+                  }}
+                  className="underline"
+                >
+                  개인정보 처리방침
+                </button>
               </Checkbox>
               {error && <span className="text-[12px]">{error}</span>}
             </div>
@@ -234,6 +250,11 @@ export const ApplicateWorkshop = ({ }) => {
           </div>
         )}
       </FullDialog>
+
+      <PrivacyPolicy
+        open={privacyOpen}
+        onClose={() => setPrivacyOpen(false)}
+      />
     </>
   );
 };
