@@ -81,22 +81,12 @@ const modalEmbedStyle = {
 };
 
 const Thumbnail = ({
-  workshopId,
-  liked,
-  likeCount,
-  onToggleLike,
-
   instagramUrl,
   streamVideoUrl,
   streamThumbnailUrl,
   streamStatus,
   embedReady,
 }: {
-  workshopId: number;
-  liked: boolean;
-  likeCount: number;
-  onToggleLike: (id: number) => void;
-
   instagramUrl: string;
   streamVideoUrl?: string | null;
   streamThumbnailUrl?: string | null;
@@ -183,36 +173,6 @@ const Thumbnail = ({
     }
   };
 
-  const LikeButton = ({
-    liked,
-    count,
-    onClick,
-    className = "",
-  }: {
-    liked: boolean;
-    count: number;
-    onClick: () => void;
-    className?: string;
-  }) => {
-    return (
-      <button
-        className={clsx(
-          "flex items-center text-white text-[12px]",
-          className
-        )}
-        onClick={onClick}
-      >
-        <img
-          src={liked ? "/images/heart_2.png" : "/images/heart_1.png"}
-          alt=""
-          className="w-4 mr-1"
-        />
-        {count}
-      </button>
-    );
-  };
-
-
 
 
   return (
@@ -256,7 +216,6 @@ const Thumbnail = ({
                 width={40}
                 height={40} />
             </div>
-
             {canPlayStream ? (
               <video
                 className="absolute inset-0 w-full h-full object-cover"
@@ -274,8 +233,6 @@ const Thumbnail = ({
                   />
                 )}
               </video>
-
-
             ) : hasInstagram ? (
               <blockquote
                 className="instagram-media w-full h-full ig-embed-modal"
@@ -288,12 +245,6 @@ const Thumbnail = ({
                 영상이 준비중입니다.
               </div>
             )}
-            <LikeButton
-              liked={liked}
-              count={likeCount}
-              onClick={() => onToggleLike(workshopId)}
-              className="absolute bottom-3 left-3 z-[20]"
-            />
           </div>
         </div>
       </VideoDialog>
@@ -458,10 +409,6 @@ export default function Videos() {
                   key={workshop.id}
                 >
                   <Thumbnail
-                    workshopId={workshop.id}
-                    liked={likedIds.includes(workshop.id)}
-                    likeCount={workshop.like_count}
-                    onToggleLike={handleToggleLike}
                     instagramUrl={toInstagramEmbedUrl(workshop.instagram_video_url)}
                     streamVideoUrl={workshop.stream_video_url}
                     streamThumbnailUrl={workshop.stream_thumbnail_url}
