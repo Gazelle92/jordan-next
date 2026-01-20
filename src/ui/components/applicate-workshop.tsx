@@ -205,7 +205,7 @@ export const ApplicateWorkshop = ({ }) => {
                 />
               </div>
             </div>
-            <div className="flex flex-col">
+            <div className="flex flex-col gap-1">
               <Checkbox
                 checked={form.privacy_policy_agreed}
                 onChange={(event) =>
@@ -216,6 +216,8 @@ export const ApplicateWorkshop = ({ }) => {
                 }
               >
                 <div>
+                  [필수]&nbsp;
+
                   <button
                     type="button"
                     onClick={(e) => {
@@ -224,9 +226,35 @@ export const ApplicateWorkshop = ({ }) => {
                     }}
                     className="underline"
                   >
-                    개인정보 수집・이용&nbsp;
+                    개인정보 수집・이용
                   </button>
-                  및 콘텐츠 활용에 동의합니다.
+                  &nbsp;및 콘텐츠 활용에 동의합니다.
+                </div>
+              </Checkbox>
+              {error && <span className="text-[12px]">{error}</span>}
+
+              <Checkbox
+                checked={form.privacy_policy_agreed}
+                onChange={(event) =>
+                  setForm((prev) => ({
+                    ...prev,
+                    privacy_policy_agreed: event.target.checked,
+                  }))
+                }
+              >
+                <div>
+                  [필수]&nbsp;
+                  <button
+                    type="button"
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      setPrivacyOpen(true);
+                    }}
+                    className="underline"
+                  >
+                    개인정보 제3자 제공/처리위탁
+                  </button>
+                  &nbsp;동의
                 </div>
               </Checkbox>
               {error && <span className="text-[12px]">{error}</span>}
