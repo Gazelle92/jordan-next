@@ -134,15 +134,13 @@ const guests: ProfileProps[] = [
 
 
 const matches = [
-  { label: "Opening", time: "12:00 - 12:10" },
-  { label: "Round 64 (2 Circle)", time: "12:10 - 13:40" },
-  { label: "Judge Show", time: "14:20 - 14:50" },
-  { label: "Round 12", time: "14:50 - 15:30" },
-  { label: "Round 6", time: "15:30 - 16:00" },
-  { label: "Wild Card", time: "16:00 - 16:20" },
-  { label: "Semifinals", time: "16:20 - 16:50" },
-  { label: "Final", time: "16:50 - 17:10" },
-  { label: "Awards", time: "17:10 - 17:30" },
+  { label: "1차 예선 (3 circles)", time: "12:00 - 13:30" },
+  { label: "2차 예선 (3 circles)", time: "13:30 - 15:00" },
+  { label: "본선 (TOP 12 )", time: "16:00 - 16:40" },
+  { label: "TOP 6", time: "16:40 - 17:00" },
+  { label: "SEMI FINAL & WILD CARD", time: "17:00 - 17:30" },
+  { label: "JUDGE SHOW", time: "17:30 - 17:50" },
+  { label: "FINAl & awards", time: "17:50 - 18:30" },
 ];
 
 
@@ -230,10 +228,10 @@ export default function IrlInfo() {
             <div className={clsx("txt-w ", openMap[0] && "show")}>
               <div className="txt-inner px-4 leading-[1.5]">
                 <div className="dot-sp-1 !font-semibold !text-[13px]">
-                  {"참가 대상: 여성 댄서 누구나 (2인 1조 팀으로 신청 가능)"}
+                  {"참가 대상: 만 15세 이상 여성 댄서 누구나 (2인 1조 팀 신청)"}
                 </div>
                 <div className="dot-sp-1 !font-semibold !text-[13px]">
-                  {"신청 기간: 1월 21일(수)~1월 27일(화)"}
+                  {"참가 신청 기간: 1월 21일(수) 12:00~ 1월 27일(화) 23:59"}
                 </div>
                 <div className="dot-sp-1 !font-semibold !text-[13px]">
                   {"참가자 발표: 1월 30일(금), 공식 웹사이트 공지 및 개별 문자 발송"}
@@ -254,6 +252,13 @@ export default function IrlInfo() {
 
             <div className={clsx("txt-w", openMap[1] && "show")}>
               <div className="txt-inner px-4 leading-[1.5]">
+                <div className="dot-sp-1">
+                  {"배틀 장르"}
+                </div>
+                <div className="dot-sp-2">
+                  {"2:2 여성 오픈 스타일 / DJ 음악 랜덤 재생"}
+                </div>
+                <br />
                 <div className="dot-sp-1">
                   {"1차 예선"}
                 </div>
@@ -288,22 +293,13 @@ export default function IrlInfo() {
                 <br />
 
                 <div className="dot-sp-1">
-                  {"TOP12 & TOP6"}
+                  {"TOP 12 & TOP 6 & SEMI FINAL"}
                 </div>
                 <div className="dot-sp-2">
                   {"팀당 2라운드 (라운드당 60초) / 루틴 제한 없음"}
                 </div>
-
                 <br />
 
-                <div className="dot-sp-1">
-                  {"SEMI FINAL"}
-                </div>
-                <div className="dot-sp-2">
-                  {"팀당 2라운드 (라운드당 60초) / 루틴 제한 없음"}
-                </div>
-
-                <br />
 
                 <div className="dot-sp-1">
                   {"WILD CARD"}
@@ -312,7 +308,7 @@ export default function IrlInfo() {
                   {"TOP6 배틀에서 승리한 3팀을 제외한 9팀 중, JUDGE가 각 1팀씩 총 3팀 선발"}
                 </div>
                 <div className="dot-sp-2">
-                  {"콘테스트를 통해 최종 1팀이 WILD CARD로 SEMI FINAL 진출"}
+                  {"콘테스트를 통해 최종 1팀이 SEMI FINAL 진출"}
                 </div>
 
                 <br />
@@ -339,7 +335,7 @@ export default function IrlInfo() {
                   {"SEMI FINAL ~ FINAL: JUDGE + 관객 심사"}
                 </div>
                 <div className="dot-sp-2">
-                  {"JUDGE 거수 3포인트 + 관객 심사 1포인트 (총 4포인트)로 승패 결정"}
+                  {"JUDGE 거수 3포인트 + 관객 심사 1포인트 총 4포인트로 승패 결정"}
                 </div>
               </div>
 
@@ -360,7 +356,7 @@ export default function IrlInfo() {
             <div className={clsx("txt-w", openMap[2] && "show")}>
               <div className="txt-inner px-4 leading-[1.5]">
                 <div className="dot-sp-1 !font-semibold !text-[13px]">
-                  {"1등 : 1,000만 원 상당의 조던 브랜드 스폰서십+젬 신발 트로피"}
+                  {"1등 : 1,000만 원 상당의 조던 브랜드 스폰서십 + 우승 트로피"}
                 </div>
                 <div className="dot-sp-1 !font-semibold !text-[13px]">
                   {"2등 : 500만 원 상당의 조던 브랜드 스폰서십"}
@@ -375,7 +371,7 @@ export default function IrlInfo() {
                 <br />
 
                 <div>
-                  {"※ 리워드는 지급일로부터 1년간 유효하며, 재고 상황에 따라 제품 선택이 제한될 수 있습니다."}
+                  {"※ 리워드는 지급일로부터 1년이며, 재고 상황에 따라 일부 제품 선택이 제한될 수 있습니다."}
                 </div>
               </div>
 
@@ -399,13 +395,10 @@ export default function IrlInfo() {
                   {"코레오그래피 워크샵과 중복 참여가 제한됩니다."}
                 </div>
                 <div className="dot-sp-1 !font-semibold !text-[13px]">
-                  {"프로그램 참가자로 선정되지 않더라도 행사 관람을 원하실 경우, 반드시 일반 관람 신청을 별도로 진행해 주시기 바랍니다."}
+                  {"프로그램 참가자로 선정되지 않더라도 행사 관람을 원하실 경우, 반드시 '배틀 관람 및 토크 세션'을 별도로 진행해 주시기 바랍니다."}
                 </div>
                 <div className="dot-sp-1 !font-semibold !text-[13px]">
                   {"본 행사는 조던 브랜드 이벤트로, 타 브랜드 로고가 과도하게 노출되는 착장은 자제를 부탁드립니다."}
-                </div>
-                <div className="dot-sp-1 !font-semibold !text-[13px]">
-                  {"원활한 운영을 위해 신청 시 개인정보 수집·이용 및 콘텐츠 활용 동의가 필요합니다."}
                 </div>
                 <div className="dot-sp-1 !font-semibold !text-[13px]">
                   {"현장 상황에 따라 운영 내용은 일부 변동될 수 있습니다."}
@@ -446,9 +439,7 @@ export default function IrlInfo() {
         <div className="flex flex-col gap-3 overflow-visible">
           <Link href="/workshop">
             <Button reverse>
-              CHOREOGRAPHY
-              <br />
-              WORKSHOP
+              코레오그래피 워크숍 신청하기
             </Button>
           </Link>
         </div>

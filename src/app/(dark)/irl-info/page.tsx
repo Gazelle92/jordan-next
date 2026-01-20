@@ -14,7 +14,7 @@ const programs = [
   { id: 1, name: "2:2 WOMEN'S OPEN STYLE BATTLE", times: "12:00 - 18:30" },
   { id: 2, name: "CHOREOGRAPHY WORKSHOP", times: "14:00 - 18:30" },
   { id: 3, name: "TALK SESSION", times: "19:00 - 20:00" },
-  { id: 4, name: "STYLING WORKSHOP", times: "11:00 - 18:00" },
+  //{ id: 4, name: "STYLING WORKSHOP", times: "11:00 - 18:00" },
 ];
 
 export default function IrlInfo() {
@@ -42,7 +42,7 @@ export default function IrlInfo() {
                 OPEN STYLE BATTLE
               </h4>
               <p>
-                여성 댄서만을 위한 2:2 오픈 스타일 배틀. 하우스 DJ의 랜덤 플레이 속에서, 64팀 중 단 한 팀을 가리기 위해 맞붙는 변칙 토너먼트가 펼쳐집니다.
+                여성 댄서들만을 위해 마련된 2:2 오픈 스타일 배틀입니다. DJ의 랜덤 플레이에 맞춰 진행됩니다.
               </p>
               <h4 className="text-[24px] font-black leading-[1]  mb-[6px] mt-[22px]">
                 02<br />
@@ -50,7 +50,7 @@ export default function IrlInfo() {
                 WORKSHOP
               </h4>
               <p>
-                메인 디렉터 ‘바다’와 3인의 스페셜 인스트럭터가 함께하는 코레오그래피 워크숍. ‘바다’가 직접 설계한 시그니처 코레오그래피를 통해 하나의 집단 퍼포먼스를 완성합니다.
+                댄서 ‘바다’가 선택한 60명의 참여자는 2월 7일, 〈HOUSE OF GREATNESS〉 코레오그래피 워크숍에 초대됩니다. 댄서 ‘바다’ 그리고 ‘베베 멤버들’과 함께 완성된 퍼포먼스는 영상으로 제작되어, 소장용으로 전달됩니다.
               </p>
 
               <h4 className="text-[24px] font-black leading-[1]  mb-[6px] mt-[22px]">
@@ -58,7 +58,7 @@ export default function IrlInfo() {
                 TALK SESSION
               </h4>
               <p>
-                메인 호스트 ‘바다’, 서브 호스트 ‘왁씨’ 그리고 MC 킹키가 참여하는 토크 세션. 각자의 경험과 이야기를 통해 새로운 영감을 발견해 보세요.
+                댄서 ‘바다’, ‘왁씨’의 각자의 경험을 바탕으로 춤에 대해 MC ‘킹키’와 이야기하는 토크 세션입니다.
               </p>
             </div>
             <hr className="border-2" />

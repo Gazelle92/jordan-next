@@ -110,7 +110,7 @@ export const ApplicateWorkshop = ({ }) => {
                 </div>
                 <Input
                   type="text"
-                  placeholder="한글/영문"
+                  placeholder="한글"
                   value={form.name}
                   className="placeholder:text-[#ff3b49] font-extralight text-[20px]"
                   onChange={(event) =>
@@ -118,7 +118,7 @@ export const ApplicateWorkshop = ({ }) => {
                   }
                 />
               </div>
-              <div className="border-b-1 flex justify-between px-1.5 py-1">
+              <div className="border-b-0 flex justify-between px-1.5 py-1 pb-0">
                 <div className="font-black text-[20px] whitespace-nowrap">
                   생년월일
                 </div>
@@ -135,6 +135,7 @@ export const ApplicateWorkshop = ({ }) => {
                   }
                 />
               </div>
+              <div className="text-right text-[12px] border-b-1 pb-1 px-1.5">만 15세 이상만 신청이 가능합니다.</div>
               <div className="border-b-1 flex justify-between px-1.5 py-1">
                 <div className="font-black text-[20px] whitespace-nowrap">
                   휴대폰
@@ -169,6 +170,23 @@ export const ApplicateWorkshop = ({ }) => {
                   }
                 />
               </div>
+              <div className="border-b-1 flex flex-col justify-between px-1.5 py-1">
+                <div className="font-black text-[20px] whitespace-nowrap">
+                  티셔츠/신발 사이즈
+                </div>
+                <Input
+                  type="text"
+                  placeholder="사이즈 정보는 참고용으로 수집됩니다."
+                  value={form.battle_genre}
+                  className="placeholder:text-[#ff3b49] font-extralight text-[12px] !text-left"
+                  onChange={(event) =>
+                    setForm((prev) => ({
+                      ...prev,
+                      battle_genre: event.target.value,
+                    }))
+                  }
+                />
+              </div>
               <div className="border-b-1 flex flex-col px-1.5 py-1">
                 <div className="font-black text-[20px] whitespace-nowrap">
                   인스타그램 영상 링크
@@ -190,7 +208,7 @@ export const ApplicateWorkshop = ({ }) => {
                   토크세션 호스트<br />‘바다’와 ‘왁씨’에게 묻고 싶은 질문
                 </div>
                 <Textarea
-                  placeholder="‘바다’와 ‘왁씨’에게 묻고 싶은 질문이 있다면 적어주세요."
+                  placeholder=""
                   value={form.what_do_you_want}
                   className="placeholder:text-[#ff3b49] font-extralight text-[12px] h-[100px]"
                   onChange={(event) =>
@@ -212,17 +230,19 @@ export const ApplicateWorkshop = ({ }) => {
                   }))
                 }
               >
-
-                <button
-                  type="button"
-                  onClick={(e) => {
-                    e.stopPropagation();
-                    setPrivacyOpen(true);
-                  }}
-                  className="underline"
-                >
-                  개인정보 처리방침
-                </button>
+                <div>
+                  <button
+                    type="button"
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      setPrivacyOpen(true);
+                    }}
+                    className="underline"
+                  >
+                    개인정보 수집・이용&nbsp;
+                  </button>
+                  및 콘텐츠 활용에 동의합니다.
+                </div>
               </Checkbox>
               {error && <span className="text-[12px]">{error}</span>}
             </div>

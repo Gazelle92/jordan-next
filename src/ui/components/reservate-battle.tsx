@@ -11,6 +11,7 @@ import { Textarea } from "./textarea";
 import clsx from "clsx";
 import { jordan } from "../font";
 import { createPreRegistration } from "@/lib/api-client";
+import { PrivacyPolicy } from "@/ui/components/privacy-policy";
 
 const initialForm = {
   name: "",
@@ -26,6 +27,11 @@ export const ReservateBattle = ({ }) => {
   const [form, setForm] = useState(initialForm);
   const [error, setError] = useState<string | null>(null);
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [privacyOpen, setPrivacyOpen] = useState(false);
+
+  useEffect(() => {
+    if (!open) setPrivacyOpen(false);
+  }, [open]);
 
   useEffect(() => {
     if (!open) {
@@ -81,7 +87,7 @@ export const ReservateBattle = ({ }) => {
           </>
         ) : (
           <div className="flex flex-col gap-5 flex-grow-1 h-full">
-            <h4 className="font-black text-[24px] text-center leading-[1]">배틀 관람 및 토크세션<br />참여 신청서</h4>
+            <h4 className="font-black text-[24px] text-center leading-[1]">배틀 관람 및 토크 세션<br />참여 신청서</h4>
             <div className="flex flex-col border-1">
               <div className="border-b-1 flex justify-between px-1.5 py-1">
                 <div className="font-black text-[20px] whitespace-nowrap">
@@ -89,7 +95,7 @@ export const ReservateBattle = ({ }) => {
                 </div>
                 <Input
                   type="text"
-                  placeholder="한글/영문"
+                  placeholder="한글"
                   value={form.name}
                   className="placeholder:text-[#ff3b49] font-extralight text-[20px] resize-none"
                   onChange={(event) =>
@@ -97,7 +103,7 @@ export const ReservateBattle = ({ }) => {
                   }
                 />
               </div>
-              <div className="border-b-1 flex justify-between px-1.5 py-1">
+              <div className="border-b-0 flex justify-between px-1.5 py-1 pb-0">
                 <div className="font-black text-[20px] whitespace-nowrap">
                   생년월일
                 </div>
@@ -114,6 +120,7 @@ export const ReservateBattle = ({ }) => {
                   }
                 />
               </div>
+              <div className="text-right text-[12px] border-b-1 pb-1 px-1.5">만 15세 이상만 신청이 가능합니다.</div>
               <div className="border-b-1 flex justify-between px-1.5 py-1">
                 <div className="font-black text-[20px] whitespace-nowrap">
                   휴대폰
@@ -136,7 +143,7 @@ export const ReservateBattle = ({ }) => {
                   토크세션 호스트<br />‘바다’와 ‘왁씨’에게 묻고 싶은 질문
                 </div>
                 <Textarea
-                  placeholder=" ‘바다’와 ‘왁씨’에게 묻고 싶은 질문이 있다면 적어주세요."
+                  placeholder=""
                   value={form.what_do_you_want}
                   className="placeholder:text-[#ff3b49] font-extralight text-[12px] resize-none h-[100px]"
                   onChange={(event) =>
@@ -148,6 +155,34 @@ export const ReservateBattle = ({ }) => {
                 />
               </div>
             </div>
+            <div className="flex flex-col justify-center text-center gap-[8px]">
+              <div className="flex justify-center gap-[20px] text-[16px] leading-[1.2]">
+                <Checkbox
+                  checked={form.privacy_policy_agreed}
+                  onChange={(event) =>
+                    setForm((prev) => ({
+                      ...prev,
+                      privacy_policy_agreed: event.target.checked,
+                    }))
+                  }
+                >
+                  <div className="text-[16px]">배틀 관람</div>
+                </Checkbox>
+
+                <Checkbox
+                  checked={form.privacy_policy_agreed}
+                  onChange={(event) =>
+                    setForm((prev) => ({
+                      ...prev,
+                      privacy_policy_agreed: event.target.checked,
+                    }))
+                  }
+                >
+                  <div className="text-[16px]">토크 세션 관람</div>
+                </Checkbox>
+              </div>
+              {error && <span className="text-[12px]">{error}</span>}
+            </div>
             <div className="flex flex-col">
               <Checkbox
                 checked={form.privacy_policy_agreed}
@@ -158,7 +193,19 @@ export const ReservateBattle = ({ }) => {
                   }))
                 }
               >
-                <a className="underline ">개인정보 수집・이용 및 콘텐츠 활용</a>에 동의합니다.
+                <div>
+                  <button
+                    type="button"
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      setPrivacyOpen(true);
+                    }}
+                    className="underline"
+                  >
+                    개인정보 수집・이용&nbsp;
+                  </button>
+                  및 콘텐츠 활용에 동의합니다.
+                </div>
               </Checkbox>
               {error && <span className="text-[12px]">{error}</span>}
             </div>
@@ -169,6 +216,10 @@ export const ReservateBattle = ({ }) => {
           </div>
         )}
       </FullDialog>
+      <PrivacyPolicy
+        open={privacyOpen}
+        onClose={() => setPrivacyOpen(false)}
+      />
     </>
   );
 };

@@ -11,6 +11,7 @@ import { Textarea } from "./textarea";
 import clsx from "clsx";
 import { jordan } from "../font";
 import { createBattle } from "@/lib/api-client";
+import { PrivacyPolicy } from "@/ui/components/privacy-policy";
 
 const initialForm = {
   name: "",
@@ -33,6 +34,11 @@ export const ApplicateBattle = ({ }) => {
   const [form, setForm] = useState(initialForm);
   const [error, setError] = useState<string | null>(null);
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [privacyOpen, setPrivacyOpen] = useState(false);
+
+  useEffect(() => {
+    if (!open) setPrivacyOpen(false);
+  }, [open]);
 
   useEffect(() => {
     if (!open) {
@@ -106,7 +112,7 @@ export const ApplicateBattle = ({ }) => {
                 </div>
                 <Input
                   type="text"
-                  placeholder="한글/영문"
+                  placeholder="한글"
                   value={form.name}
                   className="placeholder:text-[#ff3b49] font-extralight"
                   onChange={(event) =>
@@ -114,7 +120,7 @@ export const ApplicateBattle = ({ }) => {
                   }
                 />
               </div>
-              <div className="border-b-1 flex justify-between px-1.5 py-1">
+              <div className="border-b-0 flex justify-between px-1.5 py-1 pb-0">
                 <div className="text-[20px] whitespace-nowrap">
                   생년월일
                 </div>
@@ -131,6 +137,7 @@ export const ApplicateBattle = ({ }) => {
                   }
                 />
               </div>
+              <div className="text-right text-[12px] border-b-1 pb-1 px-1.5">만 15세 이상만 신청이 가능합니다.</div>
               <div className="border-b-1 flex justify-between px-1.5 py-1">
                 <div className="text-[20px] whitespace-nowrap">
                   장르
@@ -194,7 +201,7 @@ export const ApplicateBattle = ({ }) => {
                 </div>
                 <Input
                   type="text"
-                  placeholder="한글/영문"
+                  placeholder="한글"
                   value={form.member2_name}
                   className="placeholder:text-[#ff3b49] font-extralight text-[20px]"
                   onChange={(event) =>
@@ -202,7 +209,7 @@ export const ApplicateBattle = ({ }) => {
                   }
                 />
               </div>
-              <div className="border-b-1 flex justify-between px-1.5 py-1">
+              <div className="border-b-0 flex justify-between px-1.5 py-1 pb-0">
                 <div className="text-[20px] whitespace-nowrap">
                   생년월일
                 </div>
@@ -219,6 +226,7 @@ export const ApplicateBattle = ({ }) => {
                   }
                 />
               </div>
+              <div className="text-right text-[12px] border-b-1 pb-1 px-1.5">만 15세 이상만 신청이 가능합니다.</div>
               <div className="border-b-1 flex justify-between px-1.5 py-1">
                 <div className="text-[20px] whitespace-nowrap">
                   장르
@@ -277,7 +285,7 @@ export const ApplicateBattle = ({ }) => {
                 토크세션 호스트<br />‘바다’와 ‘왁씨’에게 묻고 싶은 질문
               </div>
               <Textarea
-                placeholder="‘바다’와 ‘왁씨’에게 묻고 싶은 질문이 있다면 적어주세요."
+                placeholder=""
                 value={form.what_do_you_want}
 
                 onChange={(event) =>
@@ -299,7 +307,19 @@ export const ApplicateBattle = ({ }) => {
                   }))
                 }
               >
-                <a className="underline ">개인정보 수집</a>에 동의합니다.
+                <div>
+                  <button
+                    type="button"
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      setPrivacyOpen(true);
+                    }}
+                    className="underline"
+                  >
+                    개인정보 수집・이용&nbsp;
+                  </button>
+                  및 콘텐츠 활용에 동의합니다.
+                </div>
               </Checkbox>
               {error && <span className="text-[12px]">{error}</span>}
             </div>
@@ -310,6 +330,10 @@ export const ApplicateBattle = ({ }) => {
           </div>
         )}
       </FullDialog>
+      <PrivacyPolicy
+        open={privacyOpen}
+        onClose={() => setPrivacyOpen(false)}
+      />
     </>
   );
 };

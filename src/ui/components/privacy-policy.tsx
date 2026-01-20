@@ -14,7 +14,7 @@ export const PrivacyPolicy = ({ open, onClose }: PrivacyPolicyProps) => {
 
       <div
         className={clsx(
-          "fixed inset-0 z-51 flex justify-center items-center transition-all duration-400 flex-col fixed max-w-md mx-auto p-5 inset-0  top-[20px]",
+          "fixed inset-0 z-51 flex justify-center items-center transition-all duration-400 flex-col fixed max-w-md mx-auto p-5 inset-0  bottom-[00px] top-[00px]",
           open
             ? "pointer-events-auto bg-black/100  opacity-100"
             : "pointer-events-none bg-black/0 backdrop-blur-0 opacity-0"
@@ -24,7 +24,7 @@ export const PrivacyPolicy = ({ open, onClose }: PrivacyPolicyProps) => {
         <div className="flex flex-col gap-5 flex-grow-1 h-[calc(100%-106px)]">
           <h4 className="font-black text-[24px] text-center leading-[1]">개인정보 처리방침</h4>
           <hr className="border-2"></hr>
-          <div className="flex flex-col scroll_el h-[calc(100% - 80px)] overflow-y-scroll scrollbar">
+          <div className="flex flex-col scroll_el h-[calc(100% - 80px)] overflow-y-scroll scrollbar text-[10px]">
             주식회사 텔레포트(이하 “회사”)는 본 웹사이트를 통해 진행되는 이벤트 및 프로그램 운영과 관련하여 「개인정보 보호법」 등 관련 법령을 준수하며, 이용자의 개인정보를 안전하게 처리합니다. 본 개인정보 처리방침은 신청 유형과 관계없이 본 웹사이트를 통해 수집·이용되는 개인정보의 처리 기준을 안내합니다.
             <br />
             1. 수집하는 개인정보 항목<br />
@@ -78,7 +78,7 @@ export const PrivacyPolicy = ({ open, onClose }: PrivacyPolicyProps) => {
         </div>
         <hr className="border-1 mt-2 mb-4 w-full"></hr>
         <div onClick={onClose} className="flex w-full justify-center items-center mx-3 h-[40px] text-center text-[24px] font-black bg-[#FF3B49] text-black h-[40px]">
-          <span className="text-[18px] ">확인</span>
+          <span className="text-[24px] ">확인</span>
         </div>
       </div>
 

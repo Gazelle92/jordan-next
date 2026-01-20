@@ -19,7 +19,7 @@ export default function BasicInformation() {
         </div>
       </div>
       <div className="py-[22px] text-[13px] font-semibold whitespace-pre-wrap break-keep ani px-4 ">
-        여성 댄서들만을 위해 마련된 2:2 오픈 스타일 배틀입니다. 하우스 DJ의 랜덤 플레이에 맞춰 배틀이 진행되며, 예선부터 본선까지 토너먼트 방식으로 운영됩니다.
+        여성 댄서들만을 위해 마련된 2:2 오픈 스타일 배틀입니다. DJ의 랜덤 플레이에 맞춰 진행됩니다.
       </div>
 
     </div>
