@@ -150,7 +150,7 @@ export default function WorkshopInformation() {
             <div className="!font-semibold !text-[13px]">※ 1인 단독 촬영 및 게시물만 인정됩니다. 공동 작업자 참여는 불가합니다.</div>
           </div>
 
-          <a href="/FULL_INFRARED.mp3" download="FULL_INFRARED.mp3"
+          <a href="https://mp3-audio.mcidiot.workers.dev/" download="FULL_INFRARED.mp3"
           >
             <Button className="mt-4">챌린지 음원 다운로드</Button>
           </a>

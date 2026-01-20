@@ -157,7 +157,27 @@ const Thumbnail = ({
     };
   }, [open, isStreamReady, streamVideoUrl, canPlayHls]);
 
+
+  const [playing, setPlaying] = useState(false);
+
+  const togglePlay = () => {
+    const video = videoRef.current;
+    if (!video) return;
+
+    if (video.paused) {
+      video.play();
+      setPlaying(true);
+    } else {
+      video.pause();
+      setPlaying(false);
+    }
+  };
+
+
+
   return (
+
+
     <>
       <div className="relative aspect-120/180 w-[120%] h-[120%] overflow-hidden  bg-black ">
         <div className="absolute inset-0 pointer-events-none bg-gradient-to-b from-black/25 via-transparent to-black/35" />
@@ -185,14 +205,23 @@ const Thumbnail = ({
         />
       </div>
       <VideoDialog open={open} onClose={() => setOpen(false)}>
-        <div className="aspect-320/500 w-full h-auto max-w-[400px] here_test">
-          <div className="relative w-full h-full overflow-hidden  bg-black">
+        <div className="aspect-9/16 w-auto h-full max-w-[400px]">
+          <div className="relative w-full h-full overflow-hidden  bg-black hover_w">
             <div className="absolute inset-0 pointer-events-none bg-gradient-to-b from-black/30 via-transparent to-black/40" />
+            <div className="absolute flex left-1/2 z-1 top-1/2 -translate-1/2 z-[9] pointer-events-none hover_target">
+              <Image
+                src="/images/btn_play.png"
+                alt="play"
+                className="mx-auto mt-[20px]"
+                width={40}
+                height={40} />
+            </div>
             {canPlayStream ? (
               <video
                 className="absolute inset-0 w-full h-full object-cover"
                 ref={videoRef}
-                controls
+                controls={false}
+                onClick={togglePlay}
                 playsInline
                 preload="metadata"
                 poster={streamThumbnailUrl ?? undefined}

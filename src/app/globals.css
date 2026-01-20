@@ -274,3 +274,13 @@ body {
 
 .table_body tr:first-child td{padding-top: 8px;}
 .pretendard{font-family: "pretendard", "pretendard Fallback"!important;}
+
+video::-webkit-media-controls {
+  display: none !important;
+}
+video::-webkit-media-controls-start-playback-button {
+  display: none !important;
+}
+.hover_target{transition: ease 0.3s opacity;}
+.hover_w:not(:hover) .hover_target{opacity: 0;}
+.hover_w:hover .hover_target{opacity: 1;}

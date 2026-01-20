@@ -61,14 +61,14 @@ export const VideoDialog = ({ open, onClose, children }: VideoDialogProps) => {
         </div>
       )}
       <div
-        className={`flex video-dialog h-full flex-col ${open
+        className={`flex video-dialog max-w-[400px] mx-auto aspect-[9/16] w-full h-auto max-h-[calc(100%-120px)] flex-col ${open
           ? "pointer-events-auto opacity-100"
           : "pointer-events-none opacity-0"
           }`}
       >
         <div
           ref={dialogRef}
-          className={`w-full h-full overflow-y-auto flex-grow-1 flex flex-col justify-center transition-transform duration-400 pb-15 items-center ${open
+          className={`w-full flex-grow-1 flex flex-col justify-center transition-transform duration-400 items-center ${open
             ? "scale-100 opacity-100 translate-y-0"
             : "scale-95 opacity-0 translate-y-3"
             }`}
