@@ -10,7 +10,7 @@ import { FullDialog2 } from "@/ui/components/full-dialog2";
 import { ApplicateWorkshop } from "@/ui/components/applicate-workshop";
 export default function Workshop() {
   return (
-    <div className="flex flex-col">
+    <div className="flex flex-col pb-3">
       <HistoryBack />
       <div className="flex flex-col gap-10 px-3">
         <div className="flex flex-col flex-grow-1 items-center justify-center gap-7">

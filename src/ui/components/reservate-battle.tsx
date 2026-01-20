@@ -18,6 +18,8 @@ const initialForm = {
   phone_number: "",
   birth_date: "",
   what_do_you_want: "",
+  watch_battle: false,
+  watch_talk_session: false,
   privacy_policy_agreed: false,
 };
 
@@ -47,6 +49,7 @@ export const ReservateBattle = ({ }) => {
       setError("개인정보 수집에 동의 해주시기 바랍니다.");
       return;
     }
+
     if (
       !form.name ||
       !form.phone_number ||
@@ -140,7 +143,7 @@ export const ReservateBattle = ({ }) => {
               </div>
               <div className="flex flex-col px-1.5 py-1">
                 <div className={clsx("font-black text-[20px]", jordan.className)}>
-                  토크세션 호스트<br />‘바다’와 ‘왁씨’에게 묻고 싶은 질문
+                  토크세션 호스트<br />댄서 ‘바다’와 ‘왁씨’에게 묻고 싶은 질문
                 </div>
                 <Textarea
                   placeholder=""
@@ -158,11 +161,11 @@ export const ReservateBattle = ({ }) => {
             <div className="flex flex-col justify-center text-center gap-[8px]">
               <div className="flex justify-center gap-[20px] text-[16px] leading-[1.2]">
                 <Checkbox
-                  checked={form.privacy_policy_agreed}
+                  checked={form.watch_battle}
                   onChange={(event) =>
                     setForm((prev) => ({
                       ...prev,
-                      privacy_policy_agreed: event.target.checked,
+                      watch_battle: event.target.checked,
                     }))
                   }
                 >
@@ -170,18 +173,18 @@ export const ReservateBattle = ({ }) => {
                 </Checkbox>
 
                 <Checkbox
-                  checked={form.privacy_policy_agreed}
+                  checked={form.watch_talk_session}
                   onChange={(event) =>
                     setForm((prev) => ({
                       ...prev,
-                      privacy_policy_agreed: event.target.checked,
+                      watch_talk_session: event.target.checked,
                     }))
                   }
                 >
                   <div className="text-[16px]">토크 세션 관람</div>
                 </Checkbox>
               </div>
-              {error && <span className="text-[12px]">{error}</span>}
+              <span className="text-[12px]">* 두 프로그램은 중복 신청이 가능합니다.</span>
             </div>
             <div className="flex flex-col">
               <Checkbox

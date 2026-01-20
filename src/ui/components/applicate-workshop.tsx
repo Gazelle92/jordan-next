@@ -18,7 +18,7 @@ const initialForm = {
   name: "",
   phone_number: "",
   birth_date: "",
-  battle_genre: "",
+  size: "",
   instagram_video_url: "",
   what_do_you_want: "",
   privacy_policy_agreed: false,
@@ -54,7 +54,7 @@ export const ApplicateWorkshop = ({ }) => {
       !form.name ||
       !form.phone_number ||
       !form.birth_date ||
-      !form.battle_genre ||
+      !form.size ||
       !form.instagram_video_url ||
       !form.what_do_you_want
     ) {
@@ -69,7 +69,7 @@ export const ApplicateWorkshop = ({ }) => {
         name: form.name,
         phone_number: form.phone_number,
         birth_date: form.birth_date,
-        battle_genre: form.battle_genre,
+        size: form.size,
         instagram_video_url: form.instagram_video_url,
         what_do_you_want: form.what_do_you_want,
         privacy_policy_agreed: form.privacy_policy_agreed,
@@ -153,40 +153,8 @@ export const ApplicateWorkshop = ({ }) => {
                   }
                 />
               </div>
-              <div className="border-b-1 flex justify-between px-1.5 py-1">
-                <div className="font-black text-[20px] whitespace-nowrap">
-                  배틀 장르
-                </div>
-                <Input
-                  type="text"
-                  placeholder="배틀 장르를 입력해주세요."
-                  value={form.battle_genre}
-                  className="placeholder:text-[#ff3b49] font-extralight text-[20px]"
-                  onChange={(event) =>
-                    setForm((prev) => ({
-                      ...prev,
-                      battle_genre: event.target.value,
-                    }))
-                  }
-                />
-              </div>
-              <div className="border-b-1 flex flex-col justify-between px-1.5 py-1">
-                <div className="font-black text-[20px] whitespace-nowrap">
-                  티셔츠/신발 사이즈
-                </div>
-                <Input
-                  type="text"
-                  placeholder="사이즈 정보는 참고용으로 수집됩니다."
-                  value={form.battle_genre}
-                  className="placeholder:text-[#ff3b49] font-extralight text-[12px] !text-left"
-                  onChange={(event) =>
-                    setForm((prev) => ({
-                      ...prev,
-                      battle_genre: event.target.value,
-                    }))
-                  }
-                />
-              </div>
+
+
               <div className="border-b-1 flex flex-col px-1.5 py-1">
                 <div className="font-black text-[20px] whitespace-nowrap">
                   인스타그램 영상 링크
@@ -203,9 +171,28 @@ export const ApplicateWorkshop = ({ }) => {
                   }
                 />
               </div>
+
+              <div className="border-b-1 flex flex-col justify-between px-1.5 py-1">
+                <div className="font-black text-[20px] whitespace-nowrap">
+                  티셔츠/신발 사이즈
+                </div>
+                <Input
+                  type="text"
+                  placeholder="사이즈 정보는 참고용으로 수집됩니다."
+                  value={form.size}
+                  className="placeholder:text-[#ff3b49] font-extralight text-[12px] !text-left"
+                  onChange={(event) =>
+                    setForm((prev) => ({
+                      ...prev,
+                      size: event.target.value,
+                    }))
+                  }
+                />
+              </div>
+
               <div className="flex flex-col px-1.5 py-1">
                 <div className={clsx("font-black text-[20px] whitespace-nowrap", jordan.className)}>
-                  토크세션 호스트<br />‘바다’와 ‘왁씨’에게 묻고 싶은 질문
+                  토크세션 호스트<br />댄서 ‘바다’와 ‘왁씨’에게 묻고 싶은 질문
                 </div>
                 <Textarea
                   placeholder=""
