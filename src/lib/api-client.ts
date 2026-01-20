@@ -43,7 +43,6 @@ export type WorkshopPayload = {
   name: string;
   phone_number: string;
   birth_date: string;
-  battle_genre: string;
   instagram_video_url: string;
   what_do_you_want: string;
   privacy_policy_agreed: boolean;

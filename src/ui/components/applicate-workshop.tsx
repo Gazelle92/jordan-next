@@ -18,7 +18,6 @@ const initialForm = {
   name: "",
   phone_number: "",
   birth_date: "",
-  battle_genre: "",
   instagram_video_url: "",
   what_do_you_want: "",
   privacy_policy_agreed: false,
@@ -72,7 +71,6 @@ export const ApplicateWorkshop = ({ }) => {
       !form.name ||
       !form.phone_number ||
       !form.birth_date ||
-      !form.battle_genre ||
       !form.instagram_video_url
       //!form.what_do_you_want
     ) {
