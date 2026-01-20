@@ -186,7 +186,7 @@ function StepVerify({
 }) {
   return (
     <div className="flex flex-col gap-5 flex-grow mt-10 px-5 pb-5">
-      <h4 className="font-black text-[24px] text-center">신청서 수정</h4>
+      <h4 className="font-black text-[24px] text-center">배틀 신청서 수정</h4>
 
       <div className="flex items-center justify-center mt-[120px] text-center">
         <strong>이름과 휴대폰 중간 4자리를 입력해 주세요.</strong>
@@ -197,7 +197,7 @@ function StepVerify({
           <div className="font-black text-[20px] whitespace-nowrap">이름</div>
           <Input
             type="text"
-            placeholder="이름을 입력해주세요."
+            placeholder="한글"
             value={form.name}
             className="placeholder:text-[#ff3b49] font-extralight text-[20px]"
             onChange={(event) =>
@@ -211,7 +211,7 @@ function StepVerify({
           </div>
           <Input
             type="text"
-            placeholder="휴대폰을 입력해주세요."
+            placeholder="ex) 1234"
             value={form.phoneMiddle}
             className="placeholder:text-[#ff3b49] font-extralight text-[20px]"
             onChange={(event) =>
@@ -421,20 +421,23 @@ function StepEdit({
         </div>
 
 
-        <div className="border-b-1 flex flex-col px-1.5 py-1">
-          <div className={clsx("font-semibold text-[20px] whitespace-nowrap", jordan.className)}>
-            댄서에게 궁금한 점
-          </div>
-          <Textarea
-            placeholder="댄서에게 궁금한 점"
-            value={formValue.what_do_you_want}
-            onChange={(event) =>
-              onChange({ ...formValue, what_do_you_want: event.target.value })
-            }
-            className="!text-left placeholder:text-[#ff3b49] font-extralight text-[12px]"
-          />
-        </div>
+
       </div>
+
+      <div className="border-1 flex flex-col px-1.5 py-1 mt-[14px]">
+        <div className={clsx("font-semibold text-[20px] whitespace-nowrap", jordan.className)}>
+          댄서 ‘바다’, ‘왁씨’에게 묻고 싶은 질문
+        </div>
+        <Textarea
+          placeholder=""
+          value={formValue.what_do_you_want}
+          onChange={(event) =>
+            onChange({ ...formValue, what_do_you_want: event.target.value })
+          }
+          className="!text-left placeholder:text-[#ff3b49] font-extralight text-[12px]"
+        />
+      </div>
+
       <span className="text-[12px]">
         {error ?? "필수 항목을 모두 입력해 주세요."}
       </span>
