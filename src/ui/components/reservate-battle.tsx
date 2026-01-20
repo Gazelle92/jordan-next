@@ -154,7 +154,7 @@ export const ReservateBattle = ({ }) => {
                   }
                 />
               </div>
-              <div className="flex flex-col px-1.5 py-1">
+              <div className="flex flex-col px-1.5 py-1 border-b-1">
                 <div className="font-black text-[20px]">
                   댄서 ‘바다’, ‘왁씨’에게 묻고 싶은 질문
                 </div>
@@ -170,8 +170,36 @@ export const ReservateBattle = ({ }) => {
                   }
                 />
               </div>
+
+              <div className="flex flex-col justify-between px-1.5 py-1 relative ">
+                <div className="font-black text-[20px]">
+                  토크 세션 관람
+                </div>
+                <span className="font-extralight text-[12px]">* 토크 세션 관람을 희망하시는 경우 체크해 주세요.</span>
+                <Checkbox
+                  className="absolute right-[14px] top-[10px] view_label"
+                  checked={form.privacy_policy_agreed}
+                  onChange={(event) =>
+                    setForm((prev) => ({
+                      ...prev,
+                      privacy_policy_agreed: event.target.checked,
+                    }))
+                  }
+                >
+                </Checkbox>
+
+
+              </div>
+
+
+
             </div>
-            <div className="flex flex-col justify-center text-center gap-[8px]">
+            <span className="font-extralight text-[12px] mt-[-12px]">
+              * 해당 프로그램은 사전 신청 후 당첨된 인원에 한해 참여 가능합니다.<br />
+              * 참가자 발표는 1월 30일(금), 개별 문자 발송 예정입니다.
+            </span>
+            {/*<div className="flex flex-col justify-center text-center gap-[8px]">
+
               <div className="flex justify-center gap-[20px] text-[16px] leading-[1.2] chbx_wrap">
                 <Checkbox
                   checked={form.privacy_policy_agreed}
@@ -199,7 +227,7 @@ export const ReservateBattle = ({ }) => {
                 </Checkbox>
               </div>
               <span className="text-[12px]">* 두 프로그램은 중복 신청이 가능합니다.</span>
-            </div>
+            </div>*/}
             <div className="flex-grow-1" />
             <div className="flex flex-col gap-1">
               <Checkbox

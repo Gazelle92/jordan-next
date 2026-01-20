@@ -302,3 +302,7 @@ body {
 .chbx_wrap > label{width: calc(50% - 3px); border: 1px solid #ff3b49; position: relative; display: flex; justify-content: center; align-items: center; border-radius: 9px; height: 41px; padding: 9px 0 8px;}
 .chbx_wrap label:has(input:checked){background-color: #FF3B49; color: #000; font-weight: 900;}
 .chbx_wrap label input{opacity: 0; position: absolute;}
+
+.view_label{width: 16px; height: 16px; border: 1px solid #ff3b49; background-color: #000; cursor: pointer;}
+.view_label:has(input:checked){background-color: #ff3b49;}
+.view_label input{opacity: 0; cursor: pointer;}
