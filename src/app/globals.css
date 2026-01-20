@@ -200,7 +200,7 @@ body {
 .txt-w:not(.show) .txt-inner{display: none;}
 .txt-w .txt-btn-w{padding-top: 16px;}
 .txt-w.show .txt-btn-w{padding-top: 20px;}
-
+.txt-inner{padding-top: 12px;}
 .workshop_txt g{fill: var(--foreground)!important;}
 
 /*.logo_ani{transition:  transform 1s cubic-bezier(0,0,.43,1.06), opacity 1s cubic-bezier(0,0,.43,1.06); opacity: 0; transform: translateX(-100px);}
