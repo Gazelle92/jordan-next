@@ -68,7 +68,7 @@ export default function Home() {
           </div>
 
           <video
-            src="https://customer-y6yfz33adjmztpgx.cloudflarestream.com/29bc1ae03cd5e74772998e47fdedce02/manifest/video.m3u8"
+            src="https://customer-y6yfz33adjmztpgx.cloudflarestream.com/415e8973325f4369ca89014736dabb3c/manifest/video.m3u8"
             autoPlay
             muted
             playsInline

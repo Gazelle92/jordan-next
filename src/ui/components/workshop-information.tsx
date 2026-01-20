@@ -24,7 +24,7 @@ export default function WorkshopInformation() {
         </div>
       </div>
       <div className="py-[22px] text-[13px] font-semibold whitespace-pre-wrap break-keep ani px-4 ">
-        <div>메인 디렉터 바다가 직접 선보이는 시그니처 코레오그래피를 경험할 수 있는 특별한 워크숍입니다. 3인의 스페셜 인스트럭터와 함께 안무를 익히고, 하나의 거대한 집단 퍼포먼스를 완성합니다. 완성된 퍼포먼스는 감각적인 비주얼 필름으로 기록됩니다.</div>
+        <div>댄서 ‘바다’가 선택한 60명의 참여자는 2월 7일, 〈HOUSE OF GREATNESS〉 코레오그래피 워크숍에 초대됩니다. ‘바다’ 그리고 ‘베베 멤버들’과 함께 완성된 퍼포먼스는 영상으로 제작되어, 소장용으로 전달됩니다.</div>
       </div>
 
       <div className="text-[13px] font-semibold whitespace-pre-wrap break-keep ani border-t-4">
@@ -35,13 +35,13 @@ export default function WorkshopInformation() {
         <div className={clsx("txt-w ", openMap[0] && "show")}>
           <div className="txt-inner px-4 leading-[1.5]">
             <div className="dot-sp-1 !font-semibold !text-[13px]">
-              {"참가 대상 : 조던 월드 오브 플라이트 서울 홍대 혹은 카시나 성수점을 방문하는 여성 댄서 누구나"}
+              {"참가 대상 : 만 15세 이상 여성 댄서 누구나"}
             </div>
             <div className="dot-sp-1 !font-semibold !text-[13px]">
-              {"참여 기간 : 1월 21일(수) ~ 1월 27일(화)"}
+              {"신청 기간 : 1월 21일(수) 12:00~ 1월 27일(화) 23:59"}
             </div>
             <div className="dot-sp-1 !font-semibold !text-[13px]">
-              {"선정 방식 : 메인 디렉터 ‘바다’가 신청자 중 총 60명을 직접 선정"}
+              {"선정 방식 : 댄서 ‘바다’가 신청자 중 60명을 선정"}
             </div>
             <div className="dot-sp-1 !font-semibold !text-[13px]">
               {"참가자 발표 : 1월 30일(금), 공식 웹사이트 공지 및 개별 문자 발송"}
@@ -56,21 +56,21 @@ export default function WorkshopInformation() {
               {"STEP 1."}
             </div>
             <div className="font-semibold text-[13px]">
-              {"조던 월드 오브 플라이트 서울 홍대 혹은 카시나 성수점 내 별도 셋업 공간에서 챌린지 영상 촬영"}
+              {"챌린지 영상 촬영 (조던 월드 오브 플라이트 서울 홍대 / 카시나 성수점 내 스튜디오 또는 개인 공간)"}
             </div>
 
             <div className="font-semibold text-[16px]">
               {"STEP 2."}
             </div>
             <div className="font-semibold text-[13px]">
-              {"본인 인스타그램 계정에 ‘게시물’ 또는 ‘릴스’로 업로드 (공개 계정 필수)"}
+              {"챌린지 영상을 본인 인스타그램 계정에 ‘릴스’ 업로드 *공개 계정 필수"}
             </div>
 
             <div className="font-semibold text-[16px]">
               {"STEP 3."}
             </div>
             <div className="font-semibold text-[13px]">
-              {"공식 웹사이트 내 신청서에 해당 게시물 링크를 제출하면 신청 완료"}
+              {"공식 웹사이트 내 신청서에 게시물 링크 등록 후 신청 완료"}
             </div>
 
             <br />
@@ -149,19 +149,19 @@ export default function WorkshopInformation() {
               {"2:2 OPEN STYLE BATTLE과 중복 참여가 불가합니다."}
             </div>
             <div className="dot-sp-1 !font-semibold !text-[13px]">
-              {"프로그램 참가자로 선정되지 않더라도 행사 관람을 원하실 경우, 반드시 일반 관람 신청을 별도로 진행해 주시기 바랍니다."}
+              {"프로그램 참가자로 선정되지 않더라도 행사 관람을 원하실 경우, 반드시 ‘배틀 관람 및 토크 세션’을 별도로 신청해 주시기 바랍니다."}
             </div>
             <div className="dot-sp-1 !font-semibold !text-[13px]">
               {"본 행사는 조던 브랜드 이벤트로, 타 브랜드 로고가 과도하게 노출되는 착장은 자제를 부탁드립니다."}
-            </div>
-            <div className="dot-sp-1 !font-semibold !text-[13px]">
-              {"원활한 운영을 위해 신청 시 개인정보 수집·이용 및 콘텐츠 활용 동의가 필요합니다."}
             </div>
             <div className="dot-sp-1 !font-semibold !text-[13px]">
               {"현장 상황에 따라 운영 내용은 일부 변동될 수 있습니다."}
             </div>
             <div className="dot-sp-1 !font-semibold !text-[13px]">
               {"가이드라인에 위반되거나 선정적인 내용은 업로드 및 선정이 제한될 수 있습니다."}
+            </div>
+            <div className="dot-sp-1 !font-semibold !text-[13px]">
+              {"본 음원은 챌린지용으로 제작되었으며, 제3자가 수익 목적이나 상업적 이용을 위해 사용할 수 없습니다."}
             </div>
           </div>
 

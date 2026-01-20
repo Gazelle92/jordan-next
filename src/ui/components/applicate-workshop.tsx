@@ -86,7 +86,7 @@ export const ApplicateWorkshop = ({ }) => {
     <>
       <div className="sticky bottom-3 mt-3 mx-3 z-1">
         <div className="">
-          <Button className="border-none text-center pretendard" onClick={() => setOpen(true)}>코레오그래피 워크샵 신청하기</Button>
+          <Button className="border-none text-center pretendard" onClick={() => setOpen(true)}>코레오그래피 워크숍 신청하기</Button>
         </div>
       </div>
       <FullDialog open={open} onClose={() => setOpen(false)}>
@@ -94,7 +94,7 @@ export const ApplicateWorkshop = ({ }) => {
           <>
             <div className="flex flex-col flex-grow-1 items-center justify-center gap-6">
               <Logo width={100} height={100} />
-              <strong className="text-center">코레오그래피 워크샵 신청이<br />완료되었습니다.</strong>
+              <strong className="text-center">코레오그래피 워크숍 신청이<br />완료되었습니다.</strong>
             </div>
             <Link href="/menu">
               <Button>메뉴로 돌아가기</Button>
@@ -102,7 +102,7 @@ export const ApplicateWorkshop = ({ }) => {
           </>
         ) : (
           <div className="flex flex-col gap-5 flex-grow-1 h-full">
-            <h4 className="font-black text-[24px] text-center">코레오그래피 워크샵 신청서</h4>
+            <h4 className="font-black text-[24px] text-center">코레오그래피 워크숍 신청서</h4>
             <div className="flex flex-col border-1">
               <div className="border-b-1 flex justify-between px-1.5 py-1">
                 <div className="font-black text-[20px] whitespace-nowrap">

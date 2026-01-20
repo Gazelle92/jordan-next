@@ -239,7 +239,7 @@ function StepEdit({
 
   return (
     <div className="flex flex-col gap-5 flex-grow mt-10 px-5 pb-5">
-      <h4 className="font-black text-[24px] text-center">워크샵 신청서 수정</h4>
+      <h4 className="font-black text-[24px] text-center">워크숍 신청서 수정</h4>
 
       <div className="flex flex-col border-1">
         <div className="border-b-1 flex justify-between px-1.5 py-1">
