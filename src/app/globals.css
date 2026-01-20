@@ -203,6 +203,19 @@ body {
 .txt-inner{padding-top: 12px;}
 .workshop_txt g{fill: var(--foreground)!important;}
 
+
+.btn_more{display: flex; justify-content: center; align-items: center;font-size: 11px; height: 22px; width: 64px; gap: 4px; border: 1px solid #ff3b49; border-radius: 10px; line-height: 1; cursor: pointer;}
+.bar_w{width: 7px; height: 7px; position: relative;}
+.bar_w::before, .bar_w::after{content: ''; display: block; background-color: #ff3b49;position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%);}
+.bar_w::before{width: 100%; height: 1px;}
+.bar_w::after{width: 1px; height: 100%;}
+.show .btn_more .bar_w::after{display: none;}
+.btn_more .btn_more_1{display: block;}
+.btn_more .btn_more_2{display: none;}
+.show .btn_more .btn_more_1{display: none;}
+.show .btn_more .btn_more_2{display: block;}
+
+
 /*.logo_ani{transition:  transform 1s cubic-bezier(0,0,.43,1.06), opacity 1s cubic-bezier(0,0,.43,1.06); opacity: 0; transform: translateX(-100px);}
 .ani.active .logo_ani{transform: translateX(0); opacity: 1;}
 */
@@ -275,12 +288,17 @@ body {
 .table_body tr:first-child td{padding-top: 8px;}
 .pretendard{font-family: "pretendard", "pretendard Fallback"!important;}
 
-video::-webkit-media-controls {
+.hover_w video::-webkit-media-controls {
   display: none !important;
 }
-video::-webkit-media-controls-start-playback-button {
+.hover_w video::-webkit-media-controls-start-playback-button {
   display: none !important;
 }
 .hover_target{transition: ease 0.3s opacity;}
 .hover_w:not(:hover) .hover_target{opacity: 0;}
 .hover_w:hover .hover_target{opacity: 1;}
+
+.chbx_wrap{display: flex; gap: 6px;}
+.chbx_wrap > label{width: calc(50% - 3px); border: 1px solid #ff3b49; position: relative; display: flex; justify-content: center; align-items: center; border-radius: 9px; height: 41px; padding: 9px 0 8px;}
+.chbx_wrap label:has(input:checked){background-color: #FF3B49; color: #000; font-weight: 900;}
+.chbx_wrap label input{opacity: 0; position: absolute;}

@@ -22,8 +22,9 @@ export const Event = ({ }) => {
 
   return (
     <>
+      <div className="text-[22px] px-4 border-t-1 py-[18px] font-black text-center leading-[1]">스토어 챌린지 참여 안내</div>
       <Button className="pretendard" onClick={() => setOpen(true)}>
-        조던 월드 오브 플라이트 서울 홍대<br /> & 카시나 성수점<br />스토어 챌린지 참여 안내
+        조던 월드 오브 플라이트 서울 홍대<br />& 카시나 성수점
       </Button>
       {/*<Button className="pretendard" reverse>챌린지 음원 다운로드</Button>*/}
       <FullDialog open={open} onClose={() => setOpen(false)}>

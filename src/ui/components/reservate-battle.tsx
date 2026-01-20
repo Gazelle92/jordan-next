@@ -95,7 +95,7 @@ export const ReservateBattle = ({ }) => {
           <>
             <div className="flex flex-col flex-grow-1 items-center justify-center gap-6">
               <Logo width={100} height={100} />
-              <strong className="text-center">배틀 관람 및 토크세션<br />참여 신청이 완료되었습니다.</strong>
+              <strong className="text-center">배틀 관람 및 토크 세션<br />참여 신청이 완료되었습니다.</strong>
             </div>
             <Link href="/menu">
               <Button>메뉴로 돌아가기</Button>
@@ -107,7 +107,7 @@ export const ReservateBattle = ({ }) => {
             <div className="flex flex-col border-1">
               <div className="border-b-1 flex justify-between px-1.5 py-1">
                 <div className="font-black text-[20px] whitespace-nowrap">
-                  이름
+                  이름*
                 </div>
                 <Input
                   type="text"
@@ -121,7 +121,7 @@ export const ReservateBattle = ({ }) => {
               </div>
               <div className="border-b-0 flex justify-between px-1.5 py-1 pb-0">
                 <div className="font-black text-[20px] whitespace-nowrap">
-                  생년월일
+                  생년월일*
                 </div>
                 <Input
                   type="text"
@@ -139,7 +139,7 @@ export const ReservateBattle = ({ }) => {
               <div className="text-right text-[12px] border-b-1 pb-1 px-1.5">만 15세 이상만 신청이 가능합니다.</div>
               <div className="border-b-1 flex justify-between px-1.5 py-1">
                 <div className="font-black text-[20px] whitespace-nowrap">
-                  휴대폰
+                  휴대폰*
                 </div>
                 <Input
                   type="text"
@@ -155,8 +155,8 @@ export const ReservateBattle = ({ }) => {
                 />
               </div>
               <div className="flex flex-col px-1.5 py-1">
-                <div className={clsx("font-black text-[20px]", jordan.className)}>
-                  댄서 ‘바다’와 ‘왁씨’에게 묻고 싶은 질문
+                <div className="font-black text-[20px]">
+                  댄서 ‘바다’, ‘왁씨’에게 묻고 싶은 질문
                 </div>
                 <Textarea
                   placeholder=""
@@ -172,7 +172,7 @@ export const ReservateBattle = ({ }) => {
               </div>
             </div>
             <div className="flex flex-col justify-center text-center gap-[8px]">
-              <div className="flex justify-center gap-[20px] text-[16px] leading-[1.2]">
+              <div className="flex justify-center gap-[20px] text-[16px] leading-[1.2] chbx_wrap">
                 <Checkbox
                   checked={form.privacy_policy_agreed}
                   onChange={(event) =>
@@ -182,8 +182,9 @@ export const ReservateBattle = ({ }) => {
                     }))
                   }
                 >
-                  <div className="text-[16px]">배틀 관람</div>
+                  <div className=" text-[20px] font-black">배틀 관람</div>
                 </Checkbox>
+
 
                 <Checkbox
                   checked={form.privacy_policy_agreed}
@@ -194,12 +195,12 @@ export const ReservateBattle = ({ }) => {
                     }))
                   }
                 >
-                  <div className="text-[16px]">토크 세션 관람</div>
+                  <div className="text-[20px] font-black">토크 세션 관람</div>
                 </Checkbox>
               </div>
               <span className="text-[12px]">* 두 프로그램은 중복 신청이 가능합니다.</span>
             </div>
-            <div className="flex flex-col">
+            <div className="flex flex-col gap-1">
               <Checkbox
                 checked={form.privacy_policy_agreed}
                 onChange={(event) =>
@@ -210,6 +211,8 @@ export const ReservateBattle = ({ }) => {
                 }
               >
                 <div>
+                  [필수]&nbsp;
+
                   <button
                     type="button"
                     onClick={(e) => {
@@ -218,13 +221,41 @@ export const ReservateBattle = ({ }) => {
                     }}
                     className="underline"
                   >
-                    개인정보 수집・이용&nbsp;
+                    개인정보 수집・이용
                   </button>
-                  및 콘텐츠 활용에 동의합니다.
+                  &nbsp;및 콘텐츠 활용에 동의합니다.
+                </div>
+              </Checkbox>
+              {error && <span className="text-[12px]">{error}</span>}
+
+              <Checkbox
+                checked={form.privacy_policy_agreed}
+                onChange={(event) =>
+                  setForm((prev) => ({
+                    ...prev,
+                    privacy_policy_agreed: event.target.checked,
+                  }))
+                }
+              >
+                <div>
+                  [필수]&nbsp;
+                  <button
+                    type="button"
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      setPrivacyOpen(true);
+                    }}
+                    className="underline"
+                  >
+                    개인정보 제3자 제공/처리위탁
+                  </button>
+                  &nbsp;동의
                 </div>
               </Checkbox>
               {error && <span className="text-[12px]">{error}</span>}
             </div>
+
+
             <div className="flex-grow-1" />
             <Button disabled={isSubmitting} onClick={handleSubmit}>
               {isSubmitting ? "신청 중..." : "신청하기"}

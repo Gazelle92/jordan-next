@@ -222,7 +222,7 @@ export default function IrlInfo() {
 
           <div className="text-[13px] font-semibold whitespace-pre-wrap break-keep ani border-t-4">
             <div className="text-[22px] px-4 pt-[12px] font-black text-center">
-              {"REGISTRATION | 참가 신청"}
+              {"REGISTRATION 참가 신청"}
             </div>
 
             <div className={clsx("txt-w ", openMap[0] && "show")}>
@@ -242,12 +242,16 @@ export default function IrlInfo() {
                 className="txt-btn-w w-full flex justify-center mx-auto pb-[30px] border-b-1"
                 onClick={() => toggle(0)}
               >
-                <div className="btn_arrow" />
+                <div className="btn_more">
+                  <div className="bar_w"></div>
+                  <span className="btn_more_1">더보기</span>
+                  <span className="btn_more_2">닫기</span>
+                </div>
               </div>
             </div>
 
             <div className="text-[22px] px-4 pt-[12px] font-black text-center">
-              {"BATTLE RULES | 배틀 규정"}
+              {"BATTLE RULES 배틀 규정"}
             </div>
 
             <div className={clsx("txt-w", openMap[1] && "show")}>
@@ -343,14 +347,18 @@ export default function IrlInfo() {
                 className="txt-btn-w w-full flex justify-center mx-auto pb-[30px] border-b-1"
                 onClick={() => toggle(1)}
               >
-                <div className="btn_arrow" />
+                <div className="btn_more">
+                  <div className="bar_w"></div>
+                  <span className="btn_more_1">더보기</span>
+                  <span className="btn_more_2">닫기</span>
+                </div>
               </div>
             </div>
 
             <br />
 
             <div className="text-[22px] px-4 pt-[12px] font-black text-center">
-              BATTLE REWARDS<br />| 우승 혜택
+              BATTLE REWARDS 우승 혜택
             </div>
 
             <div className={clsx("txt-w", openMap[2] && "show")}>
@@ -379,14 +387,18 @@ export default function IrlInfo() {
                 className="txt-btn-w w-full flex justify-center mx-auto pb-[30px] border-b-1"
                 onClick={() => toggle(2)}
               >
-                <div className="btn_arrow" />
+                <div className="btn_more">
+                  <div className="bar_w"></div>
+                  <span className="btn_more_1">더보기</span>
+                  <span className="btn_more_2">닫기</span>
+                </div>
               </div>
             </div>
 
             <br />
 
             <div className="text-[22px] px-4 pt-[12px] font-black text-center">
-              {"NOTICE | 유의 사항"}
+              {"NOTICE 유의 사항"}
             </div>
 
             <div className={clsx("txt-w", openMap[3] && "show")}>
@@ -409,7 +421,11 @@ export default function IrlInfo() {
                 className="txt-btn-w w-full flex justify-center mx-auto pb-[30px]"
                 onClick={() => toggle(3)}
               >
-                <div className="btn_arrow" />
+                <div className="btn_more">
+                  <div className="bar_w"></div>
+                  <span className="btn_more_1">더보기</span>
+                  <span className="btn_more_2">닫기</span>
+                </div>
               </div>
             </div>
           </div>

@@ -188,26 +188,9 @@ export const ApplicateWorkshop = ({ }) => {
                   }
                 />
               </div>
-              <div className="border-b-1 flex flex-col justify-between px-1.5 py-1">
-                <div className="font-black text-[20px] whitespace-nowrap">
-                  티셔츠/신발 사이즈
-                </div>
-                <Input
-                  type="text"
-                  placeholder="사이즈 정보는 참고용으로 수집됩니다."
-                  value={form.battle_genre}
-                  className="placeholder:text-[#ff3b49] font-extralight text-[12px] !text-left"
-                  onChange={(event) =>
-                    setForm((prev) => ({
-                      ...prev,
-                      battle_genre: event.target.value,
-                    }))
-                  }
-                />
-              </div>
               <div className="flex flex-col px-1.5 py-1">
                 <div className={clsx("font-black text-[20px] whitespace-nowrap", jordan.className)}>
-                  댄서 ‘바다’와 ‘왁씨’에게 묻고 싶은 질문
+                  댄서 ‘바다’, ‘왁씨’에게 묻고 싶은 질문
                 </div>
                 <Textarea
                   placeholder=""

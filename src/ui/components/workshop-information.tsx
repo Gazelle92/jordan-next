@@ -30,7 +30,7 @@ export default function WorkshopInformation() {
 
       <div className="text-[13px] font-semibold whitespace-pre-wrap break-keep ani border-t-4">
         <div className="text-[22px] px-4 pt-[12px] font-black text-center">
-          {"REGISTRATION | 참가 신청"}
+          {"REGISTRATION 참가 신청"}
         </div>
 
         <div className={clsx("txt-w ", openMap[0] && "show")}>
@@ -85,15 +85,31 @@ export default function WorkshopInformation() {
             className="txt-btn-w w-full flex justify-center mx-auto pb-[30px] border-b-1"
             onClick={() => toggle(0)}
           >
-            <div className="btn_arrow" />
+            <div className="btn_more">
+              <div className="bar_w"></div>
+              <span className="btn_more_1">더보기</span>
+              <span className="btn_more_2">닫기</span>
+            </div>
           </div>
         </div>
 
-        <div className="text-[22px] px-4 pt-[12px] font-black text-center">
-          HOW TO CHALLENGE <br />| 챌린지 참여 방법
+        <div className="text-[22px] px-4 pt-[16px] font-black text-center leading-[1]">
+          HOW TO CHALLENGE<br />챌린지 참여 방법
         </div>
 
+        <div className="p-4">
+          <video
+            controls
+            playsInline
+            preload="metadata"
+
+          >
+
+            <source src="https://customer-y6yfz33adjmztpgx.cloudflarestream.com/a94b65cff6445d4aad08bfaca726b9b1/manifest/video.m3u8" />
+          </video>
+        </div>
         <div className={clsx("txt-w", openMap[1] && "show")}>
+
           <div className="txt-inner px-4 leading-[1.5]">
             <div className="font-black text-[16px]">
               {"STEP 1."}
@@ -158,7 +174,11 @@ export default function WorkshopInformation() {
             className="txt-btn-w w-full flex justify-center mx-auto pb-[30px] border-b-1"
             onClick={() => toggle(1)}
           >
-            <div className="btn_arrow" />
+            <div className="btn_more">
+              <div className="bar_w"></div>
+              <span className="btn_more_1">더보기</span>
+              <span className="btn_more_2">닫기</span>
+            </div>
           </div>
 
         </div>
@@ -166,7 +186,7 @@ export default function WorkshopInformation() {
         <br />
 
         <div className="text-[22px] px-4 pt-[12px] font-black text-center">
-          {"NOTICE | 유의 사항"}
+          {"NOTICE 유의 사항"}
         </div>
 
         <div className={clsx("txt-w", openMap[2] && "show")}>
@@ -195,7 +215,11 @@ export default function WorkshopInformation() {
             className="txt-btn-w w-full flex justify-center mx-auto pb-[30px]"
             onClick={() => toggle(2)}
           >
-            <div className="btn_arrow" />
+            <div className="btn_more">
+              <div className="bar_w"></div>
+              <span className="btn_more_1">더보기</span>
+              <span className="btn_more_2">닫기</span>
+            </div>
           </div>
         </div>
       </div>

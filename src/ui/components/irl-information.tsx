@@ -4,22 +4,22 @@ import clsx from "clsx";
 export default function irlInformation() {
   return (
     <div className="flex flex-col ">
-      <div className="flex flex-col gap-1.5">
+      <div className="flex flex-col ">
 
         <div className="flex flex-col gap-2 text-center font-black pt-[19px] pb-[27px] relative">
-          <span className="text-[15px] leading-[1]">일시</span>
+          <span className="text-[15px] leading-[1] font-semibold">일시</span>
           <h1 className="text-[24px] font-black leading-[1]">2026.02.07</h1>
-          <span className="text-[15px] leading-[1]">장소</span>
+          <span className="text-[15px] leading-[1] font-semibold">장소</span>
           <h1 className="text-[24px] font-black leading-[1]">앤더슨씨 성수</h1>
           <span className="text-[15px] leading-[1]">서울특별시 성동구 성수일로6길 36</span>
           <div className="absolute left-0 bottom-0 h-[1px] border-b-4 border_el ani_order_9"></div>
         </div>
-        <div className="flex flex-col gap-1 text-center font-black pb-2 relative">
+        <div className="flex flex-col text-center font-black py-2 relative">
           <h1 className="text-[24px] font-black leading-[1]">HOUSE OF GREATNESS</h1>
           <div className="absolute left-0 bottom-0 h-[1px] border-b-1 border_el ani_order_6"></div>
         </div>
       </div>
-      <div className="py-[15px] text-[13px] font-semibold whitespace-pre-wrap break-keep ani px-4">
+      <div className="py-[15px] text-[13px] font-medium whitespace-pre-wrap break-keep ani px-4">
 
         {/*HOUSE OF GREATNESS는 조던의 정신처럼 멈추지 않는 움직임이 서로를 만나고, 충돌하며, 더 큰 에너지로 확장되는 현장입니다.
         <br />

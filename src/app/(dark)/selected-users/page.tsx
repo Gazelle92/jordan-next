@@ -4,7 +4,7 @@ import ChoreoGraphyWorkshop from "@/ui/svg/choreo_graphy_workshop.svg";
 import InfraredBattle from "@/ui/svg/infrared_battle.svg";
 import Logo from "@/ui/svg/logo.svg";
 
-import SelectedDancer from "@/ui/svg/selected_dancer_2.svg";
+import SelectedDancer from "@/ui/svg/selected_dancer_3.svg";
 import ChoreoGraphyWorkshop2 from "@/ui/svg/choreo_graphy_workshop_2.svg";
 import WomenBattle from "@/ui/svg/women_battle.svg";
 import type { User } from "@/types/users";
@@ -55,7 +55,7 @@ export default function SelectedUsers() {
       <div className="flex flex-col gap-5 px-3 pb-3">
         <div className="flex flex-col flex-grow-1 items-center justify-center gap-[32px]">
           <Logo className="w-20" />
-          <SelectedDancer className="w-[184px] filled-color" />
+          <SelectedDancer className="w-[253px] filled-color" />
         </div>
         <hr className="border-2" />
         <div className="flex flex-col gap-3">

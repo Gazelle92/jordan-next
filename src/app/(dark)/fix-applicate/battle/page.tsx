@@ -425,7 +425,7 @@ function StepEdit({
       </div>
 
       <div className="border-1 flex flex-col px-1.5 py-1">
-        <div className={clsx("font-semibold text-[20px] whitespace-nowrap", jordan.className)}>댄서 ‘바다’와 ‘왁씨’에게 묻고 싶은 질문
+        <div className={clsx("font-semibold text-[20px] whitespace-nowrap", jordan.className)}>댄서 ‘바다’, ‘왁씨’에게 묻고 싶은 질문
         </div>
         <Textarea
           placeholder=""
