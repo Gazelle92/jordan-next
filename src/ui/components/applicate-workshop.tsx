@@ -72,7 +72,7 @@ export const ApplicateWorkshop = ({ }) => {
       !form.phone_number ||
       !form.birth_date ||
       !form.battle_genre ||
-      !form.instagram_video_url ||
+      !form.instagram_video_url
       //!form.what_do_you_want
     ) {
       setError("필수 항목 누락되었습니다.");
