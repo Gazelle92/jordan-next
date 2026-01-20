@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import clsx from "clsx";
+import { Button } from "./button";
 
 export default function WorkshopInformation() {
   const [openMap, setOpenMap] = useState<Record<number, boolean>>({});
@@ -95,46 +96,68 @@ export default function WorkshopInformation() {
         <div className={clsx("txt-w", openMap[1] && "show")}>
           <div className="txt-inner px-4 leading-[1.5]">
             <div className="font-black text-[16px]">
-              {"1. 음원 선택"}
-            </div>
-            <div className="font-semibold text-[13px]">
-              {"바다(@badalee__)의 인스타그램 챌린지 영상에 사용된 ‘오리지널 오디오’를 사용해 주세요."}
-            </div>
-
-            <br />
-
-            <div className="font-black text-[16px]">
-              {"2. 영상 업로드"}
-            </div>
-            <div className="font-semibold text-[13px]">
-              {"촬영한 챌린지 영상을 선택해 업로드 단계를 진행해 주세요."}
-            </div>
-
-            <br />
-
-            <div className="font-black text-[16px]">
-              {"3. 스티커 추가"}
+              {"STEP 1."}
             </div>
             <div className="font-semibold text-[13px] whitespace-pre-wrap">
-              {"릴스 업로드 화면 하단의 [스티커] 아이콘 클릭 후, 검색창에 'HOUSEOFGREATNESS' 입력\n전용 GIF 스티커를 선택하여 가이드라인에 맞춰 크기와 위치를 조정해 주세요."}
+              {"댄서 ‘바다(@badalee__)’의 챌린지 영상 내 아이디 하단 음원 클릭\n*챌린지 음원은 공식 웹사이트에서 다운로드할 수 있습니다."}
             </div>
 
             <br />
 
             <div className="font-black text-[16px]">
-              {"4. 업로드 완료"}
+              {"STEP 2."}
             </div>
             <div className="font-semibold text-[13px]">
-              {"필수 과정이 완료된 영상을 인스타그램에 최종 업로드해 주세요."}
+              {"촬영한 영상을 선택"}
             </div>
+
+            <br />
+
+            <div className="font-black text-[16px]">
+              {"STEP 3."}
+            </div>
+            <div className="font-semibold text-[13px]">
+              {"화면 하단 스티커 아이콘 클릭 후, ‘HOUSEOFGREATNESS’ 검색"}
+            </div>
+
+            <br />
+
+            <div className="font-black text-[16px]">
+              {"STEP 4."}
+            </div>
+            <div className="font-semibold text-[13px] whitespace-pre-wrap">
+              {"스티커 선택 후 크기 및 위치 조정\n* 댄서 ‘바다’의 챌린지 영상을 참고하여, 스티커가 잘리지 않도록 화면 상단에 배치합니다."}
+            </div>
+
+            <br />
+
+            <div className="font-black text-[16px]">
+              {"STEP 5."}
+            </div>
+            <div className="font-semibold text-[13px]">
+              {"‘릴스’로 업로드"}
+            </div>
+
+            <br />
+            <div className="dot-sp-1 !font-semibold !text-[13px]">
+              {"선정 방식: 댄서 ‘바다’가 신청 인원 중 60명 선정"}
+            </div>
+            <div className="dot-sp-1 !font-semibold !text-[13px]">
+              {"참가자 발표: 1월 30일(금), 공식 웹사이트 공지 및 개별 문자 발송"}
+            </div>
+            <br />
+            <div className="!font-semibold !text-[13px]">※ 조던 월드 오브 플라이트 서울 홍대 및 카시나 성수점 내 스튜디오에서 참여 및 접수 완료 시 리워드가 제공됩니다.</div>
+            <div className="!font-semibold !text-[13px]">※ 1인 단독 촬영 및 게시물만 인정됩니다. 공동 작업자 참여는 불가합니다.</div>
           </div>
 
+          <Button className="mt-4">챌린지 음원 다운로드</Button>
           <div
             className="txt-btn-w w-full flex justify-center mx-auto pb-[30px] border-b-1"
             onClick={() => toggle(1)}
           >
             <div className="btn_arrow" />
           </div>
+
         </div>
 
         <br />

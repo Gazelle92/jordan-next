@@ -405,7 +405,7 @@ function StepEdit({
             }
           />
         </div>
-        <div className="border-b-1 flex flex-col px-1.5 py-1">
+        <div className="flex flex-col px-1.5 py-1">
           <div className={clsx("font-semibold text-[20px] whitespace-nowrap", jordan.className)}>
             인스타그램 아이디
           </div>
@@ -424,9 +424,9 @@ function StepEdit({
 
       </div>
 
-      <div className="border-1 flex flex-col px-1.5 py-1 mt-[14px]">
+      <div className="border-1 flex flex-col px-1.5 py-1">
         <div className={clsx("font-semibold text-[20px] whitespace-nowrap", jordan.className)}>
-          댄서 ‘바다’, ‘왁씨’에게 묻고 싶은 질문
+          토크세션 호스트<br />댄서 ‘바다’와 ‘왁씨’에게 묻고 싶은 질문
         </div>
         <Textarea
           placeholder=""
@@ -434,7 +434,7 @@ function StepEdit({
           onChange={(event) =>
             onChange({ ...formValue, what_do_you_want: event.target.value })
           }
-          className="!text-left placeholder:text-[#ff3b49] font-extralight text-[12px]"
+          className="!text-left placeholder:text-[#ff3b49] font-extralight text-[12px] resize-none"
         />
       </div>
 

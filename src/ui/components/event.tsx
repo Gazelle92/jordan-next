@@ -201,13 +201,12 @@ export const Event = ({ }) => {
                   <div className="dot-sp-2 !font-semibold !text-[13px]">
                     {"휴대폰 흡착 패드 & 클립형 라이트 세트"}
                   </div>
-                  <div className="pl-[20px] !font-semibold !text-[13px]">
+                  <div className="dot-sp-2 !font-semibold !text-[13px]">
                     {"※ 리워드는 한정 수량으로 조기 소진될 수 있습니다."}
                   </div>
                   <div className="dot-sp-1 !font-semibold !text-[13px]">
                     {"챌린지 선정자에게 스크래치 쿠폰이 제공되며, 당첨자에 한해 인프라레드 제품이 증정됩니다."}
                   </div>
-
 
 
 
@@ -231,7 +230,7 @@ export const Event = ({ }) => {
                     {"2:2 OPEN STYLE BATTLE과 중복 참여가 불가합니다."}
                   </div>
                   <div className="dot-sp-1 !font-semibold !text-[13px]">
-                    {"프로그램 참가자로 선정되지 않더라도 행사 관람을 원하실 경우, 반드시 ‘배틀 관람 및 토크 세션’을 별도로 신청해 주시기 바랍니다."}
+                    {"프로그램 참가자로 선정되지 않더라도 행사 관람을 원하실 경우, 반드시 ‘배틀 관람 및 토크 세션’ 신청을 별도로 진행해 주시기 바랍니다."}
                   </div>
                   <div className="dot-sp-1 !font-semibold !text-[13px]">
                     {"본 행사는 조던 브랜드 이벤트로, 타 브랜드 로고가 과도하게 노출되는 착장은 자제를 부탁드립니다."}

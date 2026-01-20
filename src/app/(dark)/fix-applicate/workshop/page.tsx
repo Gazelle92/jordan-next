@@ -299,11 +299,11 @@ function StepEdit({
 
         <div className="border-b-1 flex flex-col px-1.5 py-1">
           <div className={clsx("font-black text-[20px] whitespace-nowrap", jordan.className)}>
-            댄서 ‘바다’, ‘왁씨’에게 묻고 싶은 질문
+            토크세션 호스트<br />댄서 ‘바다’와 ‘왁씨’에게 묻고 싶은 질문
           </div>
           <Textarea
             placeholder=""
-            className="placeholder:text-[#ff3b49] font-extralight text-[20px]"
+            className="placeholder:text-[#ff3b49] font-extralight text-[12px] resize-none h-[100px]"
             value={formValue.what_do_you_want}
             onChange={(event) =>
               onChange({ ...formValue, what_do_you_want: event.target.value })
