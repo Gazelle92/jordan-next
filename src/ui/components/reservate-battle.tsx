@@ -42,20 +42,36 @@ export const ReservateBattle = ({ }) => {
     }
   }, [open]);
 
+  const birthDateRegex = /^\d{8}$/;
+  const phoneRegex = /^010\d{8}$/;
+  const instagramRegex = /^@[A-Za-z0-9._]+$/;
+
   const handleSubmit = async () => {
     if (!form.privacy_policy_agreed) {
       setError("개인정보 수집에 동의 해주시기 바랍니다.");
       return;
     }
+    if (!birthDateRegex.test(form.birth_date)) {
+      setError("생년월일 날짜 형식이 올바르지 않습니다.\n예시) 20260207");
+      return;
+    }
+    if (!phoneRegex.test(form.phone_number)) {
+      setError("휴대폰 번호 형식이 올바르지 않습니다.\n예시) 01012345678");
+      return;
+    }
     if (
       !form.name ||
       !form.phone_number ||
-      !form.birth_date ||
-      !form.what_do_you_want
+      !form.birth_date
+      //!form.what_do_you_want
     ) {
       setError("필수 항목 누락되었습니다.");
       return;
     }
+
+
+
+
 
     setIsSubmitting(true);
     setError(null);
@@ -181,7 +197,7 @@ export const ReservateBattle = ({ }) => {
                   <div className="text-[16px]">토크 세션 관람</div>
                 </Checkbox>
               </div>
-              {error && <span className="text-[12px]">{error}</span>}
+              <span className="text-[12px]">* 두 프로그램은 중복 신청이 가능합니다.</span>
             </div>
             <div className="flex flex-col">
               <Checkbox

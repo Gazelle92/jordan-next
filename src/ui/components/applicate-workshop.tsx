@@ -45,7 +45,24 @@ export const ApplicateWorkshop = ({ }) => {
     }
   }, [open]);
 
+  const birthDateRegex = /^\d{8}$/;
+  const phoneRegex = /^010\d{8}$/;
+
   const handleSubmit = async () => {
+    if (!form.privacy_policy_agreed) {
+      setError("개인정보 수집에 동의 해주시기 바랍니다.");
+      return;
+    }
+    if (!birthDateRegex.test(form.birth_date)) {
+      setError("생년월일 날짜 형식이 올바르지 않습니다.\n예시) 20260207");
+      return;
+    }
+    if (!phoneRegex.test(form.phone_number)) {
+      setError("휴대폰 번호 형식이 올바르지 않습니다.\n예시) 01012345678");
+      return;
+    }
+
+
     if (!form.privacy_policy_agreed) {
       setError("개인정보 수집에 동의 해주시기 바랍니다.");
       return;
@@ -56,7 +73,7 @@ export const ApplicateWorkshop = ({ }) => {
       !form.birth_date ||
       !form.battle_genre ||
       !form.instagram_video_url ||
-      !form.what_do_you_want
+      //!form.what_do_you_want
     ) {
       setError("필수 항목 누락되었습니다.");
       return;
