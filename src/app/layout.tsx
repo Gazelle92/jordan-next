@@ -7,7 +7,21 @@ import PageEnterAni from "@/ui/components/PageEnterAni";
 
 export const metadata: Metadata = {
   title: "HOUSE OF GREATNESS",
+
   description: "HOUSE OF GREATNESS",
+
+  openGraph: {
+    images: [
+      {
+        url: "https://houseofgreatness.kr/images/Jordan_cover.jpg",
+        width: 1200,
+        height: 630,
+        alt: "HOUSE OF GREATNESS",
+      },
+    ],
+  },
+
+
 };
 
 export default function RootLayout({

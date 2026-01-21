@@ -25,9 +25,11 @@ export const PrivacyPolicy = ({ open, onClose }: PrivacyPolicyProps) => {
           <h4 className="font-black text-[24px] text-center leading-[1]">개인정보 처리방침</h4>
           <hr className="border-2"></hr>
           <div className="flex flex-col scroll_el h-[calc(100% - 80px)] overflow-y-scroll scrollbar text-[10px]">
-            주식회사 텔레포트(이하 “회사”)는 본 웹사이트를 통해 진행되는 이벤트 및 프로그램 운영과 관련하여 「개인정보 보호법」 등 관련 법령을 준수하며, 이용자의 개인정보를 안전하게 처리합니다. 본 개인정보 처리방침은 신청 유형과 관계없이 본 웹사이트를 통해 수집·이용되는 개인정보의 처리 기준을 안내합니다.<br />
+            <span>
+              주식회사 텔레포트(이하 “회사”)는 본 웹사이트를 통해 진행되는 이벤트 및 프로그램 운영과 관련하여 「개인정보 보호법」 등 관련 법령을 준수하며, 이용자의 개인정보를 안전하게 처리합니다. 본 개인정보 처리방침은 신청 유형과 관계없이 본 웹사이트를 통해 수집·이용되는 개인정보의 처리 기준을 안내합니다.<br />
+            </span>
             <br />
-            1. 수집하는 개인정보 항목<br />
+            <span>1. 수집하는 개인정보 항목</span>
             회사는 이벤트 및 프로그램 신청 유형에 따라 아래 개인정보 항목 중 일부를 수집할 수 있습니다.<br />
             이름<br />
             생년월일<br />

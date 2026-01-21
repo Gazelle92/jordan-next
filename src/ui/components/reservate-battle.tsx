@@ -101,7 +101,7 @@ export const ReservateBattle = ({ }) => {
   return (
     <>
       <Button onClick={() => setOpen(true)}>
-        <span className="text-[24px] pretendard">{/*HOUSE OF GREATNESS 이벤트 예약하기*/}배틀 & 코레오그래피 워크샵 관람 신청</span>
+        <span className="text-[24px] pretendard break-keep">{/*HOUSE OF GREATNESS 이벤트 예약하기*/}HOUSE OF GREATNESS<br />이벤트 관람 신청하기</span>
       </Button>
       <FullDialog open={open} onClose={() => setOpen(false)}>
         {completed ? (
