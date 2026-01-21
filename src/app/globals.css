@@ -309,5 +309,15 @@ body {
 
 .pre-loader:not(.show){display: none;}
 
+
+ .dot-sp-3{position: relative; }
+
+.dot-sp-3{padding-left: 36px;}
+.dot-sp-1::before, .dot-sp-2::before, .dot-sp-3::before{content: ''; width: 4px; height: 4px; background-color: #ff3b49; border-radius: 100%; position: absolute;  top: 8px;}
+.dot-sp-1::before{left: 2px;}
+.dot-sp-2::before{left: 14px;}
+.dot-sp-3::before{left: 26px;}
+
+
 .policy-page .dot-sp-1, .policy-page .dot-sp-2{font-size: 12px!important; font-weight: 400;}
 .policy-page .dot-sp-1:before, .policy-page .dot-sp-2:before{width: 3px; height: 3px;}
