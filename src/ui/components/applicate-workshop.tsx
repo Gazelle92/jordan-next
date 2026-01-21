@@ -207,7 +207,7 @@ export const ApplicateWorkshop = ({ }) => {
                   }))
                 }
               >
-                <div>
+                <div className="break-keep">
                   [필수]&nbsp;
 
                   <button
@@ -233,7 +233,7 @@ export const ApplicateWorkshop = ({ }) => {
                   }))
                 }
               >
-                <div>
+                <div className="break-keep">
                   [필수]&nbsp;
                   <button
                     type="button"

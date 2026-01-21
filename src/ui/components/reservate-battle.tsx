@@ -116,7 +116,7 @@ export const ReservateBattle = ({ }) => {
           </>
         ) : (
           <div className="flex flex-col gap-5 flex-grow-1 h-full">
-            <h4 className="font-black text-[24px] text-center leading-[1]">HOUSE OF GREATNESS 이벤트<br />관람 신청서</h4>
+            <h4 className="font-black text-[24px] text-center leading-[1] break-keep">HOUSE OF GREATNESS<br />이벤트 관람 신청서</h4>
             <div className="flex flex-col border-1">
               <div className="border-b-1 flex justify-between px-1.5 py-1">
                 <div className="font-black text-[20px] whitespace-nowrap">
@@ -252,7 +252,7 @@ export const ReservateBattle = ({ }) => {
                   }))
                 }
               >
-                <div>
+                <div className="break-keep">
                   [필수]&nbsp;
 
                   <button
@@ -278,7 +278,7 @@ export const ReservateBattle = ({ }) => {
                   }))
                 }
               >
-                <div>
+                <div className="break-keep">
                   [필수]&nbsp;
                   <button
                     type="button"

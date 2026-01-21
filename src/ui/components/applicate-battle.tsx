@@ -340,7 +340,7 @@ export const ApplicateBattle = ({ }) => {
                   }))
                 }
               >
-                <div>
+                <div className="break-keep">
                   [필수]&nbsp;
 
                   <button
@@ -366,7 +366,7 @@ export const ApplicateBattle = ({ }) => {
                   }))
                 }
               >
-                <div>
+                <div className="break-keep">
                   [필수]&nbsp;
                   <button
                     type="button"
