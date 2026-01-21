@@ -239,7 +239,7 @@ export const Event = ({ }) => {
                     {"2:2 OPEN STYLE BATTLE과 중복 참여가 불가합니다."}
                   </div>
                   <div className="dot-sp-1 !font-semibold !text-[13px]">
-                    {"프로그램 참가자로 선정되지 않더라도 행사 관람을 원하실 경우, 반드시 'HOUSE OF GREATNESS 이벤트 관람 신청' 신청을 별도로 진행해 주시기 바랍니다."}
+                    {"프로그램 참가자로 선정되지 않더라도 행사 관람을 원하실 경우, 반드시 'HOUSE OF GREATNESS 이벤트 관람' 신청을 별도로 진행해 주시기 바랍니다."}
                   </div>
                   <div className="dot-sp-1 !font-semibold !text-[13px]">
                     {"본 행사는 조던 브랜드 이벤트로, 타 브랜드 로고가 과도하게 노출되는 착장은 자제를 부탁드립니다."}
