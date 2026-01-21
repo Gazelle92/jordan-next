@@ -99,7 +99,7 @@ export default function WorkshopInformation() {
           HOW TO CHALLENGE<br />챌린지 참여 방법
         </div>
 
-        <div className="p-4 flex justify-center text-[0px] relative">
+        <div className="p-4 flex justify-center text-[0px] h-[400px] relative">
           <video
             controls
             playsInline
