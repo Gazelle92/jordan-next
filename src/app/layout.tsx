@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import { ViewTransitions } from "next-view-transitions";
 import Script from "next/script";
+import { Analytics } from "@vercel/analytics/next";
 import { pretendard } from "@/ui/font";
 import PageEnterAni from "@/ui/components/PageEnterAni";
 
@@ -40,6 +41,7 @@ export default function RootLayout({
       <body className={`${pretendard.variable} pretendard`}>
         <PageEnterAni />
         <ViewTransitions>{children}</ViewTransitions>
+        <Analytics />
       </body>
 
     </html>
