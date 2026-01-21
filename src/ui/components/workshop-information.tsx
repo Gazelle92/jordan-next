@@ -123,7 +123,7 @@ export default function WorkshopInformation() {
               src="/images/btn_play.png"
               alt="play"
               fill
-              className="absolute !h-[40px] !w-[40px] !left-1/2 !top-[45%] -translate-x-1/2 -translate-y-1/2 z-[2] !bottom-auto !right-auto"
+              className="absolute !h-[40px] !w-[40px] !left-1/2 !top-[45%] -translate-x-1/2 -translate-y-1/2 z-[2] !bottom-auto !right-auto pointer-events-none"
             />
           )}
         </div>
