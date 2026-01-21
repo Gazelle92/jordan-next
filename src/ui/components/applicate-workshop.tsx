@@ -92,7 +92,7 @@ export const ApplicateWorkshop = ({ }) => {
 
   return (
     <>
-      <div className="sticky bottom-3 mt-3 mx-3 z-1">
+      <div className="sticky bottom-3 mt-3 mx-3 z-3">
         <div className="">
           <Button className="border-none text-center pretendard" onClick={() => setOpen(true)}>코레오그래피 워크숍 신청하기</Button>
         </div>
