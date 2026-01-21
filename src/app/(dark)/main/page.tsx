@@ -68,11 +68,11 @@ export default function Home() {
           </div>
 
           <video
-            src="https://customer-y6yfz33adjmztpgx.cloudflarestream.com/2fc2a1c6537b8aa74562e193cb398a29/manifest/video.m3u8"
+            src="https://customer-y6yfz33adjmztpgx.cloudflarestream.com/ddaf946e96acc0433eb84460946c4263/manifest/video.m3u8"
             autoPlay
             muted
             playsInline
-            className={`w-dvw h-dvh object-cover transition-opacity duration-500 ease-in-out ${fadeOut ? "opacity-0" : "opacity-100"
+            className={`w-dvw h-dvh object-cover object-top transition-opacity duration-500 ease-in-out ${fadeOut ? "opacity-0" : "opacity-100"
               }`}
             onClick={() => {
               setFadeOut(true);
