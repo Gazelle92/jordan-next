@@ -105,7 +105,7 @@ export default function WorkshopInformation() {
 
           >
 
-            <source src="https://customer-y6yfz33adjmztpgx.cloudflarestream.com/a94b65cff6445d4aad08bfaca726b9b1/manifest/video.m3u8" />
+            <source src="https://customer-y6yfz33adjmztpgx.cloudflarestream.com/eda43045c09ff9f1798d9172fb93ee21/manifest/video.m3u8" />
           </video>
         </div>
         <div className={clsx("txt-w", openMap[1] && "show")}>
