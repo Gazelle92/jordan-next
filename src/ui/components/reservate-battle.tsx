@@ -108,7 +108,7 @@ export const ReservateBattle = ({ }) => {
           <>
             <div className="flex flex-col flex-grow-1 items-center justify-center gap-6">
               <Logo width={100} height={100} />
-              <strong className="text-center">배틀 & 코레오그래피 워크샵<br />관람 신청이 완료되었습니다.</strong>
+              <strong className="text-center">HOUSE OF GREATNESS 이벤트<br />관람 신청이 완료되었습니다.</strong>
             </div>
             <Link href="/menu">
               <Button>메뉴로 돌아가기</Button>
@@ -116,7 +116,7 @@ export const ReservateBattle = ({ }) => {
           </>
         ) : (
           <div className="flex flex-col gap-5 flex-grow-1 h-full">
-            <h4 className="font-black text-[24px] text-center leading-[1]">배틀 & 코레오그래피 워크샵<br />관람 신청서</h4>
+            <h4 className="font-black text-[24px] text-center leading-[1]">HOUSE OF GREATNESS 이벤트<br />관람 신청서</h4>
             <div className="flex flex-col border-1">
               <div className="border-b-1 flex justify-between px-1.5 py-1">
                 <div className="font-black text-[20px] whitespace-nowrap">
