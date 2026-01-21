@@ -41,11 +41,11 @@ export const PrivacyPolicy = ({ open, onClose }: PrivacyPolicyProps) => {
 
             <span className="">2. 개인정보의 수집 및 이용 목적</span>
             <span className="">회사는 수집한 개인정보를 다음의 목적을 위해 이용합니다.</span>
-            <span className="">이벤트 및 프로그램 참여 신청 접수 및 참가자 확인</span>
-            <span className="">참가자 선정, 일정 안내, 결과 공지 및 관련 커뮤니케이션</span>
-            <span className="">배틀 및 워크샵 등 프로그램 운영 및 참가자 관리</span>
-            <span className="">챌린지 영상의 확인, 저장, 인코딩 및 웹페이지 노출(아카이빙)</span>
-            <span className="">서비스 운영 및 시스템 관리, 문의 대응 및 분쟁 처리</span>
+            <span className="dot-sp-1">이벤트 및 프로그램 참여 신청 접수 및 참가자 확인</span>
+            <span className="dot-sp-1">참가자 선정, 일정 안내, 결과 공지 및 관련 커뮤니케이션</span>
+            <span className="dot-sp-1">배틀 및 워크샵 등 프로그램 운영 및 참가자 관리</span>
+            <span className="dot-sp-1">챌린지 영상의 확인, 저장, 인코딩 및 웹페이지 노출(아카이빙)</span>
+            <span className="dot-sp-1">서비스 운영 및 시스템 관리, 문의 대응 및 분쟁 처리</span>
             <br />
 
             <span className="">3. 개인정보의 보유 및 이용 기간</span>
@@ -56,13 +56,13 @@ export const PrivacyPolicy = ({ open, onClose }: PrivacyPolicyProps) => {
 
             <span className="">4. 개인정보의 처리위탁</span>
             <span className="">회사는 서비스 운영을 위하여 개인정보 처리 업무의 일부를 외부 전문업체에 위탁할 수 있습니다.</span>
-            <span className="">수탁자: 휴먼(Hummman)</span>
-            <span className="">위탁 업무 내용:</span>
-            <span className="">마이크로사이트 개발 및 운영</span>
-            <span className="">신청 접수 데이터(이름, 생년월일, 전화번호, 인스타그램 계정 정보, 챌린지 영상 링크 등) 관리 및 운영 지원</span>
-            <span className="">신청자 정보 확인/검수 등 운영상 필요한 관리 업무(어드민 운영 포함)</span>
-            <span className="">챌린지 영상의 저장, 인코딩, 웹페이지 노출(아카이빙) 및 관련 시스템 운영</span>
-            <span className="">처리 장소: 국내 클라우드 인프라(Cloudflare 등)</span>
+            <span className="dot-sp-1">수탁자: 휴먼(Hummman)</span>
+            <span className="dot-sp-1">위탁 업무 내용:</span>
+            <span className="dot-sp-2">마이크로사이트 개발 및 운영</span>
+            <span className="dot-sp-2">신청 접수 데이터(이름, 생년월일, 전화번호, 인스타그램 계정 정보, 챌린지 영상 링크 등) 관리 및 운영 지원</span>
+            <span className="dot-sp-2">신청자 정보 확인/검수 등 운영상 필요한 관리 업무(어드민 운영 포함)</span>
+            <span className="dot-sp-2">챌린지 영상의 저장, 인코딩, 웹페이지 노출(아카이빙) 및 관련 시스템 운영</span>
+            <span className="dot-sp-3">처리 장소: 국내 클라우드 인프라(Cloudflare 등)</span>
             <br />
 
             <span className="">회사는 위탁 계약을 통해 개인정보가 안전하게 관리될 수 있도록 필요한 사항을 규정하며, 수탁자는 위탁받은 목적 범위를 초과하여 개인정보를 이용하거나 제3자에게 제공하지 않습니다.</span>
@@ -79,8 +79,8 @@ export const PrivacyPolicy = ({ open, onClose }: PrivacyPolicyProps) => {
 
             <span className="">7. 개인정보의 파기 절차 및 방법</span>
             <span className="">회사는 개인정보 보유 기간의 경과 또는 처리 목적 달성 시 다음과 같은 방법으로 개인정보를 파기합니다.</span>
-            <span className="">전자적 파일 형태의 개인정보: 복구가 불가능한 방법으로 삭제</span>
-            <span className="">출력물 형태의 개인정보: 분쇄 또는 소각</span>
+            <span className="dot-sp-1">전자적 파일 형태의 개인정보: 복구가 불가능한 방법으로 삭제</span>
+            <span className="dot-sp-1">출력물 형태의 개인정보: 분쇄 또는 소각</span>
             <br />
 
             <span className="">8. 이용자의 권리 및 행사 방법</span>
@@ -89,8 +89,8 @@ export const PrivacyPolicy = ({ open, onClose }: PrivacyPolicyProps) => {
             <br />
 
             <span className="">9. 개인정보 보호 관련 문의처</span>
-            <span className="">개인정보 보호책임자: 김종화</span>
-            <span className="">연락처: kimtaco@teleport-online.com</span>
+            <span className="dot-sp-1">개인정보 보호책임자: 김종화</span>
+            <span className="dot-sp-1">연락처: kimtaco@teleport-online.com</span>
             <br />
 
             <span className="">10. 개인정보 처리방침의 변경</span>
