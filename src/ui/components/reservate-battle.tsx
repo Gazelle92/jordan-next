@@ -206,10 +206,11 @@ export const ReservateBattle = ({ }) => {
 
 
             </div>
-            <span className="font-extralight text-[14px] mt-[-12px]">
+            <span className="font-extralight text-[14px] mt-[-12px] break-keep">
               * 이벤트 관람과 토크 세션은 별도 운영되며, 토크 세션 관람 시 해당 항목을 선택해 주세요.<br />
               * 본 프로그램은 사전 신청 후 당첨자에 한해 참여 가능합니다.<br />
-              * 참가자 발표는 1월 30일(금), 개별 문자로 안내드립니다.
+              * 신청 기간은 2월 1일(일)까지입니다.<br />
+              * 참가자 발표는 2월 2일(월), 개별 문자로 안내 드릴 예정입니다
             </span>
             {/*<div className="flex flex-col justify-center text-center gap-[8px]">
 
