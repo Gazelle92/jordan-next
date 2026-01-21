@@ -3,7 +3,7 @@
 import { useState } from "react";
 import clsx from "clsx";
 import { Button } from "./button";
-
+import Image from "next/image";
 export default function WorkshopInformation() {
   const [openMap, setOpenMap] = useState<Record<number, boolean>>({});
   const toggle = (idx: number) => {
@@ -97,7 +97,7 @@ export default function WorkshopInformation() {
           HOW TO CHALLENGE<br />챌린지 참여 방법
         </div>
 
-        <div className="p-4 flex justify-center ">
+        <div className="p-4 flex justify-center text-[0px] relative">
           <video
             controls
             playsInline
@@ -108,6 +108,8 @@ export default function WorkshopInformation() {
 
             <source src="https://customer-y6yfz33adjmztpgx.cloudflarestream.com/eda43045c09ff9f1798d9172fb93ee21/manifest/video.m3u8" />
           </video>
+
+          <Image src="/images/intro_video_cover.jpg" alt="houseofgratness" fill className="absolute top-[16px] left-[16px] h-[calc(100%-32px)] w-[calc(100%-32px)] object-contain hidden" />
         </div>
         <div className={clsx("txt-w", openMap[1] && "show")}>
 
