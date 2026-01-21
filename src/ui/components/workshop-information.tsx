@@ -59,7 +59,7 @@ export default function WorkshopInformation() {
               {"STEP 1."}
             </div>
             <div className="font-semibold text-[13px]">
-              {"챌린지 영상 촬영 (조던 월드 오브 플라이트 서울 홍대 / 카시나 성수점 내 스튜디오 또는 개인 공간)"}
+              {"챌린지 영상 촬영 (조던 월드 오브 플라이트 홍대 / 카시나 성수점 내 스튜디오 또는 춤을 출수 있는 곳 어디든)"}
             </div>
 
             <div className="font-semibold text-[16px]">

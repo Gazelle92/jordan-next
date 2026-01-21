@@ -58,7 +58,7 @@ export default function IrlInfo() {
                 TALK SESSION
               </h4>
               <p>
-                댄서 ‘바다’, ‘왁씨’의 각자의 경험을 바탕으로 춤에 대해 MC ‘킹키’와 이야기하는 토크 세션입니다.
+                댄서 ‘바다’, ‘왁씨’의 각자의 경험을 바탕으로 MC ‘킹키’와 춤에 대해 이야기하는 토크 세션입니다.
               </p>
             </div>
             <hr className="border-2" />
