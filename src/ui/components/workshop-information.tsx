@@ -12,6 +12,8 @@ export default function WorkshopInformation() {
       [idx]: !prev[idx],
     }));
   };
+  const [hasStarted, setHasStarted] = useState(false);
+
   return (
     <div className="flex flex-col">
       <div className="flex flex-col gap-1.5">
@@ -102,14 +104,20 @@ export default function WorkshopInformation() {
             controls
             playsInline
             preload="metadata"
-            className="h-[400px]"
-
+            className="h-[400px] z-[1] cursor-pointer"
+            onPlay={() => setHasStarted(true)}
           >
 
             <source src="https://customer-y6yfz33adjmztpgx.cloudflarestream.com/eda43045c09ff9f1798d9172fb93ee21/manifest/video.m3u8" />
           </video>
-
-          <Image src="/images/intro_video_cover.jpg" alt="houseofgratness" fill className="absolute top-[16px] left-[16px] h-[calc(100%-32px)] w-[calc(100%-32px)] object-contain hidden" />
+          {!hasStarted && (
+            <Image
+              src="/images/intro_video_cover.jpg"
+              alt="houseofgreatness"
+              fill
+              className="absolute !top-[16px] !left-[16px] !h-[calc(100%-32px)] !w-[calc(100%-32px)] object-contain z-[2] pointer-events-none"
+            />
+          )}
         </div>
         <div className={clsx("txt-w", openMap[1] && "show")}>
 
