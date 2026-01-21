@@ -63,7 +63,7 @@ export default function IrlInfo() {
             </div>
             <hr className="border-2" />
             <h2 className="text-[24px] font-black text-center pb-2 border-b-1">
-              타임 테이블
+              타임테이블
             </h2>
             <div className="flex flex-col py-2">
               {programs.map((program) => (

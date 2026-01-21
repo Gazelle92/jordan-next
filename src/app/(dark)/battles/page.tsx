@@ -436,7 +436,7 @@ export default function IrlInfo() {
 
             <div className="fade-cw border-t-4 border-b-1 py-1">
               <h2 className="text-[24px] font-black text-center ">
-                배틀 타임 테이블
+                배틀 타임테이블
               </h2>
             </div>
             <div className="py-[17px] grid grid-cols-1 gap-[16px] pl-[18px] pr-[14px] pb-0 ">
