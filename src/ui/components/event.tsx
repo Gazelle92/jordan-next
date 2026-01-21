@@ -56,9 +56,9 @@ export const Event = ({ }) => {
                 <h1 className="text-[24px] font-black leading-[1] pb-2">2026.01.21 - 01.27</h1>
                 */}
                 <span className="text-[15px] leading-[1]">장소</span>
-                <h1 className="text-[24px] font-black leading-[1]">조던 월드 오브 플라이트 서울 홍대</h1>
+                <h1 className="text-[24px] font-black leading-[1] break-keep">조던 월드 오브 플라이트 서울 홍대</h1>
                 <span className="text-[15px] leading-[1]">서울 마포구 양화로 161 1층 / 11:00 - 22:00</span>
-                <h1 className="text-[24px] font-black leading-[1]">조던 카시나 성수점</h1>
+                <h1 className="text-[24px] font-black leading-[1]">카시나 성수점</h1>
                 <span className="text-[15px] leading-[1]">서울 성동구 성수이로7길 41 / 11:00 - 20:00</span>
                 <div className="absolute left-0 bottom-0 h-[1px] border-b-4 border_el ani_order_9"></div>
               </div>
@@ -194,10 +194,6 @@ export const Event = ({ }) => {
                 </div>
               </div>
 
-              <br />
-
-              <br />
-
               <div className="text-[22px] px-4 pt-[12px] font-black text-center">
                 {"REWARDS 현장 참여 혜택"}
               </div>
@@ -210,11 +206,11 @@ export const Event = ({ }) => {
                   <div className="dot-sp-2 !font-semibold !text-[13px]">
                     {"휴대폰 흡착 패드 & 클립형 라이트 세트"}
                   </div>
-                  <div className="dot-sp-2 !font-semibold !text-[13px]">
+                  <div className=" !font-semibold !text-[13px] pl-[12px]">
                     {"※ 리워드는 한정 수량으로 조기 소진될 수 있습니다."}
                   </div>
                   <div className="dot-sp-1 !font-semibold !text-[13px]">
-                    {"챌린지 선정자에게 스크래치 쿠폰이 제공되며, 당첨자에 한해 인프라레드 제품이 증정됩니다."}
+                    {"2월 7일 행사 당일, 워크숍 참가자에게 스크래치 쿠폰이 제공되며 당첨자에 한해 인프라레드 제품이 증정됩니다."}
                   </div>
 
 

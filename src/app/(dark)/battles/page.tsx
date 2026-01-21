@@ -136,7 +136,7 @@ const guests: ProfileProps[] = [
 const matches = [
   { label: "1차 예선 (3 circles)", time: "12:00 - 13:30" },
   { label: "2차 예선 (3 circles)", time: "13:30 - 15:00" },
-  { label: "본선 (TOP 12 )", time: "16:00 - 16:40" },
+  { label: "본선 (TOP 12)", time: "16:00 - 16:40" },
   { label: "TOP 6", time: "16:40 - 17:00" },
   { label: "SEMI FINAL & WILD CARD", time: "17:00 - 17:30" },
   { label: "JUDGE SHOW", time: "17:30 - 17:50" },
@@ -355,7 +355,7 @@ export default function IrlInfo() {
               </div>
             </div>
 
-            <br />
+
 
             <div className="text-[22px] px-4 pt-[12px] font-black text-center">
               BATTLE REWARDS 우승 혜택
@@ -394,8 +394,6 @@ export default function IrlInfo() {
                 </div>
               </div>
             </div>
-
-            <br />
 
             <div className="text-[22px] px-4 pt-[12px] font-black text-center">
               {"NOTICE 유의 사항"}

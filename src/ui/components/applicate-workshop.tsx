@@ -60,7 +60,7 @@ export const ApplicateWorkshop = ({ }) => {
       return;
     }
     if (!birthDateRegex.test(form.birth_date)) {
-      setError("생년월일 날짜 형식이 올바르지 않습니다.\n예시) 20260207");
+      setError("생년월일 형식이 올바르지 않습니다.\n예시) 20260207");
       return;
     }
     if (!phoneRegex.test(form.phone_number)) {
@@ -114,7 +114,7 @@ export const ApplicateWorkshop = ({ }) => {
             <div className="flex flex-col border-1">
               <div className="border-b-1 flex justify-between px-1.5 py-1">
                 <div className="font-black text-[20px] whitespace-nowrap">
-                  이름
+                  이름*
                 </div>
                 <Input
                   type="text"
@@ -128,7 +128,7 @@ export const ApplicateWorkshop = ({ }) => {
               </div>
               <div className="border-b-0 flex justify-between px-1.5 py-1 pb-0">
                 <div className="font-black text-[20px] whitespace-nowrap">
-                  생년월일
+                  생년월일*
                 </div>
                 <Input
                   type="text"
@@ -146,7 +146,7 @@ export const ApplicateWorkshop = ({ }) => {
               <div className="text-right text-[12px] border-b-1 pb-1 px-1.5">만 15세 이상만 신청이 가능합니다.</div>
               <div className="border-b-1 flex justify-between px-1.5 py-1">
                 <div className="font-black text-[20px] whitespace-nowrap">
-                  휴대폰
+                  휴대폰*
                 </div>
                 <Input
                   type="text"
@@ -165,7 +165,7 @@ export const ApplicateWorkshop = ({ }) => {
 
               <div className="border-b-1 flex flex-col px-1.5 py-1">
                 <div className="font-black text-[20px] whitespace-nowrap">
-                  인스타그램 영상 링크
+                  인스타그램 영상 링크*
                 </div>
                 <Textarea
                   placeholder="참여하신 인스타그램 릴스 게시물 링크를 붙여넣어주세요."
@@ -248,7 +248,7 @@ export const ApplicateWorkshop = ({ }) => {
                   &nbsp;동의
                 </div>
               </Checkbox>
-              {error && <span className="text-[12px]">{error}</span>}
+              {error && <span className="text-[13px]">{error}</span>}
             </div>
 
 

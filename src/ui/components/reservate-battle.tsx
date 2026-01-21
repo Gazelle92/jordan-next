@@ -57,7 +57,7 @@ export const ReservateBattle = ({ }) => {
       return;
     }
     if (!birthDateRegex.test(form.birth_date)) {
-      setError("생년월일 날짜 형식이 올바르지 않습니다.\n예시) 20260207");
+      setError("생년월일 형식이 올바르지 않습니다.\n예시) 20260207");
       return;
     }
     if (!phoneRegex.test(form.phone_number)) {
@@ -167,7 +167,26 @@ export const ReservateBattle = ({ }) => {
                   }
                 />
               </div>
-              <div className="flex flex-col px-1.5 py-1 border-b-1">
+
+
+              <div className="flex flex-col justify-between px-1.5 py-1 relative border-b-1">
+                <div className="font-black text-[20px]">
+                  토크 세션 관람
+                </div>
+
+                <Checkbox
+                  className="absolute right-[14px] top-[10px] view_label"
+                  checked={form.talk_session_view}
+                  onChange={(event) =>
+                    setForm((prev) => ({
+                      ...prev,
+                      talk_session_view: event.target.checked,
+                    }))
+                  }
+                >
+                </Checkbox>
+              </div>
+              <div className="flex flex-col px-1.5 py-1 ">
                 <div className="font-black text-[20px]">
                   댄서 ‘바다’, ‘왁씨’에게 묻고 싶은 질문
                 </div>
@@ -184,32 +203,13 @@ export const ReservateBattle = ({ }) => {
                 />
               </div>
 
-              <div className="flex flex-col justify-between px-1.5 py-1 relative ">
-                <div className="font-black text-[20px]">
-                  토크 세션 관람
-                </div>
-                <span className="font-extralight text-[12px]">* 토크 세션 관람을 희망하시는 경우 체크해 주세요.</span>
-                <Checkbox
-                  className="absolute right-[14px] top-[10px] view_label"
-                  checked={form.talk_session_view}
-                  onChange={(event) =>
-                    setForm((prev) => ({
-                      ...prev,
-                      talk_session_view: event.target.checked,
-                    }))
-                  }
-                >
-                </Checkbox>
-
-
-              </div>
-
 
 
             </div>
             <span className="font-extralight text-[14px] mt-[-12px]">
-              * 해당 프로그램은 사전 신청 후 당첨된 인원에 한해 참여 가능합니다.<br />
-              * 참가자 발표는 1월 30일(금), 개별 문자 발송 예정입니다.
+              * 이벤트 관람과 토크 세션은 별도 운영되며, 토크 세션 관람 시 해당 항목을 선택해 주세요.<br />
+              * 본 프로그램은 사전 신청 후 당첨자에 한해 참여 가능합니다.<br />
+              * 참가자 발표는 1월 30일(금), 개별 문자로 안내드립니다.
             </span>
             {/*<div className="flex flex-col justify-center text-center gap-[8px]">
 
@@ -293,7 +293,7 @@ export const ReservateBattle = ({ }) => {
                   &nbsp;동의
                 </div>
               </Checkbox>
-              {error && <span className="text-[12px]">{error}</span>}
+              {error && <span className="text-[13px]">{error}</span>}
             </div>
 
 

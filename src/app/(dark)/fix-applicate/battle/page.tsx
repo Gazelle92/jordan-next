@@ -164,9 +164,9 @@ export default function BattleEditPage() {
         />
       )}
 
-      {step === "doneEdit" && <StepDone text="배틀 신청서 수정이 완료 되었습니다." />}
+      {step === "doneEdit" && <StepDone text="배틀 신청서 수정이 완료되었습니다." />}
 
-      {step === "doneDelete" && <StepDone text="배틀 신청서 취소가 완료 되었습니다." />}
+      {step === "doneDelete" && <StepDone text="배틀 신청서 취소가 완료되었습니다." />}
     </div>
   );
 }

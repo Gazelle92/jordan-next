@@ -68,7 +68,7 @@ export const ApplicateBattle = ({ }) => {
     }
 
     if (!birthDateRegex.test(form.birth_date) || !birthDateRegex.test(form.member2_birth_date)) {
-      setError("생년월일 날짜 형식이 올바르지 않습니다. 예시) 20260207");
+      setError("생년월일 형식이 올바르지 않습니다. 예시) 20260207");
       return;
     }
 
@@ -140,7 +140,7 @@ export const ApplicateBattle = ({ }) => {
               </div>
               <div className="border-b-1 flex justify-between px-1.5 py-1 text-[20px] ">
                 <div className="whitespace-nowrap font-black">
-                  이름
+                  이름*
                 </div>
                 <Input
                   type="text"
@@ -154,7 +154,7 @@ export const ApplicateBattle = ({ }) => {
               </div>
               <div className="border-b-0 flex justify-between px-1.5 py-1 pb-0">
                 <div className="text-[20px] whitespace-nowrap font-black">
-                  생년월일
+                  생년월일*
                 </div>
                 <Input
                   type="text"
@@ -172,7 +172,7 @@ export const ApplicateBattle = ({ }) => {
               <div className="text-right text-[12px] border-b-1 pb-1 px-1.5">만 15세 이상만 신청이 가능합니다.</div>
               <div className="border-b-1 flex justify-between px-1.5 py-1">
                 <div className="text-[20px] whitespace-nowrap font-black">
-                  장르
+                  장르*
                 </div>
                 <Input
                   type="text"
@@ -189,7 +189,7 @@ export const ApplicateBattle = ({ }) => {
               </div>
               <div className="border-b-1 flex justify-between px-1.5 py-1">
                 <div className=" text-[20px] whitespace-nowrap font-black">
-                  휴대폰
+                  휴대폰*
                 </div>
                 <Input
                   type="text"
@@ -207,7 +207,7 @@ export const ApplicateBattle = ({ }) => {
 
               <div className="border-b-1 text-[20px] flex flex-col px-1.5 py-1">
                 <div className=" whitespace-nowrap font-black">
-                  인스타그램 아이디
+                  인스타그램 아이디*
                 </div>
                 <Input
                   placeholder="ex) @JORDAN"
@@ -229,7 +229,7 @@ export const ApplicateBattle = ({ }) => {
               </div>
               <div className="border-b-1 flex justify-between px-1.5 py-1">
                 <div className="text-[20px] whitespace-nowrap font-black">
-                  이름
+                  이름*
                 </div>
                 <Input
                   type="text"
@@ -243,7 +243,7 @@ export const ApplicateBattle = ({ }) => {
               </div>
               <div className="border-b-0 flex justify-between px-1.5 py-1 pb-0">
                 <div className="text-[20px] whitespace-nowrap font-black">
-                  생년월일
+                  생년월일*
                 </div>
                 <Input
                   type="text"
@@ -261,7 +261,7 @@ export const ApplicateBattle = ({ }) => {
               <div className="text-right text-[12px] border-b-1 pb-1 px-1.5">만 15세 이상만 신청이 가능합니다.</div>
               <div className="border-b-1 flex justify-between px-1.5 py-1">
                 <div className="text-[20px] whitespace-nowrap font-black">
-                  장르
+                  장르*
                 </div>
                 <Input
                   type="text"
@@ -278,7 +278,7 @@ export const ApplicateBattle = ({ }) => {
               </div>
               <div className="border-b-1 flex justify-between px-1.5 py-1">
                 <div className=" text-[20px] whitespace-nowrap font-black">
-                  휴대폰
+                  휴대폰*
                 </div>
                 <Input
                   type="text"
@@ -296,7 +296,7 @@ export const ApplicateBattle = ({ }) => {
 
               <div className="border-b-1 flex flex-col px-1.5 py-1">
                 <div className="text-[20px] whitespace-nowrap font-black">
-                  인스타그램 아이디
+                  인스타그램 아이디*
                 </div>
                 <Input
                   placeholder="ex) @JORDAN"
@@ -381,7 +381,7 @@ export const ApplicateBattle = ({ }) => {
                   &nbsp;동의
                 </div>
               </Checkbox>
-              {error && <span className="text-[12px]">{error}</span>}
+              {error && <span className="text-[13px]">{error}</span>}
             </div>
 
             <Button disabled={isSubmitting} className="pretendard" onClick={handleSubmit}>

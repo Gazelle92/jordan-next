@@ -362,7 +362,7 @@ function StepDone({ text }: { text: string }) {
     <div className="flex flex-col flex-grow items-center justify-center gap-6 px-5 pb-5">
       <div className="flex flex-col flex-grow items-center justify-center gap-6">
         <Logo width={120} height={120} />
-        <strong>{text}</strong>
+        <strong className="break-keep text-balance whitespace-break-spaces text-center">{text}</strong>
       </div>
       <Link href="/" className="mt-10 w-full">
         <Button>웹사이트로 이동</Button>
