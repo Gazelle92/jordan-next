@@ -50,8 +50,12 @@ export default function WorkshopInformation() {
               {"참가자 발표 : 1월 30일(금), 공식 웹사이트 공지 및 개별 문자 발송"}
             </div>
             <div className="dot-sp-1 !font-semibold !text-[13px]">
+              {"진행 시간 : 14:00 ~ 18:30 (코레오그래피 워크숍 + 퍼포먼스 영상 촬영 포함)"}
+            </div>
+            <div className="dot-sp-1 !font-semibold !text-[13px]">
               {"신청 방법 : 인스타그램 챌린지 참여 후 공식 웹사이트 접수"}
             </div>
+
 
             <br />
 
