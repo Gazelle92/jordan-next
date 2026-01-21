@@ -245,7 +245,7 @@ export const ApplicateWorkshop = ({ }) => {
                   >
                     개인정보 제3자 제공/처리위탁
                   </button>
-                  &nbsp;에 동의합니다.
+                  에 동의합니다.
                 </div>
               </Checkbox>
               {error && <span className="text-[13px]">{error}</span>}
