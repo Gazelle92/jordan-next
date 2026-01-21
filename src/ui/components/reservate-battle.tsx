@@ -186,7 +186,7 @@ export const ReservateBattle = ({ }) => {
                 >
                 </Checkbox>
               </div>
-              <div className="flex flex-col px-1.5 py-1 border-t-1 hidden">
+              <div className="flex flex-col px-1.5 py-1 border-t-1">
                 <div className="font-black text-[20px]">
                   댄서 ‘바다’, ‘왁씨’에게 묻고 싶은 질문
                 </div>
