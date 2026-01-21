@@ -59,8 +59,6 @@ export default function Home() {
       return (
         <div className="flex flex-grow-1 items-center justify-center relative">
           <div className="absolute top-[27px] left-1/2 main_logo_w">
-            <VideoLogo width={218} className={`main_logo transition-opacity duration-500 ease-in-out ${fadeOut ? "opacity-0" : "opacity-100"}`} />
-
           </div>
           <div className="absolute top-0 left-[22px] w-[60px] h-full">
             {/*<Image src="/images/intro_tag.jpg" alt="houseofgreatness" fill sizes="100vh" className={`h-full main_tag transition-opacity duration-500 ease-in-out ${fadeOut ? "opacity-0" : "opacity-100"}`} />*/}
