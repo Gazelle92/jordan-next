@@ -384,8 +384,8 @@ export default function Videos() {
     loadWorkshops(true).finally(() => {
       setTimeout(() => setVisible(true), 100);
       setTimeout(() => {
-        document.querySelector('.pre-loader')?.classList.remove('loader');
-      }, 3000);
+        document.querySelector('.pre-loader')?.classList.remove('show');
+      }, 2000);
     });
   }, [value.value]);
 
@@ -442,7 +442,7 @@ export default function Videos() {
             onChange={setValue}
           />
         </div>
-        <div className="pre-loader w-[120px] absolute z-[0] top-[100px] left-1/2 -translate-x-1/2">
+        <div className="pre-loader show w-[120px] absolute z-[0] top-[100px] left-1/2 -translate-x-1/2">
           <Image
             src="/images/loading.gif"
             alt="loading"
