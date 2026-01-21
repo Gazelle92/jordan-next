@@ -104,7 +104,7 @@ export default function WorkshopInformation() {
             controls
             playsInline
             preload="metadata"
-            className="h-[400px] z-[1] cursor-pointer"
+            className="h-[400px] z-[0] cursor-pointer"
             onPlay={() => setHasStarted(true)}
           >
 
@@ -115,7 +115,15 @@ export default function WorkshopInformation() {
               src="/images/intro_video_cover.jpg"
               alt="houseofgreatness"
               fill
-              className="absolute !top-[16px] !left-[16px] !h-[calc(100%-32px)] !w-[calc(100%-32px)] object-contain z-[2] pointer-events-none"
+              className="absolute !top-[16px] !left-[16px] !h-[calc(100%-32px)] !w-[calc(100%-32px)] object-contain z-[1] pointer-events-none"
+            />
+          )}
+          {!hasStarted && (
+            <Image
+              src="/images/btn_play.png"
+              alt="play"
+              fill
+              className="absolute !h-[40px] !w-[40px] !left-1/2 !top-[45%] -translate-x-1/2 -translate-y-1/2 z-[2] !bottom-auto !right-auto"
             />
           )}
         </div>
