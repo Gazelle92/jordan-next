@@ -236,7 +236,6 @@ export default function IrlInfo() {
                 <div className="dot-sp-1 !font-semibold !text-[13px]">
                   {"참가자 발표: 1월 30일(금), 공식 웹사이트 공지 및 개별 문자 발송"}
                 </div>
-                <br />
                 <div className="!font-semibold !text-[13px]">
                   {"* 참가 신청은 모집 현황에 따라 선착순으로 조기 마감될 수 있습니다."}
                 </div>
