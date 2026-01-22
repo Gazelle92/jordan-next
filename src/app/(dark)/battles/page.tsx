@@ -236,6 +236,16 @@ export default function IrlInfo() {
                 <div className="dot-sp-1 !font-semibold !text-[13px]">
                   {"참가자 발표: 1월 30일(금), 공식 웹사이트 공지 및 개별 문자 발송"}
                 </div>
+                <br />
+                <div className="!font-semibold !text-[13px]">
+                  {"* 참가 신청은 모집 현황에 따라 선착순으로 조기 마감될 수 있습니다."}
+                </div>
+                <div className="!font-semibold !text-[13px]">
+                  {"* 선착순 마감 후, 취소 인원 발생 시 1월 27일(토) 12:00 ~ 1월 28일(일) 23:59 동안 추가 접수가 진행될 수 있습니다."}
+                </div>
+
+
+
               </div>
 
               <div
