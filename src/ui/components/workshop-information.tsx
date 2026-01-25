@@ -13,6 +13,7 @@ export default function WorkshopInformation() {
     }));
   };
   const [hasStarted, setHasStarted] = useState(false);
+  const [hasStarted2, setHasStarted2] = useState(false);
 
   return (
     <div className="flex flex-col">
@@ -97,6 +98,39 @@ export default function WorkshopInformation() {
               <span className="btn_more_2">닫기</span>
             </div>
           </div>
+        </div>
+
+        <div className="text-[22px] px-4 pt-[16px] font-black text-center leading-[1]">
+          CHALLENGE TUTORIAL<br />챌린지 튜토리얼
+        </div>
+
+        <div className="p-4 flex justify-center text-[0px] relative border-b-1">
+          <video
+            controls
+            playsInline
+            preload="metadata"
+            className="h-[400px] z-[0] cursor-pointer"
+            onPlay={() => setHasStarted2(true)}
+          >
+
+            <source src="https://customer-y6yfz33adjmztpgx.cloudflarestream.com/f2f56c76dc71075397c31682730fd4ae/manifest/video.m3u8" />
+          </video>
+          {!hasStarted2 && (
+            <Image
+              src="/images/intro_video_cover2.jpg"
+              alt="houseofgreatness"
+              fill
+              className="absolute !top-[16px] !left-[16px] !h-[calc(100%-32px)] !w-[calc(100%-32px)] object-contain z-[1] pointer-events-none"
+            />
+          )}
+          {!hasStarted2 && (
+            <Image
+              src="/images/btn_play.png"
+              alt="play"
+              fill
+              className="absolute !h-[40px] !w-[40px] !left-1/2 !top-[50%] -translate-x-1/2 -translate-y-1/2 z-[2] !bottom-auto !right-auto pointer-events-none"
+            />
+          )}
         </div>
 
         <div className="text-[22px] px-4 pt-[16px] font-black text-center leading-[1]">
