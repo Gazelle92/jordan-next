@@ -77,13 +77,16 @@ export const Event = ({ }) => {
                     {"참가 대상: 만 15세 이상 여성 댄서 누구나"}
                   </div>
                   <div className="dot-sp-1 !font-semibold !text-[13px]">
-                    {"신청 기간 : 1월 21일(수) 12:00~ 1월 27일(화) 23:59"}
+                    {"신청 기간 : 1월 21일(수) 12:00~ 1월 30일(금) 19:00"}
                   </div>
                   <div className="dot-sp-1 !font-semibold !text-[13px]">
                     {"선정 방식 : 댄서 ‘바다’가 신청자 중 60명을 선정"}
                   </div>
                   <div className="dot-sp-1 !font-semibold !text-[13px]">
-                    {"참가자 발표 : 1월 30일(금), 공식 웹사이트 공지 및 개별 문자 발송"}
+                    {"참가자 발표 : 1월 31일(토), 공식 웹사이트 공지 및 개별 문자 발송"}
+                  </div>
+                  <div className="dot-sp-1 !font-semibold !text-[13px]">
+                    {"진행 시간 : 14:00 ~ 18:30 (코레오그래피 워크숍 + 퍼포먼스 영상 촬영 포함)"}
                   </div>
                   <div className="dot-sp-1 !font-semibold !text-[13px]">
                     {"신청 방법 : 인스타그램 챌린지 참여 후 공식 웹사이트 접수"}
@@ -95,21 +98,21 @@ export const Event = ({ }) => {
                     {"STEP 1."}
                   </div>
                   <div className="font-semibold text-[13px]">
-                    {"스튜디오에서 챌린지 영상 촬영"}
+                    {"챌린지 영상 촬영 (조던 월드 오브 플라이트 홍대 / 카시나 성수점 내 스튜디오 또는 춤을 출수 있는 곳 어디든)"}
                   </div>
 
                   <div className="font-semibold text-[16px]">
                     {"STEP 2."}
                   </div>
                   <div className="font-semibold text-[13px]">
-                    {"본인 인스타그램 계정에 ‘릴스’로 업로드 (공개 계정 필수)"}
+                    {"챌린지 영상을 본인 인스타그램 계정에 ‘릴스’ 업로드 *공개 계정 필수"}
                   </div>
 
                   <div className="font-semibold text-[16px]">
                     {"STEP 3."}
                   </div>
                   <div className="font-semibold text-[13px]">
-                    {"공식 웹사이트 내 신청서에 해당 게시물 링크를 제출하면 신청 완료"}
+                    {"공식 웹사이트 내 신청서에 게시물 링크 등록 후 신청 완료"}
                   </div>
 
                   <br />

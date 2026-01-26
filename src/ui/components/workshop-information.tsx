@@ -42,13 +42,13 @@ export default function WorkshopInformation() {
               {"참가 대상 : 만 15세 이상 여성 댄서 누구나"}
             </div>
             <div className="dot-sp-1 !font-semibold !text-[13px]">
-              {"신청 기간 : 1월 21일(수) 12:00~ 1월 27일(화) 23:59"}
+              {"신청 기간 : 1월 21일(수) 12:00~ 1월 30일(금) 19:00"}
             </div>
             <div className="dot-sp-1 !font-semibold !text-[13px]">
               {"선정 방식 : 댄서 ‘바다’가 신청자 중 60명을 선정"}
             </div>
             <div className="dot-sp-1 !font-semibold !text-[13px]">
-              {"참가자 발표 : 1월 30일(금), 공식 웹사이트 공지 및 개별 문자 발송"}
+              {"참가자 발표 : 1월 31일(토), 공식 웹사이트 공지 및 개별 문자 발송"}
             </div>
             <div className="dot-sp-1 !font-semibold !text-[13px]">
               {"진행 시간 : 14:00 ~ 18:30 (코레오그래피 워크숍 + 퍼포먼스 영상 촬영 포함)"}
