@@ -135,7 +135,7 @@ const guests: ProfileProps[] = [
 
 const matches = [
   { label: "1차 예선 (3 circles)", time: "12:00 - 13:30" },
-  { label: "2차 예선 (3 circles)", time: "13:30 - 15:00" },
+  { label: "2차 예선", time: "13:30 - 15:00" },
   { label: "본선 (TOP 12)", time: "16:00 - 16:40" },
   { label: "TOP 6", time: "16:40 - 17:00" },
   { label: "SEMI FINAL & WILD CARD", time: "17:00 - 17:30" },
