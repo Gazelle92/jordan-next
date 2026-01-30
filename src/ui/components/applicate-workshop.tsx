@@ -98,11 +98,14 @@ export const ApplicateWorkshop = ({ }) => {
         </div>
       </div>
       <FullDialog open={open} onClose={() => setOpen(false)}>
-        {completed ? (
+        {!completed ? (
           <>
             <div className="flex flex-col flex-grow-1 items-center justify-center gap-6">
               <Logo width={100} height={100} />
-              <strong className="text-center">코레오그래피 워크숍 신청이<br />완료되었습니다.</strong>
+              {/*<strong className="text-center">코레오그래피 워크숍 신청이<br />완료되었습니다.</strong>*/}
+              <strong className="text-center">코레오 그래피 워크숍<br />접수가 마감되었습니다.</strong>
+
+
             </div>
             <Link href="/menu">
               <Button>메뉴로 돌아가기</Button>
