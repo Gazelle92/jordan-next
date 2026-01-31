@@ -505,6 +505,15 @@ const workshopUser: WorkshopUser[] = [
   { name: "최서원", instagram: "choiseowon_", phone: "01076117983" },
   { name: "장소연", instagram: "malt_soyeon11", phone: "01067055878" },
   { name: "황시원", instagram: "sw20100916", phone: "01033616082" },
+  { name: "김하은", instagram: "haeun04_18", phone: "01079332004" },
+  { name: "최신", instagram: "ch__new", phone: "01090489983" },
+  { name: "엄윤솔", instagram: "yxonsl", phone: "01080827832" },
+  { name: "한아라", instagram: "alle_red", phone: "01072230446" },
+  { name: "이채린", instagram: "cailin0725", phone: "01098845356" },
+  { name: "우소민", instagram: "o.omi.n", phone: "01023753155" },
+  { name: "송금선", instagram: "7_iinnu", phone: "01039681939" },
+  { name: "이소율", instagram: "soxyvl", phone: "01049555247" },
+  { name: "주은빈", instagram: "eunb.in22", phone: "01028352122" },
 ];
 
 type BattleUsersTableProps = {
