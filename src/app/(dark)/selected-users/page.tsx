@@ -537,9 +537,9 @@ const UsersTable = ({ items, children }: BattleUsersTableProps) => {
       <table className="text-center text-[13px]">
         <thead>
           <tr className="border-t-1 border-b-1">
-            <th className="py-2">이름</th>
+            <th className="py-2 w-[120px]">이름</th>
             <th className="py-2">인스타그램</th>
-            <th className="py-2">휴대폰 뒷자리</th>
+            <th className="py-2 w-[100px]">휴대폰 뒷자리</th>
           </tr>
         </thead>
 
@@ -586,9 +586,9 @@ const WorkshopUsersTable = ({ items, children }: WorkshopUsersTableProps) => {
       <table className="text-center text-[13px]">
         <thead>
           <tr className="border-t-1 border-b-1">
-            <th className="py-2">이름</th>
+            <th className="py-2 w-[120px]">이름</th>
             <th className="py-2">인스타그램</th>
-            <th className="py-2">휴대폰 뒷자리</th>
+            <th className="py-2 w-[100px]">휴대폰 뒷자리</th>
           </tr>
         </thead>
         <tbody>
