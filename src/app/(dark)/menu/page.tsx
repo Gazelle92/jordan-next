@@ -6,7 +6,7 @@ import WomenBattle from "@/ui/svg/women_battle.svg";
 import IrlInfo from "@/ui/svg/infrared_irl_info_3.svg";
 import Logo from "@/ui/svg/logo.svg";
 import ViewInfrared from "@/ui/svg/view_infrared.svg";
-
+import SelectedDancer from "@/ui/svg/selected_dancer_3.svg";
 type ButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement>;
 const MenuButton = ({ children, ...props }: ButtonProps) => {
   return (
@@ -27,11 +27,11 @@ export default function Menu() {
         <Title width={300} height={46} />
       </div>
       <div className="flex flex-col items-stretch gap-3 logo_wrap ani overflow-hidden">
-        {/*<Link href="/selected-users">
+        <Link href="/selected-users">
           <MenuButton>
-            <span className="text-2xl font-black">선정자 명단 보기</span>
+            <SelectedDancer width={253} height={36} className="mx-auto" />
           </MenuButton>
-        </Link>*/}
+        </Link>
         <Link href="/irl-info">
           <MenuButton>
             <IrlInfo width={224} height={59} className="mx-auto" />
