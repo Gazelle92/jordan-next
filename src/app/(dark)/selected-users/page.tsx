@@ -522,7 +522,7 @@ type SoloUser = {
 
 const formatPhone = (phone: string) => {
   // 01055913070 → 5591
-  return phone.startsWith("010") ? phone.slice(3, 7) : phone;
+  return phone.startsWith("010") ? phone.slice(7, 11) : phone;
 };
 
 const maskInstagram = (id: string) => {
