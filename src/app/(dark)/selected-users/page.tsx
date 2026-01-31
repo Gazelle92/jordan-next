@@ -504,9 +504,8 @@ const workshopUser: WorkshopUser[] = [
   { name: "김나윤", instagram: "nx0ynu", phone: "01048247688" },
   { name: "최서원", instagram: "choiseowon_", phone: "01076117983" },
   { name: "장소연", instagram: "malt_soyeon11", phone: "01067055878" },
+  { name: "황시원", instagram: "sw20100916", phone: "01033616082" },
 ];
-
-
 
 type BattleUsersTableProps = {
   items: BattleUser[];
@@ -594,9 +593,9 @@ const WorkshopUsersTable = ({ items, children }: WorkshopUsersTableProps) => {
         <tbody>
           {items.map((user, index) => (
             <tr key={index}>
-              <td><div className="my-[6px]">{user.name}</div></td>
-              <td><div className="my-[6px]">{maskInstagram(user.instagram)}</div></td>
-              <td><div className="my-[6px]">{formatPhone(user.phone)}</div></td>
+              <td><div className="my-[5px]">{user.name}</div></td>
+              <td><div className="my-[5px]">{maskInstagram(user.instagram)}</div></td>
+              <td><div className="my-[5px]">{formatPhone(user.phone)}</div></td>
             </tr>
           ))}
         </tbody>
