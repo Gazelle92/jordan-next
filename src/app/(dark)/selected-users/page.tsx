@@ -583,7 +583,7 @@ const WorkshopUsersTable = ({ items, children }: WorkshopUsersTableProps) => {
   return (
     <div className="flex flex-col gap-5 pb-4">
       {children}
-      <table className="text-center text-[13px]">
+      <table className="text-center text-[13px] workshop_table">
         <thead>
           <tr className="border-t-1 border-b-1">
             <th className="py-2 w-[120px]">이름</th>
@@ -594,9 +594,9 @@ const WorkshopUsersTable = ({ items, children }: WorkshopUsersTableProps) => {
         <tbody>
           {items.map((user, index) => (
             <tr key={index}>
-              <td><div className="my-1">{user.name}</div></td>
-              <td><div className="my-1">{maskInstagram(user.instagram)}</div></td>
-              <td><div className="my-1">{formatPhone(user.phone)}</div></td>
+              <td><div className="my-[6px]">{user.name}</div></td>
+              <td><div className="my-[6px]">{maskInstagram(user.instagram)}</div></td>
+              <td><div className="my-[6px]">{formatPhone(user.phone)}</div></td>
             </tr>
           ))}
         </tbody>
