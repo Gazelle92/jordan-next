@@ -20,6 +20,13 @@ type BattleUser = {
   phone2: string;
 };
 
+type WorkshopUser = {
+  name: string;
+  instagram: string; // @ 제거한 원본
+  phone: string;     // 전체 번호
+};
+
+
 const battleUsers: BattleUser[] = [
   {
     name1: "조예은",
@@ -447,11 +454,70 @@ const battleUsers: BattleUser[] = [
   },
 ];
 
+const workshopUser: WorkshopUser[] = [
+  { name: "이혜란", instagram: "im1byul._", phone: "01041110031" },
+  { name: "김민주", instagram: "_pm_minju_", phone: "01050688748" },
+  { name: "황민하", instagram: "minareeee_", phone: "01096015460" },
+  { name: "김별", instagram: "byeolkim_", phone: "01051152160" },
+  { name: "이지연", instagram: "izee__kr", phone: "01033648811" },
+  { name: "송나리", instagram: "narisongis", phone: "01051912135" },
+  { name: "안수빈", instagram: "soopreme.store", phone: "01033887396" },
+  { name: "이다혜", instagram: "_daa.bby_", phone: "01096986709" },
+  { name: "이세현", instagram: "_calla.__", phone: "01040454130" },
+  { name: "호해동", instagram: "h_haitong", phone: "01076237831" },
+  { name: "김보미", instagram: "o.asi_s_0", phone: "01039197434" },
+  { name: "박서연", instagram: "pxxeon", phone: "01027026676" },
+  { name: "임가은", instagram: "limgaeun_0730", phone: "01092240592" },
+  { name: "강양미", instagram: "imnay__03", phone: "01039299952" },
+  { name: "오정연", instagram: "jxxg_lia", phone: "01028626578" },
+  { name: "나유", instagram: "n2a1y7u", phone: "01068147654" },
+  { name: "김지현", instagram: "yumnoii", phone: "01093610271" },
+  { name: "김미주", instagram: "thisis.mj__", phone: "01055306619" },
+  { name: "박소희", instagram: "husleedpnce", phone: "01065666720" },
+  { name: "고유라", instagram: "_rahel__05", phone: "01030985630" },
+  { name: "유승주", instagram: "_j00.__", phone: "01064449958" },
+  { name: "박지연", instagram: "yeonii_pp", phone: "01041805122" },
+  { name: "정수아", instagram: "sllua__", phone: "01076360279" },
+  { name: "김수민", instagram: "sumin__o0", phone: "01094657948" },
+  { name: "Winnie", instagram: "winnie.0103", phone: "01039071206" },
+  { name: "홍윤지", instagram: "beviigw", phone: "01036142593" },
+  { name: "윤한별", instagram: "bxxl__ll", phone: "01099285336" },
+  { name: "손미주", instagram: "mijuson__", phone: "01053155615" },
+  { name: "조연서", instagram: "08_yeonseo_", phone: "01057626541" },
+  { name: "박시후", instagram: "sihu_831", phone: "01083814868" },
+  { name: "박서연", instagram: "seoyeon.o8", phone: "01050297166" },
+  { name: "배소울", instagram: "sowoolbae", phone: "01057952434" },
+  { name: "김예원", instagram: "yewon.k__", phone: "01082896303" },
+  { name: "석신화", instagram: "shx_h11", phone: "01036705553" },
+  { name: "이서연", instagram: "s.ye0x1_", phone: "01036819856" },
+  { name: "김건희", instagram: "gexnhxe_9", phone: "01031690900" },
+  { name: "이수빈", instagram: "su.xb9", phone: "01057192152" },
+  { name: "유민서", instagram: "minseo___yoo", phone: "01037840962" },
+  { name: "이태린", instagram: "taerin.l_", phone: "01081080388" },
+  { name: "박민지", instagram: "minji.mg", phone: "01097222099" },
+  { name: "임주아", instagram: "_juxa.3", phone: "01092952398" },
+  { name: "최가을", instagram: "choigaeul._", phone: "01073707481" },
+  { name: "우준희", instagram: "uzhgkl", phone: "01045866553" },
+  { name: "김시하", instagram: "shasha_move", phone: "01047310922" },
+  { name: "문다현", instagram: "dahyhyhyunnn", phone: "01071445073" },
+  { name: "신서연", instagram: "sin___ce_", phone: "01053300794" },
+  { name: "김나윤", instagram: "nx0ynu", phone: "01048247688" },
+  { name: "최서원", instagram: "choiseowon_", phone: "01076117983" },
+  { name: "장소연", instagram: "malt_soyeon11", phone: "01067055878" },
+];
+
 
 
 type BattleUsersTableProps = {
   items: BattleUser[];
   children?: React.ReactNode;
+};
+
+
+type SoloUser = {
+  name: string;
+  instagram: string; // @ 제거한 원본
+  phone: string;     // 전체 번호
 };
 
 const formatPhone = (phone: string) => {
@@ -508,6 +574,39 @@ const UsersTable = ({ items, children }: BattleUsersTableProps) => {
   );
 };
 
+type WorkshopUsersTableProps = {
+  items: WorkshopUser[];
+  children?: React.ReactNode;
+};
+
+const WorkshopUsersTable = ({ items, children }: WorkshopUsersTableProps) => {
+  return (
+    <div className="flex flex-col gap-5 pb-4">
+      {children}
+      <table className="text-center text-[13px]">
+        <thead>
+          <tr className="border-t-1 border-b-1">
+            <th className="py-2">이름</th>
+            <th className="py-2">인스타그램</th>
+            <th className="py-2">휴대폰 뒷자리</th>
+          </tr>
+        </thead>
+        <tbody>
+          {items.map((user, index) => (
+            <tr key={index}>
+              <td><div className="my-1">{user.name}</div></td>
+              <td><div className="my-1">{maskInstagram(user.instagram)}</div></td>
+              <td><div className="my-1">{formatPhone(user.phone)}</div></td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  );
+};
+
+
+
 export default function SelectedUsers() {
   return (
     <div className="flex flex-col font-semibold">
@@ -525,9 +624,9 @@ export default function SelectedUsers() {
         </div>
         <hr className="border-2" />
         <div className="flex flex-col gap-3">
-          <UsersTable items={battleUsers}>
+          <WorkshopUsersTable items={workshopUser}>
             <ChoreoGraphyWorkshop2 width={321} className="mx-auto filled-color" />
-          </UsersTable>
+          </WorkshopUsersTable >
         </div>
         <Link href="/menu">
           <Button>메뉴로 돌아가기</Button>
