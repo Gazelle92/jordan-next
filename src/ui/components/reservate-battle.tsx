@@ -108,7 +108,10 @@ export const ReservateBattle = ({ }) => {
           <>
             <div className="flex flex-col flex-grow-1 items-center justify-center gap-6">
               <Logo width={100} height={100} />
-              <strong className="text-center">HOUSE OF GREATNESS 이벤트<br />관람 신청 접수가 마감되었습니다.</strong>
+              <strong className="text-center">
+                HOUSE OF GREATNESS<br />
+                이벤트 관람 접수가 마감되었습니다.
+              </strong>
             </div>
             <Link href="/menu">
               <Button>메뉴로 돌아가기</Button>
