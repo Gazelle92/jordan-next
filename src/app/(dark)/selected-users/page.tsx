@@ -499,7 +499,7 @@ const workshopUser: WorkshopUser[] = [
   { name: "최가을", instagram: "choigaeul._", phone: "01073707481" },
   { name: "우준희", instagram: "uzhgkl", phone: "01045866553" },
   { name: "김시하", instagram: "shasha_move", phone: "01047310922" },
-  { name: "문다현", instagram: "dahyhyhyunnn", phone: "01071445073" },
+  //{ name: "문다현", instagram: "dahyhyhyunnn", phone: "01071445073" },
   { name: "신서연", instagram: "sin___ce_", phone: "01053300794" },
   { name: "김나윤", instagram: "nx0ynu", phone: "01048247688" },
   { name: "최서원", instagram: "choiseowon_", phone: "01076117983" },
@@ -514,6 +514,9 @@ const workshopUser: WorkshopUser[] = [
   { name: "송금선", instagram: "7_iinnu", phone: "01039681939" },
   { name: "이소율", instagram: "soxyvl", phone: "01049555247" },
   { name: "주은빈", instagram: "eunb.in22", phone: "01028352122" },
+  { name: "라나 리", instagram: "ranaaleeee", phone: "01064609895" },
+  { name: "장하율", instagram: "yul_mucha", phone: "01041248087" },
+
 ];
 
 type BattleUsersTableProps = {
