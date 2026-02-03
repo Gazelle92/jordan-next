@@ -25,10 +25,10 @@ export default function GuideMap() {
           </div>
 
           <Image
-            src="/images/guide_0.png"
+            src="/images/guide_0.svg"
             alt="reward"
             className="mx-auto mt-[30px] mb-[20px]"
-            width={400}
+            width={520}
             height={140}
           />
 
