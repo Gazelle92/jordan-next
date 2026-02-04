@@ -1,5 +1,3 @@
-import { HistoryBack } from "@/ui/components/history-back";
-
 import Title from "@/ui/svg/house_of_greatness.svg";
 import Logo from "@/ui/svg/logo.svg";
 import Image from "next/image";
@@ -10,8 +8,7 @@ import { GuideInfo3 } from "@/ui/components/guide-info-3";
 export default function GuideMap() {
   return (
     <div className="flex flex-col pb-3">
-      <HistoryBack />
-      <div className="flex flex-col px-3">
+      <div className="flex flex-col px-3 pt-[86px]">
         <div className="flex flex-col flex-grow-1 items-center justify-center gap-7 mb-[74px]">
           <Logo className="w-[33px]" />
           <Title width={300} height={46} />
